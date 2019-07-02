@@ -20,8 +20,8 @@ class ChampionTile extends Component {
                   <Header>
                     <Image src={`${pathToAbility(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} avatar verticalAlign='middle'/>
                     <span>{this.props.champion.ability_name}</span>
-                    <p>{this.props.champion.ability_description}</p>
                   </Header>
+                  <p>{this.props.champion.ability_description}</p>
                 </Grid.Row>
               </Grid>
             </Popup>
