@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :champions, only: [:index]
+  resources :items, only: [:index]
+  resources :news, only: [:index]
 end
