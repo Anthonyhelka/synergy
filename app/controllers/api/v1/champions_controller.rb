@@ -1,8 +1,6 @@
 class Api::V1::ChampionsController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    binding.pry
     demon = Champion.where(origin_1: "Demon").or(Champion.where(origin_2: "Demon"))
     dragon = Champion.where(origin_1: "Dragon").or(Champion.where(origin_2: "Dragon"))
     exile = Champion.where(origin_1: "Exile").or(Champion.where(origin_2: "Exile"))
