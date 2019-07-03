@@ -47,23 +47,37 @@ class ChampionsOverview extends Component {
   }
 
   render() {
+    let nameOrder = '';
+    let tierOrder = '';
 
     if (this.state.sort === 'z-a') {
+      nameOrder = 'descending'
       this.state.champions.sort(function(a, b) {
           let nameA = a.name.toUpperCase();
           let nameB = b.name.toUpperCase();
           return (nameB < nameA) ? -1 : (nameB > nameA) ? 1 : 0;
       });
     } else if (this.state.sort === '1-5') {
+      tierOrder = 'ascending';
       this.state.champions.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
     } else if (this.state.sort === '5-1') {
+      tierOrder = 'descending';
       this.state.champions.sort((a, b) => parseFloat(b.tier) - parseFloat(a.tier));
     } else {
+      nameOrder = 'ascending';
       this.state.champions.sort(function(a, b) {
           let nameA = a.name.toUpperCase();
           let nameB = b.name.toUpperCase();
           return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
       });
+    }
+
+    if (nameOrder === '') {
+      nameOrder = 'ascending';
+    }
+
+    if (tierOrder === '') {
+      tierOrder = 'ascending';
     }
 
     let champions = this.state.champions.map(champion => {
@@ -97,19 +111,17 @@ class ChampionsOverview extends Component {
           </Menu.Item>
         </Menu>
 
-        <Table celled selectable unstackable striped fixed>
+        <Table celled selectable unstackable striped fixed sortable>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell onClick={event => this.onSort(event, 'nameSort')} >
+              <Table.HeaderCell sorted={nameOrder} onClick={event => this.onSort(event, 'nameSort')} color='red' >
                 Name
-                <Icon name='arrows alternate vertical' />
               </Table.HeaderCell>
               <Table.HeaderCell>
                 Synergies
               </Table.HeaderCell>
-              <Table.HeaderCell width='3' singleLine onClick={event => this.onSort(event, 'tierSort')} >
-                  Tier
-                  <Icon name='arrows alternate vertical' />
+              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.onSort(event, 'tierSort')} >
+                  <Icon name='dollar sign' />
               </Table.HeaderCell>
               <Table.HeaderCell>
                 Ability
