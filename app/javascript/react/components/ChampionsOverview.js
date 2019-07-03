@@ -10,7 +10,7 @@ class ChampionsOverview extends Component {
         <Menu.Item name='home' as={ Link } to='/' >
           <img src={require('../../../../public/favicon.ico')} />
         </Menu.Item>
-        <Dropdown item text='Champions'>
+        <Dropdown item text='Champions' >
           <Dropdown.Menu>
             <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active />
             <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' />
