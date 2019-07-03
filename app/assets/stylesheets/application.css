@@ -1,9 +1,14 @@
 .main-header {
   color: black;
+  text-align: center;
  }
 
 .sub-header {
   color: black;
+}
+
+.icon-div {
+  margin: 0px !important;
 }
 
 .icon-white img {
@@ -13,12 +18,15 @@
 .icon-green img {
   border: 5px solid #21BA45;
 }
+
 .icon-blue img {
   border: 5px solid #2185D0;
 }
+
 .icon-purple img {
   border: 5px solid #A332C8;
 }
+
 .icon-yellow img {
   border: 5px solid #FBBD07;
 }
