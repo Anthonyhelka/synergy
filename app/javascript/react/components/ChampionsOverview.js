@@ -76,7 +76,7 @@ class ChampionsOverview extends Component {
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Synergies</Table.HeaderCell>
-              <Table.HeaderCell width='2'>Tier</Table.HeaderCell>
+              <Table.HeaderCell width='2' icon='dollar sign'></Table.HeaderCell>
               <Table.HeaderCell>Ability</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
