@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Table } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown, Table, Icon } from 'semantic-ui-react';
 
 import ChampionsOverviewTile from './ChampionsOverviewTile';
 
@@ -8,7 +8,21 @@ class ChampionsOverview extends Component {
   constructor(props) {
     super(props);
     this.state={
-      champions: []
+      champions: [],
+      sort: '',
+    }
+    this.onSortName = this.onSort.bind(this)
+  }
+
+  onSort(event, sortKey){
+    if (sortKey === 'nameSort' && this.state.sort === 'z-a') {
+      this.setState({ sort: 'a-z' })
+    } else if (sortKey === 'nameSort') {
+      this.setState({ sort: 'z-a' })
+    } else if (sortKey === 'tierSort' && this.state.sort === '1-5') {
+      this.setState({ sort: '5-1' })
+    } else if (sortKey === 'tierSort') {
+      this.setState({ sort: '1-5' })
     }
   }
 
@@ -34,11 +48,23 @@ class ChampionsOverview extends Component {
 
   render() {
 
-    this.state.champions.sort(function(a, b) {
-        let nameA = a.name.toUpperCase();
-        let nameB = b.name.toUpperCase();
-        return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-    });
+    if (this.state.sort === 'z-a') {
+      this.state.champions.sort(function(a, b) {
+          let nameA = a.name.toUpperCase();
+          let nameB = b.name.toUpperCase();
+          return (nameB < nameA) ? -1 : (nameB > nameA) ? 1 : 0;
+      });
+    } else if (this.state.sort === '1-5') {
+      this.state.champions.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
+    } else if (this.state.sort === '5-1') {
+      this.state.champions.sort((a, b) => parseFloat(b.tier) - parseFloat(a.tier));
+    } else {
+      this.state.champions.sort(function(a, b) {
+          let nameA = a.name.toUpperCase();
+          let nameB = b.name.toUpperCase();
+          return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+      });
+    }
 
     let champions = this.state.champions.map(champion => {
       return (
@@ -74,10 +100,20 @@ class ChampionsOverview extends Component {
         <Table celled selectable unstackable striped fixed>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Synergies</Table.HeaderCell>
-              <Table.HeaderCell width='2' icon='dollar sign'></Table.HeaderCell>
-              <Table.HeaderCell>Ability</Table.HeaderCell>
+              <Table.HeaderCell onClick={event => this.onSort(event, 'nameSort')} >
+                Name
+                <Icon name='arrows alternate vertical' />
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                Synergies
+              </Table.HeaderCell>
+              <Table.HeaderCell width='3' singleLine onClick={event => this.onSort(event, 'tierSort')} >
+                  Tier
+                  <Icon name='arrows alternate vertical' />
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                Ability
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
