@@ -5,6 +5,7 @@ class CreateChampion < ActiveRecord::Migration[5.2]
       t.string :icon, null: false
       t.string :ability_name, null: false
       t.string :ability_icon, null: false
+      t.string :ability_type, null: false
       t.string :ability_description, null: false
       t.integer :tier, null: false
       t.string :tier_color, null: false

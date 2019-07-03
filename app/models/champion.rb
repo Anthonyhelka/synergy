@@ -3,6 +3,7 @@ class Champion < ApplicationRecord
   validates :icon, presence: true
   validates :ability_name, presence: true
   validates :ability_icon, presence: true
+  validates :ability_type, presence: true
   validates :ability_description, presence: true
   validates :tier, presence: true
   validates :tier_color, presence: true
