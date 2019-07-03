@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown } from 'semantic-ui-react';
 
-class HomeContainer extends Component {
+class ChampionsOverview extends Component {
   render() {
     return (
       <div>
       <Menu size='large'>
-        <Menu.Item name='home' as={ Link } to='/' active >
+        <Menu.Item name='home' as={ Link } to='/' >
           <img src={require('../../../../public/favicon.ico')} />
         </Menu.Item>
         <Dropdown item text='Champions'>
           <Dropdown.Menu>
-            <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' />
+            <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active />
             <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' />
             <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' />
           </Dropdown.Menu>
@@ -24,10 +24,9 @@ class HomeContainer extends Component {
           <p>News</p>
         </Menu.Item>
       </Menu>
-        <p>Hello from Home :)</p>
       </div>
     )
   }
 }
 
-export default HomeContainer;
+export default ChampionsOverview;

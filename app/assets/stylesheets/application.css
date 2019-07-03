@@ -1,6 +1,9 @@
 .main-header {
   color: black;
   text-align: center;
+  padding-top: : 10px !important;
+  padding-bottom: : 10px !important;
+
  }
 
 .sub-header {
@@ -8,6 +11,10 @@
 }
 
 .icon-div {
+  margin: 0px !important;
+}
+
+.champion-tabs {
   margin: 0px !important;
 }
 

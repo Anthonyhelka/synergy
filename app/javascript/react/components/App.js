@@ -3,7 +3,9 @@ import { Router, browserHistory, Route} from 'react-router';
 import 'semantic-ui-css/semantic.min.css';
 
 import HomeContainer from './HomeContainer';
-import ChampionsContainer from  './ChampionsContainer';
+import ChampionsOverview from  './ChampionsOverview';
+import ChampionsOrigins from  './ChampionsOrigins';
+import ChampionsClasses from  './ChampionsClasses';
 import ItemsContainer from  './ItemsContainer';
 import NewsContainer from  './NewsContainer';
 
@@ -13,7 +15,10 @@ class App extends Component {
       <div>
         <Router history={browserHistory}>
           <Route path='/' component={HomeContainer}/>
-          <Route path='/champions' component={ChampionsContainer}/>
+          <Route path='/champions' component={ChampionsOverview}/>
+          <Route path='/champions/overview' component={ChampionsOverview}/>
+          <Route path='/champions/origins' component={ChampionsOrigins}/>
+          <Route path='/champions/classes' component={ChampionsClasses}/>
           <Route path='/items' component={ItemsContainer}/>
           <Route path='/news' component={NewsContainer}/>
         </Router>

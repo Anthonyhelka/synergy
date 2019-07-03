@@ -1,6 +1,6 @@
 class Api::V1::ChampionsController < ApplicationController
 
-  def index
+  def origins
     demon = Champion.where(origin_1: "Demon").or(Champion.where(origin_2: "Demon"))
     dragon = Champion.where(origin_1: "Dragon").or(Champion.where(origin_2: "Dragon"))
     exile = Champion.where(origin_1: "Exile").or(Champion.where(origin_2: "Exile"))
@@ -31,4 +31,28 @@ class Api::V1::ChampionsController < ApplicationController
     }
   end
 
+  def classes
+    assassin = Champion.where(character_class_1: "Assassin").or(Champion.where(character_class_2: "Assassin"))
+    blademaster = Champion.where(character_class_1: "Blademaster").or(Champion.where(character_class_2: "Blademaster"))
+    brawler = Champion.where(character_class_1: "Brawler").or(Champion.where(character_class_2: "Brawler"))
+    elementalist = Champion.where(character_class_1: "Elementalist").or(Champion.where(character_class_2: "Elementalist"))
+    guardian = Champion.where(character_class_1: "Guardian").or(Champion.where(character_class_2: "Guardian"))
+    gunslinger = Champion.where(character_class_1: "Gunslinger").or(Champion.where(character_class_2: "Gunslinger"))
+    knight = Champion.where(character_class_1: "Knight").or(Champion.where(character_class_2: "Knight"))
+    ranger = Champion.where(character_class_1: "Ranger").or(Champion.where(character_class_2: "Ranger"))
+    shapeshifter = Champion.where(character_class_1: "Shapeshifter").or(Champion.where(character_class_2: "Shapeshifter"))
+    sorcerer = Champion.where(character_class_1: "Sorcerer").or(Champion.where(character_class_2: "Sorcerer"))
+    render json: {
+      assassin: assassin,
+      blademaster: blademaster,
+      brawler: brawler,
+      elementalist: elementalist,
+      guardian: guardian,
+      gunslinger: gunslinger,
+      knight: knight,
+      ranger: ranger,
+      shapeshifter: shapeshifter,
+      sorcerer: sorcerer
+    }
+  end
 end
