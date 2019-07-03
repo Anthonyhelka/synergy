@@ -1,13 +1,17 @@
 .main-header {
   color: black;
   text-align: center;
- }
+}
 
 .sub-header {
   color: black;
 }
 
 .icon-div {
+  margin: 0px !important;
+}
+
+.champion-tabs {
   margin: 0px !important;
 }
 

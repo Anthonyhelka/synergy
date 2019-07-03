@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Menu, Container, Header, List } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
 
-class ChampionsContainer extends Component {
+class ChampionsOrigins extends Component {
   constructor(props) {
     super(props);
     this.state={
@@ -25,7 +25,7 @@ class ChampionsContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/champions')
+    fetch('/api/v1/champions/origins')
       .then(response => {
         if (response.ok) {
           return response;
@@ -57,7 +57,6 @@ class ChampionsContainer extends Component {
   }
 
   render() {
-
     this.state.demon.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
     let demon = this.state.demon.map(champion => {
       return (
@@ -200,34 +199,33 @@ class ChampionsContainer extends Component {
         />
       )
     });
-    
-    return(
+
+    return (
       <div>
+        <Menu size='large'>
+          <Menu.Item name='home' as={ Link } to='/' >
+            <img src={require('../../../../public/favicon.ico')} />
+          </Menu.Item>
+          <Dropdown item text='Champions'>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' />
+              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' active />
+              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' />
+            </Dropdown.Menu>
+          </Dropdown>
+          <Menu.Item name='items' as={ Link } to='/items' >
+            <p>Items</p>
+          </Menu.Item>
+          <Menu.Item name='news' as={ Link } to='/news' >
+            <p>News</p>
+          </Menu.Item>
+        </Menu>
 
-        <div>
-          <Menu size='large' >
-            <Menu.Item name='home' as={ Link } to='/' >
-              <img src={require('../../../../public/favicon.ico')} />
-            </Menu.Item>
-            <Menu.Item name='champions' as={ Link } to='/champions' active >
-              <p>Champions</p>
-            </Menu.Item>
-            <Menu.Item name='items' as={ Link } to='/items' >
-              <p>Items</p>
-            </Menu.Item>
-            <Menu.Item name='news' as={ Link } to='/news' >
-              <p>News</p>
-            </Menu.Item>
-          </Menu>
-        </div>
         <Container>
-
         <div>
-          <h1 className='main-header'>Origin Synergies</h1>
-
           <div>
             <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Demon</Header>
+              <Header as='h3'>Demon</Header>
               <List horizontal>
                 {demon}
               </List>
@@ -341,7 +339,6 @@ class ChampionsContainer extends Component {
               </List>
             </Container>
           </div>
-
         </div>
         </Container>
 
@@ -350,4 +347,4 @@ class ChampionsContainer extends Component {
   }
 }
 
-export default ChampionsContainer;
+export default ChampionsOrigins;
