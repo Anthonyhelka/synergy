@@ -1,9 +1,55 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown, Table } from 'semantic-ui-react';
+
+import ChampionsOverviewTile from './ChampionsOverviewTile';
 
 class ChampionsOverview extends Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      champions: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('/api/v1/champions/overview')
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status}(${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw(error);
+        }
+        })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({
+          champions: body.champions
+        })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render() {
+
+    this.state.champions.sort(function(a, b) {
+        let nameA = a.name.toUpperCase();
+        let nameB = b.name.toUpperCase();
+        return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+    });
+
+    let champions = this.state.champions.map(champion => {
+      return (
+        <ChampionsOverviewTile
+          key={champion.id}
+          id={champion.id}
+          champion={champion}
+        />
+      )
+    });
+
     return (
       <div>
         <Menu size='large'>
@@ -25,7 +71,20 @@ class ChampionsOverview extends Component {
           </Menu.Item>
         </Menu>
 
-        <Message warning icon='wrench' header='This Page (Overview) is Still Under Development' content='We are sorry for the inconvenience' />
+        <Table celled selectable unstackable striped fixed>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Synergies</Table.HeaderCell>
+              <Table.HeaderCell width='2'>Tier</Table.HeaderCell>
+              <Table.HeaderCell>Ability</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+
+          <Table.Body>
+            {champions}
+          </Table.Body>
+        </Table>
 
       </div>
     )

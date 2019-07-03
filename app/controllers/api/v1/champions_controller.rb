@@ -1,5 +1,12 @@
 class Api::V1::ChampionsController < ApplicationController
 
+  def overview
+    champions = Champion.all
+    render json: {
+      champions: champions
+    }
+  end
+
   def origins
     demon = Champion.where(origin_1: "Demon").or(Champion.where(origin_2: "Demon"))
     dragon = Champion.where(origin_1: "Dragon").or(Champion.where(origin_2: "Dragon"))
