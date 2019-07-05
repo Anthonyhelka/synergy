@@ -49,10 +49,13 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
   create_table "origins", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon", null: false
-    t.string "desciption", null: false
-    t.string "upgrade_1", null: false
-    t.string "upgrade_2"
-    t.string "upgrade_3"
+    t.string "desciption"
+    t.string "upgrade_1_number"
+    t.string "upgrade_1_description"
+    t.string "upgrade_2_number"
+    t.string "upgrade_2_description"
+    t.string "upgrade_3_number"
+    t.string "upgrade_3_description"
   end
 
 end

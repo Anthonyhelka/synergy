@@ -1161,112 +1161,122 @@ demon = Origin.create(
   id: 1,
   name: "Demon",
   icon: "./demon",
-  desciption: "Attacks from Demons have a chance to burn all of an enemy's mana and deal that much true damage.",
-  upgrade_1: "2: 40% chance on hit to Mana Burn",
-  upgrade_2: "4: 60% chance on hit to Mana Burn",
-  upgrade_3: "6: 80% chance on hit to Mana Burn",
+  desciption: "Attacks from Demons have a chance to burn all of an enemy's mana and deal that much true damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "40% chance",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "60% chance",
+  upgrade_3_number: "6:",
+  upgrade_3_description: "80% chance"
 )
 demon.champions << [aatrox, brand, elise, evelynn, swain, varus]
 dragon = Origin.create(
   id: 2,
   name: "Dragon",
   icon: "./dragon",
-  desciption: "Dragons are immune to Magic damage.",
-  upgrade_1: "2: Dragons are immune to Magic damage"
+  desciption: "While 2 Dragons are in play, all Dragons are immune to magic damage"
 )
 dragon.champions << [aurelionsol, shyvana]
 exile = Origin.create(
   id: 3,
   name: "Exile",
   icon: "./exile",
-  desciption: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health.",
-  upgrade_1: "2: If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health."
+  desciption: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health"
 )
 exile.champions << [yasuo]
 glacial = Origin.create(
   id: 4,
   name: "Glacial",
   icon: "./glacial",
-  desciption: "On hit, Glacials have a chance to stun for 2s.",
-  upgrade_1: "2: 20% chance",
-  upgrade_2: "4: 30% chance",
-  upgrade_3: "6: 45% chance"
+  desciption: "On hit, Glacials have a chance to stun for 2s",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "20% chance",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "30% chance",
+  upgrade_3_number: "6:",
+  upgrade_3_description: "45% chance"
 )
 glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
 imperial = Origin.create(
   id: 5,
   name: "Imperial",
   icon: "./imperial",
-  desciption: "Imperials deal Double Damage.",
-  upgrade_1: "2: 1 random Imperial",
-  upgrade_2: "4: All Imperials"
+  desciption: "A select number of Imperials deal double damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "One random Imperial",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "All Imperials"
 )
 imperial.champions << [darius, draven, katarina, swain]
-noble = Origin.create(
-  id: 6,
-  name: "Noble",
-  icon: "./noble",
-  desciption: "Nobles grant +100 Armor and heal for 35 on hit.",
-  upgrade_1: "3: 1 random ally",
-  upgrade_2: "6: All allies"
-)
-noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
 ninja = Origin.create(
-  id: 7,
+  id: 6,
   name: "Ninja",
   icon: "./ninja",
-  desciption: "Ninjas gain a percentage of Attack Damage.",
-  upgrade_1: "1: 1 Ninja only: Ninja gains +40% Attack Damage",
-  upgrade_2: "4: 4 Ninjas: All Ninjas gain +60% Attack Damage"
+  desciption: "Ninjas gain a percentage of Attack Damage",
+  upgrade_1_number: "1:",
+  upgrade_1_description: "This Ninja gains 40% attack damage",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "All Ninjas gain 80% attack damage"
 )
 ninja.champions << [akali, kennen, shen, zed]
-pirate = Origin.create(
-  id: 8,
-  name: "Pirate",
-  icon: "./pirate",
-  desciption: "Earn up to 4 additional gold after combat against another player.",
-  upgrade_1: "3: Earn up to 4 additional gold after combat against another player."
+noble = Origin.create(
+  id: 7,
+  name: "Noble",
+  icon: "./noble",
+  desciption: "Grants 100 armor and basic attacks restore 35 health on-hit",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "A random ally",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "All allies"
 )
-pirate.champions << [gangplank, graves, missfortune, pyke]
+noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
 phantom = Origin.create(
-  id: 9,
+  id: 8,
   name: "Phantom",
   icon: "./phantom",
-  desciption: "Curse a random enemy at the start of combat, setting their HP to 100.",
-  upgrade_1: "2: Curse a random enemy at the start of combat, setting their HP to 100."
+  desciption: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
 )
 phantom.champions << [karthus, kindred, mordekaiser]
+pirate = Origin.create(
+  id: 9,
+  name: "Pirate",
+  icon: "./pirate",
+  desciption: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold"
+)
+pirate.champions << [gangplank, graves, missfortune, pyke]
 robot = Origin.create(
   id: 10,
   name: "Robot",
   icon: "./robot",
-  desciption: "Robots start combat at full mana.",
-  upgrade_1: "1: Robots start combat at full mana"
+  desciption: "Robots start combat at full mana"
 )
 robot.champions << [blitzcrank]
 void = Origin.create(
   id: 11,
   name: "Void",
   icon: "./void",
-  desciption: "Your team's basic attacks ignore 50% of the enemy's Armor.",
-  upgrade_1: "3: Your team's basic attacks ignore 50% of the enemy's Armor"
+  desciption: "While 3 Voidlings are in play, your team gains 50% armor penetration"
 )
 void.champions << [chogath, kassadin, khazix, reksai]
 wild = Origin.create(
   id: 12,
   name: "Wild",
   icon: "./wild",
-  desciption: "Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 7% Attack Speed.",
-  upgrade_1: "2: Wild allies only",
-  upgrade_2: "4: All allies"
+  desciption: "Wildlings generate Fury on-hit, up to 5. Each stack gives 7% attack speed",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "Fury benefits all allied Wildlings",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "Fury benefits all allies"
 )
 wild.champions << [ahri, gnar, nidalee, rengar, warwick]
 yordle = Origin.create(
   id: 13,
   name: "Yordle",
   icon: "./yordle",
-  desciption: "Attacks against ally Yordles have a chance to miss.",
-  upgrade_1: "3: 25% chance to miss",
-  upgrade_2: "6: 60% chance to miss"
+  desciption: "Yordles have a chance to Blind icon dodge enemy attacks",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "25% chance",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "60% chance"
 )
 yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]

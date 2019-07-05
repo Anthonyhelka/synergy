@@ -16,6 +16,10 @@
   margin: 0px !important;
 }
 
+.synergy-description {
+  text-align: center;
+  text-align-last: center;
+}
 .icon-white img {
   border: 5px solid #E8E8E8;
 }
