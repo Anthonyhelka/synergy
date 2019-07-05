@@ -2,25 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown } from 'semantic-ui-react';
 
-import ChampionTile from './ChampionTile';
+import SynergyTile from './SynergyTile';
 
 class ChampionsOrigins extends Component {
   constructor(props) {
     super(props);
     this.state={
-      demon: [],
-      dragon: [],
-      exile: [],
-      glacial: [],
-      imperial: [],
-      ninja: [],
-      noble: [],
-      phantom: [],
-      pirate: [],
-      robot: [],
-      void: [],
-      wild: [],
-      yordle: []
+      origins: []
     }
   }
 
@@ -37,33 +25,19 @@ class ChampionsOrigins extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({
-          demon: body.demon[0].champions,
-          dragon: body.dragon[0].champions,
-          exile: body.exile[0].champions,
-          glacial: body.glacial[0].champions,
-          imperial: body.imperial[0].champions,
-          ninja: body.ninja[0].champions,
-          noble: body.noble[0].champions,
-          phantom: body.phantom[0].champions,
-          pirate: body.pirate[0].champions,
-          robot: body.robot[0].champions,
-          void: body.void[0].champions,
-          wild: body.wild[0].champions,
-          yordle: body.yordle[0].champions
-        })
+        this.setState({ origins: body.origins })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    this.state.demon.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let demon = this.state.demon.map(champion => {
+
+    let origins = this.state.origins.map(origin => {
       return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
+        <SynergyTile
+          key={origin.id}
+          id={origin.id}
+          origin={origin}
         />
       )
     });
@@ -89,19 +63,10 @@ class ChampionsOrigins extends Component {
           </Menu.Item>
         </Menu>
 
-        <Container>
-          <div>
-            <div>
-              <Container fluid textAlign='center'>
-                <Header as='h3'>Demon</Header>
-                <List horizontal>
-                  {demon}
-                </List>
-              </Container>
-            </div>
-
-          </div>
-        </Container>
+        <div>
+          {origins}
+        </div>
+        
       </div>
     )
   }

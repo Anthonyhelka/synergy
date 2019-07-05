@@ -14,7 +14,7 @@ class ChampionTile extends Component {
       <List.Item className='icon-div'>
         <div className={'icon-' + this.props.champion.tier_color}>
           <div>
-            <Popup trigger={<Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} size='tiny' circular floated='left' label={{ color: this.props.champion.tier_color, corner: 'right', size: 'small'}} />} inverted={true} wide position='bottom center' >
+            <Popup trigger={<Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} size='tiny' circular floated='left' label={{ color: this.props.champion.tier_color, corner: 'right', size: 'small'}} />} inverted={true} wide hideOnScroll={true} position='top center' >
               <Grid>
                 <Grid.Row>
                   <Header>

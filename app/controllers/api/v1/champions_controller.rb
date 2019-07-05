@@ -9,6 +9,7 @@ class Api::V1::ChampionsController < ApplicationController
   end
 
   def origins
+    origins = Origin.all
     demon = Origin.where(name: "Demon")
     dragon = Origin.where(name: "Dragon")
     exile = Origin.where(name: "Exile")
@@ -23,19 +24,7 @@ class Api::V1::ChampionsController < ApplicationController
     wild = Origin.where(name: "Wild")
     yordle = Origin.where(name: "Yordle")
     render json: {
-      demon: ActiveModel::Serializer::CollectionSerializer.new(demon, each_serializer: OriginSerializer),
-      dragon: ActiveModel::Serializer::CollectionSerializer.new(dragon, each_serializer: OriginSerializer),
-      exile: ActiveModel::Serializer::CollectionSerializer.new(exile, each_serializer: OriginSerializer),
-      glacial: ActiveModel::Serializer::CollectionSerializer.new(glacial, each_serializer: OriginSerializer),
-      imperial: ActiveModel::Serializer::CollectionSerializer.new(imperial, each_serializer: OriginSerializer),
-      ninja: ActiveModel::Serializer::CollectionSerializer.new(ninja, each_serializer: OriginSerializer),
-      noble: ActiveModel::Serializer::CollectionSerializer.new(noble, each_serializer: OriginSerializer),
-      phantom: ActiveModel::Serializer::CollectionSerializer.new(phantom, each_serializer: OriginSerializer),
-      pirate: ActiveModel::Serializer::CollectionSerializer.new(pirate, each_serializer: OriginSerializer),
-      robot: ActiveModel::Serializer::CollectionSerializer.new(robot, each_serializer: OriginSerializer),
-      void: ActiveModel::Serializer::CollectionSerializer.new(void, each_serializer: OriginSerializer),
-      wild: ActiveModel::Serializer::CollectionSerializer.new(wild, each_serializer: OriginSerializer),
-      yordle: ActiveModel::Serializer::CollectionSerializer.new(yordle, each_serializer: OriginSerializer)
+      origins: ActiveModel::Serializer::CollectionSerializer.new(origins, each_serializer: OriginSerializer)
     }
 
   end
