@@ -1,4 +1,5 @@
 class Api::V1::ChampionsController < ApplicationController
+  include ::ActionController::Serialization
 
   def overview
     champions = Champion.all
@@ -8,34 +9,35 @@ class Api::V1::ChampionsController < ApplicationController
   end
 
   def origins
-    demon = Champion.where(origin_1: "Demon").or(Champion.where(origin_2: "Demon"))
-    dragon = Champion.where(origin_1: "Dragon").or(Champion.where(origin_2: "Dragon"))
-    exile = Champion.where(origin_1: "Exile").or(Champion.where(origin_2: "Exile"))
-    glacial = Champion.where(origin_1: "Glacial").or(Champion.where(origin_2: "Glacial"))
-    imperial = Champion.where(origin_1: "Imperial").or(Champion.where(origin_2: "Imperial"))
-    ninja = Champion.where(origin_1: "Ninja").or(Champion.where(origin_2: "Ninja"))
-    noble = Champion.where(origin_1: "Noble").or(Champion.where(origin_2: "Noble"))
-    phantom = Champion.where(origin_1: "Phantom").or(Champion.where(origin_2: "Phantom"))
-    pirate = Champion.where(origin_1: "Pirate").or(Champion.where(origin_2: "Pirate"))
-    robot = Champion.where(origin_1: "Robot").or(Champion.where(origin_2: "Robot"))
-    void = Champion.where(origin_1: "Void").or(Champion.where(origin_2: "Void"))
-    wild = Champion.where(origin_1: "Wild").or(Champion.where(origin_2: "Wild"))
-    yordle = Champion.where(origin_1: "Yordle").or(Champion.where(origin_2: "Yordle"))
+    demon = Origin.where(name: "Demon")
+    dragon = Origin.where(name: "Dragon")
+    exile = Origin.where(name: "Exile")
+    glacial = Origin.where(name: "Glacial")
+    imperial = Origin.where(name: "Imperial")
+    ninja = Origin.where(name: "Ninja")
+    noble = Origin.where(name: "Noble")
+    phantom = Origin.where(name: "Phantom")
+    pirate = Origin.where(name: "Pirate")
+    robot = Origin.where(name: "Robot")
+    void = Origin.where(name: "Void")
+    wild = Origin.where(name: "Wild")
+    yordle = Origin.where(name: "Yordle")
     render json: {
-      demon: demon,
-      dragon: dragon,
-      exile: exile,
-      glacial: glacial,
-      imperial: imperial,
-      ninja: ninja,
-      noble: noble,
-      phantom: phantom,
-      pirate: pirate,
-      robot: robot,
-      void: void,
-      wild: wild,
-      yordle: yordle
+      demon: ActiveModel::Serializer::CollectionSerializer.new(demon, each_serializer: OriginSerializer),
+      dragon: ActiveModel::Serializer::CollectionSerializer.new(dragon, each_serializer: OriginSerializer),
+      exile: ActiveModel::Serializer::CollectionSerializer.new(exile, each_serializer: OriginSerializer),
+      glacial: ActiveModel::Serializer::CollectionSerializer.new(glacial, each_serializer: OriginSerializer),
+      imperial: ActiveModel::Serializer::CollectionSerializer.new(imperial, each_serializer: OriginSerializer),
+      ninja: ActiveModel::Serializer::CollectionSerializer.new(ninja, each_serializer: OriginSerializer),
+      noble: ActiveModel::Serializer::CollectionSerializer.new(noble, each_serializer: OriginSerializer),
+      phantom: ActiveModel::Serializer::CollectionSerializer.new(phantom, each_serializer: OriginSerializer),
+      pirate: ActiveModel::Serializer::CollectionSerializer.new(pirate, each_serializer: OriginSerializer),
+      robot: ActiveModel::Serializer::CollectionSerializer.new(robot, each_serializer: OriginSerializer),
+      void: ActiveModel::Serializer::CollectionSerializer.new(void, each_serializer: OriginSerializer),
+      wild: ActiveModel::Serializer::CollectionSerializer.new(wild, each_serializer: OriginSerializer),
+      yordle: ActiveModel::Serializer::CollectionSerializer.new(yordle, each_serializer: OriginSerializer)
     }
+
   end
 
   def classes

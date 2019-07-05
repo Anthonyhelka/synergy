@@ -1,4 +1,6 @@
 class Champion < ApplicationRecord
+  has_and_belongs_to_many :origins
+
   validates :name, presence: true
   validates :icon, presence: true
   validates :ability_name, presence: true

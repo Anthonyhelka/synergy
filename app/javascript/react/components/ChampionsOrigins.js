@@ -38,19 +38,19 @@ class ChampionsOrigins extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          demon: body.demon,
-          dragon: body.dragon,
-          exile: body.exile,
-          glacial: body.glacial,
-          imperial: body.imperial,
-          ninja: body.ninja,
-          noble: body.noble,
-          phantom: body.phantom,
-          pirate: body.pirate,
-          robot: body.robot,
-          void: body.void,
-          wild: body.wild,
-          yordle: body.yordle
+          demon: body.demon[0].champions,
+          dragon: body.dragon[0].champions,
+          exile: body.exile[0].champions,
+          glacial: body.glacial[0].champions,
+          imperial: body.imperial[0].champions,
+          ninja: body.ninja[0].champions,
+          noble: body.noble[0].champions,
+          phantom: body.phantom[0].champions,
+          pirate: body.pirate[0].champions,
+          robot: body.robot[0].champions,
+          void: body.void[0].champions,
+          wild: body.wild[0].champions,
+          yordle: body.yordle[0].champions
         })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -59,138 +59,6 @@ class ChampionsOrigins extends Component {
   render() {
     this.state.demon.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
     let demon = this.state.demon.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.dragon.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let dragon = this.state.dragon.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.exile.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let exile = this.state.exile.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.glacial.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let glacial = this.state.glacial.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.imperial.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let imperial = this.state.imperial.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.ninja.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let ninja = this.state.ninja.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.noble.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let noble = this.state.noble.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.phantom.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let phantom = this.state.phantom.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.pirate.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let pirate = this.state.pirate.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.robot.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let robot = this.state.robot.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.void.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let voidOrigin = this.state.void.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.wild.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let wild = this.state.wild.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    this.state.yordle.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
-    let yordle = this.state.yordle.map(champion => {
       return (
         <ChampionTile
           key={champion.id}
@@ -222,126 +90,18 @@ class ChampionsOrigins extends Component {
         </Menu>
 
         <Container>
-        <div>
           <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3'>Demon</Header>
-              <List horizontal>
-                {demon}
-              </List>
-            </Container>
-          </div>
+            <div>
+              <Container fluid textAlign='center'>
+                <Header as='h3'>Demon</Header>
+                <List horizontal>
+                  {demon}
+                </List>
+              </Container>
+            </div>
 
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Dragon</Header>
-              <List horizontal>
-                {dragon}
-              </List>
-            </Container>
           </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Exile</Header>
-              <List horizontal>
-                {exile}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Glacial</Header>
-              <List horizontal>
-                {glacial}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Imperial</Header>
-              <List horizontal>
-                {imperial}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Ninja</Header>
-              <List horizontal>
-                {ninja}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Noble</Header>
-              <List horizontal>
-                {noble}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Phantom</Header>
-              <List horizontal>
-                {phantom}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Pirate</Header>
-              <List horizontal>
-                {pirate}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Robot</Header>
-              <List horizontal>
-                {robot}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Void</Header>
-              <List horizontal>
-                {voidOrigin}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Wild</Header>
-              <List horizontal>
-                {wild}
-              </List>
-            </Container>
-          </div>
-
-          <div>
-            <Container fluid textAlign='center'>
-              <Header as='h3' className='sub-header'>Yordle</Header>
-              <List horizontal>
-                {yordle}
-              </List>
-            </Container>
-          </div>
-        </div>
         </Container>
-
       </div>
     )
   }

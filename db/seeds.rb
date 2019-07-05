@@ -1,5 +1,6 @@
 #Champions
 Champion.delete_all
+Origin.delete_all
 
 aatrox = Champion.create(
   id: 1,
@@ -22,7 +23,7 @@ aatrox = Champion.create(
   armor: 25,
   magic_resist: 20,
   player_damage: [2, 4, 6],
-  starting_items: ["WIP"]
+  starting_items: ["WIP"],
 )
 ahri = Champion.create(
   id: 2,
@@ -1155,3 +1156,117 @@ zed = Champion.create(
   player_damage: [2, 3, 5],
   starting_items: ["WIP"]
 )
+
+demon = Origin.create(
+  id: 1,
+  name: "Demon",
+  icon: "./demon",
+  desciption: "Attacks from Demons have a chance to burn all of an enemy's mana and deal that much true damage.",
+  upgrade_1: "2: 40% chance on hit to Mana Burn",
+  upgrade_2: "4: 60% chance on hit to Mana Burn",
+  upgrade_3: "6: 80% chance on hit to Mana Burn",
+)
+demon.champions << [aatrox, brand, elise, evelynn, swain, varus]
+dragon = Origin.create(
+  id: 2,
+  name: "Dragon",
+  icon: "./dragon",
+  desciption: "Dragons are immune to Magic damage.",
+  upgrade_1: "2: Dragons are immune to Magic damage"
+)
+dragon.champions << [aurelionsol, shyvana]
+exile = Origin.create(
+  id: 3,
+  name: "Exile",
+  icon: "./exile",
+  desciption: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health.",
+  upgrade_1: "2: If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health."
+)
+exile.champions << [yasuo]
+glacial = Origin.create(
+  id: 4,
+  name: "Glacial",
+  icon: "./glacial",
+  desciption: "On hit, Glacials have a chance to stun for 2s.",
+  upgrade_1: "2: 20% chance",
+  upgrade_2: "4: 30% chance",
+  upgrade_3: "6: 45% chance"
+)
+glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
+imperial = Origin.create(
+  id: 5,
+  name: "Imperial",
+  icon: "./imperial",
+  desciption: "Imperials deal Double Damage.",
+  upgrade_1: "2: 1 random Imperial",
+  upgrade_2: "4: All Imperials"
+)
+imperial.champions << [darius, draven, katarina, swain]
+noble = Origin.create(
+  id: 6,
+  name: "Noble",
+  icon: "./noble",
+  desciption: "Nobles grant +100 Armor and heal for 35 on hit.",
+  upgrade_1: "3: 1 random ally",
+  upgrade_2: "6: All allies"
+)
+noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
+ninja = Origin.create(
+  id: 7,
+  name: "Ninja",
+  icon: "./ninja",
+  desciption: "Ninjas gain a percentage of Attack Damage.",
+  upgrade_1: "1: 1 Ninja only: Ninja gains +40% Attack Damage",
+  upgrade_2: "4: 4 Ninjas: All Ninjas gain +60% Attack Damage"
+)
+ninja.champions << [akali, kennen, shen, zed]
+pirate = Origin.create(
+  id: 8,
+  name: "Pirate",
+  icon: "./pirate",
+  desciption: "Earn up to 4 additional gold after combat against another player.",
+  upgrade_1: "3: Earn up to 4 additional gold after combat against another player."
+)
+pirate.champions << [gangplank, graves, missfortune, pyke]
+phantom = Origin.create(
+  id: 9,
+  name: "Phantom",
+  icon: "./phantom",
+  desciption: "Curse a random enemy at the start of combat, setting their HP to 100.",
+  upgrade_1: "2: Curse a random enemy at the start of combat, setting their HP to 100."
+)
+phantom.champions << [karthus, kindred, mordekaiser]
+robot = Origin.create(
+  id: 10,
+  name: "Robot",
+  icon: "./robot",
+  desciption: "Robots start combat at full mana.",
+  upgrade_1: "1: Robots start combat at full mana"
+)
+robot.champions << [blitzcrank]
+void = Origin.create(
+  id: 11,
+  name: "Void",
+  icon: "./void",
+  desciption: "Your team's basic attacks ignore 50% of the enemy's Armor.",
+  upgrade_1: "3: Your team's basic attacks ignore 50% of the enemy's Armor"
+)
+void.champions << [chogath, kassadin, khazix, reksai]
+wild = Origin.create(
+  id: 12,
+  name: "Wild",
+  icon: "./wild",
+  desciption: "Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 7% Attack Speed.",
+  upgrade_1: "2: Wild allies only",
+  upgrade_2: "4: All allies"
+)
+wild.champions << [ahri, gnar, nidalee, rengar, warwick]
+yordle = Origin.create(
+  id: 13,
+  name: "Yordle",
+  icon: "./yordle",
+  desciption: "Attacks against ally Yordles have a chance to miss.",
+  upgrade_1: "3: 25% chance to miss",
+  upgrade_2: "6: 60% chance to miss"
+)
+yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
