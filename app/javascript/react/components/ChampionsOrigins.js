@@ -32,12 +32,12 @@ class ChampionsOrigins extends Component {
 
   render() {
 
-    let origins = this.state.origins.map(origin => {
+    let synergies = this.state.origins.map(origin => {
       return (
         <SynergyTile
           key={origin.id}
           id={origin.id}
-          origin={origin}
+          synergy={origin}
         />
       )
     });
@@ -64,9 +64,9 @@ class ChampionsOrigins extends Component {
         </Menu>
 
         <div>
-          {origins}
+          {synergies}
         </div>
-        
+
       </div>
     )
   }
