@@ -4,6 +4,9 @@ import { Menu, Container, Header, List, Dropdown, Message } from 'semantic-ui-re
 
 class HomeContainer extends Component {
   render() {
+
+    const pathToIcon = require.context('../../../../public/logo', true);
+
     return (
       <div>
         <Menu size='large'>
