@@ -1,6 +1,5 @@
-#Champions
 Champion.delete_all
-Origin.delete_all
+Team.delete_all
 
 #Champions
 aatrox = Champion.create(
@@ -1159,10 +1158,11 @@ zed = Champion.create(
 )
 
 #Origins
-demon = Origin.create(
+demon = Team.create(
   id: 1,
   name: "Demon",
   icon: "./demon",
+  teamType: "Origin",
   desciption: "Attacks from Demons have a chance to burn all of an enemy's mana and deal that much true damage",
   upgrade_1_number: "2:",
   upgrade_1_description: "40% chance",
@@ -1172,24 +1172,27 @@ demon = Origin.create(
   upgrade_3_description: "80% chance"
 )
 demon.champions << [aatrox, brand, elise, evelynn, swain, varus]
-dragon = Origin.create(
+dragon = Team.create(
   id: 2,
   name: "Dragon",
   icon: "./dragon",
+  teamType: "Origin",
   desciption: "While 2 Dragons are in play, all Dragons are immune to magic damage"
 )
 dragon.champions << [aurelionsol, shyvana]
-exile = Origin.create(
+exile = Team.create(
   id: 3,
   name: "Exile",
   icon: "./exile",
+  teamType: "Origin",
   desciption: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health"
 )
 exile.champions << [yasuo]
-glacial = Origin.create(
+glacial = Team.create(
   id: 4,
   name: "Glacial",
   icon: "./glacial",
+  teamType: "Origin",
   desciption: "On hit, Glacials have a chance to stun for 2s",
   upgrade_1_number: "2:",
   upgrade_1_description: "20% chance",
@@ -1199,10 +1202,11 @@ glacial = Origin.create(
   upgrade_3_description: "45% chance"
 )
 glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
-imperial = Origin.create(
+imperial = Team.create(
   id: 5,
   name: "Imperial",
   icon: "./imperial",
+  teamType: "Origin",
   desciption: "A select number of Imperials deal double damage",
   upgrade_1_number: "2:",
   upgrade_1_description: "One random Imperial",
@@ -1210,10 +1214,11 @@ imperial = Origin.create(
   upgrade_2_description: "All Imperials"
 )
 imperial.champions << [darius, draven, katarina, swain]
-ninja = Origin.create(
+ninja = Team.create(
   id: 6,
   name: "Ninja",
   icon: "./ninja",
+  teamType: "Origin",
   desciption: "Ninjas gain a percentage of Attack Damage",
   upgrade_1_number: "1:",
   upgrade_1_description: "This Ninja gains 40% attack damage",
@@ -1221,10 +1226,11 @@ ninja = Origin.create(
   upgrade_2_description: "All Ninjas gain 80% attack damage"
 )
 ninja.champions << [akali, kennen, shen, zed]
-noble = Origin.create(
+noble = Team.create(
   id: 7,
   name: "Noble",
   icon: "./noble",
+  teamType: "Origin",
   desciption: "Grants 100 armor and basic attacks restore 35 health on-hit",
   upgrade_1_number: "3:",
   upgrade_1_description: "A random ally",
@@ -1232,38 +1238,43 @@ noble = Origin.create(
   upgrade_2_description: "All allies"
 )
 noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
-phantom = Origin.create(
+phantom = Team.create(
   id: 8,
   name: "Phantom",
   icon: "./phantom",
+  teamType: "Origin",
   desciption: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
 )
 phantom.champions << [karthus, kindred, mordekaiser]
-pirate = Origin.create(
+pirate = Team.create(
   id: 9,
   name: "Pirate",
   icon: "./pirate",
+  teamType: "Origin",
   desciption: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold"
 )
 pirate.champions << [gangplank, graves, missfortune, pyke]
-robot = Origin.create(
+robot = Team.create(
   id: 10,
   name: "Robot",
   icon: "./robot",
+  teamType: "Origin",
   desciption: "Robots start combat at full mana"
 )
 robot.champions << [blitzcrank]
-void = Origin.create(
+void = Team.create(
   id: 11,
   name: "Void",
   icon: "./void",
+  teamType: "Origin",
   desciption: "While 3 Voidlings are in play, your team gains 50% armor penetration"
 )
 void.champions << [chogath, kassadin, khazix, reksai]
-wild = Origin.create(
+wild = Team.create(
   id: 12,
   name: "Wild",
   icon: "./wild",
+  teamType: "Origin",
   desciption: "Wildlings generate Fury on-hit, up to 5. Each stack gives 7% attack speed",
   upgrade_1_number: "2:",
   upgrade_1_description: "Fury benefits all allied Wildlings",
@@ -1271,10 +1282,11 @@ wild = Origin.create(
   upgrade_2_description: "Fury benefits all allies"
 )
 wild.champions << [ahri, gnar, nidalee, rengar, warwick]
-yordle = Origin.create(
+yordle = Team.create(
   id: 13,
   name: "Yordle",
   icon: "./yordle",
+  teamType: "Origin",
   desciption: "Yordles have a chance to Blind icon dodge enemy attacks",
   upgrade_1_number: "3:",
   upgrade_1_description: "25% chance",
@@ -1282,3 +1294,30 @@ yordle = Origin.create(
   upgrade_2_description: "60% chance"
 )
 yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
+
+#Classes
+assassin = Team.create(
+  id: 14,
+  name: "Assassin",
+  icon: "./assassin",
+  teamType: "Class",
+  desciption: "Assassins have bonus critical strike damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "+150% critical strike damage",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "+350% critical strike damage"
+)
+assassin.champions << [akali, evelynn, katarina, khazix, pyke, rengar, zed]
+
+blademaster = Team.create(
+  id: 15,
+  name: "Blademaster",
+  icon: "./blademaster",
+  teamType: "Class",
+  desciption: "Blademasters have a 45% chance to perform a multi-attack",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "Double strike",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "Triple strike"
+)
+blademaster.champions << [aatrox, draven, fiora, gangplank, shen, yasuo]

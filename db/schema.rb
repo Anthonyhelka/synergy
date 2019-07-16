@@ -40,15 +40,16 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.string "starting_items", default: [], null: false, array: true
   end
 
-  create_table "champions_origins", id: false, force: :cascade do |t|
+  create_table "champions_teams", id: false, force: :cascade do |t|
     t.bigint "champion_id", null: false
-    t.bigint "origin_id", null: false
-    t.index ["champion_id", "origin_id"], name: "index_champions_origins_on_champion_id_and_origin_id"
+    t.bigint "team_id", null: false
+    t.index ["champion_id", "team_id"], name: "index_champions_teams_on_champion_id_and_team_id"
   end
 
-  create_table "origins", force: :cascade do |t|
+  create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon", null: false
+    t.string "teamType", null: false
     t.string "desciption"
     t.string "upgrade_1_number"
     t.string "upgrade_1_description"

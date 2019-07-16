@@ -8,7 +8,7 @@ class ChampionsOrigins extends Component {
   constructor(props) {
     super(props);
     this.state={
-      origins: []
+      synergies: []
     }
   }
 
@@ -25,19 +25,19 @@ class ChampionsOrigins extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ origins: body.origins })
+        this.setState({ synergies: body.origins })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
 
-    let synergies = this.state.origins.map(origin => {
+    let synergies = this.state.synergies.map(synergy => {
       return (
         <SynergyTile
-          key={origin.id}
-          id={origin.id}
-          synergy={origin}
+          key={synergy.id}
+          id={synergy.id}
+          synergy={synergy}
         />
       )
     });
