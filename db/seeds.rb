@@ -1,6 +1,7 @@
-#Champions
 Champion.delete_all
+Team.delete_all
 
+#Champions
 aatrox = Champion.create(
   id: 1,
   name: "Aatrox",
@@ -22,7 +23,7 @@ aatrox = Champion.create(
   armor: 25,
   magic_resist: 20,
   player_damage: [2, 4, 6],
-  starting_items: ["WIP"]
+  starting_items: ["WIP"],
 )
 ahri = Champion.create(
   id: 2,
@@ -1155,3 +1156,253 @@ zed = Champion.create(
   player_damage: [2, 3, 5],
   starting_items: ["WIP"]
 )
+
+#Origins
+demon = Team.create(
+  id: 1,
+  name: "Demon",
+  icon: "./demon",
+  teamType: "Origin",
+  desciption: "Attacks from Demons have a chance to burn all of an enemy's mana and deal that much true damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "40% chance",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "60% chance",
+  upgrade_3_number: "6:",
+  upgrade_3_description: "80% chance"
+)
+demon.champions << [aatrox, brand, elise, evelynn, swain, varus]
+dragon = Team.create(
+  id: 2,
+  name: "Dragon",
+  icon: "./dragon",
+  teamType: "Origin",
+  desciption: "While 2 Dragons are in play, all Dragons are immune to magic damage"
+)
+dragon.champions << [aurelionsol, shyvana]
+exile = Team.create(
+  id: 3,
+  name: "Exile",
+  icon: "./exile",
+  teamType: "Origin",
+  desciption: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health"
+)
+exile.champions << [yasuo]
+glacial = Team.create(
+  id: 4,
+  name: "Glacial",
+  icon: "./glacial",
+  teamType: "Origin",
+  desciption: "On hit, Glacials have a chance to stun for 2s",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "20% chance",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "30% chance",
+  upgrade_3_number: "6:",
+  upgrade_3_description: "45% chance"
+)
+glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
+imperial = Team.create(
+  id: 5,
+  name: "Imperial",
+  icon: "./imperial",
+  teamType: "Origin",
+  desciption: "A select number of Imperials deal double damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "One random Imperial",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "All Imperials"
+)
+imperial.champions << [darius, draven, katarina, swain]
+ninja = Team.create(
+  id: 6,
+  name: "Ninja",
+  icon: "./ninja",
+  teamType: "Origin",
+  desciption: "Ninjas gain a percentage of Attack Damage",
+  upgrade_1_number: "1:",
+  upgrade_1_description: "This Ninja gains 40% attack damage",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "All Ninjas gain 80% attack damage"
+)
+ninja.champions << [akali, kennen, shen, zed]
+noble = Team.create(
+  id: 7,
+  name: "Noble",
+  icon: "./noble",
+  teamType: "Origin",
+  desciption: "Grants 100 armor and basic attacks restore 35 health on-hit",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "A random ally",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "All allies"
+)
+noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
+phantom = Team.create(
+  id: 8,
+  name: "Phantom",
+  icon: "./phantom",
+  teamType: "Origin",
+  desciption: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
+)
+phantom.champions << [karthus, kindred, mordekaiser]
+pirate = Team.create(
+  id: 9,
+  name: "Pirate",
+  icon: "./pirate",
+  teamType: "Origin",
+  desciption: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold"
+)
+pirate.champions << [gangplank, graves, missfortune, pyke]
+robot = Team.create(
+  id: 10,
+  name: "Robot",
+  icon: "./robot",
+  teamType: "Origin",
+  desciption: "Robots start combat at full mana"
+)
+robot.champions << [blitzcrank]
+void = Team.create(
+  id: 11,
+  name: "Void",
+  icon: "./void",
+  teamType: "Origin",
+  desciption: "While 3 Voidlings are in play, your team gains 50% armor penetration"
+)
+void.champions << [chogath, kassadin, khazix, reksai]
+wild = Team.create(
+  id: 12,
+  name: "Wild",
+  icon: "./wild",
+  teamType: "Origin",
+  desciption: "Wildlings generate Fury on-hit, up to 5. Each stack gives 7% attack speed",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "Fury benefits all allied Wildlings",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "Fury benefits all allies"
+)
+wild.champions << [ahri, gnar, nidalee, rengar, warwick]
+yordle = Team.create(
+  id: 13,
+  name: "Yordle",
+  icon: "./yordle",
+  teamType: "Origin",
+  desciption: "Yordles have a chance to Blind icon dodge enemy attacks",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "25% chance",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "60% chance"
+)
+yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
+
+#Classes
+assassin = Team.create(
+  id: 14,
+  name: "Assassin",
+  icon: "./assassin",
+  teamType: "Class",
+  desciption: "Assassins have bonus critical strike damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "+150% critical strike damage",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "+350% critical strike damage"
+)
+assassin.champions << [akali, evelynn, katarina, khazix, pyke, rengar, zed]
+blademaster = Team.create(
+  id: 15,
+  name: "Blademaster",
+  icon: "./blademaster",
+  teamType: "Class",
+  desciption: "Blademasters have a 45% chance to perform a multi-attack",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "Double strike",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "Triple strike"
+)
+blademaster.champions << [aatrox, draven, fiora, gangplank, shen, yasuo]
+brawler = Team.create(
+  id: 16,
+  name: "Brawler",
+  icon: "./brawler",
+  teamType: "Class",
+  desciption: "Brawlers gain additional maximum health",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "+300 maximum health",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "+600 maximum health"
+)
+brawler.champions << [blitzcrank, chogath, reksai, volibear, warwick]
+elementalist = Team.create(
+  id: 17,
+  name: "Elementalist",
+  icon: "./elementalist",
+  teamType: "Class",
+  desciption: "Beginning combat with 3 Elementalists will summon an Elemental adjacent to one of your Elementalists"
+)
+elementalist.champions << [anivia, brand, kennen, lissandra]
+guardian = Team.create(
+  id: 18,
+  name: "Guardian",
+  icon: "./guardian",
+  teamType: "Class",
+  desciption: "Beginning combat with 2 Guardians will grant 40 armor to all units that start adjacent to a Guardian"
+)
+guardian.champions << [braum, leona]
+gunslinger = Team.create(
+  id: 19,
+  name: "Gunslinger",
+  icon: "./gunslinger",
+  teamType: "Class",
+  desciption: "Gunslingers have a 50% chance for their attacks to hit additional enemies",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "Attacks hit one additional random enemy",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "Attacks hit all enemies in range"
+)
+gunslinger.champions << [gangplank, graves, lucian, missfortune, tristana]
+knight = Team.create(
+  id: 20,
+  name: "Knight",
+  icon: "./knight",
+  teamType: "Class",
+  desciption: "Knights ignore a flat amount of damage from basic attacks",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "20 damage ignored",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "40 damage ignored",
+  upgrade_3_number: "6:",
+  upgrade_3_description: "80 damage ignored"
+)
+knight.champions << [darius, garen, kayle, mordekaiser, poppy, sejuani]
+ranger = Team.create(
+  id: 21,
+  name: "Ranger",
+  icon: "./ranger",
+  teamType: "Class",
+  desciption: "Every 3 seconds, Rangers have a chance to gain double attack speed for 3 seconds",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "25% chance",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "65% chance"
+)
+ranger.champions << [ashe, kindred, varus, vayne]
+shapeshifter = Team.create(
+  id: 22,
+  name: "Shapeshifter",
+  icon: "./shapeshifter",
+  teamType: "Class",
+  desciption: "While 3 Shapeshifters are in play, activating their Special Ability will grant +100% maximum health, as well as healing for the amount gained"
+)
+shapeshifter.champions << [elise, gnar, nidalee, shyvana, swain]
+sorcerer = Team.create(
+  id: 23,
+  name: "Sorcerer",
+  icon: "./sorcerer",
+  teamType: "Class",
+  desciption: "Sorcerers grant bonus spell damage to their team",
+  upgrade_1_number: "3:",
+  upgrade_1_description: "+35% bonus spell damage",
+  upgrade_2_number: "6:",
+  upgrade_2_description: "+100% bonus spell damage"
+)
+sorcerer.champions << [ahri, aurelionsol, karthus, kassadin, lulu, morgana, veigar]

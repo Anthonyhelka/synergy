@@ -14,14 +14,18 @@ class ChampionTile extends Component {
       <List.Item className='icon-div'>
         <div className={'icon-' + this.props.champion.tier_color}>
           <div>
-            <Popup trigger={<Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} size='tiny' circular floated='left' label={{ color: this.props.champion.tier_color, corner: 'right', size: 'small'}} />} inverted={true} wide position='bottom left' >
-              <Grid>
+            <Popup inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} size='tiny' circular floated='left' label={{ color: this.props.champion.tier_color, corner: 'right', size: 'small'}} />} >
+              <Grid textAlign='center' >
                 <Grid.Row>
                   <Header>
                     <Image src={`${pathToAbility(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} avatar verticalAlign='middle'/>
-                    <span>{this.props.champion.ability_name}</span>
                   </Header>
-                  <p>{this.props.champion.ability_description}</p>
+                </Grid.Row>
+                <Grid.Row>
+                  <Header>
+                    {this.props.champion.ability_name}
+                  </Header>
+                  <p className='popup-description'>{this.props.champion.ability_description}</p>
                 </Grid.Row>
               </Grid>
             </Popup>
