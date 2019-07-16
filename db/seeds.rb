@@ -2,6 +2,7 @@
 Champion.delete_all
 Origin.delete_all
 
+#Champions
 aatrox = Champion.create(
   id: 1,
   name: "Aatrox",
@@ -1157,6 +1158,7 @@ zed = Champion.create(
   starting_items: ["WIP"]
 )
 
+#Origins
 demon = Origin.create(
   id: 1,
   name: "Demon",

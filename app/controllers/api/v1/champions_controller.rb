@@ -10,23 +10,9 @@ class Api::V1::ChampionsController < ApplicationController
 
   def origins
     origins = Origin.all
-    demon = Origin.where(name: "Demon")
-    dragon = Origin.where(name: "Dragon")
-    exile = Origin.where(name: "Exile")
-    glacial = Origin.where(name: "Glacial")
-    imperial = Origin.where(name: "Imperial")
-    ninja = Origin.where(name: "Ninja")
-    noble = Origin.where(name: "Noble")
-    phantom = Origin.where(name: "Phantom")
-    pirate = Origin.where(name: "Pirate")
-    robot = Origin.where(name: "Robot")
-    void = Origin.where(name: "Void")
-    wild = Origin.where(name: "Wild")
-    yordle = Origin.where(name: "Yordle")
     render json: {
       origins: ActiveModel::Serializer::CollectionSerializer.new(origins, each_serializer: OriginSerializer)
     }
-
   end
 
   def classes
