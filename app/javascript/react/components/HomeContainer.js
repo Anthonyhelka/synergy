@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid } from 'semantic-ui-react';
 
 class HomeContainer extends Component {
   render() {
@@ -27,9 +27,7 @@ class HomeContainer extends Component {
             <p>News</p>
           </Menu.Item>
         </Menu>
-
-        <Message warning icon='wrench' header='This Page (Home) is Still Under Development' content='We are sorry for the inconvenience' />
-
+        
       </div>
     )
   }

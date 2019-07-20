@@ -8,8 +8,22 @@
   text-align: center;
 }
 
-.icon-div {
+#champion-column {
+  padding-left: 7px;
+  padding-right: 0px;
+}
+
+#champion-card {
+  border: 3px solid #333740;
+  border-radius: 8px;
   margin: 0px !important;
+}
+
+#champion-card-name,
+#champion-card-name p {
+  color: #FFFFFF;
+  background-color: #333740;
+  text-align: center;
 }
 
 .champion-tabs {

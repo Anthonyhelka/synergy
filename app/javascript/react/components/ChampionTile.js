@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, List, Popup, Grid, Header } from 'semantic-ui-react';
+import { Card, Image, Icon, List, Header, Grid } from 'semantic-ui-react';
 
 class ChampionTile extends Component {
   constructor(props) {
@@ -7,31 +7,17 @@ class ChampionTile extends Component {
   }
 
   render(){
-    const pathToIcon = require.context('../../../../public/champions', true);
+    const pathToIcon = require.context('../../../../public/icons', true);
+    const pathToSplashart = require.context('../../../../public/splasharts', true);
     const pathToAbility = require.context('../../../../public/abilities', true);
 
     return (
-      <List.Item className='icon-div'>
-        <div className={'icon-' + this.props.champion.tier_color}>
-          <div>
-            <Popup inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} size='tiny' circular floated='left' label={{ color: this.props.champion.tier_color, corner: 'right', size: 'small'}} />} >
-              <Grid textAlign='center' >
-                <Grid.Row>
-                  <Header>
-                    <Image src={`${pathToAbility(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} avatar verticalAlign='middle'/>
-                  </Header>
-                </Grid.Row>
-                <Grid.Row>
-                  <Header>
-                    {this.props.champion.ability_name}
-                  </Header>
-                  <p className='popup-description'>{this.props.champion.ability_description}</p>
-                </Grid.Row>
-              </Grid>
-            </Popup>
-          </div>
-        </div>
-      </List.Item>
+      <Grid.Column id='champion-column' width='2'>
+        <Card id='champion-card'>
+          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} />
+          <Card.Content extra id='champion-card-name'><Header as='p'>{this.props.champion.name}</Header></Card.Content>
+        </Card>
+      </Grid.Column>
     );
   }
 }

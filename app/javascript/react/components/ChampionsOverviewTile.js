@@ -7,8 +7,8 @@ class ChampionsOverviewTile extends Component {
   }
 
   render(){
-    const pathToIcon = require.context('../../../../public/champions', true);
-    
+    const pathToIcon = require.context('../../../../public/icons', true);
+
     return (
       <Table.Row>
         <Table.Cell><Image src={`${pathToIcon(this.props.champion.icon , true)}`} alt={`${this.props.champion.name}`} avatar /> {this.props.champion.name}</Table.Cell>
