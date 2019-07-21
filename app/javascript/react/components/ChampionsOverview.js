@@ -39,9 +39,7 @@ class ChampionsOverview extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({
-          champions: body.champions
-        })
+        this.setState({ champions: body.champions })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

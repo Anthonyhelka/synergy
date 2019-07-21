@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, List, Popup, Grid, Container, Header, Divider, Card } from 'semantic-ui-react';
+import { Image, List, Popup, Grid, Container, Header, Divider, Card, Responsive } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
 
@@ -38,24 +38,27 @@ class SynergyTile extends Component {
       <div>
         <Container fluid textAlign='center'>
 
-          <Popup inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Header><Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
-          <Grid textAlign='center'>
-            <Grid.Row>
-              <Header>
-                <Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.name}`} avatar verticalAlign='middle' />
-              </Header>
-            </Grid.Row>
-            <Grid.Row>
-              <span className='popup-description'>{this.props.synergy.desciption}</span>
-              {upgradeConditional}
-            </Grid.Row>
-          </Grid>
+          <Popup on='click' inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Header><Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
+            <Grid textAlign='center'>
+              <Grid.Row>
+                <Header>
+                  <Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.name}`} avatar verticalAlign='middle' />
+                </Header>
+              </Grid.Row>
+              <Grid.Row>
+                <span className='popup-description'>{this.props.synergy.desciption}</span>
+                {upgradeConditional}
+              </Grid.Row>
+            </Grid>
           </Popup>
 
           <Grid textAlign='center' >
-            <Grid.Row only='computer'>
+            <Responsive as={Grid.Row} columns='3' {...Responsive.onlyMobile}>
               {champions}
-            </Grid.Row>
+            </Responsive>
+            <Responsive as={Grid.Row} {...Responsive.onlyComputer}>
+              {champions}
+            </Responsive>
           </Grid>
          </Container>
       </div>
