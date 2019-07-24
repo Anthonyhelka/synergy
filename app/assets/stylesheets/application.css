@@ -8,8 +8,49 @@
   text-align: center;
 }
 
-.icon-div {
+/* Not Hovered */
+#champion-column {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 3px;
+}
+
+#champion-card {
+  border: 3px solid #333740;
+  border-radius: 9px;
   margin: 0px !important;
+}
+
+#champion-card-extra,
+#champion-card-extra p {
+  color: #FFFFFF;
+  background-color: #333740;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Hovered */
+#champion-column-hovered {
+  padding-left: 7px;
+  padding-right: 0px;
+}
+
+#champion-card-hovered {
+  border: 3px solid #36A9E0;
+  border-radius: 9px;
+  margin: 0px !important;
+  transform: scale(1.1);
+  z-index:1000;
+}
+
+#champion-card-extra-hovered,
+#champion-card-extra-hovered p {
+  color: #FFFFFF;
+  background-color: #36A9E0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .champion-tabs {
