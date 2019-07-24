@@ -21,4 +21,12 @@ class Api::V1::ChampionsController < ApplicationController
       classes: ActiveModel::Serializer::CollectionSerializer.new(classes, each_serializer: TeamSerializer)
     }
   end
+
+  def show
+    champion = Champion.where(name: params[:id])
+    render json: {
+      champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TeamSerializer)
+    }
+  end
+
 end

@@ -6,6 +6,7 @@ import HomeContainer from './HomeContainer';
 import ChampionsOverview from  './ChampionsOverview';
 import ChampionsOrigins from  './ChampionsOrigins';
 import ChampionsClasses from  './ChampionsClasses';
+import ChampionsShow from  './ChampionsShow';
 import ItemsContainer from  './ItemsContainer';
 import NewsContainer from  './NewsContainer';
 
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path='/champions/overview' component={ChampionsOverview}/>
           <Route path='/champions/origins' component={ChampionsOrigins}/>
           <Route path='/champions/classes' component={ChampionsClasses}/>
+          <Route path='/champions/:name' component={ChampionsShow}/>
           <Route path='/items' component={ItemsContainer}/>
           <Route path='/news' component={NewsContainer}/>
         </Router>
