@@ -9,4 +9,7 @@ class ChampionsController < ApplicationController
   def classes
   end
 
+  def show
+  end
+  
 end

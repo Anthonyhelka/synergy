@@ -6,14 +6,14 @@ Rails.application.routes.draw do
       get 'champions/overview', to: 'champions#overview', as: 'overview'
       get 'champions/origins', to: 'champions#origins', as: 'origins'
       get 'champions/classes', to: 'champions#classes', as: 'classes'
-      resources :champions, only: [:index]
+      resources :champions, only: [:index, :show]
     end
   end
 
   get 'champions/overview', to: 'champions#overview', as: 'overview'
   get 'champions/origins', to: 'champions#origins', as: 'origins'
   get 'champions/classes', to: 'champions#classes', as: 'classes'
-  resources :champions, only: [:index]
+  resources :champions, only: [:index, :show]
 
   resources :items, only: [:index]
 
