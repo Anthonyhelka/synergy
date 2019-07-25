@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid } from 'semantic-ui-react';
 
-class ChampionsShow extends Component {
+class ChampionShow extends Component {
   constructor(props) {
     super(props);
     this.state={
@@ -24,13 +24,15 @@ class ChampionsShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ champion: body.champion });
+      this.setState({ champion: body.champion[0] });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
     const pathToIcon = require.context('../../../../public/logo', true);
+    const pathToSplashart = require.context('../../../../public/splasharts', true);
+    const pathToAbility = require.context('../../../../public/abilities', true);
 
     return (
       <div>
@@ -53,10 +55,11 @@ class ChampionsShow extends Component {
           </Menu.Item>
         </Menu>
 
-        <h1>{name}</h1>
+        <Message warning icon='wrench' header={`This Page (${this.state.champion.name}) is Still Under Development`} content='We are sorry for the inconvenience' />
+
       </div>
     )
   }
 }
 
-export default ChampionsShow;
+export default ChampionShow;
