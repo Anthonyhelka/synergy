@@ -1,5 +1,4 @@
 class ChampionsController < ApplicationController
-
   def overview
   end
 
@@ -11,5 +10,4 @@ class ChampionsController < ApplicationController
 
   def show
   end
-  
 end
