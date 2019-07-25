@@ -28,5 +28,4 @@ class Api::V1::ChampionsController < ApplicationController
       champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TeamSerializer)
     }
   end
-
 end
