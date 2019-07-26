@@ -1,3 +1,7 @@
+body {
+  background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
+}
+
 .main-header {
   color: black;
   text-align: center;
@@ -16,7 +20,7 @@
 }
 
 #champion-card {
-  border: 3px solid #333740;
+  border: 3px solid #1B1C1D;
   border-radius: 9px;
   margin: 0px !important;
 }
@@ -24,7 +28,7 @@
 #champion-card-extra,
 #champion-card-extra p {
   color: #FFFFFF;
-  background-color: #333740;
+  background-color: #1B1C1D;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -53,6 +57,37 @@
   overflow: hidden;
 }
 
+.ui.search {
+  color: #333740;
+  display: flex;
+  flex-direction: column;
+}
+
+.results.transition.visible div {
+  padding: 0px !important;
+  flex-direction: column;
+}
+
+.result div {
+  padding: 0px !important;
+  display: flex !important;
+  flex-direction: column;
+}
+
+#search-image {
+  width: 5% !important;
+  height: auto !important;
+}
+
+#search-title {
+  font-weight: 800 !important;
+}
+
+.ui.animated.button,
+.ui.buttons::after {
+  color: #E9E9E9;
+  background-color: #1B1C1D;
+}
 .champion-tabs {
   margin: 0px !important;
 }
@@ -61,6 +96,7 @@
   text-align: center;
   text-align-last: center;
 }
+
 .icon-white img {
   border: 5px solid #E8E8E8;
 }

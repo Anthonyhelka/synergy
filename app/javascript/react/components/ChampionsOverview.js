@@ -11,7 +11,7 @@ class ChampionsOverview extends Component {
       champions: [],
       sort: '',
     }
-    this.onSortName = this.onSort.bind(this)
+    this.onSortName = this.onSort.bind(this);
   }
 
   onSort(event, sortKey){
@@ -90,7 +90,7 @@ class ChampionsOverview extends Component {
 
     return (
       <div>
-        <Menu size='large'>
+        <Menu size='large' inverted>
           <Menu.Item name='home' as={ Link } to='/' >
             <img src={require('../../../../public/favicon.ico')} />
           </Menu.Item>

@@ -4,7 +4,7 @@ class Api::V1::ChampionsController < ApplicationController
   def overview
     champions = Champion.all
     render json: {
-      champions: champions
+      champions: ActiveModel::Serializer::CollectionSerializer.new(champions, each_serializer: TeamSerializer)
     }
   end
 

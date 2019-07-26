@@ -19,7 +19,7 @@ class ChampionTile extends Component {
     }
   }
 
-  render(){
+  render() {
     const pathToIcon = require.context('../../../../public/icons', true);
     const pathToSplashart = require.context('../../../../public/splasharts', true);
     const pathToAbility = require.context('../../../../public/abilities', true);
