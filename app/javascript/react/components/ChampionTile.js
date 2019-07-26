@@ -40,20 +40,20 @@ class ChampionTile extends Component {
     return [
       <Responsive as={Grid.Column} id={gridId} {...Responsive.onlyMobile} key='1'>
         <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} label={{ color: `${this.props.champion.tier_color}`, content: `${this.props.champion.tier}`, icon: 'dollar sign', size: 'mini', ribbon: true }} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header></Card.Content>
+          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} />
+          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header><Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Card.Content>
         </Card>
       </Responsive>,
       <Responsive as={Grid.Column} id={gridId} width='2' {...Responsive.onlyTablet} key='2'>
         <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} label={{ color: `${this.props.champion.tier_color}`, content: `${this.props.champion.tier}`, icon: 'dollar sign', size: 'tiny', ribbon: true }} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header></Card.Content>
+          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} />
+          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header><Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Card.Content>
         </Card>
       </Responsive>,
       <Responsive as={Grid.Column} id={gridId} width='2' {...Responsive.onlyComputer} key='3'>
         <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} label={{ color: `${this.props.champion.tier_color}`, content: `${this.props.champion.tier}`, icon: 'dollar sign', size: 'small', ribbon: true }} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header></Card.Content>
+          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} />
+          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='small' icon='dollar sign' /></Header></Card.Content>
         </Card>
       </Responsive>
     ];
