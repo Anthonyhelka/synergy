@@ -6,7 +6,7 @@ class ItemsContainer extends Component {
   render() {
     return (
       <div>
-        <Menu size='large'>
+        <Menu size='large' inverted>
           <Menu.Item name='home' as={ Link } to='/' >
             <img src={require('../../../../public/favicon.ico')} />
           </Menu.Item>
