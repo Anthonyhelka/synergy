@@ -44,22 +44,21 @@ class HomeContainer extends Component {
 
     let results = this.state.filteredData.map(champion => ({
       title: champion.name,
-      description: champion.ability_description,
       image: champion.icon
     }));
 
-    const resultRenderer = ({ title, description, image, id }) => {
+    const resultRenderer = ({ title, image, id }) => {
       const pathToIcon = require.context('../../../../public/icons', true);
       return [
-        <Responsive key={1} as={Segment} fluid={true} basic='very' textAlign='left' maxWidth={500}>
+        <Responsive key={1} as={Segment} fluid basic='very' textAlign='left' maxWidth={500}  onClick={event => this.onResultSelect(event, title)}>
           <img id='search-image-mobile' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>,
-        <Responsive key={2} as={Segment} fluid={true} basic='very' textAlign='left' minWidth={501} maxWidth={1249}>
+        <Responsive key={2} as={Segment} fluid basic='very' textAlign='left' minWidth={501} maxWidth={1249}  onClick={event => this.onResultSelect(event, title)}>
           <img id='search-image-tablet-computer' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>,
-        <Responsive key={3} as={Segment} fluid={true} basic='very' textAlign='left' minWidth={1250}>
+        <Responsive key={3} as={Segment} fluid basic='very' textAlign='left' minWidth={1250}  onClick={event => this.onResultSelect(event, title)}>
           <img id='search-image-large-computer' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>
