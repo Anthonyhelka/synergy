@@ -44,25 +44,26 @@ class HomeContainer extends Component {
 
     let results = this.state.filteredData.map(champion => ({
       title: champion.name,
+      description: champion.ability_description,
       image: champion.icon
     }));
 
-    const resultRenderer = ({ title, image, id }) => {
+    const resultRenderer = ({ title, description, image, id }) => {
       const pathToIcon = require.context('../../../../public/icons', true);
-      return (
-        <Table columns='2' basic='very' compact='very' size='small' singleLine={true} onClick={event => this.onResultSelect(event, title )}>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>
-                <Image id='search-image' key={id} src={`${pathToIcon(image , true)}`} size='mini' />
-              </Table.Cell>
-              <Table.Cell>
-                <span id='search-title'>{title}</span>
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
-      );
+      return [
+        <Responsive key={1} as={Segment} fluid={true} basic='very' textAlign='left' maxWidth={500}>
+          <img id='search-image-mobile' key={id} src={`${pathToIcon(image , true)}`} />
+          <span id='search-title'>&nbsp;&nbsp;{title}</span>
+        </Responsive>,
+        <Responsive key={2} as={Segment} fluid={true} basic='very' textAlign='left' minWidth={501} maxWidth={1249}>
+          <img id='search-image-tablet-computer' key={id} src={`${pathToIcon(image , true)}`} />
+          <span id='search-title'>&nbsp;&nbsp;{title}</span>
+        </Responsive>,
+        <Responsive key={3} as={Segment} fluid={true} basic='very' textAlign='left' minWidth={1250}>
+          <img id='search-image-large-computer' key={id} src={`${pathToIcon(image , true)}`} />
+          <span id='search-title'>&nbsp;&nbsp;{title}</span>
+        </Responsive>
+      ];
     };
 
     return (
@@ -103,7 +104,7 @@ class HomeContainer extends Component {
         <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' minWidth={801} />
 
         <Segment id='search-segment' textAlign='center' basic={true}>
-          <Search placeholder='Search for champion...' fluid={true} results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
+          <Search placeholder='Search for champion...' results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
         </Segment>
 
         <Segment id='button-segment' textAlign='center' basic={true}>
