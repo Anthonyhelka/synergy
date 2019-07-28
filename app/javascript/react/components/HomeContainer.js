@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Search, Table, Segment, Button, Icon } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Search, Table, Segment, Button, Icon, Responsive } from 'semantic-ui-react';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -67,30 +67,46 @@ class HomeContainer extends Component {
 
     return (
       <div>
-        <Menu size='large' inverted>
-          <Menu.Item name='home' as={ Link } to='/' active >
-            <img src={require('../../../../public/favicon.ico')} />
+        <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
+          <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Home' as={ Link } to='/' active />
+              <Dropdown.Item text='Champions' as={ Link } to='/champions' />
+              <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' />
+              <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' />
+              <Dropdown.Item text='Items' as={ Link } to='/items' />
+              <Dropdown.Item text='News' as={ Link } to='/news' />
+            </Dropdown.Menu>
+          </Dropdown>
+        </Responsive>
+
+        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501}>
+          <Menu.Item name='home' as={ Link } to='/' active>
+            <Image src={require('../../../../public/favicon.ico')} size='mini' />
           </Menu.Item>
-          <Dropdown item text='Champions'>
+          <Dropdown as={Menu.Item} item text='Champions'>
             <Dropdown.Menu>
               <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' />
               <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' />
               <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' />
             </Dropdown.Menu>
           </Dropdown>
-          <Menu.Item name='items' as={ Link } to='/items' >
+          <Menu.Item name='items' as={ Link } to='/items'>
             <p>Items</p>
           </Menu.Item>
-          <Menu.Item name='news' as={ Link } to='/news' >
+          <Menu.Item name='news' as={ Link } to='/news'>
             <p>News</p>
           </Menu.Item>
-        </Menu>
+        </Responsive>
 
-        <Search placeholder='Search for champion...' fluid={true} results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
+        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' maxWidth={800} />
+        <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' minWidth={801} />
 
-        <Image id='home-logo' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' />
+        <Segment id='search-segment' textAlign='center' basic={true}>
+          <Search placeholder='Search for champion...' fluid={true} results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
+        </Segment>
 
-        <Segment textAlign='center' basic='very'>
+        <Segment id='button-segment' textAlign='center' basic={true}>
           <Button.Group>
             <Button animated as={ Link } to={'/champions'}>
               <Button.Content visible>Champions</Button.Content>
