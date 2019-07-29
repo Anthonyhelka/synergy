@@ -58,55 +58,56 @@ div.results.transition.visible {
   margin-top: 0px !important;
 }
 
-.ui.animated.button,
-.ui.buttons::after {
-  color: #E9E9E9;
-  background-color: #1B1C1D;
+.ui.animated.button {
+  color: #E9E9E9 !important;
+  background-color: #1B1C1D !important;
+}
+
+.ui.animated.button:hover {
+  color: #E9E9E9 !important;
+  background-color: #3D3E3F !important;
 }
 
 /* Synergies Page */
 
 /* Champion Cards */
-
-#champion-column {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 3px;
+div.ui.header {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
 }
 
-#champion-card {
-  border: 3px solid #1B1C1D;
-  border-radius: 9px;
+#synergy-popup-description {
+  text-align: center;
+  text-align-last: center;
+}
+
+.ui.card, .ui.cards>.card {
+  width: auto !important;
+}
+
+div.item {
   margin: 0px !important;
+  padding: 3px !important;
+  padding-top: 0px !important;
 }
 
 #champion-card-extra,
 #champion-card-extra p {
-  color: #FFFFFF;
-  background-color: #1B1C1D;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
 }
 
-#champion-column-hovered {
-  padding-left: 7px;
-  padding-right: 0px;
+#champion-card-hover {
+  border: 3px solid #36A9E0 !important;
+  border-radius: 9px !important;
+  transform: scale(1.1) !important;
+  z-index: 1000 !important;
 }
 
-#champion-card-hovered {
-  border: 3px solid #36A9E0;
-  border-radius: 9px;
-  margin: 0px !important;
-  transform: scale(1.1);
-  z-index:1000;
-}
-
-#champion-card-extra-hovered,
-#champion-card-extra-hovered p {
-  color: #FFFFFF;
-  background-color: #36A9E0;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
+#champion-card-extra-hover,
+#champion-card-extra-hover p {
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #36A9E0 !important;
 }

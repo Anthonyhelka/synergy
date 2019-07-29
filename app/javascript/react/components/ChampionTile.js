@@ -24,39 +24,31 @@ class ChampionTile extends Component {
     const pathToSplashart = require.context('../../../../public/splasharts', true);
     const pathToAbility = require.context('../../../../public/abilities', true);
 
-    let gridId;
     let cardId;
     let cardExtraId;
     if(this.state.isHovered === false) {
-      gridId = 'champion-column';
       cardId = 'champion-card';
       cardExtraId = 'champion-card-extra';
     } else {
-      gridId = 'champion-column-hovered';
-      cardId = 'champion-card-hovered';
-      cardExtraId = 'champion-card-extra-hovered';
+      cardId = 'champion-card-hover';
+      cardExtraId = 'champion-card-extra-hover';
     }
 
-    return [
-      <Responsive as={Grid.Column} id={gridId} {...Responsive.onlyMobile} key='1'>
-        <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header><Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Card.Content>
-        </Card>
-      </Responsive>,
-      <Responsive as={Grid.Column} id={gridId} width='2' {...Responsive.onlyTablet} key='2'>
-        <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}</Header><Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Card.Content>
-        </Card>
-      </Responsive>,
-      <Responsive as={Grid.Column} id={gridId} width='2' {...Responsive.onlyComputer} key='3'>
-        <Card as={ Link } to={`/champions/${this.props.champion.name}`} id={cardId}>
-          <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} />
-          <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='small' icon='dollar sign' /></Header></Card.Content>
-        </Card>
-      </Responsive>
-    ];
+    return (
+      <List.Item>
+        <Responsive maxWidth={1023}>
+          <Card>
+            <Image src={`${pathToIcon(this.props.champion.icon , true)}`} size='tiny' />
+          </Card>
+        </Responsive>
+        <Responsive minWidth={1024}>
+          <Card id={cardId}>
+            <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} size='small' />
+            <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Header></Card.Content>
+          </Card>
+        </Responsive>
+      </List.Item>
+    );
   }
 }
 
