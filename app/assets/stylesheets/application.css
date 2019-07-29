@@ -1,118 +1,114 @@
+/* Body */
 body {
   background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
 }
 
-.main-header {
-  color: black;
-  text-align: center;
+/* Home Page */
+
+/* Logo */
+#home-logo-mobile-tablet {
+  margin-top: 50px !important;
 }
 
-.sub-header {
-  color: black;
-  text-align: center;
+#home-logo-computer {
+  margin-top: 75px !important;
 }
 
-/* Not Hovered */
-#champion-column {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 3px;
-}
-
-#champion-card {
-  border: 3px solid #1B1C1D;
-  border-radius: 9px;
-  margin: 0px !important;
-}
-
-#champion-card-extra,
-#champion-card-extra p {
-  color: #FFFFFF;
-  background-color: #1B1C1D;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-/* Hovered */
-#champion-column-hovered {
-  padding-left: 7px;
-  padding-right: 0px;
-}
-
-#champion-card-hovered {
-  border: 3px solid #36A9E0;
-  border-radius: 9px;
-  margin: 0px !important;
-  transform: scale(1.1);
-  z-index:1000;
-}
-
-#champion-card-extra-hovered,
-#champion-card-extra-hovered p {
-  color: #FFFFFF;
-  background-color: #36A9E0;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.ui.search {
-  color: #333740;
-  display: flex;
-  flex-direction: column;
+/*Search Bar */
+#search-segment {
+  margin-bottom: 0px !important;
+  padding: 0px !important;
 }
 
 .results.transition.visible div {
   padding: 0px !important;
-  flex-direction: column;
 }
 
-.result div {
-  padding: 0px !important;
-  display: flex !important;
-  flex-direction: column;
+div.results.transition.visible {
+  width: 100% !important;
+  max-width: 100vw !important;
 }
 
-#search-image {
-  width: 5% !important;
+#search-image-mobile,
+#search-image-tablet-computer,
+#search-image-large-computer {
   height: auto !important;
+  margin: auto !important;
+  vertical-align: middle !important;
+}
+
+#search-image-mobile {
+  width: 15% !important;
+}
+
+#search-image-tablet-computer {
+  width: 5% !important;
+}
+
+#search-image-large-computer {
+  width: 3% !important;
 }
 
 #search-title {
+  vertical-align: middle !important;
   font-weight: 800 !important;
 }
 
-.ui.animated.button,
-.ui.buttons::after {
-  color: #E9E9E9;
-  background-color: #1B1C1D;
-}
-.champion-tabs {
-  margin: 0px !important;
+/* Buttons */
+#button-segment {
+  margin-top: 0px !important;
 }
 
-.popup-description {
+.ui.animated.button {
+  color: #E9E9E9 !important;
+  background-color: #1B1C1D !important;
+}
+
+.ui.animated.button:hover {
+  color: #E9E9E9 !important;
+  background-color: #3D3E3F !important;
+}
+
+/* Synergies Page */
+
+/* Champion Cards */
+div.ui.header {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+#synergy-popup-description {
   text-align: center;
   text-align-last: center;
 }
 
-.icon-white img {
-  border: 5px solid #E8E8E8;
+.ui.card, .ui.cards>.card {
+  width: auto !important;
 }
 
-.icon-green img {
-  border: 5px solid #21BA45;
+div.item {
+  margin: 0px !important;
+  padding: 3px !important;
+  padding-top: 0px !important;
 }
 
-.icon-blue img {
-  border: 5px solid #2185D0;
+#champion-card-extra,
+#champion-card-extra p {
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
 }
 
-.icon-purple img {
-  border: 5px solid #A332C8;
+#champion-card-hover {
+  border: 3px solid #36A9E0 !important;
+  border-radius: 9px !important;
+  transform: scale(1.1) !important;
+  z-index: 1000 !important;
 }
 
-.icon-yellow img {
-  border: 5px solid #FBBD07;
+#champion-card-extra-hover,
+#champion-card-extra-hover p {
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #36A9E0 !important;
 }

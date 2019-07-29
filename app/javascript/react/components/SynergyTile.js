@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Image, Popup, Grid, Container, Header, Divider, Card, Responsive } from 'semantic-ui-react';
+import { Image, Popup, Grid, Container, Header, Divider, Card, Responsive, List } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
 
 class SynergyTile extends Component {
   constructor(props) {
-  super(props);
+    super(props);
   }
 
   render(){
@@ -46,25 +46,17 @@ class SynergyTile extends Component {
                 </Header>
               </Grid.Row>
               <Grid.Row>
-                <span className='popup-description'>{this.props.synergy.desciption}</span>
+                <span id='synergy-popup-description'>{this.props.synergy.desciption}</span>
                 {upgradeConditional}
               </Grid.Row>
             </Grid>
           </Popup>
 
-          <Grid textAlign='center'>
-            <Responsive as={Grid.Row} columns='3' {...Responsive.onlyMobile}>
-              {champions}
-            </Responsive>
-            <Responsive as={Grid.Row} {...Responsive.onlyTablet}>
-              {champions}
-            </Responsive>
-            <Responsive as={Grid.Row} {...Responsive.onlyComputer}>
-              {champions}
-            </Responsive>
-          </Grid>
+          <List horizontal size='mini'>
+            {champions}
+          </List>
 
-         </Container>
+        </Container>
       </div>
     );
   }

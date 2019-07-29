@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Table, Icon } from 'semantic-ui-react';
+import { Menu, Container, Header, List, Dropdown, Table, Icon, Responsive, Image } from 'semantic-ui-react';
 
 import ChampionsOverviewTile from './ChampionsOverviewTile';
 
@@ -90,11 +90,24 @@ class ChampionsOverview extends Component {
 
     return (
       <div>
-        <Menu size='large' inverted>
+        <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
+          <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Home' as={ Link } to='/' />
+              <Dropdown.Item text='Champions' as={ Link } to='/champions' active />
+              <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' />
+              <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' />
+              <Dropdown.Item text='Items' as={ Link } to='/items' />
+              <Dropdown.Item text='News' as={ Link } to='/news' />
+            </Dropdown.Menu>
+          </Dropdown>
+        </Responsive>
+
+        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501}>
           <Menu.Item name='home' as={ Link } to='/' >
-            <img src={require('../../../../public/favicon.ico')} />
+            <Image src={require('../../../../public/favicon.ico')} size='mini' />
           </Menu.Item>
-          <Dropdown item text='Champions' >
+          <Dropdown as={Menu.Item} item text='Champions' active>
             <Dropdown.Menu>
               <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active />
               <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' />
@@ -107,7 +120,7 @@ class ChampionsOverview extends Component {
           <Menu.Item name='news' as={ Link } to='/news' >
             <p>News</p>
           </Menu.Item>
-        </Menu>
+        </Responsive>
 
         <Table celled selectable unstackable striped fixed sortable>
           <Table.Header>
