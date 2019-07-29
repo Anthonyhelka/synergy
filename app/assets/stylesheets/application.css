@@ -69,6 +69,31 @@ div.results.transition.visible {
   background-color: #3D3E3F !important;
 }
 
+/* Champion Overview Page */
+.ui.celled.fixed.selectable.sortable.striped.unstackable.table {
+  margin-top: 0px !important;
+}
+
+#image-mobile,
+#image-tablet-computer,
+#image-large-computer {
+  height: auto !important;
+  margin: auto !important;
+  vertical-align: middle !important;
+}
+
+#image-mobile {
+  width: 60% !important;
+}
+
+#image-tablet-computer {
+  width: 15% !important;
+}
+
+#image-large-computer {
+  width: 10% !important;
+}
+
 /* Synergies Page */
 
 /* Champion Cards */
