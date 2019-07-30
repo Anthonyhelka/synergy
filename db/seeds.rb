@@ -1171,7 +1171,7 @@ demon = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "80% chance"
 )
-demon.champions << [aatrox, brand, elise, evelynn, swain, varus]
+demon.champions << [aatrox, brand, elise, evelynn, morgana, swain, varus]
 dragon = Team.create(
   id: 2,
   name: "Dragon",

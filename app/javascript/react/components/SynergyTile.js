@@ -32,17 +32,17 @@ class SynergyTile extends Component {
       upgradeConditional = (<span></span>)
     }
 
-    const pathToIcon = require.context('../../../../public/synergies', true);
+    const pathToSynergyIcon = require.context('../../../../public/synergies', true);
 
     return (
       <div>
         <Container fluid textAlign='center'>
 
-          <Popup on='click' inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Header><Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
+          <Popup on='click' inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Header><Image src={`${pathToSynergyIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
             <Grid textAlign='center'>
               <Grid.Row>
                 <Header>
-                  <Image src={`${pathToIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.name}`} avatar verticalAlign='middle' />
+                  <Image src={`${pathToSynergyIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.name}`} avatar verticalAlign='middle' />
                 </Header>
               </Grid.Row>
               <Grid.Row>

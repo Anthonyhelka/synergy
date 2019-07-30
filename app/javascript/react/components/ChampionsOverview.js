@@ -125,18 +125,10 @@ class ChampionsOverview extends Component {
         <Table celled selectable unstackable striped fixed sortable>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell sorted={nameOrder} onClick={event => this.onSort(event, 'nameSort')} color='red' >
-                Name
-              </Table.HeaderCell>
-              <Table.HeaderCell>
-                Synergies
-              </Table.HeaderCell>
-              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.onSort(event, 'tierSort')} >
-                  <Icon name='dollar sign' />
-              </Table.HeaderCell>
-              <Table.HeaderCell>
-                Ability
-              </Table.HeaderCell>
+              <Table.HeaderCell sorted={nameOrder} onClick={event => this.onSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
+              <Table.HeaderCell>Synergies</Table.HeaderCell>
+              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.onSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
+              <Table.HeaderCell>Ability</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
