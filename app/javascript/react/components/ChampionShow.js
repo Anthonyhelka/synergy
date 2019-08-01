@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Responsive } from 'semantic-ui-react';
 
+import ChampionShowTile from './ChampionShowTile';
+
 class ChampionShow extends Component {
   constructor(props) {
     super(props);
     this.state={
-      champion: {}
+      champion: {},
+      updated: false
     }
   }
 
@@ -24,16 +27,24 @@ class ChampionShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ champion: body.champion[0] });
+      this.setState({ champion: body.champion[0], updated: true });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    const pathToIcon = require.context('../../../../public/logo', true);
-    const pathToSplashart = require.context('../../../../public/splasharts', true);
-    const pathToAbility = require.context('../../../../public/abilities', true);
-
+    let championShowTile;
+    if (this.state.updated === false) {
+      championShowTile = '';
+    } else {
+      championShowTile = (
+        <ChampionShowTile
+          key={this.state.champion.id}
+          id={this.state.champion.id}
+          champion={this.state.champion}
+        />
+      );
+    }
     return (
       <div>
         <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
@@ -68,7 +79,7 @@ class ChampionShow extends Component {
           </Menu.Item>
         </Responsive>
 
-        <Message warning icon='wrench' header={`This Page (${this.state.champion.name}) is Still Under Development`} content='We are sorry for the inconvenience' />
+        {championShowTile}
 
       </div>
     )

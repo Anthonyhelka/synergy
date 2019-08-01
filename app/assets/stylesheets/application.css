@@ -137,3 +137,9 @@ div.item {
   color: #FFFFFF !important;
   background-color: #36A9E0 !important;
 }
+
+/* Show Page */
+div.ui.compact.center.aligned.segment {
+  margin: auto !important;
+  margin-top: 25px !important;
+}
