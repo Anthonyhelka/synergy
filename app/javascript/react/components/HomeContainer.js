@@ -7,18 +7,38 @@ class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
+      background: '',
       query: '',
       filteredData: []
     }
     this.onSearchChange = this.onSearchChange.bind(this);
     this.getData = this.getData.bind(this);
     this.onResultSelect = this.onResultSelect.bind(this);
+  }
 
+  componentWillMount() {
+    let backgroundImages = ['aatrox', 'braum', 'elise', 'fiora', 'gnar', 'jinx', 'khazix', 'kindred', 'lissandra', 'lucian', 'poppy', 'shyvana', 'tristana', 'twistedfate', 'volibear']
+    let randomImage = backgroundImages[Math.floor(Math.random()*backgroundImages.length)];
+    this.setState({ background: randomImage })
+  }
+
+  componentDidMount() {
+    document.body.classList.add(`black-background-color`);
+    document.body.classList.add(`background-${this.state.background}`);
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove(`black-background-color`);
+    document.body.classList.remove(`background-${this.state.background}`);
   }
 
   onSearchChange(event){
     this.setState({ query: event.target.value })
     this.getData();
+  }
+
+  onResultSelect(event, name){
+    browserHistory.push(`/champions/${name}`);
   }
 
   getData() {
@@ -35,10 +55,6 @@ class HomeContainer extends Component {
         })
       });
   };
-
-  onResultSelect(event, name){
-    browserHistory.push(`/champions/${name}`);
-  }
 
   render() {
 
@@ -99,8 +115,8 @@ class HomeContainer extends Component {
           </Menu.Item>
         </Responsive>
 
-        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' maxWidth={800} />
-        <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogo2.png')} size='medium' minWidth={801} />
+        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogoWhite.png')} size='medium' maxWidth={800} />
+        <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogoWhite.png')} size='medium' minWidth={801} />
 
         <Segment id='search-segment' textAlign='center' basic={true}>
           <Search placeholder='Search for champion...' results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
