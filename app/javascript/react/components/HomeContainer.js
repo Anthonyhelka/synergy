@@ -23,13 +23,17 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-    document.body.classList.add(`black-background-color`);
-    document.body.classList.add(`background-${this.state.background}`);
+    if (window.innerWidth >= 1024) {
+      document.body.classList.add(`black-background-color`);
+      document.body.classList.add(`background-${this.state.background}`);
+    }
   }
 
   componentWillUnmount() {
-    document.body.classList.remove(`black-background-color`);
-    document.body.classList.remove(`background-${this.state.background}`);
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove(`black-background-color`);
+      document.body.classList.remove(`background-${this.state.background}`);
+    }
   }
 
   onSearchChange(event){
@@ -115,7 +119,7 @@ class HomeContainer extends Component {
           </Menu.Item>
         </Responsive>
 
-        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogoWhite.png')} size='medium' maxWidth={800} />
+        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogoBlack.png')} size='medium' maxWidth={800} />
         <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogoWhite.png')} size='medium' minWidth={801} />
 
         <Segment id='search-segment' textAlign='center' basic={true}>

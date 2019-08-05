@@ -7,23 +7,63 @@ body {
 /* Home Page */
 
 /*Background Images */
-.black-background-color { background-color: black !important; }
+.black-background-color {
+  background-color: black !important;
+  background-repeat: no-repeat !important;
+}
 .background-aatrox { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-aatrox.jpg") !important; }
+.background-ahri { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-ahri.jpg") !important; }
+.background-akali { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-akali.jpg") !important; }
+.background-anivia { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-anivia.jpg") !important; }
+.background-ashe { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-ashe.jpg") !important; }
+.background-aurelionsol { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-aurelionsol.jpg") !important; }
+.background-blitzcrank { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg") !important; }
+.background-brand { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-brand.jpg") !important; }
 .background-braum  { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-braum.jpg") !important; }
+.background-chogath  { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-chogath.jpg") !important; }
+.background-darius  { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-darius.jpg") !important; }
+.background-draven  { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-draven.jpg") !important; }
 .background-elise { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-elise.jpg") !important; }
+.background-evelynn { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-evelynn.jpg") !important; }
 .background-fiora { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-fiora.jpg") !important; }
+.background-gangplank { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-gangplank.jpg") !important; }
+.background-garen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-garen.jpg") !important; }
 .background-gnar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-gnar.jpg") !important; }
-.background-jinx { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-jinx.jpg") !important; }
+.background-graves { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-graves.jpg") !important; }
+.background-karthus { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-karthus.jpg") !important; }
+.background-kassadin { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kassadin.jpg") !important; }
+.background-katarina { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-katarina.jpg") !important; }
+.background-kayle { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kayle.jpg") !important; }
+.background-kennen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kennen.jpg") !important; }
 .background-khazix { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-khazix.jpg") !important; }
 .background-kindred { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kindred.jpg") !important; }
+.background-leona { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-leona.jpg") !important; }
 .background-lissandra { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lissandra.jpg") !important; }
 .background-lucian { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lucian.jpg") !important; }
+.background-lulu { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lulu.jpg") !important; }
+.background-missfortune { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-missfortune.jpg") !important; }
+.background-mordekaiser { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-mordekaiser.jpg") !important; }
+.background-morgana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-morgana.jpg") !important; }
+.background-nidalee { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-nidalee.jpg") !important; }
 .background-poppy { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-poppy.jpg") !important; }
+.background-pyke { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-pyke.jpg") !important; }
+.background-reksai { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-reksai.jpg") !important; }
+.background-rengar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-rengar.jpg") !important; }
+.background-sejuani { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-sejuani.jpg") !important; }
+.background-shen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-shen.jpg") !important; }
 .background-shyvana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-shyvana.jpg") !important; }
+.background-swain { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-swain.jpg") !important; }
 .background-tristana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-tristana.jpg") !important; }
-.background-twistedfate { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-twistedfate.jpg") !important; }
-.background-twistedfate { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-twistedfate.jpg") !important }
+.background-varus { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-varus.jpg") !important; }
+.background-vayne { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-vayne.jpg") !important; }
+.background-veigar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-veigar.jpg") !important; }
 .background-volibear { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-volibear.jpg") !important; }
+.background-warwick { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-warwick.jpg") !important; }
+.background-yasuo { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-yasuo.jpg") !important; }
+.background-zed { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-zed.jpg") !important; }
+
+.background-jinx { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-jinx.jpg") !important; }
+.background-twistedfate { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-twistedfate.jpg") !important; }
 
 /* Logo */
 #home-logo-mobile-tablet {
@@ -159,23 +199,19 @@ div.item {
 }
 
 /* Show Page */
-.show-background {
-  background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-tristana.jpg") !important;
-  background-color: black !important;
-}
-
-#show-champion-name {
-  position: absolute !important;
-  color: white !important;
-}
-
-#champion-backdrop-container {
-  position: absolute !important;
-  padding: 0px !important;
-}
-
-#champion-show-container {
-  margin: auto  !important;
+#show-page-container {
+  width: 600px !important;
+  height: auto !important;
   margin-top: 25px !important;
-  z-index: 1001 !important;
+  margin-left: 25px !important;
+}
+
+#show-page-ability-icon {
+  border: 2px solid black !important;
+}
+
+#show-page-ability-description,
+#show-page-synergy-desciption {
+  text-align: center;
+  text-align-last: center;
 }
