@@ -50,7 +50,7 @@ class ChampionShowTile extends Component {
                 </Header>
               </Grid.Row>
               <Grid.Row>
-                <span id='synergy-popup-description'>{synergy.desciption}</span>
+                <span id='synergy-popup-description'>{synergy.description}</span>
               </Grid.Row>
             </Grid>
           </Popup>
@@ -77,7 +77,7 @@ class ChampionShowTile extends Component {
       return (
         <Segment textAlign='center' inverted>
           <Header><Image src={`${pathToSynergyIcon(synergy.icon, true)}`}/><br />{synergy.name}</Header>
-          <Header.Subheader id='show-page-synergy-description'>{synergy.desciption}</Header.Subheader>
+          <Header.Subheader id='show-page-synergy-description'>{synergy.description}</Header.Subheader>
           <Divider />
           <List horizontal>
             {synergyChampions}
@@ -97,7 +97,7 @@ class ChampionShowTile extends Component {
             <Segment textAlign='center' fluid>
               <Header><Image id='show-page-ability-icon' src={`${pathToAbility(this.props.champion.icon, true)}`}/><br />{this.props.champion.ability_name}</Header>
               <Header.Subheader id='show-page-ability-description'>{this.props.champion.ability_description}</Header.Subheader>
-              <i>{this.props.champion.mana} Mana</i>
+              <i>{this.props.champion.mana_cost} Mana</i>
             </Segment>
             <Header textAlign='center'>Statistics</Header>
             <Segment id='champion-show-container' fluid>
@@ -125,7 +125,7 @@ class ChampionShowTile extends Component {
             <Segment textAlign='center' fluid>
               <Header><Image id='show-page-ability-icon' src={`${pathToAbility(this.props.champion.icon, true)}`}/><br />{this.props.champion.ability_name}</Header>
               <Header.Subheader id='show-page-ability-description'>{this.props.champion.ability_description}</Header.Subheader>
-              <i>{this.props.champion.mana} Mana</i>
+              <i>{this.props.champion.mana_cost} Mana</i>
             </Segment>
             <Header textAlign='center'>Statistics</Header>
             <Segment id='champion-show-container' fluid>

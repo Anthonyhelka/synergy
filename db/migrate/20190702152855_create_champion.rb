@@ -14,15 +14,14 @@ class CreateChampion < ActiveRecord::Migration[5.2]
       t.string :character_class_1, null: false
       t.string :character_class_2
       t.integer :health, array: true, default: [], null: false
-      t.integer :mana, null: false
+      t.integer :starting_mana, null: false
+      t.integer :mana_cost, null: false
       t.integer :attack_damage, null: false
       t.integer :attack_speed, null: false
-      t.integer :dps, null: false
       t.integer :attack_range, null: false
       t.integer :armor, null: false
       t.integer :magic_resist, null: false
       t.integer :player_damage, array: true, default: [], null: false
-      t.string :starting_items, array: true, default: [], null: false
     end
   end
 end

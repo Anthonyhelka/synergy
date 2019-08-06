@@ -46,7 +46,7 @@ class SynergyTile extends Component {
                 </Header>
               </Grid.Row>
               <Grid.Row>
-                <span id='synergy-popup-description'>{this.props.synergy.desciption}</span>
+                <span id='synergy-popup-description'>{this.props.synergy.description}</span>
                 {upgradeConditional}
               </Grid.Row>
             </Grid>
