@@ -38,12 +38,12 @@ class ChampionTile extends Component {
       <List.Item>
         <Responsive maxWidth={1023}>
           <Card as={ Link } to={`/champions/${this.props.champion.name}`}>
-            <Image src={`${pathToIcon(this.props.champion.icon , true)}`} size='tiny' />
+            <Image src={`${pathToIcon(this.props.champion.icon, true)}`} size='tiny' />
           </Card>
         </Responsive>
         <Responsive minWidth={1024}>
           <Card id={cardId} as={ Link } to={`/champions/${this.props.champion.name}`}>
-            <Image src={`${pathToSplashart(this.props.champion.icon , true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} size='small' />
+            <Image src={`${pathToSplashart(this.props.champion.icon, true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} size='small' />
             <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Header></Card.Content>
           </Card>
         </Responsive>
