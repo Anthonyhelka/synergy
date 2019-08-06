@@ -29,15 +29,14 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.string "character_class_1", null: false
     t.string "character_class_2"
     t.integer "health", default: [], null: false, array: true
-    t.integer "mana", null: false
+    t.integer "starting_mana", null: false
+    t.integer "mana_cost", null: false
     t.integer "attack_damage", null: false
     t.integer "attack_speed", null: false
-    t.integer "dps", null: false
     t.integer "attack_range", null: false
     t.integer "armor", null: false
     t.integer "magic_resist", null: false
     t.integer "player_damage", default: [], null: false, array: true
-    t.string "starting_items", default: [], null: false, array: true
   end
 
   create_table "champions_teams", id: false, force: :cascade do |t|
@@ -50,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.string "name", null: false
     t.string "icon", null: false
     t.string "teamType", null: false
-    t.string "desciption"
+    t.string "description"
     t.string "upgrade_1_number"
     t.string "upgrade_1_description"
     t.string "upgrade_2_number"
