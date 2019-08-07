@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get 'champions/origins', to: 'champions#origins', as: 'origins'
       get 'champions/classes', to: 'champions#classes', as: 'classes'
       resources :champions, only: [:index, :show]
+
+      resources :summoners, only: [:index, :show]
     end
   end
 
@@ -18,4 +20,6 @@ Rails.application.routes.draw do
   resources :items, only: [:index]
 
   resources :news, only: [:index]
+
+  resources :summoners, only: [:index, :show]
 end

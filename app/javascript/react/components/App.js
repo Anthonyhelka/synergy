@@ -9,6 +9,9 @@ import ChampionsClasses from  './ChampionsClasses';
 import ChampionShow from  './ChampionShow';
 import ItemsContainer from  './ItemsContainer';
 import NewsContainer from  './NewsContainer';
+import SummonerContainer from  './SummonerContainer';
+import SummonerShow from './SummonerShow';
+
 
 class App extends Component {
   render(){
@@ -23,6 +26,8 @@ class App extends Component {
           <Route path='/champions/:name' component={ChampionShow}/>
           <Route path='/items' component={ItemsContainer}/>
           <Route path='/news' component={NewsContainer}/>
+          <Route path='/summoners' component={SummonerContainer}/>
+          <Route path='/summoners/:name' component={SummonerShow}/>
         </Router>
       </div>
     )
