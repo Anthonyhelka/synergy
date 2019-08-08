@@ -7,7 +7,7 @@ class Api::V1::SummonersController < ApplicationController
   def show
     summoner_name = params["id"]
     summoner_name = URI.escape(summoner_name)
-    api_key = "RGAPI-0f69909f-d433-41a1-83ad-11f2d6081334"
+    api_key = "RGAPI-89843cf9-c579-4c47-b568-9ced78e15039"
     summoner_info = HTTParty.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{summoner_name}?api_key=#{api_key}")
     summoner_id = summoner_info["id"]
     ranked_data = HTTParty.get("https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
