@@ -16,7 +16,7 @@ class SummonerShow extends Component {
 
   componentDidMount() {
     let summonerName = this.props.params.name
-    fetch(`/api/v1/summoners/${summonerName}`)
+    fetch(`/api/v1/summoner/${summonerName}`)
       .then(response => {
         if (response.ok) {
           return response;

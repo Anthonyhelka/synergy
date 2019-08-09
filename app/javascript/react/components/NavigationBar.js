@@ -45,7 +45,7 @@ class NavigationBar extends Component {
 
   handleSearch(event){
     if(event.keyCode == 13){
-      browserHistory.push(`/summoners/${event.target.value}`);
+      browserHistory.push(`/summoner/${event.target.value}`);
       window.location.reload();
     } else {
       this.setState({  query: event.target.value })

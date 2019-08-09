@@ -1,11 +1,8 @@
 require 'dotenv'
 Dotenv.load('api-keys.env')
 
-class Api::V1::SummonersController < ApplicationController
+class Api::V1::SummonerController < ApplicationController
   include ::ActionController::Serialization
-
-  def index
-  end
 
   def show
     summoner_name = params["id"]

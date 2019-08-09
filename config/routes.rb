@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'champions/classes', to: 'champions#classes', as: 'classes'
       resources :champions, only: [:index, :show]
 
-      resources :summoners, only: [:index, :show]
+      resources :summoner, only: [:show]
     end
   end
 
@@ -21,5 +21,5 @@ Rails.application.routes.draw do
 
   resources :news, only: [:index]
 
-  resources :summoners, only: [:index, :show]
+  resources :summoner, only: [:show]
 end
