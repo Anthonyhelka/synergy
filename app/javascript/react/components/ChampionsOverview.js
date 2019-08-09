@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Table, Icon, Responsive, Image } from 'semantic-ui-react';
+import { Table, Icon } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
 import ChampionsOverviewTile from './ChampionsOverviewTile';
@@ -10,12 +9,12 @@ class ChampionsOverview extends Component {
     super(props);
     this.state={
       champions: [],
-      sort: '',
+      sort: ''
     }
-    this.onSortName = this.onSort.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
-  onSort(event, sortKey){
+  handleSort(event, sortKey){
     if (sortKey === 'nameSort' && this.state.sort === 'z-a') {
       this.setState({ sort: 'a-z' })
     } else if (sortKey === 'nameSort') {
@@ -96,9 +95,9 @@ class ChampionsOverview extends Component {
         <Table celled selectable unstackable striped fixed sortable>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell sorted={nameOrder} onClick={event => this.onSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
+              <Table.HeaderCell sorted={nameOrder} onClick={event => this.handleSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
               <Table.HeaderCell>Synergies</Table.HeaderCell>
-              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.onSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
+              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.handleSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
               <Table.HeaderCell>Ability</Table.HeaderCell>
             </Table.Row>
           </Table.Header>

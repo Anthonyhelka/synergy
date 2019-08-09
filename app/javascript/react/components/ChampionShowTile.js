@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
-import { Card, Image, Icon, List, Header, Grid, Transition, Dimmer, Segment, Responsive, Label, Popup, Divider, Container } from 'semantic-ui-react';
+import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image } from 'semantic-ui-react';
 
 class ChampionShowTile extends Component {
   constructor(props) {
@@ -9,7 +8,7 @@ class ChampionShowTile extends Component {
     this.state={
       update: false
     }
-    this.onChampionClick = this.onChampionClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -27,39 +26,21 @@ class ChampionShowTile extends Component {
     document.body.classList.remove(`background-${name}`);
   }
 
-  onChampionClick(event, name) {
+  handleClick(event, name) {
     browserHistory.push(`/champions/${name}`);
     window.location.reload();
   }
 
   render() {
     const pathToIcon = require.context('../../../../public/icons', true);
-    const pathToSplashart = require.context('../../../../public/splasharts', true);
-    const pathToBackdrop = require.context('../../../../public/backdrops', true);
     const pathToAbility = require.context('../../../../public/abilities', true);
     const pathToSynergyIcon = require.context('../../../../public/synergies', true);
 
     let synergiesIconList = this.props.champion.teams.map(synergy => {
-      return (
-        <List.Item key={synergy.id}>
-          <Popup on='click' key={synergy.id} inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Image key={synergy.id} src={`${pathToSynergyIcon(synergy.icon, true)}`} avatar />} >
-            <Grid textAlign='center'>
-              <Grid.Row>
-                <Header>
-                  <Image src={`${pathToSynergyIcon(synergy.icon , true)}`} alt={`${synergy.name}`} avatar verticalAlign='middle' />
-                </Header>
-              </Grid.Row>
-              <Grid.Row>
-                <span id='synergy-popup-description'>{synergy.description}</span>
-              </Grid.Row>
-            </Grid>
-          </Popup>
-        </List.Item>
-      )
+      return (<List.Item key={synergy.id}><Image src={`${pathToSynergyIcon(synergy.icon, true)}`} avatar /></List.Item>)
     });
 
     let synergiesChampionList = this.props.champion.teams.map(synergy => {
-
       let synergyChampions = synergy.champions.filter(champion => {
         if (champion.name === this.props.champion.name) {
           return false;
@@ -67,11 +48,7 @@ class ChampionShowTile extends Component {
           return true;
         }
       }).map(champion => {
-        return (
-          <List.Item key={champion.name} onClick={event => this.onChampionClick(event, `${champion.name}`)}>
-            <Image src={`${pathToIcon(champion.icon, true)}`} size='mini'/>
-          </List.Item>
-        )
+        return (<List.Item key={champion.name} onClick={event => this.handleClick(event, `${champion.name}`)}><Image src={`${pathToIcon(champion.icon, true)}`} size='mini'/></List.Item>)
       });
 
       return (

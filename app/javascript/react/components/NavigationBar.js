@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { browserHistory } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Search, Table, Segment, Button, Icon, Responsive } from 'semantic-ui-react';
+import { browserHistory, Link } from 'react-router';
+import { Responsive, Menu, Dropdown, Image, Segment, Search } from 'semantic-ui-react';
 
 class NavigationBar extends Component {
   constructor(props) {
@@ -13,9 +12,10 @@ class NavigationBar extends Component {
       origins: false,
       classes: false,
       items: false,
-      news: false
+      news: false,
+      query: ''
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentWillMount() {
@@ -43,28 +43,12 @@ class NavigationBar extends Component {
     }
   }
 
-  handleClick(event, page) {
-    switch(page) {
-      case 'home':
-        browserHistory.push('/');
-        break;
-      case 'overview':
-        browserHistory.push('/champions/overview');
-        break;
-      case 'origins':
-        browserHistory.push('/champions/origins');
-        break;
-      case 'classes':
-        browserHistory.push('/champions/classes');
-        break;
-      case 'items':
-        browserHistory.push('/items');
-        break;
-      case 'news':
-        browserHistory.push('/news');
-        break;
-      default:
-        break;
+  handleSearch(event){
+    if(event.keyCode == 13){
+      browserHistory.push(`/summoners/${event.target.value}`);
+      window.location.reload();
+    } else {
+      this.setState({  query: event.target.value })
     }
   }
 
@@ -73,34 +57,42 @@ class NavigationBar extends Component {
       <div>
         <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
           <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Home' onClick={event => this.handleClick(event, 'home')} active={this.state.home} />
-              <Dropdown.Item text='Champions' onClick={event => this.handleClick(event, 'overview')} active={this.state.overview} />
-              <Dropdown.Item text='Origins' onClick={event => this.handleClick(event, 'origins')} active={this.state.origins} />
-              <Dropdown.Item text='Classes' onClick={event => this.handleClick(event, 'classes')} active={this.state.classes} />
-              <Dropdown.Item text='Items' onClick={event => this.handleClick(event, 'items')} active={this.state.items} />
-              <Dropdown.Item text='News' onClick={event => this.handleClick(event, 'news')} active={this.state.news} />
+            <Dropdown.Menu textAlign='center'>
+              <Dropdown.Item text='Home' as={ Link } to='/' active={this.state.home} />
+              <Dropdown.Item text='Champions' as={ Link } to='/champions/overview' active={this.state.overview} />
+              <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' active={this.state.origins} />
+              <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' active={this.state.classes} />
+              <Dropdown.Item text='Items' as={ Link } to='/items' active={this.state.items} />
+              <Dropdown.Item text='News' as={ Link } to='/news' active={this.state.news} />
             </Dropdown.Menu>
           </Dropdown>
         </Responsive>
 
-        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501}>
-          <Menu.Item name='home' onClick={event => this.handleClick(event, 'home')} active={this.state.home}>
-            <Image src={require('../../../../public/favicon.ico')} size='mini' />
-          </Menu.Item>
+        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501} maxWidth={1023}>
+          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
           <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
             <Dropdown.Menu>
-              <Dropdown.Item text='Overview' onClick={event => this.handleClick(event, 'overview')} active={this.state.overview} />
-              <Dropdown.Item text='Origin Synergies' onClick={event => this.handleClick(event, 'origins')} active={this.state.origins} />
-              <Dropdown.Item text='Class Synergies' onClick={event => this.handleClick(event, 'classes')} active={this.state.classes} />
+              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />
+              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' active={this.state.origins} />
+              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' active={this.state.classes} />
             </Dropdown.Menu>
           </Dropdown>
-          <Menu.Item name='items' onClick={event => this.handleClick(event, 'items')} active={this.state.items}>
-            <p>Items</p>
-          </Menu.Item>
-          <Menu.Item name='news' onClick={event => this.handleClick(event, 'news')} active={this.state.news}>
-            <p>News</p>
-          </Menu.Item>
+          <Menu.Item name='items' as={ Link } to='/items' active={this.state.items}><p>Items</p></Menu.Item>
+          <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
+        </Responsive>
+
+        <Responsive as={Menu} inverted fluid widths='5' size='small' minWidth={1024}>
+          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
+          <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />
+              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' active={this.state.origins} />
+              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' active={this.state.classes} />
+            </Dropdown.Menu>
+          </Dropdown>
+          <Menu.Item name='items' as={ Link } to='/items' active={this.state.items}><p>Items</p></Menu.Item>
+          <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
+          <Menu.Item id='navigation-bar-search-container'><Search id='navigation-bar-search-bar' placeholder='Search for summoner...' value={this.state.query} onSearchChange={this.handleSearch} onKeyDown={this.handleSearch} open={false} /></Menu.Item>
         </Responsive>
       </div>
     )

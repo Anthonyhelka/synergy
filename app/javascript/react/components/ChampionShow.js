@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Responsive } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
 import ChampionShowTile from './ChampionShowTile';
@@ -46,6 +44,7 @@ class ChampionShow extends Component {
         />
       );
     }
+    
     return (
       <div>
         <NavigationBar />

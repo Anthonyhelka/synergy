@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message, Responsive, Image } from 'semantic-ui-react';
+import { Message } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
 

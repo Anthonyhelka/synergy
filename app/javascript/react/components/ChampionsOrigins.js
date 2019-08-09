@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Image, Responsive } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
 import SynergyTile from './SynergyTile';

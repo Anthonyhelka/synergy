@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { browserHistory } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Message, Card, Image, Grid, Search, Table, Segment, Button, Icon, Responsive } from 'semantic-ui-react';
+import { browserHistory, Link } from 'react-router';
+import { Responsive, Segment, Search, Button, Icon, Image } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
 
@@ -13,9 +12,10 @@ class HomeContainer extends Component {
       query: '',
       filteredData: []
     }
-    this.onSearchChange = this.onSearchChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
     this.getData = this.getData.bind(this);
-    this.onResultSelect = this.onResultSelect.bind(this);
+    this.handleResultSelect = this.handleResultSelect.bind(this);
   }
 
   componentWillMount() {
@@ -38,15 +38,6 @@ class HomeContainer extends Component {
     }
   }
 
-  onSearchChange(event){
-    this.setState({ query: event.target.value })
-    this.getData();
-  }
-
-  onResultSelect(event, name){
-    browserHistory.push(`/champions/${name}`);
-  }
-
   getData() {
     fetch(`/api/v1/champions/overview`)
       .then(response => response.json())
@@ -62,25 +53,43 @@ class HomeContainer extends Component {
       });
   };
 
+  handleSearch(event){
+    if(event.keyCode == 13){
+      browserHistory.push(`/summoners/${event.target.value}`);
+      window.location.reload();
+    } else {
+      this.handleSearchChange(event);
+    }
+  }
+
+  handleSearchChange(event){
+    this.setState({ query: event.target.value })
+    this.getData();
+  }
+
+  handleResultSelect(event, name){
+    browserHistory.push(`/champions/${name}`);
+  }
+
   render() {
 
     let results = this.state.filteredData.map(champion => ({
-      title: champion.name,
-      image: champion.icon
-    }));
+          title: champion.name,
+          image: champion.icon
+        }));
 
     const resultRenderer = ({ title, image, id }) => {
       const pathToIcon = require.context('../../../../public/icons', true);
       return [
-        <Responsive key={1} as={Segment} fluid basic='very' textAlign='left' maxWidth={500}  onClick={event => this.onResultSelect(event, title)}>
+        <Responsive key={1} as={Segment} fluid basic='very' textAlign='left' maxWidth={500}  onClick={event => this.handleResultSelect(event, title)}>
           <img id='search-image-mobile' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>,
-        <Responsive key={2} as={Segment} fluid basic='very' textAlign='left' minWidth={501} maxWidth={1249}  onClick={event => this.onResultSelect(event, title)}>
+        <Responsive key={2} as={Segment} fluid basic='very' textAlign='left' minWidth={501} maxWidth={1249}  onClick={event => this.handleResultSelect(event, title)}>
           <img id='search-image-tablet-computer' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>,
-        <Responsive key={3} as={Segment} fluid basic='very' textAlign='left' minWidth={1250}  onClick={event => this.onResultSelect(event, title)}>
+        <Responsive key={3} as={Segment} fluid basic='very' textAlign='left' minWidth={1250}  onClick={event => this.handleResultSelect(event, title)}>
           <img id='search-image-large-computer' key={id} src={`${pathToIcon(image , true)}`} />
           <span id='search-title'>&nbsp;&nbsp;{title}</span>
         </Responsive>
@@ -91,11 +100,11 @@ class HomeContainer extends Component {
       <div>
         <NavigationBar page='home' />
 
-        <Responsive as={Image} id='home-logo-mobile-tablet' centered src={require('../../../../public/logo/transparentLogoBlack.png')} size='medium' maxWidth={800} />
-        <Responsive as={Image} id='home-logo-computer' centered src={require('../../../../public/logo/transparentLogoWhite.png')} size='medium' minWidth={801} />
+        <Responsive as={Image} id='home-logo-mobile-tablet' src={require('../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
+        <Responsive as={Image} id='home-logo-computer' src={require('../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
 
-        <Segment id='search-segment' textAlign='center' basic={true}>
-          <Search placeholder='Search for champion...' results={results} resultRenderer={resultRenderer} value={this.state.query} onSearchChange={this.onSearchChange} />
+        <Segment id='search-segment' textAlign='center' basic>
+          <Search id='search-bar' placeholder='Search for champion/summoner' value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={this.handleSearch} onKeyDown={this.handleSearch} showNoResults={false} />
         </Segment>
 
         <Segment id='button-segment' textAlign='center' basic={true}>
