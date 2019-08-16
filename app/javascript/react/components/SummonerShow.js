@@ -15,8 +15,8 @@ class SummonerShow extends Component {
   }
 
   componentDidMount() {
-    let summonerName = this.props.params.name
-    fetch(`/api/v1/summoner/${summonerName}`)
+    let summoner = this.props.params.name
+    fetch(`/api/v1/summoner/${summoner}`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -45,7 +45,7 @@ class SummonerShow extends Component {
         let winRate = ((this.state.rank.wins / (this.state.rank.wins + this.state.rank.losses)) * 100).toFixed(2);
         summonerDisplay = (
           <div>
-            <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.15.1/img/profileicon/${this.state.summoner.profileIconId}.png`} rounded centered size='tiny' />
+            <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.16.1/img/profileicon/${this.state.summoner.profileIconId}.png`} rounded centered size='tiny' />
             <Divider />
             <Image src={`${pathToRankedEmblem(rankTier, true)}`} alt={`${rankTier}`} centered size='tiny' />
             <span id='summoner-show-page-rank'>{this.state.rank.tier} {this.state.rank.rank} {this.state.rank.leaguePoints}LP</span>

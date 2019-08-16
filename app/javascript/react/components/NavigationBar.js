@@ -13,9 +13,7 @@ class NavigationBar extends Component {
       classes: false,
       items: false,
       news: false,
-      query: ''
     }
-    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentWillMount() {
@@ -40,15 +38,6 @@ class NavigationBar extends Component {
         break;
       default:
         break;
-    }
-  }
-
-  handleSearch(event){
-    if(event.keyCode == 13){
-      browserHistory.push(`/summoner/${event.target.value}`);
-      window.location.reload();
-    } else {
-      this.setState({  query: event.target.value })
     }
   }
 
@@ -81,7 +70,7 @@ class NavigationBar extends Component {
           <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
         </Responsive>
 
-        <Responsive as={Menu} inverted fluid widths='5' size='small' minWidth={1024}>
+        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={1024}>
           <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
           <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
             <Dropdown.Menu>
@@ -92,7 +81,6 @@ class NavigationBar extends Component {
           </Dropdown>
           <Menu.Item name='items' as={ Link } to='/items' active={this.state.items}><p>Items</p></Menu.Item>
           <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
-          <Menu.Item id='navigation-bar-search-container'><Search id='navigation-bar-search-bar' placeholder='Search for summoner...' value={this.state.query} onSearchChange={this.handleSearch} onKeyDown={this.handleSearch} open={false} /></Menu.Item>
         </Responsive>
       </div>
     )
