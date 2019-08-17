@@ -87,13 +87,14 @@ class SearchBar extends Component {
 
     return (
       <div>
-
         <Responsive maxWidth={500}>
           <Segment id='search-segment' textAlign='center' basic>
             <Segment id='search-bar-container' compact basic textAlign='center'>
               <Search id='search-bar' placeholder='Search for champion/summoner' value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={this.handleSearch} onKeyDown={this.handleSearch} icon={false} showNoResults={false} />
             </Segment>
+
             <br />
+
             <Segment id='search-bar-button-group-mobile' basic textAlign='center'>
               <Button.Group>
                 <Dropdown as={Button} primary text={this.state.region}>

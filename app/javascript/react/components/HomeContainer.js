@@ -43,28 +43,55 @@ class HomeContainer extends Component {
 
         <SearchBar />
 
-        <Segment id='button-segment' textAlign='center' basic={true}>
-          <Button.Group>
-            <Button animated as={ Link } to={'/champions'}>
-              <Button.Content visible>Champions</Button.Content>
-              <Button.Content hidden>
-                <Icon name='chess pawn' />
-              </Button.Content>
-            </Button>
-            <Button animated as={ Link } to={'/items'}>
-              <Button.Content visible>Items</Button.Content>
-              <Button.Content hidden>
-                <Icon name='shield alternate' />
-              </Button.Content>
-            </Button>
-            <Button animated as={ Link } to={'/news'}>
-              <Button.Content visible>News</Button.Content>
-              <Button.Content hidden>
-                <Icon name='newspaper' />
-              </Button.Content>
-            </Button>
-          </Button.Group>
-        </Segment>
+        <Responsive maxWidth={500}>
+          <Segment id='button-segment-mobile' textAlign='center' basic={true}>
+            <Button.Group>
+              <Button animated as={ Link } to={'/champions'}>
+                <Button.Content visible>Champions</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='chess pawn' />
+                </Button.Content>
+              </Button>
+              <Button animated as={ Link } to={'/items'}>
+                <Button.Content visible>Items</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='shield alternate' />
+                </Button.Content>
+              </Button>
+              <Button animated as={ Link } to={'/news'}>
+                <Button.Content visible>News</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='newspaper' />
+                </Button.Content>
+              </Button>
+            </Button.Group>
+          </Segment>
+        </Responsive>
+
+        <Responsive minWidth={501}>
+          <Segment id='button-segment-tablet-computer' textAlign='center' basic={true}>
+            <Button.Group>
+              <Button animated as={ Link } to={'/champions'}>
+                <Button.Content visible>Champions</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='chess pawn' />
+                </Button.Content>
+              </Button>
+              <Button animated as={ Link } to={'/items'}>
+                <Button.Content visible>Items</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='shield alternate' />
+                </Button.Content>
+              </Button>
+              <Button animated as={ Link } to={'/news'}>
+                <Button.Content visible>News</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='newspaper' />
+                </Button.Content>
+              </Button>
+            </Button.Group>
+          </Segment>
+        </Responsive>
       </div>
     )
   }

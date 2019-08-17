@@ -26,7 +26,7 @@ class ChampionsOverviewTile extends Component {
               </Header>
             </Grid.Row>
             <Grid.Row>
-              <span id='synergy-popup-description'>{synergy.desciption}</span>
+              <span id='synergy-popup-description'>{synergy.description}</span>
             </Grid.Row>
           </Grid>
         </Popup>

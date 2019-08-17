@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown, Message, Responsive, Image, Segment, Divider } from 'semantic-ui-react';
 
 import NavigationBar from './NavigationBar';
+import SearchBar from './SearchBar';
 
 class SummonerShow extends Component {
   constructor(props) {

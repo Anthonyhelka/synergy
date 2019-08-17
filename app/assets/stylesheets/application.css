@@ -87,8 +87,9 @@ body {
 
 /* Search Bar */
 #search-segment {
-  margin: 0px !important;
+  margin-bottom: 0px !important;
   padding: 0px !important;
+  height: 38px !important;
 }
 
 #search-bar-container {
@@ -100,25 +101,28 @@ body {
 #search-bar {
   width: 225px !important;
   border-radius: 0px !important;
+  height: 38px !important;
 }
 
 #region-button-container {
   display: inline-block !important;
   margin: 0px !important;
   padding: 0px !important;
+  height: 38px !important;
 }
 
 #search-button-container {
   display: inline-block !important;
   margin: 0px !important;
   padding: 0px !important;
+  height: 38px !important;
 }
 
 #search-button,
 #region-button {
   border-radius: 0px !important;
-  height: 38px !important;
   margin: 0px !important;
+  height: 100% !important;
 }
 
 #search-bar-button-group-mobile {
@@ -146,16 +150,10 @@ div.results.transition.visible {
   vertical-align: middle !important;
 }
 
-#search-image-mobile {
-  width: 15% !important;
-}
-
-#search-image-tablet-computer {
-  width: 5% !important;
-}
-
+#search-image-mobile,
+#search-image-tablet-computer,
 #search-image-large-computer {
-  width: 25% !important;
+  width: 20% !important;
 }
 
 #search-title {
@@ -164,18 +162,22 @@ div.results.transition.visible {
 }
 
 /* Buttons */
-#button-segment {
+#button-segment-mobile {
+  margin-top: 30px !important;
+}
+
+#button-segment-tablet-computer {
   margin-top: 0px !important;
 }
 
 .ui.animated.button {
-  color: #E9E9E9 !important;
-  background-color: #1B1C1D !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
 }
 
 .ui.animated.button:hover {
-  color: #E9E9E9 !important;
-  background-color: #3D3E3F !important;
+  color: #2185D0 !important;
+  background-color: #FFFFFF !important;
 }
 
 /* Champion Overview Page */
