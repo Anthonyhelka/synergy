@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Menu, Container, Header, List, Dropdown, Table, Icon, Responsive, Image } from 'semantic-ui-react';
+import { Table, Icon } from 'semantic-ui-react';
 
+import NavigationBar from './NavigationBar';
 import ChampionsOverviewTile from './ChampionsOverviewTile';
 
 class ChampionsOverview extends Component {
@@ -9,12 +9,12 @@ class ChampionsOverview extends Component {
     super(props);
     this.state={
       champions: [],
-      sort: '',
+      sort: ''
     }
-    this.onSortName = this.onSort.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
-  onSort(event, sortKey){
+  handleSort(event, sortKey){
     if (sortKey === 'nameSort' && this.state.sort === 'z-a') {
       this.setState({ sort: 'a-z' })
     } else if (sortKey === 'nameSort') {
@@ -90,44 +90,14 @@ class ChampionsOverview extends Component {
 
     return (
       <div>
-        <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
-          <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Home' as={ Link } to='/' />
-              <Dropdown.Item text='Champions' as={ Link } to='/champions' active />
-              <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' />
-              <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' />
-              <Dropdown.Item text='Items' as={ Link } to='/items' />
-              <Dropdown.Item text='News' as={ Link } to='/news' />
-            </Dropdown.Menu>
-          </Dropdown>
-        </Responsive>
-
-        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501}>
-          <Menu.Item name='home' as={ Link } to='/' >
-            <Image src={require('../../../../public/favicon.ico')} size='mini' />
-          </Menu.Item>
-          <Dropdown as={Menu.Item} item text='Champions' active>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active />
-              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' />
-              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' />
-            </Dropdown.Menu>
-          </Dropdown>
-          <Menu.Item name='items' as={ Link } to='/items' >
-            <p>Items</p>
-          </Menu.Item>
-          <Menu.Item name='news' as={ Link } to='/news' >
-            <p>News</p>
-          </Menu.Item>
-        </Responsive>
+        <NavigationBar page='overview' />
 
         <Table celled selectable unstackable striped fixed sortable>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell sorted={nameOrder} onClick={event => this.onSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
+              <Table.HeaderCell sorted={nameOrder} onClick={event => this.handleSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
               <Table.HeaderCell>Synergies</Table.HeaderCell>
-              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.onSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
+              <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.handleSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
               <Table.HeaderCell>Ability</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -136,7 +106,6 @@ class ChampionsOverview extends Component {
             {champions}
           </Table.Body>
         </Table>
-
       </div>
     )
   }

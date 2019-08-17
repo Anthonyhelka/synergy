@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Popup, Grid, Container, Header, Divider, Card, Responsive, List } from 'semantic-ui-react';
+import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
 
@@ -38,7 +38,7 @@ class SynergyTile extends Component {
       <div>
         <Container fluid textAlign='center'>
 
-          <Popup on='click' inverted={true} wide position='top center' hideOnScroll={true} basic={true} trigger={<Header><Image src={`${pathToSynergyIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
+          <Popup on='click' inverted wide position='top center' hideOnScroll basic trigger={<Header><Image src={`${pathToSynergyIcon(this.props.synergy.icon , true)}`} alt={`${this.props.synergy.icon}`} avatar verticalAlign='middle' /><br />{this.props.synergy.name}</Header>} >
             <Grid textAlign='center'>
               <Grid.Row>
                 <Header>

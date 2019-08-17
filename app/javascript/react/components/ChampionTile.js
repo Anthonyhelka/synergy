@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Card, Image, Icon, List, Header, Grid, Transition, Dimmer, Segment, Responsive, Label } from 'semantic-ui-react';
+import { List, Responsive, Card, Header, Label, Image } from 'semantic-ui-react';
 
 class ChampionTile extends Component {
   constructor(props) {
@@ -8,10 +8,10 @@ class ChampionTile extends Component {
     this.state={
       isHovered: false,
     }
-    this.onHover = this.onHover.bind(this)
+    this.handleHover = this.handleHover.bind(this)
   }
 
-  onHover(event){
+  handleHover(event){
     if(this.state.isHovered === false) {
       this.setState({ isHovered: true })
     } else if(this.state.isHovered === true) {
@@ -22,7 +22,6 @@ class ChampionTile extends Component {
   render() {
     const pathToIcon = require.context('../../../../public/icons', true);
     const pathToSplashart = require.context('../../../../public/splasharts', true);
-    const pathToAbility = require.context('../../../../public/abilities', true);
 
     let cardId;
     let cardExtraId;
@@ -43,7 +42,7 @@ class ChampionTile extends Component {
         </Responsive>
         <Responsive minWidth={1024}>
           <Card id={cardId} as={ Link } to={`/champions/${this.props.champion.name}`}>
-            <Image src={`${pathToSplashart(this.props.champion.icon, true)}`} onMouseEnter={event => this.onHover(event)} onMouseLeave={event => this.onHover(event)} size='small' />
+            <Image src={`${pathToSplashart(this.props.champion.icon, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
             <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.tier} color={this.props.champion.tier_color} size='mini' icon='dollar sign' /></Header></Card.Content>
           </Card>
         </Responsive>
