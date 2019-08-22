@@ -4,7 +4,6 @@ RSpec.describe Team, type: :model do
     let!(:team_two) { FactoryBot.create(:team)}
 
     it "has a valid factory" do
-      binding.pry
       expect(team_one).to be_valid
       expect(team_two).to be_valid
     end

@@ -1,4 +1,4 @@
-example_id                          | status | run_time        |
------------------------------------ | ------ | --------------- |
-./spec/models/champion_spec.rb[1:1] | passed | 0.15868 seconds |
-./spec/models/team_spec.rb[1:1]     | passed | 11.18 seconds   |
+example_id                          | status | run_time       |
+----------------------------------- | ------ | -------------- |
+./spec/models/champion_spec.rb[1:1] | passed | 20.99 seconds  |
+./spec/models/team_spec.rb[1:1]     | passed | 0.0317 seconds |

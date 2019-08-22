@@ -82,6 +82,7 @@ class ChampionShowTile extends Component {
                 <Grid.Row><b>Cost:</b>&nbsp;&nbsp;{this.props.champion.tier}</Grid.Row>
                 <Grid.Row><b>Health:</b>&nbsp;&nbsp;{this.props.champion.health[0]}/{this.props.champion.health[1]}/{this.props.champion.health[2]}</Grid.Row>
                 <Grid.Row><b>Attack Damage:</b>&nbsp;&nbsp;{this.props.champion.attack_damage}</Grid.Row>
+                <Grid.Row><b>Attack Speed:</b>&nbsp;&nbsp;{this.props.champion.attack_speed}</Grid.Row>
                 <Grid.Row><b>Range:</b>&nbsp;&nbsp;{this.props.champion.attack_range}</Grid.Row>
                 <Grid.Row><b>Armor:</b>&nbsp;&nbsp;{this.props.champion.armor}</Grid.Row>
                 <Grid.Row><b>Magic Resist:</b>&nbsp;&nbsp;{this.props.champion.magic_resist}</Grid.Row>
@@ -110,6 +111,7 @@ class ChampionShowTile extends Component {
                 <Grid.Row><b>Cost:</b>&nbsp;&nbsp;{this.props.champion.tier}</Grid.Row>
                 <Grid.Row><b>Health:</b>&nbsp;&nbsp;{this.props.champion.health[0]}/{this.props.champion.health[1]}/{this.props.champion.health[2]}</Grid.Row>
                 <Grid.Row><b>Attack Damage:</b>&nbsp;&nbsp;{this.props.champion.attack_damage}</Grid.Row>
+                <Grid.Row><b>Attack Speed:</b>&nbsp;&nbsp;{this.props.champion.attack_speed}</Grid.Row>
                 <Grid.Row><b>Range:</b>&nbsp;&nbsp;{this.props.champion.attack_range}</Grid.Row>
                 <Grid.Row><b>Armor:</b>&nbsp;&nbsp;{this.props.champion.armor}</Grid.Row>
                 <Grid.Row><b>Magic Resist:</b>&nbsp;&nbsp;{this.props.champion.magic_resist}</Grid.Row>

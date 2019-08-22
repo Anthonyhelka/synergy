@@ -4,6 +4,7 @@ RSpec.describe Champion, type: :model do
     let!(:champion_two) { FactoryBot.create(:champion)}
 
     it "has a valid factory" do
+      binding.pry
       expect(champion_one).to be_valid
       expect(champion_two).to be_valid
     end
