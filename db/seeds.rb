@@ -1,6 +1,36 @@
 Champion.delete_all
 Team.delete_all
 
+def tier_color(tier)
+  case tier
+    when 1
+      return "white"
+    when 2
+      return "green"
+    when 3
+      return "blue"
+    when 4
+      return "purple"
+    when 5
+      return "yellow"
+  end
+end
+
+def player_damage(tier)
+  case tier
+    when 1
+      return [1, 2, 4]
+    when 2
+      return [2, 3, 5]
+    when 3
+      return [2, 3, 6]
+    when 4
+      return [2, 4, 6]
+    when 5
+      return [3, 5, 8]
+  end
+end
+
 #Champions
 aatrox = Champion.create(
   id: 1,
@@ -11,7 +41,7 @@ aatrox = Champion.create(
   ability_type: "Active",
   ability_description: "Aatrox cleaves the area in front of him, dealing damage to enemies inside it.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Demon",
   character_class_1: "Blademaster",
   health: [700, 1350, 2700],
@@ -22,7 +52,7 @@ aatrox = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 ahri = Champion.create(
   id: 2,
@@ -33,7 +63,7 @@ ahri = Champion.create(
   ability_type: "Active",
   ability_description: "Ahri fires an orb in a line that returns to her, damaging enemies it passes through.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Wild",
   character_class_1: "Sorcerer",
   health: [450, 810, 1620],
@@ -44,7 +74,7 @@ ahri = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 akali = Champion.create(
   id: 3,
@@ -55,7 +85,7 @@ akali = Champion.create(
   ability_type: "Active",
   ability_description: "Akali throws shurikens in front of her, dealing damage.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Ninja",
   character_class_1: "Assassin",
   health: [650, 1260, 2520],
@@ -66,7 +96,7 @@ akali = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 anivia = Champion.create(
   id: 4,
@@ -77,7 +107,7 @@ anivia = Champion.create(
   ability_type: "Active",
   ability_description: "Anivia channels a large hailstorm, damaging enemies inside of it.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Glacial",
   character_class_1: "Elementalist",
   health: [650, 1170, 2340],
@@ -88,7 +118,7 @@ anivia = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 ashe = Champion.create(
   id: 5,
@@ -99,7 +129,7 @@ ashe = Champion.create(
   ability_type: "Active",
   ability_description: "Ashe fires an arrow that travels across the map, damages, and stuns (stun duration based on each hex traveled).",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Glacial",
   character_class_1: "Ranger",
   health: [550, 990, 1980],
@@ -110,7 +140,7 @@ ashe = Champion.create(
   attack_range: 4,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 aurelionsol = Champion.create(
   id: 6,
@@ -121,7 +151,7 @@ aurelionsol = Champion.create(
   ability_type: "Active",
   ability_description: "Aurelion Sol breathes a large blast of fire in a line, dealing damage to enemies.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Dragon",
   character_class_1: "Sorcerer",
   health: [650, 1080, 2160],
@@ -132,7 +162,7 @@ aurelionsol = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 blitzcrank = Champion.create(
   id: 7,
@@ -143,7 +173,7 @@ blitzcrank = Champion.create(
   ability_type: "Active",
   ability_description: "Blitzcrank pulls the furthest enemy to him.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Robot",
   character_class_1: "Brawler",
   health: [600, 1080, 2160],
@@ -154,7 +184,7 @@ blitzcrank = Champion.create(
   attack_range: 1,
   armor: 35,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 brand = Champion.create(
   id: 8,
@@ -165,7 +195,7 @@ brand = Champion.create(
   ability_type: "Active",
   ability_description: "Brand launches a bouncing fireball, damaging enemies hit.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Demon",
   character_class_1: "Elementalist",
   health: [700, 1260, 2520],
@@ -176,7 +206,7 @@ brand = Champion.create(
   attack_range: 3,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 braum = Champion.create(
   id: 9,
@@ -187,7 +217,7 @@ braum = Champion.create(
   ability_type: "Active",
   ability_description: "Braum creates a barrier that blocks a percentage of all incoming damage.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Glacial",
   character_class_1: "Guardian",
   health: [650, 1350, 2700],
@@ -198,7 +228,7 @@ braum = Champion.create(
   attack_range: 1,
   armor: 75,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 camille = Champion.create(
   id: 52,
@@ -209,7 +239,7 @@ camille = Champion.create(
   ability_type: "Active",
   ability_description: "Camille roots an enemy and forces her in-range teammates to target whomever she's fighting.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Hextech",
   character_class_1: "Blademaster",
   health: [550, 990, 1980],
@@ -220,7 +250,7 @@ camille = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 chogath = Champion.create(
   id: 10,
@@ -231,7 +261,7 @@ chogath = Champion.create(
   ability_type: "Active",
   ability_description: "Cho\'gath ruptures an area, knocking up and damaging enemies inside of it.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Void",
   character_class_1: "Brawler",
   health: [1000, 2000, 4000],
@@ -242,7 +272,7 @@ chogath = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 darius = Champion.create(
   id: 11,
@@ -253,7 +283,7 @@ darius = Champion.create(
   ability_type: "Active",
   ability_description: "Darius swings his axe, damaging nearby enemies and healing himself based off his missing health.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Imperial",
   character_class_1: "Knight",
   health: [600, 1080, 2160],
@@ -264,7 +294,7 @@ darius = Champion.create(
   attack_range: 1,
   armor: 40,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 draven = Champion.create(
   id: 12,
@@ -275,7 +305,7 @@ draven = Champion.create(
   ability_type: "Active",
   ability_description: "Draven gains bonus on-hit damage and Attack Speed. Stacks up to two times.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Imperial",
   character_class_1: "Blademaster",
   health: [700, 1260, 2520],
@@ -286,7 +316,7 @@ draven = Champion.create(
   attack_range: 3,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 elise = Champion.create(
   id: 13,
@@ -297,7 +327,7 @@ elise = Champion.create(
   ability_type: "Active",
   ability_description: "Elise fires a cocoon stunning the nearest enemy and transforms, summoning 1-4 Spiderlings depending on level.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Demon",
   character_class_1: "Shapeshifter",
   health: [500, 900, 1800],
@@ -308,7 +338,7 @@ elise = Champion.create(
   attack_range: 2,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 evelynn = Champion.create(
   id: 14,
@@ -319,7 +349,7 @@ evelynn = Champion.create(
   ability_type: "Active",
   ability_description: "Evelynn deals damage to the 3 closest enemies and teleports away. Damage is increased against low health enemies.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Demon",
   character_class_1: "Assassin",
   health: [550, 990, 1980],
@@ -330,7 +360,7 @@ evelynn = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 fiora = Champion.create(
   id: 15,
@@ -341,7 +371,7 @@ fiora = Champion.create(
   ability_type: "Active",
   ability_description: "Fiora becomes immune to damage and spells. After a short delay, she stuns and damages the closest enemy.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Noble",
   character_class_1: "Blademaster",
   health: [400, 720, 1440],
@@ -352,7 +382,7 @@ fiora = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 gangplank = Champion.create(
   id: 16,
@@ -363,7 +393,7 @@ gangplank = Champion.create(
   ability_type: "Passive/Active",
   ability_description: "Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Pirate",
   character_class_1: "Blademaster",
   character_class_2: "Gunslinger",
@@ -375,7 +405,7 @@ gangplank = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 garen = Champion.create(
   id: 17,
@@ -386,7 +416,7 @@ garen = Champion.create(
   ability_type: "Active",
   ability_description: "Garen rapidly spins his sword around his body, becoming immune to magic damage and dealing damage to nearby enemies.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Noble",
   character_class_1: "Knight",
   health: [600, 1080, 2160],
@@ -397,7 +427,7 @@ garen = Champion.create(
   attack_range: 1,
   armor: 40,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 gnar = Champion.create(
   id: 18,
@@ -408,7 +438,7 @@ gnar = Champion.create(
   ability_type: "Active",
   ability_description: "Gnar transforms and jumps behind the furthest enemy, damaging and shoving enemies backwards.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Wild",
   origin_2: "Yordle",
   character_class_1: "Shapeshifter",
@@ -420,7 +450,7 @@ gnar = Champion.create(
   attack_range: 2,
   armor: 30,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 graves = Champion.create(
   id: 19,
@@ -431,7 +461,7 @@ graves = Champion.create(
   ability_type: "Passive",
   ability_description: "Graves\' attacks deal splash damage to nearby enemies.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Pirate",
   character_class_1: "Gunslinger",
   health: [450, 900, 1800],
@@ -442,7 +472,7 @@ graves = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 jayce = Champion.create(
   id: 53,
@@ -453,7 +483,7 @@ jayce = Champion.create(
   ability_type: "Active",
   ability_description: "Jayce disrupts the enemy frontline by knocking back an enemy unit with his hammer. He then switches to his Mercury Cannon bringing increased attack speed and ranged damage.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Hextech",
   character_class_1: "Shapeshifter",
   health: [600, 1080, 2160],
@@ -464,7 +494,7 @@ jayce = Champion.create(
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 jinx = Champion.create(
   id: 54,
@@ -475,7 +505,7 @@ jinx = Champion.create(
   ability_type: "Passive",
   ability_description: "Jinx Gets Excited after her first takedown, gaining bonus attack speed. If she scores a second takedown she pulls out Fishbones, her rocket launcher, causing her attacks to deal AoE damage.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Hextech",
   character_class_1: "Gunslinger",
   health: [550, 990, 1980],
@@ -486,7 +516,7 @@ jinx = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 karthus = Champion.create(
   id: 20,
@@ -497,7 +527,7 @@ karthus = Champion.create(
   ability_type: "Active",
   ability_description: "Karthus deals damage to a number of random enemies after a long channel.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Phantom",
   character_class_1: "Sorcerer",
   health: [850, 1530, 3060],
@@ -508,7 +538,7 @@ karthus = Champion.create(
   attack_range: 3,
   armor: 25,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 kassadin = Champion.create(
   id: 21,
@@ -519,7 +549,7 @@ kassadin = Champion.create(
   ability_type: "Passive",
   ability_description: "Kassadin\'s attacks steal mana from enemies, converting it into a shield.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Void",
   character_class_1: "Sorcerer",
   health: [550, 990, 1980],
@@ -530,7 +560,7 @@ kassadin = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 katarina = Champion.create(
   id: 22,
@@ -541,7 +571,7 @@ katarina = Champion.create(
   ability_type: "Active",
   ability_description: "Katarina channels and fires daggers at a number of nearby enemies, dealing damage and reducing healing.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Imperial",
   character_class_1: "Assassin",
   health: [450, 810, 1620],
@@ -552,7 +582,7 @@ katarina = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 kayle = Champion.create(
   id: 23,
@@ -563,7 +593,7 @@ kayle = Champion.create(
   ability_type: "Active",
   ability_description: "Kayle shields an ally, making them immune to damage.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Noble",
   character_class_1: "Knight",
   health: [750, 1440, 2880],
@@ -574,7 +604,7 @@ kayle = Champion.create(
   attack_range: 3,
   armor: 40,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 kennen = Champion.create(
   id: 24,
@@ -585,7 +615,7 @@ kennen = Champion.create(
   ability_type: "Active",
   ability_description: "Kennen summons a storm around him, dealing damage and stunning enemies inside of it.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Ninja",
   origin_2: "Yordle",
   character_class_1: "Elementalist",
@@ -597,7 +627,7 @@ kennen = Champion.create(
   attack_range: 2,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 khazix = Champion.create(
   id: 25,
@@ -608,7 +638,7 @@ khazix = Champion.create(
   ability_type: "Active",
   ability_description: "Kha\'Zix slashes the closest enemy, dealing bonus damage to enemies that are alone.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Void",
   character_class_1: "Assassin",
   health: [500, 900, 1800],
@@ -619,7 +649,7 @@ khazix = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 kindred = Champion.create(
   id: 26,
@@ -630,7 +660,7 @@ kindred = Champion.create(
   ability_type: "Active",
   ability_description: "Kindred creates a zone around herself that prevents allies from dying.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Phantom",
   character_class_1: "Ranger",
   health: [600, 1080, 2160],
@@ -641,7 +671,7 @@ kindred = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 leona = Champion.create(
   id: 27,
@@ -652,7 +682,7 @@ leona = Champion.create(
   ability_type: "Active",
   ability_description: "Leona calls down a solar ray, stunning enemies in the center and dealing damage to enemies inside it.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Noble",
   character_class_1: "Guardian",
   health: [750, 1350, 2700],
@@ -663,7 +693,7 @@ leona = Champion.create(
   attack_range: 1,
   armor: 100,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 lissandra = Champion.create(
   id: 28,
@@ -674,7 +704,7 @@ lissandra = Champion.create(
   ability_type: "Active",
   ability_description: "Lissandra encases the target in ice, dealing damage to nearby enemies. Below half HP, Lissandra instead encases herself, becoming untargetable.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Glacial",
   character_class_1: "Elementalist",
   health: [450, 810, 1620],
@@ -685,7 +715,7 @@ lissandra = Champion.create(
   attack_range: 2,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 lucian = Champion.create(
   id: 29,
@@ -696,7 +726,7 @@ lucian = Champion.create(
   ability_type: "Active",
   ability_description: "Lucian dashes away to safety and attacks an enemy twice, once with Attack Damage and once with Spell Damage.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Noble",
   character_class_1: "Gunslinger",
   health: [600, 1080, 2160],
@@ -707,7 +737,7 @@ lucian = Champion.create(
   attack_range: 3,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 lulu = Champion.create(
   id: 30,
@@ -718,7 +748,7 @@ lulu = Champion.create(
   ability_type: "Active",
   ability_description: "Lulu grants an ally bonus Health, knocking up enemies near them.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Yordle",
   character_class_1: "Sorcerer",
   health: [500, 900, 1800],
@@ -729,7 +759,7 @@ lulu = Champion.create(
   attack_range: 2,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 missfortune = Champion.create(
   id: 31,
@@ -740,7 +770,7 @@ missfortune = Champion.create(
   ability_type: "Active",
   ability_description: "Miss Fortune channels and fires several waves of bullets in a cone.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Pirate",
   character_class_1: "Gunslinger",
   health: [700, 1170, 2340],
@@ -751,7 +781,7 @@ missfortune = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 mordekaiser = Champion.create(
   id: 32,
@@ -762,7 +792,7 @@ mordekaiser = Champion.create(
   ability_type: "Active",
   ability_description: "Mordekaiser slams his mace in front him, dealing damage in a line.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Phantom",
   character_class_1: "Knight",
   health: [550, 900, 1800],
@@ -773,7 +803,7 @@ mordekaiser = Champion.create(
   attack_range: 1,
   armor: 40,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 morgana = Champion.create(
   id: 33,
@@ -784,7 +814,7 @@ morgana = Champion.create(
   ability_type: "Active",
   ability_description: "Morgana fires chains to nearby enemies, dealing damage and stunning after a short delay if they are still nearby.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Demon",
   character_class_1: "Sorcerer",
   health: [650, 1170, 2340],
@@ -795,7 +825,7 @@ morgana = Champion.create(
   attack_range: 2,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 nidalee = Champion.create(
   id: 34,
@@ -806,7 +836,7 @@ nidalee = Champion.create(
   ability_type: "Active",
   ability_description: "Nidalee heals herself and the weakest ally, then transforms.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Wild",
   character_class_1: "Shapeshifter",
   health: [500, 900, 1800],
@@ -817,7 +847,7 @@ nidalee = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 poppy = Champion.create(
   id: 35,
@@ -828,7 +858,7 @@ poppy = Champion.create(
   ability_type: "Active",
   ability_description: "Poppy brings down her hammer, knocking away and stunning nearby enemies.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Yordle",
   character_class_1: "Knight",
   health: [800, 1440, 2880],
@@ -839,7 +869,7 @@ poppy = Champion.create(
   attack_range: 1,
   armor: 40,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 pyke = Champion.create(
   id: 36,
@@ -850,7 +880,7 @@ pyke = Champion.create(
   ability_type: "Active",
   ability_description: "Pyke dashes behind the furthest enemy, creating an afterimage that stuns enemies it passes through.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Pirate",
   character_class_1: "Assassin",
   health: [600, 1080, 2160],
@@ -861,7 +891,7 @@ pyke = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 reksai = Champion.create(
   id: 37,
@@ -872,7 +902,7 @@ reksai = Champion.create(
   ability_type: "Active",
   ability_description: "Rek\'Sai burrows for a short duration becoming untargetable and healing. When Rek\'Sai unburrows she deals damage and knocks up the closest enemy.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Void",
   character_class_1: "Brawler",
   health: [650, 1170, 2340],
@@ -883,7 +913,7 @@ reksai = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 rengar = Champion.create(
   id: 38,
@@ -894,7 +924,7 @@ rengar = Champion.create(
   ability_type: "Active",
   ability_description: "Rengar leaps to the weakest enemy and stabs them, he then gains an attack speed bonus.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Wild",
   character_class_1: "Assassin",
   health: [550, 900, 1980],
@@ -905,7 +935,7 @@ rengar = Champion.create(
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 sejuani = Champion.create(
   id: 39,
@@ -916,7 +946,7 @@ sejuani = Champion.create(
   ability_type: "Active",
   ability_description: "Sejuani creates a large glacial storm, stunning enemies within it after a short delay.",
   tier: 4,
-  tier_color: "purple",
+  tier_color: tier_color(4),
   origin_1: "Glacial",
   character_class_1: "Knight",
   health: [850, 1530, 3060],
@@ -927,7 +957,7 @@ sejuani = Champion.create(
   attack_range: 1,
   armor: 40,
   magic_resist: 20,
-  player_damage: [2, 4, 6]
+  player_damage: player_damage(4)
 )
 shen = Champion.create(
   id: 40,
@@ -938,7 +968,7 @@ shen = Champion.create(
   ability_type: "Active",
   ability_description: "Shen creates a zone around himself, allowing allies to dodge all attacks.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Ninja",
   character_class_1: "Blademaster",
   health: [650, 1170, 2340],
@@ -949,7 +979,7 @@ shen = Champion.create(
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 shyvana = Champion.create(
   id: 41,
@@ -960,7 +990,7 @@ shyvana = Champion.create(
   ability_type: "Active",
   ability_description: "Shyvana dashes away and transforms. While transformed, Shyvana's attacks become ranged and light the ground on fire.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Dragon",
   character_class_1: "Shapeshifter",
   health: [650, 990, 1980],
@@ -971,7 +1001,7 @@ shyvana = Champion.create(
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 swain = Champion.create(
   id: 42,
@@ -982,7 +1012,7 @@ swain = Champion.create(
   ability_type: "Active",
   ability_description: "Swain transforms, draining health from all nearby enemies.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Demon",
   origin_2: "Imperial",
   character_class_1: "Shapeshifter",
@@ -994,7 +1024,7 @@ swain = Champion.create(
   attack_range: 2,
   armor: 25,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 tristana = Champion.create(
   id: 43,
@@ -1005,7 +1035,7 @@ tristana = Champion.create(
   ability_type: "Active",
   ability_description: "Tristana places a bomb on her current target that detonates after 4 attacks, damaging nearby enemies.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Yordle",
   character_class_1: "Gunslinger",
   health: [500, 900, 1800],
@@ -1016,7 +1046,7 @@ tristana = Champion.create(
   attack_range: 4,
   armor: 20,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 twistedfate = Champion.create(
   id: 51,
@@ -1027,7 +1057,7 @@ twistedfate = Champion.create(
   ability_type: "Active",
   ability_description: "Twisted Fate throws a card that either stuns, deals damage around his target, or restores mana to himself and nearby allies.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Pirate",
   character_class_1: "Sorcerer",
   health: [450, 810, 1620],
@@ -1038,7 +1068,7 @@ twistedfate = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 varus = Champion.create(
   id: 44,
@@ -1049,7 +1079,7 @@ varus = Champion.create(
   ability_type: "Active",
   ability_description: "Varus charges and fires an arrow, dealing damage to all enemies in a line.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Demon",
   character_class_1: "Ranger",
   health: [500, 900, 1800],
@@ -1060,7 +1090,7 @@ varus = Champion.create(
   attack_range: 4,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 vayne = Champion.create(
   id: 45,
@@ -1071,7 +1101,7 @@ vayne = Champion.create(
   ability_type: "Passive",
   ability_description: "Vayne deals bonus true damage every third attack based on the enemy's maximum health.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Noble",
   character_class_1: "Ranger",
   health: [550, 990, 1980],
@@ -1082,7 +1112,7 @@ vayne = Champion.create(
   attack_range: 3,
   armor: 25,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 veigar = Champion.create(
   id: 46,
@@ -1093,7 +1123,7 @@ veigar = Champion.create(
   ability_type: "Active",
   ability_description: "Veigar blasts an enemy with magical energy. This spell instantly kills if the enemy is a lower star level than Veigar.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Yordle",
   character_class_1: "Sorcerer",
   health: [500, 810, 1620],
@@ -1104,7 +1134,7 @@ veigar = Champion.create(
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 vi = Champion.create(
   id: 55,
@@ -1115,7 +1145,7 @@ vi = Champion.create(
   ability_type: "Active",
   ability_description: "Vi targets the farthest enemy and charges towards them, knocking aside and damaging every enemy along the way. Once she gets there, she knocks her target up and damages them.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Hextech",
   character_class_1: "Brawler",
   health: [600, 1080, 2160],
@@ -1126,7 +1156,7 @@ vi = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 volibear = Champion.create(
   id: 47,
@@ -1137,7 +1167,7 @@ volibear = Champion.create(
   ability_type: "Active",
   ability_description: "Volibear\'s attacks bounce between enemies.",
   tier: 3,
-  tier_color: "blue",
+  tier_color: tier_color(3),
   origin_1: "Glacial",
   character_class_1: "Brawler",
   health: [750, 1170, 2340],
@@ -1148,7 +1178,7 @@ volibear = Champion.create(
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
-  player_damage: [2, 3, 6]
+  player_damage: player_damage(3)
 )
 warwick = Champion.create(
   id: 48,
@@ -1159,7 +1189,7 @@ warwick = Champion.create(
   ability_type: "Active",
   ability_description: "Warwick pounces onto the lowest health enemy, stunning and damaging them.",
   tier: 1,
-  tier_color: "white",
+  tier_color: tier_color(1),
   origin_1: "Wild",
   character_class_1: "Brawler",
   health: [600, 1080, 2160],
@@ -1170,7 +1200,7 @@ warwick = Champion.create(
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
-  player_damage: [1, 2, 4]
+  player_damage: player_damage(1)
 )
 yasuo = Champion.create(
   id: 49,
@@ -1181,7 +1211,7 @@ yasuo = Champion.create(
   ability_type: "Active",
   ability_description: "Yasuo stabs forward dealing damage. On third cast, Yasuo launches a tornado dealing damage and knocking up enemies in a line.",
   tier: 5,
-  tier_color: "yellow",
+  tier_color: tier_color(5),
   origin_1: "Exile",
   character_class_1: "Blademaster",
   health: [700, 1260, 2520],
@@ -1192,7 +1222,7 @@ yasuo = Champion.create(
   attack_range: 1,
   armor: 35,
   magic_resist: 20,
-  player_damage: [3, 5, 8]
+  player_damage: player_damage(5)
 )
 zed = Champion.create(
   id: 50,
@@ -1203,7 +1233,7 @@ zed = Champion.create(
   ability_type: "Active",
   ability_description: "Zed fires a shuriken in a line, damaging enemies it passes through.",
   tier: 2,
-  tier_color: "green",
+  tier_color: tier_color(2),
   origin_1: "Ninja",
   character_class_1: "Assassin",
   health: [550, 900, 1800],
@@ -1214,7 +1244,7 @@ zed = Champion.create(
   attack_range: 1,
   armor: 25,
   magic_resist: 20,
-  player_damage: [2, 3, 5]
+  player_damage: player_damage(2)
 )
 
 #Origins

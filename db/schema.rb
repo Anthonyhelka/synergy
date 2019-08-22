@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.integer "starting_mana", null: false
     t.integer "mana_cost", null: false
     t.integer "attack_damage", null: false
-    t.integer "attack_speed", null: false
+    t.float "attack_speed", null: false
     t.integer "attack_range", null: false
     t.integer "armor", null: false
     t.integer "magic_resist", null: false

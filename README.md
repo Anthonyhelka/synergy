@@ -1,24 +1,41 @@
-# README
+# Synergy
+Synergy is an application that was developed to help users improve at the popular game Teamfight Tactics. Synergy aims to smooth out the harsh learning curve and mountains of statistics that exist in Teamfight Tactics by giving users the most essential information they need in a in a clear and effective manner.
+![Alt text](/public/favicon.ico?raw=true "Synergy")
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Tech/Frameworks Used
+**Ruby v2.4.5**
 
-Things you may want to cover:
+**Built with:**
+* [Ruby on Rails](https://rubyonrails.org/) v5.2.3
+* [React](https://reactjs.org/) v16.8.6
+* [Semantic UI React](https://react.semantic-ui.com/) v0.87.2
 
-* Ruby version
+**Tested with:**
+* [Rspec](https://rspec.info/)
+* [Capybara](https://teamcapybara.github.io/capybara/)
+* [FactoryBot](https://github.com/thoughtbot/factory_bot)
+* [Faker](https://github.com/faker-ruby/faker)
 
-* System dependencies
+# Installation
+**Install Ruby Gems:** ```$ bundle exec bundle install```
 
-* Configuration
+**Install JSON Packages:** ```$ yarn install```
 
-* Database creation
+# Database Creation & Initialization
+**Create Database:** ```$ rails db:create```
 
-* Database initialization
+**Create Tables:** ```$ rails db:migrate```
 
-* How to run the test suite
+**Load Data From Seeds File:** ```$ rails db:seed```
 
-* Services (job queues, cache servers, search engines, etc.)
+# Testing
+**Run Ruby Tests:** ```$ rspec```
 
-* Deployment instructions
+**Run React Tests:** ``` $ yarn run test```
 
-* ...
+# Deployment
+**Start Rails Server:** ```$ rails server```
+
+**Start Yarn Scripts:** ```$ yarn run start```
+
+**Navigate to http://localhost:3000/**
