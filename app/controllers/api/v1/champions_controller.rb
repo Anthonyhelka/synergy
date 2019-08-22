@@ -9,14 +9,14 @@ class Api::V1::ChampionsController < ApplicationController
   end
 
   def origins
-    origins = Team.where(teamType: "Origin")
+    origins = Team.where(team_type: "Origin")
     render json: {
       origins: ActiveModel::Serializer::CollectionSerializer.new(origins, each_serializer: TeamSerializer)
     }
   end
 
   def classes
-    classes = Team.where(teamType: "Class")
+    classes = Team.where(team_type: "Class")
     render json: {
       classes: ActiveModel::Serializer::CollectionSerializer.new(classes, each_serializer: TeamSerializer)
     }
