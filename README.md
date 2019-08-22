@@ -1,6 +1,8 @@
 # Synergy
 Synergy is an application that was developed to help users improve at the popular game Teamfight Tactics. Synergy aims to smooth out the harsh learning curve and mountains of statistics that exist in Teamfight Tactics by giving users the most essential information they need in a in a clear and effective manner.
-![Alt text](/public/favicon.ico?raw=true "Synergy")
+<p align="center">
+  <img src="/public/favicon.ico?raw=true" alt="Synergy" width="400">
+</p>
 
 # Tech/Frameworks Used
 **Ruby v2.4.5**
