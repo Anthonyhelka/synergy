@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe "Champion object", type: :model do
     let(:champion) { FactoryBot.create(:champion) }
 

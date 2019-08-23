@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe "Team object", type: :model do
     let(:team) { FactoryBot.create(:team) }
 

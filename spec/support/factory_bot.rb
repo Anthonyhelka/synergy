@@ -1,3 +1,5 @@
+require "factory_bot_rails"
+
 ability_type = ["Active", "Passive"]
 tier = [1, 2, 3, 4, 5]
 tier_color = ["white", "green", "blue", "purple", "yellow"]
@@ -6,6 +8,8 @@ character_class = ["Assassin", "Blademaster", "Brawler", "Elementalist", "Guardi
 def random_number
   return rand 1..100
 end
+name = ["Demon", "Dragon", "Exile", "Glacial", "Hextech", "Imperial", "Ninja", "Noble", "Phantom", "Pirate", "Robot", "Void", "Wild", "Yordle", "Assassin", "Blademaster", "Brawler", "Elementalist", "Guardian", "Gunslinger", "Knight", "Ranger", "Shapeshifter", "Sorcerer"]
+team_type = ["Origin", "Class"]
 
 FactoryBot.define do
   factory :champion do
@@ -28,5 +32,13 @@ FactoryBot.define do
     armor { random_number }
     magic_resist { random_number }
     player_damage { [random_number, random_number, random_number] }
+  end
+
+  factory :team do
+    name { name.sample  }
+    icon { "./demon" }
+    team_type { team_type.sample }
+    description { Faker::Hipster.sentences(number: 1) }
+    champions { [FactoryBot.create(:champion), FactoryBot.create(:champion)]  }
   end
 end
