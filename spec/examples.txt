@@ -1,4 +1,39 @@
-example_id                          | status | run_time       |
------------------------------------ | ------ | -------------- |
-./spec/models/champion_spec.rb[1:1] | passed | 20.99 seconds  |
-./spec/models/team_spec.rb[1:1]     | passed | 0.0317 seconds |
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/controllers/champion_spec.rb[1:1:1] | passed | 0.05674 seconds |
+./spec/controllers/champion_spec.rb[1:1:2] | passed | 0.0259 seconds  |
+./spec/controllers/champion_spec.rb[1:2:1] | passed | 0.01361 seconds |
+./spec/controllers/champion_spec.rb[1:2:2] | passed | 0.01649 seconds |
+./spec/controllers/champion_spec.rb[1:3:1] | passed | 0.01313 seconds |
+./spec/controllers/champion_spec.rb[1:3:2] | passed | 0.01174 seconds |
+./spec/controllers/champion_spec.rb[1:4:1] | passed | 0.01204 seconds |
+./spec/controllers/champion_spec.rb[1:4:2] | passed | 0.01262 seconds |
+./spec/controllers/summoner_spec.rb[1:1:1] | passed | 0.88863 seconds |
+./spec/controllers/summoner_spec.rb[1:1:2] | passed | 0.87541 seconds |
+./spec/controllers/summoner_spec.rb[1:1:3] | passed | 0.84275 seconds |
+./spec/controllers/summoner_spec.rb[1:1:4] | failed | 0.83947 seconds |
+./spec/models/champion_spec.rb[1:1]        | passed | 0.01281 seconds |
+./spec/models/champion_spec.rb[1:2]        | passed | 0.00475 seconds |
+./spec/models/champion_spec.rb[1:3]        | passed | 0.0048 seconds  |
+./spec/models/champion_spec.rb[1:4]        | passed | 0.00426 seconds |
+./spec/models/champion_spec.rb[1:5]        | passed | 0.00408 seconds |
+./spec/models/champion_spec.rb[1:6]        | passed | 0.00671 seconds |
+./spec/models/champion_spec.rb[1:7]        | passed | 0.00541 seconds |
+./spec/models/champion_spec.rb[1:8]        | passed | 0.00488 seconds |
+./spec/models/champion_spec.rb[1:9]        | passed | 0.00676 seconds |
+./spec/models/champion_spec.rb[1:10]       | passed | 0.00469 seconds |
+./spec/models/champion_spec.rb[1:11]       | passed | 0.00517 seconds |
+./spec/models/champion_spec.rb[1:12]       | passed | 0.0068 seconds  |
+./spec/models/champion_spec.rb[1:13]       | passed | 0.00446 seconds |
+./spec/models/champion_spec.rb[1:14]       | passed | 0.00505 seconds |
+./spec/models/champion_spec.rb[1:15]       | passed | 0.00692 seconds |
+./spec/models/champion_spec.rb[1:16]       | passed | 0.00474 seconds |
+./spec/models/champion_spec.rb[1:17]       | passed | 0.00559 seconds |
+./spec/models/champion_spec.rb[1:18]       | passed | 0.00592 seconds |
+./spec/models/champion_spec.rb[1:19]       | passed | 0.00464 seconds |
+./spec/models/champion_spec.rb[1:20]       | passed | 0.00702 seconds |
+./spec/models/team_spec.rb[1:1]            | passed | 0.01932 seconds |
+./spec/models/team_spec.rb[1:2]            | passed | 0.01817 seconds |
+./spec/models/team_spec.rb[1:3]            | passed | 0.01775 seconds |
+./spec/models/team_spec.rb[1:4]            | passed | 0.01796 seconds |
+./spec/models/team_spec.rb[1:5]            | passed | 0.01798 seconds |

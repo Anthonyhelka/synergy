@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon", null: false
-    t.string "teamType", null: false
+    t.string "team_type", null: false
     t.string "description"
     t.string "upgrade_1_number"
     t.string "upgrade_1_description"

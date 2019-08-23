@@ -3,7 +3,7 @@ class CreateTeam < ActiveRecord::Migration[5.2]
     create_table :teams do |t|
       t.string :name, null: false
       t.string :icon, null: false
-      t.string :teamType, null: false
+      t.string :team_type, null: false
       t.string :description
       t.string :upgrade_1_number
       t.string :upgrade_1_description

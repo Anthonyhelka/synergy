@@ -3,5 +3,5 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
-  validates :teamType, presence: true
+  validates :team_type, presence: true
 end
