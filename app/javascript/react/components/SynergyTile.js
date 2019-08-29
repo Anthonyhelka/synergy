@@ -52,7 +52,7 @@ class SynergyTile extends Component {
             </Grid>
           </Popup>
 
-          <List horizontal size='mini'>
+          <List id='synergy-list-div' horizontal size='mini'>
             {champions}
           </List>
 

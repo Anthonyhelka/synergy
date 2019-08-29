@@ -45,8 +45,8 @@ class NavigationBar extends Component {
     return (
       <div>
         <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
-          <Dropdown item text={<Image src={require('../../../../public/favicon.ico')} />}>
-            <Dropdown.Menu textAlign='center'>
+          <Dropdown id='navigation-bar-dropdown-image-mobile' item trigger={<Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/>}>
+            <Dropdown.Menu>
               <Dropdown.Item text='Home' as={ Link } to='/' active={this.state.home} />
               <Dropdown.Item text='Champions' as={ Link } to='/champions/overview' active={this.state.overview} />
               <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' active={this.state.origins} />
@@ -58,7 +58,7 @@ class NavigationBar extends Component {
         </Responsive>
 
         <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501} maxWidth={1023}>
-          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
+          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/></Menu.Item>
           <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
             <Dropdown.Menu>
               <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />
@@ -71,7 +71,7 @@ class NavigationBar extends Component {
         </Responsive>
 
         <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={1024}>
-          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image src={require('../../../../public/favicon.ico')} size='mini' /></Menu.Item>
+          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/></Menu.Item>
           <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
             <Dropdown.Menu>
               <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />

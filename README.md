@@ -15,25 +15,25 @@ Synergy is an application that was developed to help users improve at the popula
 **Tested with:**
 * [Rspec](https://rspec.info/)
 * [Capybara](https://teamcapybara.github.io/capybara/)
-* [FactoryBot](https://github.com/thoughtbot/factory_bot)
-* [Faker](https://github.com/faker-ruby/faker)
+* [Jest](https://jestjs.io/)
+* [Enyzme](https://airbnb.io/enzyme/)
 
 # Installation
 **Install Ruby Gems:** ```$ bundle exec bundle install```
 
 **Install JSON Packages:** ```$ yarn install```
 
-# Database Creation & Initialization
+# Database Creation, Initialization & Population
 **Create Database:** ```$ rails db:create```
 
 **Create Tables:** ```$ rails db:migrate```
 
-**Load Data From Seeds File:** ```$ rails db:seed```
+**Populate With Data From Seeds File:** ```$ rails db:seed```
 
 # Testing
-**Run Ruby Tests:** ```$ rspec```
+**Run Ruby RSpec/Capybara Tests:** ```$ rspec```
 
-**Run React Tests:** ``` $ yarn run test```
+**Run React Jest/Enyzme Tests:** ``` $ yarn run test```
 
 # Deployment
 **Start Rails Server:** ```$ rails server```
