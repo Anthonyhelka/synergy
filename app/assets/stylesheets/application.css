@@ -66,6 +66,11 @@ body {
 .background-zed { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-zed.jpg") !important; }
 
 /* Navigation Bar */
+#navigation-bar-logo {
+  width: 50px !important;
+  height: auto !important;
+}
+
 #navigation-bar-search-container {
   padding: 0px !important;
 }
@@ -229,6 +234,13 @@ div.item {
   padding-top: 0px !important;
 }
 
+#champion-card {
+  background-color: #1B1C1D !important;
+  border: 3px solid #1B1C1D !important;
+  border-radius: 9px !important;
+  transform: scale(1) !important;
+}
+
 #champion-card-extra,
 #champion-card-extra p {
   border: none !important;
@@ -237,10 +249,10 @@ div.item {
 }
 
 #champion-card-hover {
+  background-color: #36A9E0 !important;
   border: 3px solid #36A9E0 !important;
   border-radius: 9px !important;
   transform: scale(1.1) !important;
-  z-index: 1000 !important;
 }
 
 #champion-card-extra-hover,

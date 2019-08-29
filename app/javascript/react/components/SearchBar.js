@@ -98,7 +98,7 @@ class SearchBar extends Component {
             <Segment id='search-bar-button-group-mobile' basic textAlign='center'>
               <Button.Group>
                 <Dropdown as={Button} primary text={this.state.region}>
-                  <Dropdown.Menu textAlign='center' basic>
+                  <Dropdown.Menu>
                     <Dropdown.Item text='NA' onClick={event => this.handleRegionChange(event, 'NA')} />
                     <Dropdown.Item text='EUNE' onClick={event => this.handleRegionChange(event, 'EUNE')} />
                     <Dropdown.Item text='EUW' onClick={event => this.handleRegionChange(event, 'EUW')} />
@@ -121,7 +121,7 @@ class SearchBar extends Component {
           <Segment id='search-segment' textAlign='center' basic>
             <Segment id='region-button-container' compact basic textAlign='center'>
               <Dropdown id='region-button' as={Button} compact primary text={this.state.region}>
-                <Dropdown.Menu textAlign='center' basic>
+                <Dropdown.Menu>
                   <Dropdown.Item text='NA' onClick={event => this.handleRegionChange(event, 'NA')} />
                   <Dropdown.Item text='EUNE' onClick={event => this.handleRegionChange(event, 'EUNE')} />
                   <Dropdown.Item text='EUW' onClick={event => this.handleRegionChange(event, 'EUW')} />
