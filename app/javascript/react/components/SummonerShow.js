@@ -85,6 +85,12 @@ class SummonerShow extends Component {
       <div>
         <NavigationBar />
 
+        <br />
+        
+        <SearchBar />
+
+        <br />
+
         <Responsive maxWidth='1023'>
           <Segment id='summoner-show-page-container-mobile-tablet' textAlign='center'>
             <Header>{this.state.summoner.name}</Header>

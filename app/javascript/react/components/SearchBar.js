@@ -104,7 +104,7 @@ class SearchBar extends Component {
             </Dropdown>
           </Segment>
           <Segment id='search-bar-search-form-container' compact basic textAlign='center'>
-            <Search id='search-bar-search-form' placeholder='Search for champion/summoner' value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={event => this.handleSearch(event)} onKeyDown={event => this.handleSearch(event)} icon={false} showNoResults={false}/>
+            <Search id='search-bar-search-form' placeholder='Champion or Summoner' value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={event => this.handleSearch(event)} onKeyDown={event => this.handleSearch(event)} icon={false} showNoResults={false}/>
           </Segment>
           <Segment id='search-bar-go-button-container' compact basic textAlign='center'>
             <Button id='search-bar-go-button' icon='search' primary onClick={event => this.handleSearch(event, 'search-button')} />

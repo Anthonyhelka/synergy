@@ -287,13 +287,17 @@ div.item {
 }
  /* Summoner Page */
  #summoner-show-page-container-mobile-tablet {
-   margin: auto !important;
+   width: 100% !important;
+   z-index: -1 !important;
+   position: absolute !important;
  }
 
 #summoner-show-page-container-computer {
-  margin: auto !important;
-  margin-top: 25px !important;
   width: 50% !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translate(-50%,0) !important;
 }
 
 #summoner-show-page-icon {
