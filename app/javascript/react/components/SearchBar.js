@@ -8,50 +8,51 @@ class SearchBar extends Component {
     this.state={
       background: '',
       query: '',
-      filteredData: [],
+      champions: [],
+      filteredChampions: [],
       region: 'NA'
     }
-    this.getData = this.getData.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.filterChampions = this.filterChampions.bind(this);
     this.handleResultSelect = this.handleResultSelect.bind(this);
     this.handleRegionChange = this.handleRegionChange.bind(this);
-    this.handleSearchSummoner = this.handleSearchSummoner.bind(this);
+    this.handleGoClick = this.handleGoClick.bind(this);
   }
 
-  getData() {
-    fetch(`/api/v1/champions/overview`)
-      .then(response => response.json())
+  componentDidMount() {
+    fetch('/api/v1/champions/overview')
       .then(response => {
-        let query = this.state.query;
-        let data = response.champions;
-        let filteredData = data.filter(champion => {
-          return champion.name.toLowerCase().includes(query.toLowerCase());
-        });
-        this.setState({
-          filteredData: filteredData
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status}(${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw(error);
+        }
         })
-      });
-  };
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ champions: body.champions })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
   handleSearch(event, inputType){
+    this.setState({ query: event.target.value })
     if(event.keyCode == 13 || inputType === 'search-button'){
-      this.handleSearchSummoner(event);
+      this.handleGoClick(event);
     } else {
-      this.handleSearchChange(event);
+      this.filterChampions(event.target.value);
     }
   }
 
-  handleSearchSummoner(event){
-    let region = (this.state.region).toLowerCase();
-    browserHistory.push(`/summoner/${region}-${this.state.query}`);
-    window.location.reload();
-  }
-
-  handleSearchChange(event){
-    this.setState({ query: event.target.value })
-    this.getData();
-  }
+  filterChampions(query) {
+    let champions = this.state.champions;
+    let filteredChampions = champions.filter(champion => {
+      return champion.name.toLowerCase().includes(query.toLowerCase());
+    });
+    this.setState({ filteredChampions: filteredChampions })
+  };
 
   handleResultSelect(event, name){
     browserHistory.push(`/champions/${name}`);
@@ -61,8 +62,14 @@ class SearchBar extends Component {
     this.setState({ region: region })
   }
 
+  handleGoClick(event){
+    let region = (this.state.region).toLowerCase();
+    browserHistory.push(`/summoner/${region}-${this.state.query}`);
+    window.location.reload();
+  }
+
   render() {
-    let results = this.state.filteredData.map(champion => ({
+    let results = this.state.filteredChampions.map(champion => ({
       title: champion.name,
       image: champion.icon
     }));
@@ -97,7 +104,7 @@ class SearchBar extends Component {
             </Dropdown>
           </Segment>
           <Segment id='search-bar-search-form-container' compact basic textAlign='center'>
-            <Search id='search-bar-search-form' placeholder='Search for champion/summoner' icon={false} showNoResults={false} value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={this.handleSearch} onKeyDown={this.handleSearch}/>
+            <Search id='search-bar-search-form' placeholder='Search for champion/summoner' value={this.state.query} results={results} resultRenderer={resultRenderer} onSearchChange={event => this.handleSearch(event)} onKeyDown={event => this.handleSearch(event)} icon={false} showNoResults={false}/>
           </Segment>
           <Segment id='search-bar-go-button-container' compact basic textAlign='center'>
             <Button id='search-bar-go-button' icon='search' primary onClick={event => this.handleSearch(event, 'search-button')} />
