@@ -1361,7 +1361,7 @@ robot = Team.create(
   name: "Robot",
   icon: "./robot",
   team_type: "Origin",
-  description: "Robots start combat at full "
+  description: "Robots start combat at full mana"
 )
 robot.champions << [blitzcrank]
 void = Team.create(

@@ -2,9 +2,11 @@
 body {
   background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
   background-color: white !important;
+  position: relative !important;
+  z-index: -2 !important;
 }
 
-/*Background Images */
+/* Background Images */
 .black-background-color {
   background-color: black !important;
   background-repeat: no-repeat !important;
@@ -66,33 +68,36 @@ body {
 .background-zed { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-zed.jpg") !important; }
 
 /* Navigation Bar */
+#navigation-bar {
+  padding-bottom: 0px !important;
+  border-bottom: 3px solid #2185D0 !important;
+  border-radius: 0px !important;
+}
+
 #navigation-bar-logo {
   width: 40px !important;
   height: auto !important;
 }
 
-#navigation-bar-search-container {
-  padding: 0px !important;
-}
-
-#navigation-bar-search-bar {
-  width: 25% !important;
-  border-radius: 0px !important;
-}
-
-/* Home Page */
-
-/* Logo */
-#home-logo-mobile-tablet {
+/* Home Page Logo */
+#home-page-logo-mobile-tablet {
   margin-top: 50px !important;
 }
 
-#home-logo-computer {
+#home-page-logo-computer {
   margin-top: 75px !important;
 }
 
 /* Search Bar */
-#search-segment {
+.search-bar {
+  padding: 0px !important;
+  min-height: 38px !important;
+  height: 38px !important;
+  margin: auto !important;
+  transform: scale(0.9) !important;
+}
+
+#search-bar-container {
   display: flex !important;
   flex-direction: row !important;
   margin-bottom: 0px !important;
@@ -103,41 +108,33 @@ body {
   justify-content: center !important;
 }
 
- #search-bar-container {
+#search-bar-region-button-container,
+#search-bar-go-button-container {
+  display: inline-block !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  min-height: 38px !important;
+  height: 38px !important;
+}
+
+#search-bar-region-button,
+#search-bar-go-button {
+  border-radius: 0px !important;
+  margin: 0px !important;
+  height: 100% !important;
+}
+
+#search-bar-search-form-container {
   display: inline-block !important;
   padding: 0px !important;
   margin: 0px !important;
 }
 
-#search-bar {
+#search-bar-search-form {
   width: 225px !important;
   border-radius: 0px !important;
   min-height: 38px !important;
   height: 38px !important;
-}
-
-#region-button-container {
-  display: inline-block !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
-
-}
-
-#search-button-container {
-  display: inline-block !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
-}
-
-#search-button,
-#region-button {
-  border-radius: 0px !important;
-  margin: 0px !important;
-  height: 100% !important;
 }
 
 #search-bar-button-group-mobile {
@@ -148,46 +145,46 @@ body {
   border-radius: 0px !important;
 }
 
+/* Search Bar Results */
+div.results.transition.visible {
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: absolute !important;
+}
+
 .results.transition.visible div {
   padding: 0px !important;
 }
 
-div.results.transition.visible {
-  width: 100% !important;
-  max-width: 100vw !important;
+.results.transition.visible {
+  position:relative !important;
 }
 
-#search-image-mobile,
-#search-image-tablet-computer,
-#search-image-large-computer {
+#search-bar-result-image {
   height: auto !important;
   margin: auto !important;
   vertical-align: middle !important;
-}
-
-#search-image-mobile,
-#search-image-tablet-computer,
-#search-image-large-computer {
   width: 20% !important;
 }
 
-#search-title {
+#search-bar-result-title {
   vertical-align: middle !important;
   font-weight: 800 !important;
 }
 
-/* Buttons */
-#button-segment-mobile {
-  margin-top: 30px !important;
-}
-
-#button-segment-tablet-computer {
-  margin-top: 0px !important;
+/* Home Page Button Group */
+#home-page-button-group-container {
+  margin-top: -5px !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translate(-50%,0) !important;
 }
 
 .ui.animated.button {
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
+  margin-right: -1px !important;
 }
 
 .ui.animated.button:hover {
@@ -290,13 +287,17 @@ div.item {
 }
  /* Summoner Page */
  #summoner-show-page-container-mobile-tablet {
-   margin: auto !important;
+   width: 100% !important;
+   z-index: -1 !important;
+   position: absolute !important;
  }
 
 #summoner-show-page-container-computer {
-  margin: auto !important;
-  margin-top: 25px !important;
   width: 50% !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translate(-50%,0) !important;
 }
 
 #summoner-show-page-icon {

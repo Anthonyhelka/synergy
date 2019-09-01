@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
-import { Responsive, Menu, Dropdown, Image, Segment, Search } from 'semantic-ui-react';
+import { Responsive, Menu, Dropdown, Image, Segment } from 'semantic-ui-react';
 
 class NavigationBar extends Component {
   constructor(props) {
@@ -44,8 +44,8 @@ class NavigationBar extends Component {
   render() {
     return (
       <div>
-        <Responsive as={Menu} inverted fluid stackable widths='1' maxWidth={500}>
-          <Dropdown id='navigation-bar-dropdown-image-mobile' item trigger={<Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/>}>
+        <Responsive as={Menu} id='navigation-bar' inverted fluid stackable widths='1' maxWidth={500}>
+          <Dropdown item trigger={<Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/>}>
             <Dropdown.Menu>
               <Dropdown.Item text='Home' as={ Link } to='/' active={this.state.home} />
               <Dropdown.Item text='Champions' as={ Link } to='/champions/overview' active={this.state.overview} />
@@ -57,20 +57,7 @@ class NavigationBar extends Component {
           </Dropdown>
         </Responsive>
 
-        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={501} maxWidth={1023}>
-          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/></Menu.Item>
-          <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />
-              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' active={this.state.origins} />
-              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' active={this.state.classes} />
-            </Dropdown.Menu>
-          </Dropdown>
-          <Menu.Item name='items' as={ Link } to='/items' active={this.state.items}><p>Items</p></Menu.Item>
-          <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
-        </Responsive>
-
-        <Responsive as={Menu} inverted fluid widths='4' size='small' minWidth={1024}>
+        <Responsive as={Menu} id='navigation-bar' inverted fluid widths='4' size='small' minWidth={501}>
           <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/></Menu.Item>
           <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
             <Dropdown.Menu>
