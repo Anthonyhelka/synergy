@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
-import { Responsive, Image, Segment, Search, Button, Icon } from 'semantic-ui-react';
+import { Responsive, Image, Segment, Search, Button, Icon, Dropdown } from 'semantic-ui-react';
 
 class SearchBar extends Component {
   constructor(props) {
