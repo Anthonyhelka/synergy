@@ -1,5 +1,5 @@
 require 'dotenv'
-Dotenv.load('api-keys.env')
+Dotenv.load('keys.env')
 
 class Api::V1::SummonerController < ApplicationController
   include ::ActionController::Serialization
@@ -31,7 +31,7 @@ class Api::V1::SummonerController < ApplicationController
         region = "tr1"
     end
     summoner_name = URI.escape(summoner_name)
-    api_key = ENV["RIOT_API_KEY"]
+    api_key = ENV.fetch("RIOT_API_KEY")
     summoner_info = HTTParty.get("https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{summoner_name}?api_key=#{api_key}")
     summoner_id = summoner_info["id"]
     ranked_data = HTTParty.get("https://#{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
