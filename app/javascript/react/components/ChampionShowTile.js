@@ -22,6 +22,7 @@ class ChampionShowTile extends Component {
   componentWillUnmount() {
     let name = (this.props.champion.name).toLowerCase();
     name = name.replace(/\s+/g, '');
+    name = name.replace("'", '');
     document.body.classList.remove(`black-background-color`);
     document.body.classList.remove(`background-${name}`);
   }

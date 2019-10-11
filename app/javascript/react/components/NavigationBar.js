@@ -52,7 +52,7 @@ class NavigationBar extends Component {
               <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' active={this.state.origins} />
               <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' active={this.state.classes} />
               <Dropdown.Item text='Items' as={ Link } to='/items' active={this.state.items} />
-              <Dropdown.Item text='News' as={ Link } to='/news' active={this.state.news} />
+              <Dropdown.Item text='News' as={ Link } to='/news' active={this.state.news}  id='navigation-bar-item-mobile-last'/>
             </Dropdown.Menu>
           </Dropdown>
         </Responsive>
