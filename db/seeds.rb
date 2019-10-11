@@ -19,11 +19,11 @@ end
 def player_damage(tier)
   case tier
     when 1
-      return [1, 2, 4]
+      return [1, 2, 3]
     when 2
-      return [2, 3, 5]
+      return [1, 2, 4]
     when 3
-      return [2, 3, 6]
+      return [2, 3, 5]
     when 4
       return [2, 4, 6]
     when 5
@@ -50,7 +50,7 @@ aatrox = Champion.create(
   attack_damage: 65,
   attack_speed: 0.65,
   attack_range: 1,
-  armor: 25,
+  armor: 35,
   magic_resist: 20,
   player_damage: player_damage(3)
 )
@@ -92,7 +92,7 @@ akali = Champion.create(
   starting_mana: 0,
   mana_cost: 25,
   attack_damage: 80,
-  attack_speed: 0.70,
+  attack_speed: 0.80,
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
@@ -105,16 +105,16 @@ anivia = Champion.create(
   ability_name: "Glacial Storm",
   ability_icon: "./anivia",
   ability_type: "Active",
-  ability_description: "Anivia channels a large hailstorm, damaging enemies inside of it.",
+  ability_description: "Anivia channels a large hailstorm targeted at the furthest enemy, damaging enemies inside of it.",
   tier: 5,
   tier_color: tier_color(5),
   origin_1: "Glacial",
   character_class_1: "Elementalist",
-  health: [700, 1170, 2340],
-  starting_mana: 0,
-  mana_cost: 100,
+  health: [750, 1170, 2340],
+  starting_mana: 50,
+  mana_cost: 125,
   attack_damage: 40,
-  attack_speed: 0.60,
+  attack_speed: 0.80,
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
@@ -134,7 +134,7 @@ ashe = Champion.create(
   character_class_1: "Ranger",
   health: [550, 990, 1980],
   starting_mana: 0,
-  mana_cost: 100,
+  mana_cost: 125,
   attack_damage: 65,
   attack_speed: 0.70,
   attack_range: 4,
@@ -176,7 +176,7 @@ blitzcrank = Champion.create(
   tier_color: tier_color(2),
   origin_1: "Robot",
   character_class_1: "Brawler",
-  health: [600, 1080, 2160],
+  health: [650, 1080, 2160],
   starting_mana: 0,
   mana_cost: 125,
   attack_damage: 50,
@@ -222,7 +222,7 @@ braum = Champion.create(
   character_class_1: "Guardian",
   health: [650, 1350, 2700],
   starting_mana: 0,
-  mana_cost: 50,
+  mana_cost: 75,
   attack_damage: 40,
   attack_speed: 0.60,
   attack_range: 1,
@@ -245,7 +245,7 @@ camille = Champion.create(
   health: [550, 990, 1980],
   starting_mana: 0,
   mana_cost: 150,
-  attack_damage: 50,
+  attack_damage: 55,
   attack_speed: 0.60,
   attack_range: 1,
   armor: 25,
@@ -374,7 +374,7 @@ fiora = Champion.create(
   tier_color: tier_color(1),
   origin_1: "Noble",
   character_class_1: "Blademaster",
-  health: [400, 720, 1440],
+  health: [450, 720, 1440],
   starting_mana: 0,
   mana_cost: 75,
   attack_damage: 40,
@@ -400,7 +400,7 @@ gangplank = Champion.create(
   health: [700, 1080, 2160],
   starting_mana: 0,
   mana_cost: 100,
-  attack_damage: 55,
+  attack_damage: 60,
   attack_speed: 0.65,
   attack_range: 1,
   armor: 20,
@@ -442,9 +442,9 @@ gnar = Champion.create(
   origin_1: "Wild",
   origin_2: "Yordle",
   character_class_1: "Shapeshifter",
-  health: [750, 1530, 3060],
+  health: [700, 1530, 3060],
   starting_mana: 0,
-  mana_cost: 125,
+  mana_cost: 100,
   attack_damage: 50,
   attack_speed: 0.70,
   attack_range: 2,
@@ -470,7 +470,7 @@ graves = Champion.create(
   attack_damage: 55,
   attack_speed: 0.55,
   attack_range: 1,
-  armor: 20,
+  armor: 30,
   magic_resist: 20,
   player_damage: player_damage(1)
 )
@@ -492,7 +492,7 @@ jayce = Champion.create(
   attack_damage: 55,
   attack_speed: 0.70,
   attack_range: 1,
-  armor: 30,
+  armor: 35,
   magic_resist: 20,
   player_damage: player_damage(2)
 )
@@ -512,11 +512,34 @@ jinx = Champion.create(
   starting_mana: 0,
   mana_cost: 0,
   attack_damage: 75,
-  attack_speed: 0.65,
+  attack_speed: 0.70,
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
   player_damage: player_damage(4)
+)
+kaisa = Champion.create(
+  id: 57,
+  name: "Kai'Sa",
+  icon: "./kaisa",
+  ability_name: "Killer Instinct",
+  ability_icon: "./kaisa",
+  ability_type: "Active",
+  ability_description: "Kai'Sa dashes to the furthest enemy unit, gaining a shield and bonus attack speed for 3 seconds.",
+  tier: 5,
+  tier_color: tier_color(5),
+  origin_1: "Void",
+  character_class_1: "Assassin",
+  character_class_2: "Ranger",
+  health: [700, 1260, 2520],
+  starting_mana: 50,
+  mana_cost: 125,
+  attack_damage: 55,
+  attack_speed: 1.25,
+  attack_range: 2,
+  armor: 20,
+  magic_resist: 20,
+  player_damage: player_damage(5)
 )
 karthus = Champion.create(
   id: 20,
@@ -555,10 +578,10 @@ kassadin = Champion.create(
   health: [550, 990, 1980],
   starting_mana: 0,
   mana_cost: 0,
-  attack_damage: 55,
-  attack_speed: 0.60,
+  attack_damage: 40,
+  attack_speed: 0.55,
   attack_range: 1,
-  armor: 25,
+  armor: 35,
   magic_resist: 20,
   player_damage: player_damage(1)
 )
@@ -576,7 +599,7 @@ katarina = Champion.create(
   character_class_1: "Assassin",
   health: [450, 810, 1620],
   starting_mana: 0,
-  mana_cost: 100,
+  mana_cost: 85,
   attack_damage: 65,
   attack_speed: 0.65,
   attack_range: 1,
@@ -643,7 +666,7 @@ khazix = Champion.create(
   character_class_1: "Assassin",
   health: [500, 900, 1800],
   starting_mana: 0,
-  mana_cost: 50,
+  mana_cost: 65,
   attack_damage: 55,
   attack_speed: 0.60,
   attack_range: 1,
@@ -667,7 +690,7 @@ kindred = Champion.create(
   starting_mana: 0,
   mana_cost: 150,
   attack_damage: 60,
-  attack_speed: 0.65,
+  attack_speed: 0.70,
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
@@ -685,7 +708,7 @@ leona = Champion.create(
   tier_color: tier_color(4),
   origin_1: "Noble",
   character_class_1: "Guardian",
-  health: [750, 1350, 2700],
+  health: [800, 1350, 2700],
   starting_mana: 0,
   mana_cost: 100,
   attack_damage: 45,
@@ -707,9 +730,9 @@ lissandra = Champion.create(
   tier_color: tier_color(2),
   origin_1: "Glacial",
   character_class_1: "Elementalist",
-  health: [450, 810, 1620],
+  health: [500, 810, 1620],
   starting_mana: 0,
-  mana_cost: 125,
+  mana_cost: 85,
   attack_damage: 40,
   attack_speed: 0.60,
   attack_range: 2,
@@ -768,16 +791,16 @@ missfortune = Champion.create(
   ability_name: "Bullet Time",
   ability_icon: "./missfortune",
   ability_type: "Active",
-  ability_description: "Miss Fortune channels and fires several waves of bullets in a cone.",
+  ability_description: "Miss Fortune channels and fires several waves of bullets in a cone targeted at the furthest enemy.",
   tier: 5,
   tier_color: tier_color(5),
   origin_1: "Pirate",
   character_class_1: "Gunslinger",
-  health: [700, 1170, 2340],
+  health: [750, 1170, 2340],
   starting_mana: 0,
-  mana_cost: 75,
+  mana_cost: 150,
   attack_damage: 75,
-  attack_speed: 0.85,
+  attack_speed: 0.95,
   attack_range: 3,
   armor: 20,
   magic_resist: 20,
@@ -796,8 +819,8 @@ mordekaiser = Champion.create(
   origin_1: "Phantom",
   character_class_1: "Knight",
   health: [550, 900, 1800],
-  starting_mana: 0,
-  mana_cost: 100,
+  starting_mana: 50,
+  mana_cost: 150,
   attack_damage: 50,
   attack_speed: 0.50,
   attack_range: 1,
@@ -841,11 +864,33 @@ nidalee = Champion.create(
   character_class_1: "Shapeshifter",
   health: [500, 900, 1800],
   starting_mana: 0,
-  mana_cost: 100,
+  mana_cost: 85,
   attack_damage: 50,
   attack_speed: 0.65,
   attack_range: 3,
   armor: 20,
+  magic_resist: 20,
+  player_damage: player_damage(1)
+)
+pantheon = Champion.create(
+  id: 56,
+  name: "Pantheon",
+  icon: "./pantheon",
+  ability_name: "Grand Starfall",
+  ability_icon: "./pantheon",
+  ability_type: "Active",
+  ability_description: "Pantheon leaps into the air and crashes down towards the farthest enemy, stunning them in the process. As he lands, Pantheon deals damage to all enemies in his path. Enemies hit burn for additional damage over a few seconds.",
+  tier: 5,
+  tier_color: tier_color(5),
+  origin_1: "Dragon",
+  character_class_1: "Guardian",
+  health: [850, 1530, 3060],
+  starting_mana: 150,
+  mana_cost: 200,
+  attack_damage: 75,
+  attack_speed: 0.75,
+  attack_range: 1,
+  armor: 80,
   magic_resist: 20,
   player_damage: player_damage(1)
 )
@@ -861,7 +906,7 @@ poppy = Champion.create(
   tier_color: tier_color(3),
   origin_1: "Yordle",
   character_class_1: "Knight",
-  health: [800, 1440, 2880],
+  health: [700, 1440, 2880],
   starting_mana: 0,
   mana_cost: 75,
   attack_damage: 50,
@@ -884,7 +929,7 @@ pyke = Champion.create(
   origin_1: "Pirate",
   character_class_1: "Assassin",
   health: [600, 1080, 2160],
-  starting_mana: 0,
+  starting_mana: 50,
   mana_cost: 125,
   attack_damage: 60,
   attack_speed: 0.60,
@@ -909,7 +954,7 @@ reksai = Champion.create(
   starting_mana: 0,
   mana_cost: 150,
   attack_damage: 50,
-  attack_speed: 0.65,
+  attack_speed: 0.60,
   attack_range: 1,
   armor: 20,
   magic_resist: 20,
@@ -949,7 +994,7 @@ sejuani = Champion.create(
   tier_color: tier_color(4),
   origin_1: "Glacial",
   character_class_1: "Knight",
-  health: [850, 1530, 3060],
+  health: [800, 1530, 3060],
   starting_mana: 0,
   mana_cost: 150,
   attack_damage: 45,
@@ -995,7 +1040,7 @@ shyvana = Champion.create(
   character_class_1: "Shapeshifter",
   health: [650, 990, 1980],
   starting_mana: 0,
-  mana_cost: 100,
+  mana_cost: 85,
   attack_damage: 50,
   attack_speed: 0.70,
   attack_range: 1,
@@ -1060,7 +1105,7 @@ twistedfate = Champion.create(
   tier_color: tier_color(2),
   origin_1: "Pirate",
   character_class_1: "Sorcerer",
-  health: [450, 810, 1620],
+  health: [500, 810, 1620],
   starting_mana: 0,
   mana_cost: 50,
   attack_damage: 40,
@@ -1148,7 +1193,7 @@ vi = Champion.create(
   tier_color: tier_color(3),
   origin_1: "Hextech",
   character_class_1: "Brawler",
-  health: [600, 1080, 2160],
+  health: [700, 1080, 2160],
   starting_mana: 75,
   mana_cost: 150,
   attack_damage: 55,
@@ -1173,8 +1218,8 @@ volibear = Champion.create(
   health: [750, 1170, 2340],
   starting_mana: 0,
   mana_cost: 75,
-  attack_damage: 75,
-  attack_speed: 0.55,
+  attack_damage: 70,
+  attack_speed: 0.65,
   attack_range: 1,
   armor: 30,
   magic_resist: 20,
@@ -1192,7 +1237,7 @@ warwick = Champion.create(
   tier_color: tier_color(1),
   origin_1: "Wild",
   character_class_1: "Brawler",
-  health: [600, 1080, 2160],
+  health: [650, 1080, 2160],
   starting_mana: 0,
   mana_cost: 150,
   attack_damage: 50,
@@ -1214,7 +1259,7 @@ yasuo = Champion.create(
   tier_color: tier_color(5),
   origin_1: "Exile",
   character_class_1: "Blademaster",
-  health: [700, 1260, 2520],
+  health: [750, 1260, 2520],
   starting_mana: 0,
   mana_cost: 25,
   attack_damage: 75,
@@ -1267,15 +1312,15 @@ dragon = Team.create(
   name: "Dragon",
   icon: "./dragon",
   team_type: "Origin",
-  description: "While 2 Dragons are in play, all Dragons take 83% reduced magic damage"
+  description: "While 2 Dragons are in play, all Dragons take 75% reduced magic damage"
 )
-dragon.champions << [aurelionsol, shyvana]
+dragon.champions << [aurelionsol, pantheon, shyvana]
 exile = Team.create(
   id: 3,
   name: "Exile",
   icon: "./exile",
   team_type: "Origin",
-  description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health"
+  description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health"
 )
 exile.champions << [yasuo]
 glacial = Team.create(
@@ -1283,13 +1328,13 @@ glacial = Team.create(
   name: "Glacial",
   icon: "./glacial",
   team_type: "Origin",
-  description: "On hit, Glacials have a chance to stun for 2 seconds",
+  description: "Glacials gain a chance to stun for 1.5 seconds with each attack",
   upgrade_1_number: "2:",
   upgrade_1_description: "20% chance",
   upgrade_2_number: "4:",
-  upgrade_2_description: "30% chance",
+  upgrade_2_description: "33% chance",
   upgrade_3_number: "6:",
-  upgrade_3_description: "45% chance"
+  upgrade_3_description: "50% chance"
 )
 glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
 hextech = Team.create(
@@ -1297,7 +1342,7 @@ hextech = Team.create(
   name: "Hextech",
   icon: "./hextech",
   team_type: "Origin",
-  description: "At the start of combat, launch a pulse bomb at a random enemy, temporarily disabling nearby enemy items for 8 seconds",
+  description: "At the start of combat, launch a pulse bomb at a random enemy, temporarily disabling nearby enemy items for 7 seconds",
   upgrade_1_number: "2:",
   upgrade_1_description: "Affects units within 1 hex of the bomb",
   upgrade_2_number: "4:",
@@ -1325,7 +1370,7 @@ ninja = Team.create(
   upgrade_1_number: "1:",
   upgrade_1_description: "This Ninja gains 50 attack damage/ability power",
   upgrade_2_number: "4:",
-  upgrade_2_description: "All Ninjas gain 70 attack damage/ability power"
+  upgrade_2_description: "All Ninjas gain 80 attack damage/ability power"
 )
 ninja.champions << [akali, kennen, shen, zed]
 noble = Team.create(
@@ -1333,7 +1378,7 @@ noble = Team.create(
   name: "Noble",
   icon: "./noble",
   team_type: "Origin",
-  description: "Grants 60 armor/magic resist and basic attacks restore 35 health on-hit",
+  description: "Grants 50 armor/magic resist and basic attacks restore 30 health",
   upgrade_1_number: "3:",
   upgrade_1_description: "A random ally",
   upgrade_2_number: "6:",
@@ -1369,19 +1414,23 @@ void = Team.create(
   name: "Void",
   icon: "./void",
   team_type: "Origin",
-  description: "While 3 Voidlings are in play, void units deal true damage"
+  description: "A select number of Voidlings deal true damage",
+  upgrade_1_number: "2:",
+  upgrade_1_description: "One random Voidling",
+  upgrade_2_number: "4:",
+  upgrade_2_description: "All Voidlings"
 )
-void.champions << [chogath, kassadin, khazix, reksai]
+void.champions << [chogath, kaisa, kassadin, khazix, reksai]
 wild = Team.create(
   id: 12,
   name: "Wild",
   icon: "./wild",
   team_type: "Origin",
-  description: "Wildlings generate Fury on-hit, up to 5. Each stack gives 12% attack speed",
+  description: "Wildlings generate Fury on-hit, up to 5. Each stack gives 10% attack speed",
   upgrade_1_number: "2:",
   upgrade_1_description: "Fury benefits all allied Wildlings",
   upgrade_2_number: "4:",
-  upgrade_2_description: "Fury benefits all allies"
+  upgrade_2_description: "Fury benefits all allies and their attacks cannot be dodged"
 )
 wild.champions << [ahri, gnar, nidalee, rengar, warwick]
 yordle = Team.create(
@@ -1389,11 +1438,13 @@ yordle = Team.create(
   name: "Yordle",
   icon: "./yordle",
   team_type: "Origin",
-  description: "Yordles have a chance to dodge enemy attacks",
+  description: "Yordles gain a chance to dodge enemy attacks",
   upgrade_1_number: "3:",
   upgrade_1_description: "30% chance",
   upgrade_2_number: "6:",
-  upgrade_2_description: "55% chance"
+  upgrade_2_description: "60% chance",
+  upgrade_3_number: "9:",
+  upgrade_3_description: "90% chance"
 )
 yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
 
@@ -1403,19 +1454,21 @@ assassin = Team.create(
   name: "Assassin",
   icon: "./assassin",
   team_type: "Class",
-  description: "Assassins have bonus critical strike damage",
+  description: "Assassins gain bonus critical strike damage and chance",
   upgrade_1_number: "2:",
-  upgrade_1_description: "+125% critical strike damage",
+  upgrade_1_description: "+75% critical strike damage/+5% critical strike chance",
   upgrade_2_number: "6:",
-  upgrade_2_description: "+350% critical strike damage"
+  upgrade_2_description: "+150% critical strike damage/+20% critical strike chance",
+  upgrade_3_number: "9:",
+  upgrade_3_description: "+225% critical strike damage/+30% critical strike chance"
 )
-assassin.champions << [akali, evelynn, katarina, khazix, pyke, rengar, zed]
+assassin.champions << [akali, evelynn, kaisa, katarina, khazix, pyke, rengar, zed]
 blademaster = Team.create(
   id: 15,
   name: "Blademaster",
   icon: "./blademaster",
   team_type: "Class",
-  description: "Blademasters have a 45% chance to perform a multi-attack",
+  description: "Blademasters gain a 45% chance to perform a multi-attack",
   upgrade_1_number: "3:",
   upgrade_1_description: "Double strike",
   upgrade_2_number: "6:",
@@ -1451,21 +1504,21 @@ guardian = Team.create(
   name: "Guardian",
   icon: "./guardian",
   team_type: "Class",
-  description: "Beginning combat with 2 Guardians will grant 50 armor to all units that start adjacent to a Guardian"
+  description: "Beginning combat with 2 Guardians will grant 45 armor to all units that start adjacent to a Guardian"
 )
-guardian.champions << [braum, leona]
+guardian.champions << [braum, leona, pantheon]
 gunslinger = Team.create(
   id: 19,
   name: "Gunslinger",
   icon: "./gunslinger",
   team_type: "Class",
-  description: "Gunslingers have a 50% chance for their attacks to hit additional enemies",
+  description: "Gunslingers gain a 50% chance for their attacks to hit additional enemies",
   upgrade_1_number: "2:",
   upgrade_1_description: "Attacks hit one additional random enemy",
   upgrade_2_number: "4:",
   upgrade_2_description: "Attacks hit two additional random enemies",
   upgrade_3_number: "6:",
-  upgrade_3_description: "Attacks hit three additional random enemies"
+  upgrade_3_description: "Attacks hit four additional random enemies"
 )
 gunslinger.champions << [gangplank, graves, jinx, lucian, missfortune, tristana]
 knight = Team.create(
@@ -1477,9 +1530,9 @@ knight = Team.create(
   upgrade_1_number: "2:",
   upgrade_1_description: "15 damage ignored",
   upgrade_2_number: "4:",
-  upgrade_2_description: "30 damage ignored",
+  upgrade_2_description: "35 damage ignored",
   upgrade_3_number: "6:",
-  upgrade_3_description: "55 damage ignored"
+  upgrade_3_description: "60 damage ignored"
 )
 knight.champions << [darius, garen, kayle, mordekaiser, poppy, sejuani]
 ranger = Team.create(
@@ -1491,9 +1544,9 @@ ranger = Team.create(
   upgrade_1_number: "2:",
   upgrade_1_description: "25% chance",
   upgrade_2_number: "4:",
-  upgrade_2_description: "65% chance"
+  upgrade_2_description: "75% chance"
 )
-ranger.champions << [ashe, kindred, varus, vayne]
+ranger.champions << [ashe, kaisa, kindred, varus, vayne]
 shapeshifter = Team.create(
   id: 22,
   name: "Shapeshifter",
@@ -1503,7 +1556,7 @@ shapeshifter = Team.create(
   upgrade_1_number: "3:",
   upgrade_1_description: "60% bonus health",
   upgrade_2_number: "6:",
-  upgrade_2_description: "120% bonus health"
+  upgrade_2_description: "100% bonus health"
 )
 shapeshifter.champions << [elise, gnar, jayce, nidalee, shyvana, swain]
 sorcerer = Team.create(
@@ -1511,10 +1564,12 @@ sorcerer = Team.create(
   name: "Sorcerer",
   icon: "./sorcerer",
   team_type: "Class",
-  description: "Sorcerers grant bonus spell damage to their team",
+  description: "Sorcerers grant bonus spell power to their team",
   upgrade_1_number: "3:",
-  upgrade_1_description: "+40% bonus spell damage",
+  upgrade_1_description: "+40% bonus spell power",
   upgrade_2_number: "6:",
-  upgrade_2_description: "+100% bonus spell damage"
+  upgrade_2_description: "+100% bonus spell power",
+  upgrade_3_number: "9:",
+  upgrade_3_description: "+175% bonus spell power"
 )
 sorcerer.champions << [ahri, aurelionsol, karthus, kassadin, lulu, morgana, twistedfate, veigar]

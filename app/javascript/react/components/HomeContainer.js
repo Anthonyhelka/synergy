@@ -14,7 +14,7 @@ class HomeContainer extends Component {
   }
 
   componentWillMount() {
-    let backgroundImages = ['aatrox', 'braum', 'elise', 'fiora', 'gnar', 'jinx', 'khazix', 'kindred', 'lissandra', 'lucian', 'poppy', 'shyvana', 'tristana', 'twistedfate', 'volibear']
+    let backgroundImages = ['jinx', 'lissandra', 'poppy', 'tristana']
     let randomImage = backgroundImages[Math.floor(Math.random()*backgroundImages.length)];
     this.setState({ background: randomImage })
   }
