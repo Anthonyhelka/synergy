@@ -159,7 +159,7 @@ div.results.transition.visible {
   max-width: 100vw !important;
   position: absolute !important;
   overflow-y: scroll;
-  height: 200px !important;
+  max-height: 200px !important;
 }
 
 .results.transition.visible div {
