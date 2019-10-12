@@ -287,33 +287,8 @@ div.item {
 }
 
 /* Champion Show Page */
-#champion-show-page-background {
-  position: absolute !important;
-  width: 900px !important;
-  height: 600px !important;
-  margin-top: 25px !important;
-  left: 50% !important;
-  -webkit-transform: translateX(-50%) !important;
-  transform: translateX(-50%) !important;
-  background-image: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
-  background-color: #000000 !important;
-  background-repeat: no-repeat !important;
-  background-position: 100% 0px !important;
-  background-size: 100% 100%;
-}
-
-#champion-show-page-cover {
-  position: absolute !important;
-  width: 900px !important;
-  height: 600px !important;
-  margin-top: 25px !important;
-  left: 50% !important;
-  -webkit-transform: translateX(-50%) !important;
-  transform: translateX(-50%) !important;
-  background-color: #24324D !important;
-  opacity: 0.8 !important;
-}
-
+#champion-show-page-background,
+#champion-show-page-cover,
 #champion-show-page-container {
   position: absolute !important;
   width: 900px !important;
@@ -322,30 +297,66 @@ div.item {
   left: 50% !important;
   -webkit-transform: translateX(-50%) !important;
   transform: translateX(-50%) !important;
+  padding: 20px !important;
 }
 
-#champion-show-page-header {
-  width: 35% !important;
-  height: auto !important;
+#champion-show-page-background {
+  background-image: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
+  background-color: #000000 !important;
+  background-repeat: no-repeat !important;
+  background-position: 100% 0px !important;
+  background-size: 100% 100%;
+}
+
+#champion-show-page-cover {
+  background-color: #202040 !important;
+  opacity: 0.8 !important;
+}
+
+#champion-show-page-left-column {
+  display: inline-block !important;
   float: left !important;
-  margin-top: 25px !important;
-  background-color: #182338 !important;
+  width: 28% !important;
+  height: 100% !important;
+  border: none !important;
+  padding: 0px !important;
+  color: #FFFFFF !important;
+}
+
+#champion-show-page-header,
+#champion-show-page-render {
+  width: 100% !important;
+  background-color: #602080 !important;
+  border: none !important;
+}
+#champion-show-page-header {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 #champion-show-page-header-image {
   width: 25% !important;
   height: auto !important;
-  margin-right: 14px !important;
   border: 3px solid purple !important;
   border-radius: 5px !important;
 }
 
-#champion-show-page-header-title span {
-  color: #FFFFFF !important;
+#champion-show-page-render-image {
+  width: 80% !important;
+  height: auto !important;
+  margin: auto !important;
 }
 
+#champion-show-page-right-column {
+  display: inline-block !important;
+  float: right !important;
+  width: 70% !important;
+  height: 100% !important;
+  border: none !important;
+  padding: 0px !important;
+  color: #FFFFFF !important;
+  margin-top: 0px !important;
+}
  /* Summoner Page */
  #summoner-show-page-container-mobile-tablet {
    width: 100% !important;

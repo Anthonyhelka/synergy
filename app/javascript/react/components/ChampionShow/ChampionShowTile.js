@@ -19,6 +19,7 @@ class ChampionShowTile extends Component {
   render() {
     const pathToIcon = require.context('../../../../../public/icons', true);
     const pathToAbility = require.context('../../../../../public/abilities', true);
+    const pathToRender = require.context('../../../../../public/renders', true);
     const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
 
     // let synergiesIconList = this.props.champion.teams.map(synergy => {
@@ -50,19 +51,30 @@ class ChampionShowTile extends Component {
 
     return (
       <div>
-        <Segment id='champion-show-page-background'>
+        <Segment id='champion-show-page-background' raised>
         </Segment>
-        <Segment id='champion-show-page-cover'>
+        <Segment id='champion-show-page-cover' raised>
         </Segment>
-        <Segment id='champion-show-page-container' basic>
-          <Segment id='champion-show-page-header'>
-            <Image id='champion-show-page-header-image' src={`${pathToIcon(this.props.champion.icon, true)}`}  />
-            <div id='champion-show-page-header-title'>
-              <span>Akali</span>
-              <br />
-              <span><i>The Rogue Assassin</i></span>
-            </div>
+
+          <Segment id='champion-show-page-container' basic raised>
+
+          <Segment id='champion-show-page-left-column' basic>
+            <Segment id='champion-show-page-header'>
+              <Image id='champion-show-page-header-image' src={`${pathToIcon(this.props.champion.icon, true)}`}  />
+              <div id='champion-show-page-header-title'>
+                <span>&nbsp;Akali</span>
+                <br />
+                <span><i>&nbsp;The Rogue Assassin</i></span>
+              </div>
+            </Segment>
+            <Segment id='champion-show-page-render'>
+              <Image id='champion-show-page-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
+            </Segment>
           </Segment>
+
+          <Segment id='champion-show-page-right-column'>
+          </Segment>
+
         </Segment>
       </div>
     );
