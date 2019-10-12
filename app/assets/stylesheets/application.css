@@ -319,7 +319,8 @@ div.item {
 }
 
 #summoner-show-page-icon {
-  border: 2px solid black !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
 #summoner-show-page-rank {

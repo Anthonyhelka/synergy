@@ -46,7 +46,7 @@ class SummonerShow extends Component {
         let winRate = ((this.state.rank.wins / (this.state.rank.wins + this.state.rank.losses)) * 100).toFixed(2);
         summonerDisplay = (
           <div>
-            <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.16.1/img/profileicon/${this.state.summoner.profileIconId}.png`} rounded centered size='tiny' />
+            <Image id='summoner-show-page-icon' src={`http://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/tft_aatrox.png`} centered />
             <Divider />
             <Image src={`${pathToRankedEmblem(rankTier, true)}`} alt={`${rankTier}`} centered size='tiny' />
             <span id='summoner-show-page-rank'>{this.state.rank.tier} {this.state.rank.rank} {this.state.rank.leaguePoints}LP</span>
@@ -86,7 +86,7 @@ class SummonerShow extends Component {
         <NavigationBar />
 
         <br />
-        
+
         <SearchBar />
 
         <br />
