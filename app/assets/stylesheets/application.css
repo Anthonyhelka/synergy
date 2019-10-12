@@ -286,23 +286,66 @@ div.item {
   background-color: #36A9E0 !important;
 }
 
-/* Show Page */
-#show-page-container {
-  width: 600px !important;
-  height: auto !important;
+/* Champion Show Page */
+#champion-show-page-background {
+  position: absolute !important;
+  width: 900px !important;
+  height: 600px !important;
   margin-top: 25px !important;
-  margin-left: 25px !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+  transform: translateX(-50%) !important;
+  background-image: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
+  background-color: #000000 !important;
+  background-repeat: no-repeat !important;
+  background-position: 100% 0px !important;
+  background-size: 100% 100%;
 }
 
-#show-page-ability-icon {
-  border: 2px solid black !important;
+#champion-show-page-cover {
+  position: absolute !important;
+  width: 900px !important;
+  height: 600px !important;
+  margin-top: 25px !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+  transform: translateX(-50%) !important;
+  background-color: #24324D !important;
+  opacity: 0.8 !important;
 }
 
-#show-page-ability-description,
-#show-page-synergy-desciption {
-  text-align: center;
-  text-align-last: center;
+#champion-show-page-container {
+  position: absolute !important;
+  width: 900px !important;
+  height: 600px !important;
+  margin-top: 25px !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+  transform: translateX(-50%) !important;
 }
+
+#champion-show-page-header {
+  width: 35% !important;
+  height: auto !important;
+  float: left !important;
+  margin-top: 25px !important;
+  background-color: #182338 !important;
+  display: flex;
+  align-items:center;
+}
+
+#champion-show-page-header-image {
+  width: 25% !important;
+  height: auto !important;
+  margin-right: 14px !important;
+  border: 3px solid purple !important;
+  border-radius: 5px !important;
+}
+
+#champion-show-page-header-title span {
+  color: #FFFFFF !important;
+}
+
  /* Summoner Page */
  #summoner-show-page-container-mobile-tablet {
    width: 100% !important;
