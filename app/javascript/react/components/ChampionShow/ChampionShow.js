@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../NavigationBar';
 import ChampionShowTile from './ChampionShowTile';
 
 class ChampionShow extends Component {
@@ -44,7 +44,7 @@ class ChampionShow extends Component {
         />
       );
     }
-    
+
     return (
       <div>
         <NavigationBar />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../NavigationBar';
 import SynergyTile from './SynergyTile';
 
 class ChampionsOrigins extends Component {

@@ -33,9 +33,9 @@ class ChampionShowTile extends Component {
   }
 
   render() {
-    const pathToIcon = require.context('../../../../public/icons', true);
-    const pathToAbility = require.context('../../../../public/abilities', true);
-    const pathToSynergyIcon = require.context('../../../../public/synergies', true);
+    const pathToIcon = require.context('../../../../../public/icons', true);
+    const pathToAbility = require.context('../../../../../public/abilities', true);
+    const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
 
     let synergiesIconList = this.props.champion.teams.map(synergy => {
       return (<List.Item key={synergy.id}><Image src={`${pathToSynergyIcon(synergy.icon, true)}`} avatar /></List.Item>)

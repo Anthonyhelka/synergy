@@ -32,7 +32,7 @@ class SynergyTile extends Component {
       upgradeConditional = (<span></span>)
     }
 
-    const pathToSynergyIcon = require.context('../../../../public/synergies', true);
+    const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
 
     return (
       <div>

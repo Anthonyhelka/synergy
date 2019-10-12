@@ -1456,11 +1456,11 @@ assassin = Team.create(
   team_type: "Class",
   description: "Assassins gain bonus critical strike damage and chance",
   upgrade_1_number: "2:",
-  upgrade_1_description: "+75% critical strike damage/+5% critical strike chance",
+  upgrade_1_description: "+75% damage/+5% chance",
   upgrade_2_number: "6:",
-  upgrade_2_description: "+150% critical strike damage/+20% critical strike chance",
+  upgrade_2_description: "+150% damage/+20% chance",
   upgrade_3_number: "9:",
-  upgrade_3_description: "+225% critical strike damage/+30% critical strike chance"
+  upgrade_3_description: "+225% damage/+30% chance"
 )
 assassin.champions << [akali, evelynn, kaisa, katarina, khazix, pyke, rengar, zed]
 blademaster = Team.create(

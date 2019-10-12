@@ -4,9 +4,9 @@ import 'semantic-ui-css/semantic.min.css';
 
 import HomeContainer from './HomeContainer';
 import ChampionsOverview from  './ChampionsOverview';
-import ChampionsOrigins from  './ChampionsOrigins';
-import ChampionsClasses from  './ChampionsClasses';
-import ChampionShow from  './ChampionShow';
+import ChampionsOrigins from  './Synergies/ChampionsOrigins';
+import ChampionsClasses from  './Synergies/ChampionsClasses';
+import ChampionShow from  './ChampionShow/ChampionShow';
 import ItemsContainer from  './ItemsContainer';
 import NewsContainer from  './NewsContainer';
 import SummonerShow from './SummonerShow';
