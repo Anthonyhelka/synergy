@@ -22,9 +22,18 @@ class ChampionShowTile extends Component {
     const pathToRender = require.context('../../../../../public/renders', true);
     const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
 
-    // let synergiesIconList = this.props.champion.teams.map(synergy => {
-    //   return (<List.Item key={synergy.id}><Image src={`${pathToSynergyIcon(synergy.icon, true)}`} avatar /></List.Item>)
-    // });
+
+    let synergiesIconList = this.props.champion.teams.map(synergy => {
+      let name = './test-' + (synergy.name).toLowerCase();
+      return (
+        <List.Item id='champion-show-page-synergy-list-item' key={synergy.id}>
+          <div className="synergy-hexagon">
+            <img id='synergy-icon' src={`${pathToSynergyIcon(name, true)}`}  />
+          </div>
+          <span id='champion-show-page-synergy-text'>&nbsp;{synergy.name}</span>
+        </List.Item>
+      )
+    });
 
     // let synergiesChampionList = this.props.champion.teams.map(synergy => {
     //   let synergyChampions = synergy.champions.filter(champion => {
@@ -51,6 +60,8 @@ class ChampionShowTile extends Component {
 
     return (
       <div>
+
+
         <Segment id='champion-show-page-background' raised>
         </Segment>
         <Segment id='champion-show-page-cover' raised>
@@ -72,10 +83,18 @@ class ChampionShowTile extends Component {
             </Segment>
           </Segment>
 
-          <Segment id='champion-show-page-right-column'>
+          <Segment id='champion-show-page-right-column' basic>
+            <Segment id='champion-show-page-synergy-container'>
+              <List horizontal id='champion-show-page-synergy-list'>{synergiesIconList}</List>
+            </Segment>
+
+          </Segment>
+
+          <Segment id='champion-show-page-bottom-row'>
           </Segment>
 
         </Segment>
+
       </div>
     );
   }
