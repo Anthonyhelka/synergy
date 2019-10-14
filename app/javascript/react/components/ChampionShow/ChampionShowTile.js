@@ -42,10 +42,10 @@ class ChampionShowTile extends Component {
 
 
         <Segment id='champion-page-champion-container'>
-          <Segment id='champion-page-champion-header'>
-          <Label id='champion-page-champion-header-label' attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+          <Segment className={`champion-page-champion-header ${this.props.champion.tier_color}-tier`}>
+          <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
             <div id='champion-page-champion-header-title'>
-              <span>Akali</span>
+              <span>{this.props.champion.name}</span>
               <br />
               <i>The Rogue Assassin</i>
             </div>

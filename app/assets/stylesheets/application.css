@@ -321,13 +321,13 @@ div.item {
   padding: 14px !important;
 }
 
-#champion-page-champion-header {
+.champion-page-champion-header {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
   height: 15% !important;
   padding: 0px !important;
-  border: 5px solid #8A1B88 !important;
+  border: 5px solid !important;
 }
 
 #champion-page-champion-header-image {
@@ -336,16 +336,45 @@ div.item {
   z-index: 1 !important;
 }
 
-#champion-page-champion-header-label {
+.champion-page-champion-header-label {
   position: absolute !important;
   border-radius: 0px !important;
   border-bottom-right-radius: 5px !important;
-  background-color: #8A1B88 !important;
   color: #FFFFFF !important;
   font-size: 0.9vw !important;
   font-weight: bold !important;
   z-index: 2 !important;
 }
+
+.white-tier {
+  background-color: #7A8292 !important;
+  border-color: #7A8292 !important;
+}
+
+.green-tier {
+  background-color: #21BA45 !important;
+  border-color: #21BA45 !important;
+}
+
+.blue-tier {
+  background-color: #2185D0 !important;
+  border-color: #2185D0 !important;
+}
+
+.purple-tier {
+  background-color: #A332C8 !important;
+  border-color: #A332C8 !important;
+}
+
+.yellow-tier {
+  background-color: #FBBD07 !important;
+  border-color: #FBBD07 !important;
+}
+
+
+
+
+
 
 #champion-page-champion-header-title {
   position: absolute !important;
