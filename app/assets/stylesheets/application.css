@@ -1,14 +1,19 @@
 /* Body */
 body {
-  background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important;
-  background-color: white !important;
+  /* background-image: url("https://columbiaairport.com/wp-content/uploads/2015/12/CAE-Website-Full-Background-Texture1902x1200-9.jpg") !important; */
+  background: url("https://cdn.wallpapersafari.com/65/35/ayjCpf.jpg") no-repeat center center fixed !important;
+  background-color: #E3E3E3 !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: relative !important;
   z-index: -2 !important;
 }
 
 /* Background Images */
 .black-background-color {
-  background-color: black !important;
+  background-color: #000000 !important;
   background-repeat: no-repeat !important;
   background-size:contain !important;
   background-position: 125% 57px !important;
@@ -287,40 +292,88 @@ div.item {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* Champion Show Page */
-#champion-show-page-background,
-#champion-show-page-cover,
-#champion-show-page-container {
+#champion-page-container {
+  display: flex !important;
+  width: 100% !important;
+  height: 800px !important;
+  background-color: green !important;
+  padding: 2.5% !important;
+}
+
+#champion-page-search-container,
+#champion-page-champion-container {
+  height: 100% !important;
+  max-height: inherit !important;
+  margin-top: 0px !important;
+  background-color: lightblue !important;
+}
+
+#champion-page-search-container {
+  width: 30% !important;
+  margin-right: 2.5%;
+  background-color: yellow !important;
+}
+
+#champion-page-champion-container {
+  width: 65% !important;
+  margin-left: 2.5%;
+  padding: 14px !important;
+}
+
+#champion-page-champion-header {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 15% !important;
+  padding: 0px !important;
+  border: 3px solid #2185D0 !important;
+}
+
+#champion-page-champion-header-image {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+#champion-page-champion-header-title {
   position: absolute !important;
-  width: 900px !important;
-  height: 600px !important;
-  margin-top: 25px !important;
-  left: 50% !important;
-  -webkit-transform: translateX(-50%) !important;
-  transform: translateX(-50%) !important;
-  padding: 20px !important;
+  margin-left: 5% !important;
+  color: #FFFFFF !important;
+  font-size: 1.2vw;
+  font-weight: bold !important;
+  z-index: 2 !important;
 }
 
-#champion-show-page-background {
-  background-image: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
-  background-color: #000000 !important;
-  background-repeat: no-repeat !important;
-  background-position: 100% 0px !important;
-  background-size: 100% 100%;
+#champion-page-champion-header-title span {
+  font-size: 1.4vw;
 }
 
-#champion-show-page-cover {
-  background-color: #202040 !important;
-  opacity: 0.8 !important;
+#champion-page-champion-header-synergies-container {
+  display:flex !important;
+  position: absolute !important;
+  right: 0px !important;
+  background-color: #2185D0 !important;
+  width: 25% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#champion-page-champion-header-synergy {
+  display: flex !important;
+  align-items: center !important;
+  color: #FFFFFF !important;
+  float: left !important;
+  font-size: 1.1vw;
+  font-weight: bold !important;
+}
+
+#champion-page-champion-header-synergy img {
+  width: 35px !important;
+  height: auto !important;
+  vertical-align: middle !important;
 }
 
 #champion-show-page-left-column {
@@ -333,22 +386,10 @@ div.item {
   color: #FFFFFF !important;
 }
 
-#champion-show-page-header,
 #champion-show-page-render {
   width: 100% !important;
   border: none !important;
   background: rgba(96, 32, 128, 0.7) !important;
-}
-#champion-show-page-header {
-  display: flex;
-  align-items: center;
-}
-
-#champion-show-page-header-image {
-  width: 25% !important;
-  height: auto !important;
-  border: 3px solid purple !important;
-  border-radius: 5px !important;
 }
 
 #champion-show-page-render-image {
@@ -368,46 +409,6 @@ div.item {
   margin-top: 0px !important;
 }
 
-#champion-show-page-synergy-container {
-  background: rgba(96, 32, 128, 0.7) !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  height: 10% !important;
-}
-
-#champion-show-page-synergy-list {
-  display: flex !important;
-  width: 50% !important;
-  height: 100% !important;
-}
-
-#champion-show-page-synergy-list-item {
-  display: flex !important;
-  align-items: center !important;
-  padding-right: 10px !important;
-  padding-bottom: 0px !important;
-}
-
-#champion-show-page-synergy-icon {
-  background-color: #CF4C2F !important;
-  display: flex !important;
-  border-radius: 3px !important;
-}
-
-#champion-show-page-synergy-icon img {
-  margin: auto !important;
-  width: 55% !important;
-  height: auto !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
-
-#champion-show-page-synergy-text {
-  display: inline-block !important;
-  vertical-align: middle !important;
-}
 
 #champion-show-page-bottom-row {
   display: inline-block !important;
@@ -417,49 +418,6 @@ div.item {
   padding: 0px !important;
   color: #FFFFFF !important;
   margin-top: 0px !important;
-}
-
-
-#test-image {
-  width: 28px !important;
-  height: 28px !important;
-}
-
-.synergy-hexagon {
-  position: relative;
-  width: 28px;
-  height: 16px;
-  background-color: #CD5C5C;
-}
-
-.synergy-hexagon::before,
-.synergy-hexagon::after {
-  content: "";
-  position: absolute;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-}
-
-.synergy-hexagon::before {
-  bottom: 100%;
-  border-bottom: 8px solid #CD5C5C;
-}
-
-.synergy-hexagon::after {
-  top: 100%;
-  border-top: 8px solid #CD5C5C;
-}
-
-#synergy-icon {
-  width: 23px !important;
-  height: 23px !important;
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  margin: auto;
-  z-index: 1000;
 }
 
  /* Summoner Page */
