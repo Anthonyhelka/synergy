@@ -306,7 +306,7 @@ div.item {
   height: 100% !important;
   max-height: inherit !important;
   margin-top: 0px !important;
-  background-color: lightblue !important;
+  background-color: white !important;
 }
 
 #champion-page-search-container {
@@ -327,7 +327,7 @@ div.item {
   width: 100% !important;
   height: 15% !important;
   padding: 0px !important;
-  border: 3px solid #2185D0 !important;
+  border: 5px solid #8A1B88 !important;
 }
 
 #champion-page-champion-header-image {
@@ -336,9 +336,21 @@ div.item {
   z-index: 1 !important;
 }
 
+#champion-page-champion-header-label {
+  position: absolute !important;
+  border-radius: 0px !important;
+  border-bottom-right-radius: 5px !important;
+  background-color: #8A1B88 !important;
+  color: #FFFFFF !important;
+  font-size: 0.9vw !important;
+  font-weight: bold !important;
+  z-index: 2 !important;
+}
+
 #champion-page-champion-header-title {
   position: absolute !important;
-  margin-left: 5% !important;
+  margin: auto !important;
+  margin-left: 8% !important;
   color: #FFFFFF !important;
   font-size: 1.2vw;
   font-weight: bold !important;
@@ -349,12 +361,34 @@ div.item {
   font-size: 1.4vw;
 }
 
+#champion-page-champion-header-coin {
+  display: inline !important;
+  width: 15px !important;
+  z-index: 2 !important;
+}
+
+#champion-page-champion-header-synergies-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 101%;
+  background: #2185D0;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  transform: skew(-45deg);
+  z-index: -1;
+
+}
+
 #champion-page-champion-header-synergies-container {
   display:flex !important;
   position: absolute !important;
   right: 0px !important;
   background-color: #2185D0 !important;
-  width: 25% !important;
+  width: 15% !important;
   height: 100% !important;
   z-index: 2 !important;
   justify-content: center;
@@ -364,14 +398,14 @@ div.item {
 #champion-page-champion-header-synergy {
   display: flex !important;
   align-items: center !important;
+  position: relative !important;
   color: #FFFFFF !important;
-  float: left !important;
   font-size: 1.1vw;
   font-weight: bold !important;
 }
 
 #champion-page-champion-header-synergy img {
-  width: 35px !important;
+  width: 30px !important;
   height: auto !important;
   vertical-align: middle !important;
 }
@@ -420,12 +454,12 @@ div.item {
   margin-top: 0px !important;
 }
 
- /* Summoner Page */
- #summoner-show-page-container-mobile-tablet {
-   width: 100% !important;
-   z-index: -1 !important;
-   position: absolute !important;
- }
+/* Summoner Page */
+#summoner-show-page-container-mobile-tablet {
+ width: 100% !important;
+ z-index: -1 !important;
+ position: absolute !important;
+}
 
 #summoner-show-page-container-computer {
   width: 50% !important;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image } from 'semantic-ui-react';
+import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon } from 'semantic-ui-react';
 
 class ChampionShowTile extends Component {
   constructor(props) {
@@ -43,10 +43,11 @@ class ChampionShowTile extends Component {
 
         <Segment id='champion-page-champion-container'>
           <Segment id='champion-page-champion-header'>
+          <Label id='champion-page-champion-header-label' attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
             <div id='champion-page-champion-header-title'>
-              <span>&nbsp;Akali</span>
+              <span>Akali</span>
               <br />
-              <i>&nbsp;The Rogue Assassin</i>
+              <i>The Rogue Assassin</i>
             </div>
             <Image id='champion-page-champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
             <div id='champion-page-champion-header-synergies-container'>
