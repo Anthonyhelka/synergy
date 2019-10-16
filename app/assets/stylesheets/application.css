@@ -415,7 +415,7 @@ div.item {
 #champion-page-champion-left-column {
   display: inline-block !important;
   float: left !important;
-  width: 30% !important;
+  width: 25% !important;
   height: 80% !important;
   margin: 0px !important;
   padding: 0px !important;
@@ -446,6 +446,7 @@ div.item {
 
 .champion-page-champion-ability-title-container span {
   position: absolute !important;
+  width: 100% !important;
   top: 50% !important;
   left: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;
@@ -464,7 +465,7 @@ div.item {
   display: inline-block !important;
   float: left !important;
   width: 100% !important;
-  height: 80% !important;
+  height: 60% !important;
   margin: 0px !important;
   padding: 0px !important;
   background-color: #000000 !important;
