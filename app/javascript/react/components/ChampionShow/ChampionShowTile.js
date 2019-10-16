@@ -43,16 +43,31 @@ class ChampionShowTile extends Component {
 
         <Segment id='champion-page-champion-container'>
           <Segment className={`champion-page-champion-header ${this.props.champion.tier_color}-tier`}>
-          <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+            <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
             <div id='champion-page-champion-header-title'>
               <span>{this.props.champion.name}</span>
               <br />
               <i>The Rogue Assassin</i>
             </div>
             <Image id='champion-page-champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
-            <div id='champion-page-champion-header-synergies-container'>
+            <div className='champion-page-champion-header-synergies-container'>
               {synergiesIconList}
             </div>
+          </Segment>
+
+          <Segment id='champion-page-champion-left-column' basic>
+
+            <Segment id='champion-page-champion-ability'>
+              <Segment className='champion-page-champion-ability-title-container' basic>
+                <span>{this.props.champion.ability_name}</span>
+              </Segment>
+              <Divider className='champion-page-champion-ability-divider' />
+
+            </Segment>
+
+            <Segment id='champion-page-champion-render'>
+              <Image className='champion-page-champion-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
+            </Segment>
           </Segment>
         </Segment>
 
@@ -65,3 +80,10 @@ class ChampionShowTile extends Component {
 }
 
 export default ChampionShowTile;
+
+<Divider className='champion-page-champion-ability-divider' />
+// <Image className='champion-page-champion-ability-image' src={`${pathToAbility(this.props.champion.icon, true)}`}  />
+// <Divider className='champion-page-champion-ability-divider' />
+// <span>{this.props.champion.ability_type}</span>
+// <span>{this.props.champion.ability_description}</span>
+// <span>{this.props.champion.starting_mana}/{this.props.champion.mana_cost}</span>
