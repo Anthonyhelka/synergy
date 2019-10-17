@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon } from 'semantic-ui-react';
+import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
+
+import '../../../../assets/stylesheets/ChampionShow.css';
 
 class ChampionShowTile extends Component {
   constructor(props) {
@@ -25,7 +27,7 @@ class ChampionShowTile extends Component {
 
     let synergiesIconList = this.props.champion.teams.map(synergy => {
       return (
-        <div id='champion-page-champion-header-synergy'>
+        <div id='champion-header-synergy'>
           <Image src={`${pathToSynergyIcon(synergy.icon, true)}`}  />
           <span>&nbsp;{synergy.name}</span>
         </div>
@@ -34,46 +36,42 @@ class ChampionShowTile extends Component {
 
     return (
       <div>
-      <Segment id='champion-page-container'>
+        <Table id='page-container' columns='2' compact>
+          <Table.Body>
+            <Table.Row>
 
-        <Segment id='champion-page-search-container'>
-        </Segment>
+              <Table.Cell width='1'>
+                <Segment id='search-container'>
+                  search
+                </Segment>
+              </Table.Cell>
 
+              <Table.Cell width='2'>
 
+                <Segment id='champion-container'>
+                  <Table basic='very'>
+                    <Table.Body>
 
-        <Segment id='champion-page-champion-container'>
-          <Segment className={`champion-page-champion-header ${this.props.champion.tier_color}-tier`}>
-            <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
-            <div id='champion-page-champion-header-title'>
-              <span>{this.props.champion.name}</span>
-              <br />
-              <i>The Rogue Assassin</i>
-            </div>
-            <Image id='champion-page-champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
-            <div className='champion-page-champion-header-synergies-container'>
-              {synergiesIconList}
-            </div>
-          </Segment>
+                      <Table.Row>
+                        <Segment id='champion-header'>
+                          <Label id='champion-header-tier' className={`${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+                          <div id='champion-header-title'><span>{this.props.champion.name}</span><p>The Rogue Assassin</p></div>
+                          <Image id='champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
+                          <div id='champion-header-synergies-container'>
+                            {synergiesIconList}
+                          </div>
+                        </Segment>
+                      </Table.Row>
 
-          <Segment id='champion-page-champion-left-column' basic>
+                    </Table.Body>
+                  </Table>
+                </Segment>
 
-            <Segment id='champion-page-champion-ability'>
-              <Segment className='champion-page-champion-ability-title-container' basic>
-                <span>{this.props.champion.ability_name}</span>
-              </Segment>
-              <Divider className='champion-page-champion-ability-divider' />
+              </Table.Cell>
 
-            </Segment>
-
-            <Segment id='champion-page-champion-render'>
-              <Image className='champion-page-champion-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
-            </Segment>
-          </Segment>
-        </Segment>
-
-
-
-      </Segment>
+            </Table.Row>
+          </Table.Body>
+        </Table>
       </div>
     );
   }
@@ -81,9 +79,58 @@ class ChampionShowTile extends Component {
 
 export default ChampionShowTile;
 
-<Divider className='champion-page-champion-ability-divider' />
+// <Divider className='champion-page-champion-ability-divider' />
 // <Image className='champion-page-champion-ability-image' src={`${pathToAbility(this.props.champion.icon, true)}`}  />
 // <Divider className='champion-page-champion-ability-divider' />
 // <span>{this.props.champion.ability_type}</span>
 // <span>{this.props.champion.ability_description}</span>
 // <span>{this.props.champion.starting_mana}/{this.props.champion.mana_cost}</span>
+
+
+
+// <Segment id='champion-page-container'>
+//
+//   <Segment id='champion-page-search-container'>
+//   </Segment>
+//
+//
+//
+//   <Segment id='champion-page-champion-container'>
+    // <Segment className={`champion-page-champion-header ${this.props.champion.tier_color}-tier`}>
+    //   <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+    //   <div id='champion-page-champion-header-title'>
+    //     <span>{this.props.champion.name}</span>
+    //     <br />
+    //     <i>The Rogue Assassin</i>
+    //   </div>
+    //   <Image id='champion-page-champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
+    //   <div className='champion-page-champion-header-synergies-container'>
+    //     {synergiesIconList}
+    //   </div>
+    // </Segment>
+//
+//     <Segment id='champion-page-champion-left-column' basic>
+//
+//       <Segment id='champion-page-champion-ability'>
+//         <Segment className='champion-page-champion-ability-title-container' basic>
+//           <span>{this.props.champion.ability_name}</span>
+//         </Segment>
+//
+//         <Divider className='champion-page-champion-ability-divider' />
+//
+//         <Segment className='champion-page-champion-ability-image-container' basic>
+//           <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
+//         </Segment>
+//
+//
+//       </Segment>
+//
+//       <Segment id='champion-page-champion-render'>
+//         <Image className='champion-page-champion-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
+//       </Segment>
+//     </Segment>
+//   </Segment>
+//
+//
+//
+// </Segment>
