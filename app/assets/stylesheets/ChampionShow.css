@@ -1,17 +1,27 @@
 /* Containers */
 #page-container {
   width: 90% !important;
-  margin: auto !important;
   height: 100vh !important;
   border-radius: 0px !important;
+  margin: auto !important;
   padding: 14px !important;
   background-color: green !important;
 }
 
-#search-container,
-#champion-container {
-  width: 100% !important;
+#search-container {
+  width: 32.5% !important;
   height: 100% !important;
+  float: left !important;
+  margin: 0px !important;
+  border: none !important;
+  background-color: yellow !important;
+}
+
+#champion-container {
+  width: 65% !important;
+  height: 100% !important;
+  float: right !important;
+  margin: 0px !important;
   border: none !important;
   background-color: yellow !important;
 }

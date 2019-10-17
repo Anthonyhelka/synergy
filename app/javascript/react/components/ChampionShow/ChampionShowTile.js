@@ -36,42 +36,79 @@ class ChampionShowTile extends Component {
 
     return (
       <div>
-        <Table id='page-container' columns='2' compact>
-          <Table.Body>
-            <Table.Row>
+        <Segment id='page-container'>
 
-              <Table.Cell width='1'>
-                <Segment id='search-container'>
-                  search
-                </Segment>
-              </Table.Cell>
+          <Segment id='search-container'>
+            Search Container
+          </Segment>
 
-              <Table.Cell width='2'>
+          <Segment id='champion-container'>
+            <Grid>
 
-                <Segment id='champion-container'>
-                  <Table basic='very'>
-                    <Table.Body>
+              <Grid.Row columns='1'>
+                <Grid.Column>
+                  <Segment id='champion-header'>
+                    <Label id='champion-header-tier' className={`${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+                    <div id='champion-header-title'><span>{this.props.champion.name}</span><p>The Rogue Assassin</p></div>
+                    <Image id='champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
+                    <div id='champion-header-synergies-container'>
+                      {synergiesIconList}
+                    </div>
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
 
-                      <Table.Row>
-                        <Segment id='champion-header'>
-                          <Label id='champion-header-tier' className={`${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
-                          <div id='champion-header-title'><span>{this.props.champion.name}</span><p>The Rogue Assassin</p></div>
-                          <Image id='champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
-                          <div id='champion-header-synergies-container'>
-                            {synergiesIconList}
-                          </div>
+              <Grid.Row columns='2'>
+                <Grid.Column>
+                  <Segment>
+                    <Grid.Row columns='2'>
+                      <Grid.Column>
+                        <Segment>
+                          Ability
                         </Segment>
-                      </Table.Row>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Segment>
+                          Render
+                        </Segment>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Segment>
+                </Grid.Column>
+                <Grid.Column>
+                  <Segment>
+                    <Grid.Row columns='3'>
+                      <Grid.Column>
+                        <Segment>
+                          Statistics
+                        </Segment>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Segment>
+                          Synergy 1
+                        </Segment>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Segment>
+                          Synergy 2
+                        </Segment>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
 
-                    </Table.Body>
-                  </Table>
-                </Segment>
+              <Grid.Row columns='1'>
+                <Grid.Column>
+                  <Segment>
+                    Recommended Items
+                  </Segment>
+                </Grid.Column>
+              </Grid.Row>
 
-              </Table.Cell>
-
-            </Table.Row>
-          </Table.Body>
-        </Table>
+            </Grid>
+          </Segment>
+        </Segment>
       </div>
     );
   }
