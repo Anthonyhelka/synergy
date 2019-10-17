@@ -292,95 +292,10 @@ div.item {
 }
 
 
-/* Champion Page */
-
-#champion-page-container {
-  display: flex !important;
-  width: 100% !important;
-  height: 800px !important;
-  padding: 2.5% !important;
-  border-radius: 0px !important;
-  background-color: #000000 !important;
-}
-
-#champion-page-search-container,
-#champion-page-champion-container {
-  height: 100% !important;
-  max-height: inherit !important;
-  margin-top: 0px !important;
-  background-color: white !important;
-}
-
-#champion-page-search-container {
-  width: 25% !important;
-  margin-right: 2.5%;
-  /* background-color: #FFFFFF !important; */
-  background: green !important;
-  /* background: url("https://cdn.wallpapersafari.com/65/35/ayjCpf.jpg") no-repeat center center !important; */
-}
-
-#champion-page-champion-container {
-  width: 65% !important;
-  margin-left: 2.5%;
-  padding: 14px !important;
-  background-color: #FFFFFF !important;
-  /* background: green !important; */
-  background: url("https://cdn.wallpapersafari.com/65/35/ayjCpf.jpg") no-repeat center center !important;
-}
 
 
 
-/* Champion Page Left Column */
-#champion-page-champion-left-column {
-  display: inline-block !important;
-  float: left !important;
-  width: 25% !important;
-  height: 80% !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  border: none !important;
-}
 
-#champion-page-champion-ability {
-  width: 100% !important;
-  height: 20% !important;
-  margin: 0px 0px 14px 0px !important;
-  padding: 0px !important;
-  text-align: center !important;
-  color: #000000 !important;
-  background-color: #FFFFFF !important;
-  border: 5px solid #2185D0 !important;
-}
-
-.champion-page-champion-ability-title-container {
-  height: 15% !important;
-  width: 100% !important;
-  margin: 0px !important;
-  border: none !important;
-  border-radius: 0px !important;
-  color: #000000 !important;
-  font-weight: bold !important;
-  font-size: 1.1em !important;
-}
-
-.champion-page-champion-ability-title-container span {
-  position: absolute !important;
-  width: 100% !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(-50%) !important;
-}
-
-.champion-page-champion-ability-divider {
-  margin: 1px !important;
-}
-
-.champion-page-champion-ability-image-container {
-  width: 44px !important;
-  height: auto !important;
-  padding: 0px !important;
-  margin: 0px !important;
-}
 
 #champion-page-champion-render {
   display: inline-block !important;
