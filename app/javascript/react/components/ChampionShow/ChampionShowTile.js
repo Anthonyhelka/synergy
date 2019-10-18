@@ -61,11 +61,11 @@ class ChampionShowTile extends Component {
               <Grid.Row id='champion-row-two' columns='2'>
                 <Grid.Column width='5'>
                   <Segment>
-                    <Grid.Row columns='2'>
+                    <Grid.Row columns='1'>
 
                       <Grid.Column>
                         <Grid stackable>
-                          <Grid.Row id='champion-ability-container' width='16'>
+                          <Grid.Row id='champion-ability-row-one' width='16'>
                             <Grid.Column id='champion-ability-title-container' width='12'>
                               <Segment id='champion-ability-title-container'>
                                 <span>{this.props.champion.ability_name}</span>
@@ -79,28 +79,40 @@ class ChampionShowTile extends Component {
                                 <span>{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
                               </Segment>
                             </Grid.Column>
+                          </Grid.Row>
 
-                            <Grid.Column id='champion-ability-image-description-container' width='12'>
-                              <Segment id='champion-ability-image-container'>
-                                <Image className='champion-page-champion-ability-image' src={`${pathToAbility(this.props.champion.icon, true)}`}  />
+                          <Grid.Row id='champion-ability-row-two'>
+                            <Grid.Column id='champion-ability-image-container' width='4' stretched>
+                              <Segment id='champion-ability-image'>
+                                <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
                               </Segment>
                             </Grid.Column>
-                            <Grid.Column id='champion-ability-description-container' width='4'>
-                              <Segment id='champion-ability-type-container'>
+                            <Grid.Column id='champion-ability-description-container' width='12'>
+                              <Segment id='champion-ability-description'>
                                 <span>{this.props.champion.ability_description}</span>
                               </Segment>
                             </Grid.Column>
                           </Grid.Row>
+
+                          <Grid.Row id='champion-ability-row-three'>
+                            <Grid.Column id='champion-ability-ability-extra-container' width='16'>
+                              <Segment id='champion-ability-ability-extra'>
+                                <span>Damage: [200, 350, 500]</span>
+                              </Segment>
+                            </Grid.Column>
+                          </Grid.Row>
+
                         </Grid>
                       </Grid.Column>
-                      <Grid.Column>
-                        <Segment>
-                          Render
-                        </Segment>
+                    </Grid.Row>
+                    <Grid.Row>
+                      <Grid.Column id='champion-render-container'>
+                        hello
                       </Grid.Column>
                     </Grid.Row>
                   </Segment>
                 </Grid.Column>
+
                 <Grid.Column width='11'>
                   <Segment>
                     <Grid.Row columns='3'>
@@ -124,13 +136,6 @@ class ChampionShowTile extends Component {
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row id='champion-row-three' columns='1'>
-                <Grid.Column>
-                  <Segment>
-                    Recommended Items
-                  </Segment>
-                </Grid.Column>
-              </Grid.Row>
 
             </Grid>
           </Segment>
@@ -160,7 +165,13 @@ export default ChampionShowTile;
                           //   <Image className='champion-page-champion-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
                           // </Segment>
 
-
+                          // <Grid.Row id='champion-row-three' columns='1'>
+                          //   <Grid.Column>
+                          //     <Segment>
+                          //       Recommended Items
+                          //     </Segment>
+                          //   </Grid.Column>
+                          // </Grid.Row>
 
 // <Segment id='champion-page-container'>
 //

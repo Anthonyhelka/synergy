@@ -318,18 +318,6 @@ div.item {
   background-color: #000000 !important;
 }
 
-
-
-#champion-show-page-bottom-row {
-  display: inline-block !important;
-  width: 100% !important;
-  height: 20% !important;
-  border: none !important;
-  padding: 0px !important;
-  color: #FFFFFF !important;
-  margin-top: 0px !important;
-}
-
 /* Summoner Page */
 #summoner-show-page-container-mobile-tablet {
  width: 100% !important;

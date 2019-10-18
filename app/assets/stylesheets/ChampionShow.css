@@ -132,8 +132,8 @@
   padding: 14px 0px 14px 0px !important;
 }
 
-#champion-ability-container {
-  padding-top: 0px !important;
+#champion-ability-row-one {
+  padding: 0px !important;
 }
 
 #champion-ability-title-container {
@@ -168,15 +168,40 @@
   transform: translateX(-50%) translateY(-50%) !important;
 }
 
-#champion-ability-divider {
-  margin: 1px !important;
+#champion-ability-row-two {
+  padding: 0px !important;
 }
 
 #champion-ability-image-container {
-  width: 44px !important;
-  height: auto !important;
   padding: 0px !important;
-  margin: 0px !important;
+}
+
+#champion-ability-image {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0px !important;
+}
+
+#champion-ability-image img {
+  max-width: 45px !important;
+  max-height: 45px !important;
+}
+
+#champion-ability-description-container {
+  padding: 0px !important;
+}
+
+#champion-ability-row-three {
+  padding: 0px !important;
+}
+
+#champion-ability-ability-extra-container {
+  padding: 0px !important;
+}
+
+#champion-ability-ability-extra {
+  text-align: center !important;
 }
 
 /* Champion Row Three */
