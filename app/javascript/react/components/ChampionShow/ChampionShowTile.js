@@ -67,17 +67,17 @@ class ChampionShowTile extends Component {
                         <Grid.Column>
                           <Grid stackable>
                             <Grid.Row id='champion-ability-row-one' width='16'>
-                              <Grid.Column id='champion-ability-title-container' width='12'>
+                              <Grid.Column id='champion-ability-title-container' width='10'>
                                 <Segment id='champion-ability-title-container' basic>
                                   <span>{this.props.champion.ability_name}</span>
                                 </Segment>
                               </Grid.Column>
-                              <Grid.Column id='champion-ability-type-mana-container' width='4'>
+                              <Grid.Column id='champion-ability-type-mana-container' width='6'>
                                 <Segment id='champion-ability-type-container' basic>
                                   <span>{this.props.champion.ability_type}</span>
                                 </Segment>
                                 <Segment id='champion-ability-mana-container' basic>
-                                  <span>{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
+                                  <span><Icon name='tint' />{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
                                 </Segment>
                               </Grid.Column>
                             </Grid.Row>

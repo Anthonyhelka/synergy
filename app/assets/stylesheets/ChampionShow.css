@@ -133,7 +133,17 @@
 }
 
 #champion-left-column {
-  border: 2px solid #000000 !important;
+}
+
+#champion-ability-row {
+  padding: 14px 0px 14px 0px !important;
+}
+
+#champion-render-row {
+  padding: 14px 0px 0px 0px !important;
+  background-color: #000000 !important;
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
 }
 
 #champion-ability-row-one {
@@ -162,9 +172,9 @@
 
 #champion-ability-type-container,
 #champion-ability-mana-container {
-  text-align: center;
-  padding: 0px !important;
+  padding: 0px 5px 0px 0px !important;
   margin: 0px !important;
+  text-align: right !important;
 }
 
 #champion-ability-title-container span {
@@ -178,15 +188,8 @@
 #champion-ability-row-two {
   padding: 0px !important;
   background-color: #FFFFFF !important;
-}
-
-#champion-ability-row {
-  padding: 14px 0px 14px 0px !important;
-}
-
-#champion-render-row {
-  padding: 14px 0px 0px 0px !important;
-  background-color: #000000 !important;
+  border-left: 3px solid #2185D0 !important;
+  border-right: 3px solid #2185D0 !important;
 }
 
 #champion-ability-image-container {
