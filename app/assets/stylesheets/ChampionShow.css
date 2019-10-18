@@ -132,8 +132,15 @@
   padding: 14px 0px 14px 0px !important;
 }
 
+#champion-left-column {
+  border: 2px solid #000000 !important;
+}
+
 #champion-ability-row-one {
   padding: 0px !important;
+  background-color: #2185D0 !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
 }
 
 #champion-ability-title-container {
@@ -170,10 +177,20 @@
 
 #champion-ability-row-two {
   padding: 0px !important;
+  background-color: #FFFFFF !important;
+}
+
+#champion-ability-row {
+  padding: 14px 0px 14px 0px !important;
+}
+
+#champion-render-row {
+  padding: 14px 0px 0px 0px !important;
+  background-color: #000000 !important;
 }
 
 #champion-ability-image-container {
-  padding: 0px !important;
+  padding: 0px 0px 0px 10px !important;
 }
 
 #champion-ability-image {
@@ -184,8 +201,12 @@
 }
 
 #champion-ability-image img {
-  max-width: 45px !important;
-  max-height: 45px !important;
+  width: auto !important;
+  max-width: 3.5vw !important;
+  height: auto !important;
+  max-height: 11vh !important;
+  border: 3px solid #000000 !important;
+  border-radius: 3px !important;
 }
 
 #champion-ability-description-container {
@@ -194,6 +215,9 @@
 
 #champion-ability-row-three {
   padding: 0px !important;
+  background-color: #2185D0 !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
 }
 
 #champion-ability-ability-extra-container {
@@ -204,6 +228,21 @@
   text-align: center !important;
 }
 
+#champion-render-container {
+  padding: 0px !important;
+}
+
+#champion-render {
+  padding: 0px !important;
+}
+
+#champion-render img {
+  width: auto !important;
+  max-width: 10vw !important;
+  height: auto !important;
+  max-height: 50vh;
+  margin: auto !important;
+}
 /* Champion Row Three */
 
 #champion-row-three {

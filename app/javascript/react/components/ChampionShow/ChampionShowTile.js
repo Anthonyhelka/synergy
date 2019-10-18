@@ -58,58 +58,64 @@ class ChampionShowTile extends Component {
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row id='champion-row-two' columns='2'>
+              <Grid.Row id='champion-row-two' columns='2' stretched>
                 <Grid.Column width='5'>
-                  <Segment>
-                    <Grid.Row columns='1'>
+                  <Segment id='champion-left-column' basic>
+                    <Grid>
+                      <Grid.Row id='champion-ability-row' columns='1'>
 
-                      <Grid.Column>
-                        <Grid stackable>
-                          <Grid.Row id='champion-ability-row-one' width='16'>
-                            <Grid.Column id='champion-ability-title-container' width='12'>
-                              <Segment id='champion-ability-title-container'>
-                                <span>{this.props.champion.ability_name}</span>
-                              </Segment>
-                            </Grid.Column>
-                            <Grid.Column id='champion-ability-type-mana-container' width='4'>
-                              <Segment id='champion-ability-type-container'>
-                                <span>{this.props.champion.ability_type}</span>
-                              </Segment>
-                              <Segment id='champion-ability-mana-container'>
-                                <span>{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
-                              </Segment>
-                            </Grid.Column>
-                          </Grid.Row>
+                        <Grid.Column>
+                          <Grid stackable>
+                            <Grid.Row id='champion-ability-row-one' width='16'>
+                              <Grid.Column id='champion-ability-title-container' width='12'>
+                                <Segment id='champion-ability-title-container' basic>
+                                  <span>{this.props.champion.ability_name}</span>
+                                </Segment>
+                              </Grid.Column>
+                              <Grid.Column id='champion-ability-type-mana-container' width='4'>
+                                <Segment id='champion-ability-type-container' basic>
+                                  <span>{this.props.champion.ability_type}</span>
+                                </Segment>
+                                <Segment id='champion-ability-mana-container' basic>
+                                  <span>{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
+                                </Segment>
+                              </Grid.Column>
+                            </Grid.Row>
 
-                          <Grid.Row id='champion-ability-row-two'>
-                            <Grid.Column id='champion-ability-image-container' width='4' stretched>
-                              <Segment id='champion-ability-image'>
-                                <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
-                              </Segment>
-                            </Grid.Column>
-                            <Grid.Column id='champion-ability-description-container' width='12'>
-                              <Segment id='champion-ability-description'>
-                                <span>{this.props.champion.ability_description}</span>
-                              </Segment>
-                            </Grid.Column>
-                          </Grid.Row>
+                            <Grid.Row id='champion-ability-row-two'>
+                              <Grid.Column id='champion-ability-image-container' width='4' stretched>
+                                <Segment id='champion-ability-image' basic>
+                                  <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
+                                </Segment>
+                              </Grid.Column>
+                              <Grid.Column id='champion-ability-description-container' width='12'>
+                                <Segment id='champion-ability-description' basic>
+                                  <span>{this.props.champion.ability_description}</span>
+                                </Segment>
+                              </Grid.Column>
+                            </Grid.Row>
 
-                          <Grid.Row id='champion-ability-row-three'>
-                            <Grid.Column id='champion-ability-ability-extra-container' width='16'>
-                              <Segment id='champion-ability-ability-extra'>
-                                <span>Damage: [200, 350, 500]</span>
-                              </Segment>
-                            </Grid.Column>
-                          </Grid.Row>
+                            <Grid.Row id='champion-ability-row-three'>
+                              <Grid.Column id='champion-ability-ability-extra-container' width='16'>
+                                <Segment id='champion-ability-ability-extra' basic>
+                                  <span>Damage: [200, 350, 500]</span>
+                                </Segment>
+                              </Grid.Column>
+                            </Grid.Row>
 
-                        </Grid>
-                      </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                      <Grid.Column id='champion-render-container'>
-                        hello
-                      </Grid.Column>
-                    </Grid.Row>
+                          </Grid>
+                        </Grid.Column>
+                      </Grid.Row>
+
+                      <Grid.Row id='champion-render-row' columns='1'>
+                        <Grid.Column id='champion-render-container'>
+                          <Segment id='champion-render' basic>
+                            <Image src={`${pathToRender(this.props.champion.icon, true)}`}  />
+                          </Segment>
+                        </Grid.Column>
+                      </Grid.Row>
+
+                    </Grid>
                   </Segment>
                 </Grid.Column>
 
@@ -147,23 +153,11 @@ class ChampionShowTile extends Component {
 
 export default ChampionShowTile;
 
-// <Divider className='champion-page-champion-ability-divider' />
-// <Divider className='champion-page-champion-ability-divider' />
-// <span>{this.props.champion.ability_type}</span>
-// <span>{this.props.champion.ability_description}</span>
-// <span>{this.props.champion.starting_mana}/{this.props.champion.mana_cost}</span>
-
-
-
-                          // <Divider id='champion-ability-divider' />
-                          //
                           // <Segment id='champion-ability-image-container' basic>
                           //   <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
                           // </Segment>
 
-                          // <Segment id='champion-page-champion-render'>
-                          //   <Image className='champion-page-champion-render-image' src={`${pathToRender(this.props.champion.icon, true)}`}  />
-                          // </Segment>
+
 
                           // <Grid.Row id='champion-row-three' columns='1'>
                           //   <Grid.Column>
@@ -172,25 +166,3 @@ export default ChampionShowTile;
                           //     </Segment>
                           //   </Grid.Column>
                           // </Grid.Row>
-
-// <Segment id='champion-page-container'>
-//
-//   <Segment id='champion-page-search-container'>
-//   </Segment>
-//
-//
-//
-//   <Segment id='champion-page-champion-container'>
-    // <Segment className={`champion-page-champion-header ${this.props.champion.tier_color}-tier`}>
-    //   <Label className={`champion-page-champion-header-label ${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
-    //   <div id='champion-page-champion-header-title'>
-    //     <span>{this.props.champion.name}</span>
-    //     <br />
-    //     <i>The Rogue Assassin</i>
-    //   </div>
-    //   <Image id='champion-page-champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
-    //   <div className='champion-page-champion-header-synergies-container'>
-    //     {synergiesIconList}
-    //   </div>
-    // </Segment>
-// </Segment>

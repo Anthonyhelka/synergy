@@ -292,32 +292,6 @@ div.item {
 }
 
 
-
-
-
-
-
-#champion-page-champion-render {
-  display: inline-block !important;
-  float: left !important;
-  width: 100% !important;
-  height: 60% !important;
-  margin: 0px !important;
-  padding: 0px !important;
-  background-color: #000000 !important;
-  border: 5px solid #2185D0 !important;
-}
-
-.champion-page-champion-render-image {
-  margin: auto !important;
-  width: auto !important;
-  max-width: 100% !important;
-  height: auto !important;
-  max-height: 100% !important;
-  border: none !important;
-  background-color: #000000 !important;
-}
-
 /* Summoner Page */
 #summoner-show-page-container-mobile-tablet {
  width: 100% !important;
