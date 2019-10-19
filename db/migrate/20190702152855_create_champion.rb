@@ -3,6 +3,7 @@ class CreateChampion < ActiveRecord::Migration[5.2]
     create_table :champions do |t|
       t.string :name, null: false
       t.string :icon, null: false
+      t.string :title, null: false
       t.string :ability_name, null: false
       t.string :ability_icon, null: false
       t.string :ability_type, null: false

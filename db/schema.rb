@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
   create_table "champions", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon", null: false
+    t.string "title", null: false
     t.string "ability_name", null: false
     t.string "ability_icon", null: false
     t.string "ability_type", null: false

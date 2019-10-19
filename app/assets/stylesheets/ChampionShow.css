@@ -237,13 +237,16 @@
 
 #champion-render {
   padding: 0px !important;
+  width: 100%!important;
+  height: 35vh !important;
+  margin: auto !important;
 }
 
 #champion-render img {
   width: auto !important;
-  max-width: 10vw !important;
+  max-width: 100% !important;
   height: auto !important;
-  max-height: 50vh;
+  max-height: 100% !important;
   margin: auto !important;
 }
 /* Champion Row Three */

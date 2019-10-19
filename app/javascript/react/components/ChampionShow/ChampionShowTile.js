@@ -20,10 +20,10 @@ class ChampionShowTile extends Component {
 
   render() {
     const pathToIcon = require.context('../../../../../public/icons', true);
+    const pathToBanner = require.context('../../../../../public/banners', true);
     const pathToAbility = require.context('../../../../../public/abilities', true);
     const pathToRender = require.context('../../../../../public/renders', true);
     const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
-    const pathToStylingImages = require.context('../../../../../public/styling-images', true);
 
     let synergiesIconList = this.props.champion.teams.map(synergy => {
       return (
@@ -33,6 +33,8 @@ class ChampionShowTile extends Component {
         </div>
       )
     });
+
+    let renderName = (this.props.champion.name).replace(/\s/g, '');
 
     return (
       <div>
@@ -49,8 +51,8 @@ class ChampionShowTile extends Component {
                 <Grid.Column>
                   <Segment id='champion-header'>
                     <Label id='champion-header-tier' className={`${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
-                    <div id='champion-header-title'><span>{this.props.champion.name}</span><p>The Rogue Assassin</p></div>
-                    <Image id='champion-header-image' src={`https://cdn.lolchess.gg/images/lol/champion-splash-modified/${this.props.champion.name}.jpg`} />
+                    <div id='champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
+                    <Image id='champion-header-image' src={`${pathToBanner(this.props.champion.icon, true)}`} />
                     <div id='champion-header-synergies-container'>
                       {synergiesIconList}
                     </div>
