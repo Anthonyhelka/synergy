@@ -35,7 +35,7 @@ class ChampionShowTile extends Component {
     });
 
     let renderName = (this.props.champion.name).replace(/\s/g, '');
-
+    debugger
     return (
       <div>
         <Segment id='page-container'>
