@@ -26,14 +26,14 @@ aatrox = Champion.create(
   stats: {
     offense: {
       damage: 65,
-      attackSpeed: 0.65,
+      attack_speed: 0.65,
       dps: 42,
       range: 1
     },
     defense: {
       health: 700,
       armor: 35,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -63,14 +63,14 @@ ahri = Champion.create(
   stats: {
     offense: {
       damage: 50,
-      attackSpeed: 0.55,
+      attack_speed: 0.55,
       dps: 28,
       range: 3
     },
     defense: {
       health: 450,
       armor: 20,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -100,14 +100,14 @@ akali = Champion.create(
   stats: {
     offense: {
       damage: 80,
-      attackSpeed: 0.80,
+      attack_speed: 0.80,
       dps: 53,
       range: 1
     },
     defense: {
       health: 650,
       armor: 20,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -145,14 +145,14 @@ anivia = Champion.create(
   stats: {
     offense: {
       damage: 40,
-      attackSpeed: 0.80,
+      attack_speed: 0.80,
       dps: 24,
       range: 3
     },
     defense: {
       health: 750,
       armor: 20,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -186,22 +186,22 @@ ashe = Champion.create(
   stats: {
     offense: {
       damage: 65,
-      attackSpeed: 0.70,
+      attack_speed: 0.70,
       dps: 42,
       range: 4
     },
     defense: {
       health: 550,
       armor: 20,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
   active: true
 )
-aurelion_sol = Champion.create(
+aurelionsol = Champion.create(
   id: 6,
-  key: "aurelion_sol",
+  key: "aurelionsol",
   name: "Aurelion Sol",
   title: "The Star Forger",
   origins: ["Dragon"],
@@ -227,14 +227,14 @@ aurelion_sol = Champion.create(
   stats: {
     offense: {
       damage: 40,
-      attackSpeed: 0.60,
+      attack_speed: 0.60,
       dps: 24,
       range: 3
     },
     defense: {
       health: 650,
       armor: 20,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -268,14 +268,14 @@ blitzcrank = Champion.create(
   stats: {
     offense: {
       damage: 50,
-      attackSpeed: 0.50,
+      attack_speed: 0.50,
       dps: 25,
       range: 1
     },
     defense: {
       health: 650,
       armor: 35,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -309,14 +309,14 @@ brand = Champion.create(
   stats: {
     offense: {
       damage: 60,
-      attackSpeed: 0.60,
+      attack_speed: 0.60,
       dps: 36,
       range: 3
     },
     defense: {
       health: 700,
       armor: 25,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -350,14 +350,14 @@ braum = Champion.create(
   stats: {
     offense: {
       damage: 40,
-      attackSpeed: 0.60,
+      attack_speed: 0.60,
       dps: 24,
       range: 1
     },
     defense: {
       health: 650,
       armor: 75,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
@@ -391,22 +391,22 @@ camille = Champion.create(
   stats: {
     offense: {
       damage: 55,
-      attackSpeed: 0.60,
+      attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
       health: 550,
       armor: 25,
-      magicResist: 20
+      magic_resist: 20
     }
   },
   items: ["WIP"],
   active: true
 )
-cho_gath = Champion.create(
+chogath = Champion.create(
   id: 10,
-  key: "cho_gath",
+  key: "chogath",
   name: "Cho'Gath",
   title: "The Terror of the Void",
   origins: ["Void"],
@@ -436,322 +436,558 @@ cho_gath = Champion.create(
   stats: {
     offense: {
       damage: 70,
-      attackSpeed: 0.60,
+      attack_speed: 0.60,
       dps: 39,
       range: 1
     },
     defense: {
       health: 1000,
       armor: 25,
-      magicResist: 20
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+darius = Champion.create(
+  id: 11,
+  key: "darius",
+  name: "Darius",
+  title: "The Hand of Noxus",
+  origins: ["Imperial"],
+  classes: ["Knight"],
+  cost: 1,
+  ability: {
+    name: "Decimate",
+    description: "Darius swings his axe, damaging nearby enemies and healing himself based off his missing health.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 225 / 300"
+      },
+      {
+        type: "Heal",
+        value: "100 / 150 / 200",
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.50,
+      dps: 25,
+      range: 1
+    },
+    defense: {
+      health: 600,
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+draven = Champion.create(
+  id: 12,
+  key: "draven",
+  name: "Draven",
+  title: "The Glorious Executioner",
+  origins: ["Imperial"],
+  classes: ["Blademaster"],
+  cost: 4,
+  ability: {
+    name: "Spinning Axes",
+    description: "Draven equips a Spinning Axe, dealing bonus on-hit damage. Stacks up to two times.",
+    type: "Active",
+    mana_cost: 50,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Attack Damage Multiplier",
+        value: "150% / 200% / 250%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 70,
+      attack_speed: 0.75,
+      dps: 49,
+      range: 3
+    },
+    defense: {
+      health: 650,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+elise = Champion.create(
+  id: 13,
+  key: "elise",
+  name: "Elise",
+  title: "The Spider Queen",
+  origins: ["Demon"],
+  classes: ["Shapeshifter"],
+  cost: 1,
+  ability: {
+    name: "Spider Form",
+    description: "Elise summons Spiderlings and transforms, gaining Lifesteal.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Life Steal",
+        value: "60% / 90% / 120%"
+      },
+      {
+        type: "Number of Spiderlings",
+        value: "1 / 2 / 4"
+      },
+      {
+        type: "Spiderling Attack Damage",
+        value: "60"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 45,
+      attack_speed: 0.6,
+      dps: 40,
+      range: 2
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+evelynn = Champion.create(
+  id: 14,
+  key: "evelynn",
+  name: "Evelynn",
+  title: "Agony's Embrace",
+  origins: ["Demon"],
+  classes: ["Assassin"],
+  cost: 3,
+  ability: {
+    name: "Last Caress",
+    description: "Evelynn deals damage to the 3 closest enemies and teleports away. Damage is increased against low health enemies.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 300 / 400"
+      },
+      {
+        type: "Damage Multiplier",
+        value: "3x / 4x / 5x"
+      },
+      {
+        type: "Execute Threshhold",
+        value: "50%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 70,
+      attack_speed: 0.6,
+      dps: 50,
+      range: 1
+    },
+    defense: {
+      health: 550,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+fiora = Champion.create(
+  id: 15,
+  key: "fiora",
+  name: "Fiora",
+  title: "The Grand Duelist",
+  origins: ["Noble"],
+  classes: ["Blademaster"],
+  cost: 1,
+  ability: {
+    name: "Riposte",
+    description: "Fiora becomes immune to damage and spells. After a short delay, she stuns and damages the closest enemy.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "100 / 250 / 400"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 40,
+      attack_speed: 1.0,
+      dps: 28,
+      range: 1
+    },
+    defense: {
+      health: 450,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+gangplank = Champion.create(
+  id: 16,
+  key: "gangplank",
+  name: "Gangplank",
+  title: "The Saltwater Scourge",
+  origins: ["Pirate"],
+  classes: ["Blademaster", "Gunslinger"],
+  cost: 3,
+  ability: {
+    name: "Powder Kegs",
+    description: "Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. Applies on hit effects.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 250 / 350"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 60,
+      attack_speed: 0.65,
+      dps: 33,
+      range: 1
+    },
+    defense: {
+      health: 700,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+garen = Champion.create(
+  id: 17,
+  key: "garen",
+  name: "Garen",
+  title: "The Might of Demacia",
+  origins: ["Noble"],
+  classes: ["Knight"],
+  cost: 1,
+  ability: {
+    name: "Judgement",
+    description: "Garen rapidly spins his sword around his body, becoming immune to magic damage and dealing damage to nearby enemies.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage per Spin",
+        value: "40 / 65 / 90"
+      },
+      {
+      type: "Total Spins",
+      value: "9"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 1
+    },
+    defense: {
+      health: 600,
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+gnar = Champion.create(
+  id: 18,
+  key: "gnar",
+  name: "Gnar",
+  title: "The Missing Link",
+  origins: ["Wild", "Yordle"],
+  classes: ["Shapeshifter"],
+  cost: 4,
+  ability: {
+    name: "GNAR!",
+    description: "Gnar transforms and jumps behind the furthest enemy, damaging and shoving enemies backwards.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 300 / 400"
+      },
+      {
+        type: "Transform Duration",
+        value: "60s"
+      },
+      {
+        type: "Transform Bonus Health",
+        value: "250 / 450 / 650"
+      },
+      {
+        type: "Transform Bonus Attack Damage",
+        value: "50 / 100 / 150"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.70,
+      dps: 31,
+      range: 2
+    },
+    defense: {
+      health: 700,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+graves = Champion.create(
+  id: 19,
+  key: "graves",
+  name: "Graves",
+  title: "The Outlaw",
+  origins: ["Pirate"],
+  classes: ["Gunslinger"],
+  cost: 1,
+  ability: {
+    name: "Buckshot",
+    description: "Graves' attacks deal increased damage and hit all enemies in front of him.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Bonus Damage",
+        value: "5% / 10% / 15%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 55,
+      attack_speed: 0.55,
+      dps: 28,
+      range: 1
+    },
+    defense: {
+      health: 450,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+jayce = Champion.create(
+  id: 53,
+  key: "jayce",
+  name: "Jayce",
+  title: "The Defender of Tomorrow",
+  origins: ["Hextech"],
+  classes: ["Shapeshifter"],
+  cost: 2,
+  ability: {
+    name: "Mercury Cannon",
+    description: "Jayce knocks away an enemy in melee range, dealing damage and stunning them. He then transforms his hammer into a cannon, increasing his attack range and gaining max attack speed for a number of attacks.",
+    type: "Active",
+    mana_cost: 50,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 350 / 500"
+      },
+      {
+        type: "Stun Duration",
+        value: "2.5s / 4.25s / 6s"
+      },
+      {
+        type: "Attacks",
+        value: "3 / 5 / 7"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 55,
+      attack_speed: 0.70,
+      dps: 39,
+      range: 1
+    },
+    defense: {
+      health: 600,
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+jinx = Champion.create(
+  id: 54,
+  key: "jinx",
+  name: "Jinx",
+  title: "The Loose Cannon",
+  origins: ["Hextech"],
+  classes: ["Gunslinger"],
+  cost: 4,
+  ability: {
+    name: "Get Excited!",
+    description: "Jinx gets excited as she participates in kills. On her first takedown, she gains attack speed. On her second, she swaps to her rocket launcher causing her attacks to deal bonus area damage.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Area Damage",
+        value: "100 / 200 / 300"
+      },
+      {
+        type: "Attack Speed",
+        value: "60% / 80% / 100%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 75,
+      attack_speed: 0.70,
+      dps: 49,
+      range: 3
+    },
+    defense: {
+      health: 550,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+kaisa = Champion.create(
+  id: 57,
+  key: "kaisa",
+  name: "Kai'Sa",
+  title: "Daughter of the Void",
+  origins: ["Void"],
+  classes: ["Assassin", "Ranger"],
+  cost: 5,
+  ability: {
+    name: "Killer Instinct",
+    description: "Kai'Sa dashes to the farthest enemy unit, gaining a shield and Attack Speed for 3 seconds.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Attack Speed",
+        value: "50% / 75% / 100%"
+      },
+      {
+        type: "Shield Amount",
+        value: "400 / 700 / 1000"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 55,
+      attack_speed: 1.25,
+      dps: 69,
+      range: 2
+    },
+    defense: {
+      health: 700,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+karthus = Champion.create(
+  id: 20,
+  key: "karthus",
+  name: "Karthus",
+  title: "The Deathsinger",
+  origins: ["Phantom"],
+  classes: ["Sorcerer"],
+  cost: 5,
+  ability: {
+    name: "Requiem",
+    description: "Karthus deals damage to a number of random enemies after a long channel.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 40,
+    stats: [
+      {
+        type: "Damage",
+        value: "350 / 600 / 850"
+      },
+      {
+        type: "Targets",
+        value: "5 / 7 / 9"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.65,
+      dps: 42,
+      range: 3
+    },
+    defense: {
+      health: 850,
+      armor: 25,
+      magic_resist: 20
     }
   },
   items: ["WIP"],
   active: true
 )
 
-# darius = Champion.create(
-#   id: 11,
-#   name: "Darius",
-#   icon: "./darius",
-#   title: "The Hand of Noxus",
-#   ability_name: "Decimate",
-#   ability_icon: "./darius",
-#   ability_type: "Active",
-#   ability_description: "Darius swings his axe, damaging nearby enemies and healing himself based off his missing health.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Imperial",
-#   character_class_1: "Knight",
-#   health: [600, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 50,
-#   attack_speed: 0.50,
-#   attack_range: 1,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# draven = Champion.create(
-#   id: 12,
-#   name: "Draven",
-#   icon: "./draven",
-#   title: "The Glorious Executioner",
-#   ability_name: "Spinning Axes",
-#   ability_icon: "./draven",
-#   ability_type: "Active",
-#   ability_description: "Draven gains bonus on-hit damage and Attack Speed. Stacks up to two times.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Imperial",
-#   character_class_1: "Blademaster",
-#   health: [650, 1260, 2520],
-#   starting_mana: 0,
-#   mana_cost: 50,
-#   attack_damage: 70,
-#   attack_speed: 0.75,
-#   attack_range: 3,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# elise = Champion.create(
-#   id: 13,
-#   name: "Elise",
-#   icon: "./elise",
-#   title: "The Spider Queen",
-#   ability_name: "Spider Form",
-#   ability_icon: "./elise",
-#   ability_type: "Active",
-#   ability_description: "Elise fires a cocoon stunning the nearest enemy and transforms, summoning 1-4 Spiderlings depending on level.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Demon",
-#   character_class_1: "Shapeshifter",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 45,
-#   attack_speed: 0.70,
-#   attack_range: 2,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# evelynn = Champion.create(
-#   id: 14,
-#   name: "Evelynn",
-#   icon: "./evelynn",
-#   title: "Agony's Embrace",
-#   ability_name: "Last Caress",
-#   ability_icon: "./evelynn",
-#   ability_type: "Active",
-#   ability_description: "Evelynn deals damage to the 3 closest enemies and teleports away. Damage is increased against low health enemies.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Demon",
-#   character_class_1: "Assassin",
-#   health: [550, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 70,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# fiora = Champion.create(
-#   id: 15,
-#   name: "Fiora",
-#   icon: "./fiora",
-#   title: "The Grand Duelist",
-#   ability_name: "Riposte",
-#   ability_icon: "./fiora",
-#   ability_type: "Active",
-#   ability_description: "Fiora becomes immune to damage and spells. After a short delay, she stuns and damages the closest enemy.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Noble",
-#   character_class_1: "Blademaster",
-#   health: [450, 720, 1440],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 40,
-#   attack_speed: 1.0,
-#   attack_range: 1,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# gangplank = Champion.create(
-#   id: 16,
-#   name: "Gangplank",
-#   icon: "./gangplank",
-#   title: "The Saltwater Scourge",
-#   ability_name: "Powder Keg",
-#   ability_icon: "./gangplank",
-#   ability_type: "Passive/Active",
-#   ability_description: "Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Pirate",
-#   character_class_1: "Blademaster",
-#   character_class_2: "Gunslinger",
-#   health: [700, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 60,
-#   attack_speed: 0.65,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# garen = Champion.create(
-#   id: 17,
-#   name: "Garen",
-#   icon: "./garen",
-#   title: "The Might of Demacia",
-#   ability_name: "Judgement",
-#   ability_icon: "./garen",
-#   ability_type: "Active",
-#   ability_description: "Garen rapidly spins his sword around his body, becoming immune to magic damage and dealing damage to nearby enemies.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Noble",
-#   character_class_1: "Knight",
-#   health: [600, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 50,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# gnar = Champion.create(
-#   id: 18,
-#   name: "Gnar",
-#   icon: "./gnar",
-#   title: "The Missing Link",
-#   ability_name: "GNAR!",
-#   ability_icon: "./gnar",
-#   ability_type: "Active",
-#   ability_description: "Gnar transforms and jumps behind the furthest enemy, damaging and shoving enemies backwards.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Wild",
-#   origin_2: "Yordle",
-#   character_class_1: "Shapeshifter",
-#   health: [700, 1530, 3060],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 50,
-#   attack_speed: 0.70,
-#   attack_range: 2,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# graves = Champion.create(
-#   id: 19,
-#   name: "Graves",
-#   icon: "./graves",
-#   title: "The Outlaw",
-#   ability_name: "Buckshot",
-#   ability_icon: "./graves",
-#   ability_type: "Passive",
-#   ability_description: "Graves\' attacks deal splash damage to nearby enemies.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Pirate",
-#   character_class_1: "Gunslinger",
-#   health: [450, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 0,
-#   attack_damage: 55,
-#   attack_speed: 0.55,
-#   attack_range: 1,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# jayce = Champion.create(
-#   id: 53,
-#   name: "Jayce",
-#   icon: "./jayce",
-#   title: "The Defender of Tomorrow",
-#   ability_name: "Mercury Cannon",
-#   ability_icon: "./jayce",
-#   ability_type: "Active",
-#   ability_description: "Jayce disrupts the enemy frontline by knocking back an enemy unit with his hammer. He then switches to his Mercury Cannon bringing increased attack speed and ranged damage.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Hextech",
-#   character_class_1: "Shapeshifter",
-#   health: [600, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 50,
-#   attack_damage: 55,
-#   attack_speed: 0.70,
-#   attack_range: 1,
-#   armor: 35,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# jinx = Champion.create(
-#   id: 54,
-#   name: "Jinx",
-#   icon: "./jinx",
-#   title: "The Loose Cannon",
-#   ability_name: "Get Excited!",
-#   ability_icon: "./jinx",
-#   ability_type: "Passive",
-#   ability_description: "Jinx Gets Excited after her first takedown, gaining bonus attack speed. If she scores a second takedown she pulls out Fishbones, her rocket launcher, causing her attacks to deal AoE damage.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Hextech",
-#   character_class_1: "Gunslinger",
-#   health: [550, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 0,
-#   attack_damage: 75,
-#   attack_speed: 0.70,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# kaisa = Champion.create(
-#   id: 57,
-#   name: "Kai'Sa",
-#   icon: "./kaisa",
-#   title: "Daughter of the Void",
-#   ability_name: "Killer Instinct",
-#   ability_icon: "./kaisa",
-#   ability_type: "Active",
-#   ability_description: "Kai'Sa dashes to the furthest enemy unit, gaining a shield and bonus attack speed for 3 seconds.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Void",
-#   character_class_1: "Assassin",
-#   character_class_2: "Ranger",
-#   health: [700, 1260, 2520],
-#   starting_mana: 50,
-#   mana_cost: 125,
-#   attack_damage: 55,
-#   attack_speed: 1.25,
-#   attack_range: 2,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
-# karthus = Champion.create(
-#   id: 20,
-#   name: "Karthus",
-#   icon: "./karthus",
-#   title: "The Deathsinger",
-#   ability_name: "Requiem",
-#   ability_icon: "./karthus",
-#   ability_type: "Active",
-#   ability_description: "Karthus deals damage to a number of random enemies after a long channel.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Phantom",
-#   character_class_1: "Sorcerer",
-#   health: [850, 1530, 3060],
-#   starting_mana: 40,
-#   mana_cost: 125,
-#   attack_damage: 65,
-#   attack_speed: 0.65,
-#   attack_range: 3,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
+
 # kassadin = Champion.create(
 #   id: 21,
 #   name: "Kassadin",
@@ -1528,7 +1764,7 @@ demon = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "45 mana returned"
 )
-demon.champions << [aatrox, brand]
+demon.champions << [aatrox, brand, elise, evelynn]
 dragon = Team.create(
   id: 2,
   name: "Dragon",
@@ -1536,7 +1772,7 @@ dragon = Team.create(
   team_type: "Origin",
   description: "While 2 Dragons are in play, all Dragons take 75% reduced magic damage"
 )
-dragon.champions << [aurelion_sol]
+dragon.champions << [aurelionsol]
 exile = Team.create(
   id: 3,
   name: "Exile",
@@ -1570,7 +1806,7 @@ hextech = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "Affects units within 2 hexes of the bomb"
 )
-hextech.champions << [camille]
+hextech.champions << [camille, jayce, jinx]
 imperial = Team.create(
   id: 5,
   name: "Imperial",
@@ -1582,7 +1818,7 @@ imperial = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "All Imperials"
 )
-imperial.champions << []
+imperial.champions << [darius, draven]
 ninja = Team.create(
   id: 6,
   name: "Ninja",
@@ -1606,7 +1842,7 @@ noble = Team.create(
   upgrade_2_number: "6:",
   upgrade_2_description: "All allies"
 )
-noble.champions << []
+noble.champions << [fiora, garen]
 phantom = Team.create(
   id: 8,
   name: "Phantom",
@@ -1614,7 +1850,7 @@ phantom = Team.create(
   team_type: "Origin",
   description: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
 )
-phantom.champions << []
+phantom.champions << [karthus]
 pirate = Team.create(
   id: 9,
   name: "Pirate",
@@ -1622,7 +1858,7 @@ pirate = Team.create(
   team_type: "Origin",
   description: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold"
 )
-pirate.champions << []
+pirate.champions << [gangplank, graves]
 robot = Team.create(
   id: 10,
   name: "Robot",
@@ -1642,7 +1878,7 @@ void = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "All Voidlings"
 )
-void.champions << [cho_gath]
+void.champions << [chogath, kaisa]
 wild = Team.create(
   id: 12,
   name: "Wild",
@@ -1654,7 +1890,7 @@ wild = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "Fury benefits all allies and their attacks cannot be dodged"
 )
-wild.champions << [ahri]
+wild.champions << [ahri, gnar]
 yordle = Team.create(
   id: 13,
   name: "Yordle",
@@ -1668,7 +1904,7 @@ yordle = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "90% chance"
 )
-yordle.champions << []
+yordle.champions << [gnar]
 
 #Classes
 assassin = Team.create(
@@ -1684,7 +1920,7 @@ assassin = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "+225% damage/+30% chance"
 )
-assassin.champions << [akali]
+assassin.champions << [akali, evelynn, kaisa]
 blademaster = Team.create(
   id: 15,
   name: "Blademaster",
@@ -1698,7 +1934,7 @@ blademaster = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "Quadruple Strike"
 )
-blademaster.champions << [aatrox, camille]
+blademaster.champions << [aatrox, camille, draven, fiora, gangplank]
 brawler = Team.create(
   id: 16,
   name: "Brawler",
@@ -1712,7 +1948,7 @@ brawler = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "+900 maximum health"
 )
-brawler.champions << [blitzcrank, cho_gath]
+brawler.champions << [blitzcrank, chogath]
 elementalist = Team.create(
   id: 17,
   name: "Elementalist",
@@ -1742,7 +1978,7 @@ gunslinger = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "Attacks hit four additional random enemies"
 )
-gunslinger.champions << []
+gunslinger.champions << [gangplank, graves, jinx]
 knight = Team.create(
   id: 20,
   name: "Knight",
@@ -1756,7 +1992,7 @@ knight = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "60 damage ignored"
 )
-knight.champions << []
+knight.champions << [darius, garen]
 ranger = Team.create(
   id: 21,
   name: "Ranger",
@@ -1768,7 +2004,7 @@ ranger = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "75% chance"
 )
-ranger.champions << [ashe]
+ranger.champions << [ashe, kaisa]
 shapeshifter = Team.create(
   id: 22,
   name: "Shapeshifter",
@@ -1780,7 +2016,7 @@ shapeshifter = Team.create(
   upgrade_2_number: "6:",
   upgrade_2_description: "100% bonus health"
 )
-shapeshifter.champions << []
+shapeshifter.champions << [elise, gnar, jayce]
 sorcerer = Team.create(
   id: 23,
   name: "Sorcerer",
@@ -1794,4 +2030,4 @@ sorcerer = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "+175% bonus spell power"
 )
-sorcerer.champions << [ahri, aurelion_sol]
+sorcerer.champions << [ahri, aurelionsol, karthus]
