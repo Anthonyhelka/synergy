@@ -19,6 +19,7 @@ class ChampionShowTile extends Component {
   }
 
   render() {
+    const championFileName = `./${this.props.champion.key}`;
     const pathToIcon = require.context('../../../../../public/icons', true);
     const pathToBanner = require.context('../../../../../public/banners', true);
     const pathToAbility = require.context('../../../../../public/abilities', true);
@@ -34,8 +35,6 @@ class ChampionShowTile extends Component {
       )
     });
 
-    let renderName = (this.props.champion.name).replace(/\s/g, '');
-    debugger
     return (
       <div>
         <Segment id='page-container'>
@@ -50,9 +49,9 @@ class ChampionShowTile extends Component {
               <Grid.Row id='champion-row-one' columns='1'>
                 <Grid.Column>
                   <Segment id='champion-header'>
-                    <Label id='champion-header-tier' className={`${this.props.champion.tier_color}-tier`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.tier}</Label>
+                    <Label id='champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.cost}</Label>
                     <div id='champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
-                    <Image id='champion-header-image' src={`${pathToBanner(this.props.champion.icon, true)}`} />
+                    <Image id='champion-header-image' src={`${pathToBanner(championFileName, true)}`} />
                     <div id='champion-header-synergies-container'>
                       {synergiesIconList}
                     </div>
@@ -71,15 +70,15 @@ class ChampionShowTile extends Component {
                             <Grid.Row id='champion-ability-row-one' width='16'>
                               <Grid.Column id='champion-ability-title-container' width='10'>
                                 <Segment id='champion-ability-title-container' basic>
-                                  <span>{this.props.champion.ability_name}</span>
+                                  <span>{this.props.champion.ability.name}</span>
                                 </Segment>
                               </Grid.Column>
                               <Grid.Column id='champion-ability-type-mana-container' width='6'>
                                 <Segment id='champion-ability-type-container' basic>
-                                  <span>{this.props.champion.ability_type}</span>
+                                  <span>{this.props.champion.ability.type}</span>
                                 </Segment>
                                 <Segment id='champion-ability-mana-container' basic>
-                                  <span><Icon name='tint' />{this.props.champion.starting_mana} / {this.props.champion.mana_cost}</span>
+                                  <span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>
                                 </Segment>
                               </Grid.Column>
                             </Grid.Row>
@@ -87,12 +86,12 @@ class ChampionShowTile extends Component {
                             <Grid.Row id='champion-ability-row-two'>
                               <Grid.Column id='champion-ability-image-container' width='4' stretched>
                                 <Segment id='champion-ability-image' basic>
-                                  <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
+                                  <Image src={`${pathToAbility(championFileName, true)}`}  />
                                 </Segment>
                               </Grid.Column>
                               <Grid.Column id='champion-ability-description-container' width='12'>
                                 <Segment id='champion-ability-description' basic>
-                                  <span>{this.props.champion.ability_description}</span>
+                                  <span>{this.props.champion.ability.description}</span>
                                 </Segment>
                               </Grid.Column>
                             </Grid.Row>
@@ -112,7 +111,7 @@ class ChampionShowTile extends Component {
                       <Grid.Row id='champion-render-row' columns='1'>
                         <Grid.Column id='champion-render-container'>
                           <Segment id='champion-render' basic>
-                            <Image src={`${pathToRender(this.props.champion.icon, true)}`}  />
+                            <Image src={`${pathToRender(championFileName, true)}`}  />
                           </Segment>
                         </Grid.Column>
                       </Grid.Row>
@@ -154,17 +153,3 @@ class ChampionShowTile extends Component {
 }
 
 export default ChampionShowTile;
-
-                          // <Segment id='champion-ability-image-container' basic>
-                          //   <Image src={`${pathToAbility(this.props.champion.icon, true)}`}  />
-                          // </Segment>
-
-
-
-                          // <Grid.Row id='champion-row-three' columns='1'>
-                          //   <Grid.Column>
-                          //     <Segment>
-                          //       Recommended Items
-                          //     </Segment>
-                          //   </Grid.Column>
-                          // </Grid.Row>

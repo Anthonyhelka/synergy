@@ -54,8 +54,8 @@ class SearchBar extends Component {
     this.setState({ filteredChampions: filteredChampions })
   };
 
-  handleResultSelect(event, name){
-    browserHistory.push(`/champions/${name}`);
+  handleResultSelect(event, key){
+    browserHistory.push(`/champions/${key}`);
   }
 
   handleRegionChange(event, region){
@@ -71,7 +71,7 @@ class SearchBar extends Component {
   render() {
     let results = this.state.filteredChampions.map(champion => ({
       title: champion.name,
-      image: champion.icon
+      image: `./${champion.key}`
     }));
 
     const resultRenderer = ({ title, image, id }) => {

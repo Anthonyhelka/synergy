@@ -3,7 +3,7 @@ import { Router, browserHistory, Route} from 'react-router';
 import 'semantic-ui-css/semantic.min.css';
 
 import HomeContainer from './HomeContainer';
-import ChampionsOverview from  './ChampionsOverview';
+import ChampionsOverview from  './Overview/ChampionsOverview';
 import ChampionsOrigins from  './Synergies/ChampionsOrigins';
 import ChampionsClasses from  './Synergies/ChampionsClasses';
 import ChampionShow from  './ChampionShow/ChampionShow';
@@ -22,7 +22,7 @@ class App extends Component {
           <Route path='/champions/overview' component={ChampionsOverview}/>
           <Route path='/champions/origins' component={ChampionsOrigins}/>
           <Route path='/champions/classes' component={ChampionsClasses}/>
-          <Route path='/champions/:name' component={ChampionShow}/>
+          <Route path='/champions/:key' component={ChampionShow}/>
           <Route path='/items' component={ItemsContainer}/>
           <Route path='/news' component={NewsContainer}/>
           <Route path='/summoner/:name' component={SummonerShow}/>

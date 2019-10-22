@@ -269,23 +269,23 @@
 }
 /* Helpers */
 
-.white-tier {
+.tier-1 {
   background-color: #7A8292 !important;
   border-color: #7A8292 !important;
 }
-.green-tier {
+.tier-2 {
   background-color: #21BA45 !important;
   border-color: #21BA45 !important;
 }
-.blue-tier {
+.tier-3 {
   background-color: #2185D0 !important;
   border-color: #2185D0 !important;
 }
-.purple-tier {
+.tier-4 {
   background-color: #A332C8 !important;
   border-color: #A332C8 !important;
 }
-.yellow-tier {
+.tier-5 {
   background-color: #FBBD07 !important;
   border-color: #FBBD07 !important;
 }

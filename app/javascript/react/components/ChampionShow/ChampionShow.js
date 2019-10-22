@@ -13,8 +13,8 @@ class ChampionShow extends Component {
   }
 
   componentDidMount() {
-  let championName = this.props.params.name
-  fetch(`/api/v1/champions/${championName}`)
+  let championKey = this.props.params.key
+  fetch(`/api/v1/champions/${championKey}`)
     .then(response => {
       if (response.ok) {
         return response;

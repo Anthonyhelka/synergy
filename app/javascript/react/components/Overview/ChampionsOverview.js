@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Icon } from 'semantic-ui-react';
 
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../NavigationBar';
 import ChampionsOverviewTile from './ChampionsOverviewTile';
 
 class ChampionsOverview extends Component {
@@ -57,10 +57,10 @@ class ChampionsOverview extends Component {
       });
     } else if (this.state.sort === '1-5') {
       tierOrder = 'ascending';
-      this.state.champions.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
+      this.state.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
     } else if (this.state.sort === '5-1') {
       tierOrder = 'descending';
-      this.state.champions.sort((a, b) => parseFloat(b.tier) - parseFloat(a.tier));
+      this.state.champions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
     } else {
       nameOrder = 'ascending';
       this.state.champions.sort(function(a, b) {

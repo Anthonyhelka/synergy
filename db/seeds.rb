@@ -986,769 +986,1359 @@ karthus = Champion.create(
   items: ["WIP"],
   active: true
 )
-
-
-# kassadin = Champion.create(
-#   id: 21,
-#   name: "Kassadin",
-#   icon: "./kassadin",
-#   title: "The Void Walker",
-#   ability_name: "Nether Blade",
-#   ability_icon: "./kassadin",
-#   ability_type: "Passive",
-#   ability_description: "Kassadin\'s attacks steal mana from enemies, converting it into a shield.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Void",
-#   character_class_1: "Sorcerer",
-#   health: [550, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 0,
-#   attack_damage: 40,
-#   attack_speed: 0.55,
-#   attack_range: 1,
-#   armor: 35,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# katarina = Champion.create(
-#   id: 22,
-#   name: "Katarina",
-#   icon: "./katarina",
-#   title: "The Sinister Blade",
-#   ability_name: "Death Lotus",
-#   ability_icon: "./katarina",
-#   ability_type: "Active",
-#   ability_description: "Katarina channels and fires daggers at a number of nearby enemies, dealing damage and reducing healing.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Imperial",
-#   character_class_1: "Assassin",
-#   health: [450, 810, 1620],
-#   starting_mana: 0,
-#   mana_cost: 85,
-#   attack_damage: 65,
-#   attack_speed: 0.65,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# kayle = Champion.create(
-#   id: 23,
-#   name: "Kayle",
-#   icon: "./kayle",
-#   title: "The Righteous",
-#   ability_name: "Divine Judgement",
-#   ability_icon: "./kayle",
-#   ability_type: "Active",
-#   ability_description: "Kayle shields an ally, making them immune to damage.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Noble",
-#   character_class_1: "Knight",
-#   health: [750, 1440, 2880],
-#   starting_mana: 0,
-#   mana_cost: 125,
-#   attack_damage: 70,
-#   attack_speed: 1.0,
-#   attack_range: 3,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
-# kennen = Champion.create(
-#   id: 24,
-#   name: "Kennen",
-#   icon: "./kennen",
-#   title: "The Heart of the Tempest",
-#   ability_name: "Slicing Maelstrom",
-#   ability_icon: "./kennen",
-#   ability_type: "Active",
-#   ability_description: "Kennen summons a storm around him, dealing damage and stunning enemies inside of it.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Ninja",
-#   origin_2: "Yordle",
-#   character_class_1: "Elementalist",
-#   health: [550, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 65,
-#   attack_speed: 0.65,
-#   attack_range: 2,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# khazix = Champion.create(
-#   id: 25,
-#   name: "Kha\'Zix",
-#   icon: "./khazix",
-#   title: "The Voidreaver",
-#   ability_name: "Taste Their Fear",
-#   ability_icon: "./khazix",
-#   ability_type: "Active",
-#   ability_description: "Kha\'Zix slashes the closest enemy, dealing bonus damage to enemies that are alone.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Void",
-#   character_class_1: "Assassin",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 65,
-#   attack_damage: 55,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# kindred = Champion.create(
-#   id: 26,
-#   name: "Kindred",
-#   icon: "./kindred",
-#   title: "The Eternal Hunters",
-#   ability_name: "Lamb\'s Respite",
-#   ability_icon: "./kindred",
-#   ability_type: "Active",
-#   ability_description: "Kindred creates a zone around herself that prevents allies from dying.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Phantom",
-#   character_class_1: "Ranger",
-#   health: [600, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 60,
-#   attack_speed: 0.70,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# leona = Champion.create(
-#   id: 27,
-#   name: "Leona",
-#   icon: "./leona",
-#   title: "The Radiant Dawn",
-#   ability_name: "Solar Flare",
-#   ability_icon: "./leona",
-#   ability_type: "Active",
-#   ability_description: "Leona calls down a solar ray, stunning enemies in the center and dealing damage to enemies inside it.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Noble",
-#   character_class_1: "Guardian",
-#   health: [800, 1350, 2700],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 45,
-#   attack_speed: 0.55,
-#   attack_range: 1,
-#   armor: 100,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# lissandra = Champion.create(
-#   id: 28,
-#   name: "Lissandra",
-#   icon: "./lissandra",
-#   title: "The Ice Witch",
-#   ability_name: "Frozen Tomb",
-#   ability_icon: "./lissandra",
-#   ability_type: "Active",
-#   ability_description: "Lissandra encases the target in ice, dealing damage to nearby enemies. Below half HP, Lissandra instead encases herself, becoming untargetable.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Glacial",
-#   character_class_1: "Elementalist",
-#   health: [500, 810, 1620],
-#   starting_mana: 0,
-#   mana_cost: 85,
-#   attack_damage: 40,
-#   attack_speed: 0.60,
-#   attack_range: 2,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# lucian = Champion.create(
-#   id: 29,
-#   name: "Lucian",
-#   icon: "./lucian",
-#   title: "The Purifier",
-#   ability_name: "Relentless Pursuit",
-#   ability_icon: "./lucian",
-#   ability_type: "Active",
-#   ability_description: "Lucian dashes away to safety and attacks an enemy twice, once with Attack Damage and once with Spell Damage.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Noble",
-#   character_class_1: "Gunslinger",
-#   health: [600, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 35,
-#   attack_damage: 65,
-#   attack_speed: 0.65,
-#   attack_range: 3,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# lulu = Champion.create(
-#   id: 30,
-#   name: "Lulu",
-#   icon: "./lulu",
-#   title: "The Fae Sorceress",
-#   ability_name: "Wild Growth",
-#   ability_icon: "./lulu",
-#   ability_type: "Active",
-#   ability_description: "Lulu grants an ally bonus Health, knocking up enemies near them.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Yordle",
-#   character_class_1: "Sorcerer",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 50,
-#   attack_speed: 0.60,
-#   attack_range: 2,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# missfortune = Champion.create(
-#   id: 31,
-#   name: "Miss Fortune",
-#   icon: "./missfortune",
-#   title: "The Bounty Hunter",
-#   ability_name: "Bullet Time",
-#   ability_icon: "./missfortune",
-#   ability_type: "Active",
-#   ability_description: "Miss Fortune channels and fires several waves of bullets in a cone targeted at the furthest enemy.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Pirate",
-#   character_class_1: "Gunslinger",
-#   health: [750, 1170, 2340],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 75,
-#   attack_speed: 0.95,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
-# mordekaiser = Champion.create(
-#   id: 32,
-#   name: "Mordekaiser",
-#   icon: "./mordekaiser",
-#   title: "The Iron Revenant",
-#   ability_name: "Obliterate",
-#   ability_icon: "./mordekaiser",
-#   ability_type: "Active",
-#   ability_description: "Mordekaiser slams his mace in front him, dealing damage in a line.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Phantom",
-#   character_class_1: "Knight",
-#   health: [550, 900, 1800],
-#   starting_mana: 50,
-#   mana_cost: 150,
-#   attack_damage: 50,
-#   attack_speed: 0.50,
-#   attack_range: 1,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# morgana = Champion.create(
-#   id: 33,
-#   name: "Morgana",
-#   icon: "./morgana",
-#   title: "The Fallen",
-#   ability_name: "Soul Shackles",
-#   ability_icon: "./morgana",
-#   ability_type: "Active",
-#   ability_description: "Morgana fires chains to nearby enemies, dealing damage and stunning after a short delay if they are still nearby.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Demon",
-#   character_class_1: "Sorcerer",
-#   health: [650, 1170, 2340],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 50,
-#   attack_speed: 0.60,
-#   attack_range: 2,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# nidalee = Champion.create(
-#   id: 34,
-#   name: "Nidalee",
-#   icon: "./nidalee",
-#   title: "The Bestial Huntress",
-#   ability_name: "Primal Surge",
-#   ability_icon: "./nidalee",
-#   ability_type: "Active",
-#   ability_description: "Nidalee heals herself and the weakest ally, then transforms.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Wild",
-#   character_class_1: "Shapeshifter",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 85,
-#   attack_damage: 50,
-#   attack_speed: 0.65,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# pantheon = Champion.create(
-#   id: 56,
-#   name: "Pantheon",
-#   icon: "./pantheon",
-#   title: "The Unbreakable Spear",
-#   ability_name: "Grand Starfall",
-#   ability_icon: "./pantheon",
-#   ability_type: "Active",
-#   ability_description: "Pantheon leaps into the air and crashes down towards the farthest enemy, stunning them in the process. As he lands, Pantheon deals damage to all enemies in his path. Enemies hit burn for additional damage over a few seconds.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Dragon",
-#   character_class_1: "Guardian",
-#   health: [850, 1530, 3060],
-#   starting_mana: 150,
-#   mana_cost: 200,
-#   attack_damage: 75,
-#   attack_speed: 0.75,
-#   attack_range: 1,
-#   armor: 80,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# poppy = Champion.create(
-#   id: 35,
-#   name: "Poppy",
-#   icon: "./poppy",
-#   title: "Keeper of the Hammer",
-#   ability_name: "Keeper's Verdict",
-#   ability_icon: "./poppy",
-#   ability_type: "Active",
-#   ability_description: "Poppy brings down her hammer, knocking away and stunning nearby enemies.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Yordle",
-#   character_class_1: "Knight",
-#   health: [700, 1440, 2880],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 50,
-#   attack_speed: 0.50,
-#   attack_range: 1,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# pyke = Champion.create(
-#   id: 36,
-#   name: "Pyke",
-#   icon: "./pyke",
-#   title: "The Bloodharbor Ripper",
-#   ability_name: "Phantom Undertow",
-#   ability_icon: "./pyke",
-#   ability_type: "Active",
-#   ability_description: "Pyke dashes behind the furthest enemy, creating an afterimage that stuns enemies it passes through.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Pirate",
-#   character_class_1: "Assassin",
-#   health: [600, 1080, 2160],
-#   starting_mana: 50,
-#   mana_cost: 125,
-#   attack_damage: 60,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# reksai = Champion.create(
-#   id: 37,
-#   name: "Rek\'Sai",
-#   icon: "./reksai",
-#   title: "The Void Burrower",
-#   ability_name: "Burrow",
-#   ability_icon: "./reksai",
-#   ability_type: "Active",
-#   ability_description: "Rek\'Sai burrows for a short duration becoming untargetable and healing. When Rek\'Sai unburrows she deals damage and knocks up the closest enemy.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Void",
-#   character_class_1: "Brawler",
-#   health: [650, 1170, 2340],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 50,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# rengar = Champion.create(
-#   id: 38,
-#   name: "Rengar",
-#   icon: "./rengar",
-#   title: "The Pridestalker",
-#   ability_name: "Savagery",
-#   ability_icon: "./rengar",
-#   ability_type: "Active",
-#   ability_description: "Rengar leaps to the weakest enemy and stabs them, he then gains an attack speed bonus.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Wild",
-#   character_class_1: "Assassin",
-#   health: [550, 900, 1980],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 70,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# sejuani = Champion.create(
-#   id: 39,
-#   name: "Sejuani",
-#   icon: "./sejuani",
-#   title: "Fury of the North",
-#   ability_name: "Glacial Prison",
-#   ability_icon: "./sejuani",
-#   ability_type: "Active",
-#   ability_description: "Sejuani creates a large glacial storm, stunning enemies within it after a short delay.",
-#   tier: 4,
-#   tier_color: tier_color(4),
-#   origin_1: "Glacial",
-#   character_class_1: "Knight",
-#   health: [800, 1530, 3060],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 45,
-#   attack_speed: 0.55,
-#   attack_range: 1,
-#   armor: 40,
-#   magic_resist: 20,
-#   player_damage: player_damage(4)
-# )
-# shen = Champion.create(
-#   id: 40,
-#   name: "Shen",
-#   icon: "./shen",
-#   title: "The Eye of Twilight",
-#   ability_name: "Spirit's Refuge",
-#   ability_icon: "./shen",
-#   ability_type: "Active",
-#   ability_description: "Shen creates a zone around himself, allowing allies to dodge all attacks.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Ninja",
-#   character_class_1: "Blademaster",
-#   health: [700, 1170, 2340],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 65,
-#   attack_speed: 0.70,
-#   attack_range: 1,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# shyvana = Champion.create(
-#   id: 41,
-#   name: "Shyvana",
-#   icon: "./shyvana",
-#   title: "The Half-Dragon",
-#   ability_name: "Dragon's Descent",
-#   ability_icon: "./shyvana",
-#   ability_type: "Active",
-#   ability_description: "Shyvana dashes away and transforms. While transformed, Shyvana's attacks become ranged and light the ground on fire.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Dragon",
-#   character_class_1: "Shapeshifter",
-#   health: [650, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 85,
-#   attack_damage: 50,
-#   attack_speed: 0.70,
-#   attack_range: 1,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# swain = Champion.create(
-#   id: 42,
-#   name: "Swain",
-#   icon: "./swain",
-#   title: "The Noxian Grand General",
-#   ability_name: "Demonflare",
-#   ability_icon: "./swain",
-#   ability_type: "Active",
-#   ability_description: "Swain transforms, draining health from all nearby enemies.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Demon",
-#   origin_2: "Imperial",
-#   character_class_1: "Shapeshifter",
-#   health: [850, 1530, 3060],
-#   starting_mana: 0,
-#   mana_cost: 100,
-#   attack_damage: 65,
-#   attack_speed: 0.65,
-#   attack_range: 2,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
-# tristana = Champion.create(
-#   id: 43,
-#   name: "Tristana",
-#   icon: "./tristana",
-#   title: "The Yordle Gunner",
-#   ability_name: "Explosive Charge",
-#   ability_icon: "./tristana",
-#   ability_type: "Active",
-#   ability_description: "Tristana places a bomb on her current target that detonates after 4 attacks, damaging nearby enemies.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Yordle",
-#   character_class_1: "Gunslinger",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 50,
-#   attack_damage: 50,
-#   attack_speed: 0.65,
-#   attack_range: 4,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# twistedfate = Champion.create(
-#   id: 51,
-#   name: "Twisted Fate",
-#   icon: "./twistedfate",
-#   title: "The Card Master",
-#   ability_name: "Pick a Card",
-#   ability_icon: "./twistedfate",
-#   ability_type: "Active",
-#   ability_description: "Twisted Fate throws a card that either stuns, deals damage around his target, or restores mana to himself and nearby allies.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Pirate",
-#   character_class_1: "Sorcerer",
-#   health: [500, 810, 1620],
-#   starting_mana: 0,
-#   mana_cost: 50,
-#   attack_damage: 40,
-#   attack_speed: 0.75,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# varus = Champion.create(
-#   id: 44,
-#   name: "Varus",
-#   icon: "./varus",
-#   title: "The Arrow of Retribution",
-#   ability_name: "Piercing Arrow",
-#   ability_icon: "./varus",
-#   ability_type: "Active",
-#   ability_description: "Varus charges and fires an arrow, dealing damage to all enemies in a line.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Demon",
-#   character_class_1: "Ranger",
-#   health: [500, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 50,
-#   attack_speed: 0.70,
-#   attack_range: 4,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
-# vayne = Champion.create(
-#   id: 45,
-#   name: "Vayne",
-#   icon: "./vayne",
-#   title: "The Night Hunter",
-#   ability_name: "Silver Bolts",
-#   ability_icon: "./vayne",
-#   ability_type: "Passive",
-#   ability_description: "Vayne deals bonus true damage every third attack based on the enemy's maximum health.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Noble",
-#   character_class_1: "Ranger",
-#   health: [550, 990, 1980],
-#   starting_mana: 0,
-#   mana_cost: 0,
-#   attack_damage: 40,
-#   attack_speed: 0.70,
-#   attack_range: 3,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# veigar = Champion.create(
-#   id: 46,
-#   name: "Veigar",
-#   icon: "./veigar",
-#   title: "The Tiny Master of Evil",
-#   ability_name: "Primordial Burst",
-#   ability_icon: "./veigar",
-#   ability_type: "Active",
-#   ability_description: "Veigar blasts an enemy with magical energy. This spell instantly kills if the enemy is a lower star level than Veigar.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Yordle",
-#   character_class_1: "Sorcerer",
-#   health: [500, 810, 1620],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 45,
-#   attack_speed: 0.55,
-#   attack_range: 3,
-#   armor: 20,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# vi = Champion.create(
-#   id: 55,
-#   name: "Vi",
-#   icon: "./vi",
-#   title: "The Piltover Enforcer",
-#   ability_name: "Assault and Battery",
-#   ability_icon: "./twistedfate",
-#   ability_type: "Active",
-#   ability_description: "Vi targets the farthest enemy and charges towards them, knocking aside and damaging every enemy along the way. Once she gets there, she knocks her target up and damages them.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Hextech",
-#   character_class_1: "Brawler",
-#   health: [700, 1080, 2160],
-#   starting_mana: 75,
-#   mana_cost: 150,
-#   attack_damage: 55,
-#   attack_speed: 0.65,
-#   attack_range: 1,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# volibear = Champion.create(
-#   id: 47,
-#   name: "Volibear",
-#   icon: "./volibear",
-#   title: "The Thunder's Roar",
-#   ability_name: "Thunder Claws",
-#   ability_icon: "./volibear",
-#   ability_type: "Active",
-#   ability_description: "Volibear\'s attacks bounce between enemies.",
-#   tier: 3,
-#   tier_color: tier_color(3),
-#   origin_1: "Glacial",
-#   character_class_1: "Brawler",
-#   health: [750, 1170, 2340],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 70,
-#   attack_speed: 0.65,
-#   attack_range: 1,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(3)
-# )
-# warwick = Champion.create(
-#   id: 48,
-#   name: "Warwick",
-#   icon: "./warwick",
-#   title: "The Uncaged Wrath of Zaun",
-#   ability_name: "Infinite Duress",
-#   ability_icon: "./warwick",
-#   ability_type: "Active",
-#   ability_description: "Warwick pounces onto the lowest health enemy, stunning and damaging them.",
-#   tier: 1,
-#   tier_color: tier_color(1),
-#   origin_1: "Wild",
-#   character_class_1: "Brawler",
-#   health: [650, 1080, 2160],
-#   starting_mana: 0,
-#   mana_cost: 150,
-#   attack_damage: 50,
-#   attack_speed: 0.60,
-#   attack_range: 1,
-#   armor: 30,
-#   magic_resist: 20,
-#   player_damage: player_damage(1)
-# )
-# yasuo = Champion.create(
-#   id: 49,
-#   name: "Yasuo",
-#   icon: "./yasuo",
-#   title: "The Unforgiven",
-#   ability_name: "Steel Tempest",
-#   ability_icon: "./yasuo",
-#   ability_type: "Active",
-#   ability_description: "Yasuo stabs forward dealing damage. On third cast, Yasuo launches a tornado dealing damage and knocking up enemies in a line.",
-#   tier: 5,
-#   tier_color: tier_color(5),
-#   origin_1: "Exile",
-#   character_class_1: "Blademaster",
-#   health: [750, 1260, 2520],
-#   starting_mana: 0,
-#   mana_cost: 25,
-#   attack_damage: 75,
-#   attack_speed: 1.00,
-#   attack_range: 1,
-#   armor: 35,
-#   magic_resist: 20,
-#   player_damage: player_damage(5)
-# )
-# zed = Champion.create(
-#   id: 50,
-#   name: "Zed",
-#   icon: "./zed",
-#   title: "The Master of Shadows",
-#   ability_name: "Razor Shuriken",
-#   ability_icon: "./zed",
-#   ability_type: "Active",
-#   ability_description: "Zed fires a shuriken in a line, damaging enemies it passes through.",
-#   tier: 2,
-#   tier_color: tier_color(2),
-#   origin_1: "Ninja",
-#   character_class_1: "Assassin",
-#   health: [550, 900, 1800],
-#   starting_mana: 0,
-#   mana_cost: 75,
-#   attack_damage: 66,
-#   attack_speed: 0.70,
-#   attack_range: 1,
-#   armor: 25,
-#   magic_resist: 20,
-#   player_damage: player_damage(2)
-# )
+kassadin = Champion.create(
+  id: 21,
+  key: "kassadin",
+  name: "Kassadin",
+  title: "The Void Walker",
+  origins: ["Void"],
+  classes: ["Sorcerer"],
+  cost: 1,
+  ability: {
+    name: "Nether Blade",
+    description: "Kassadin's attacks steal mana from enemies, converting it into a shield.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Shield Duration",
+        value: "4s"
+      },
+      {
+        type: "Mana Steal",
+        value: "25 / 50 / 75"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 40,
+      attack_speed: 0.55,
+      dps: 29,
+      range: 1
+    },
+    defense: {
+      health: 550,
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+katarina = Champion.create(
+  id: 22,
+  key: "katarina",
+  name: "Katarina",
+  title: "The Sinister Blade",
+  origins: ["Imperial"],
+  classes: ["Assassin"],
+  cost: 3,
+  ability: {
+    name: "Death Lotus",
+    description: "Katarina channels and fires daggers at a number of nearby enemies, dealing damage and reducing healing.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage Per Tick",
+        value: "45 / 70 / 95"
+      },
+      {
+        type: "Targets",
+        value: "4 / 6 / 8"
+      },
+      {
+        type: "Channel Duration",
+        value: "2.5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 1
+    },
+    defense: {
+      health: 450,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+kayle = Champion.create(
+  id: 23,
+  key: "kayle",
+  name: "Kayle",
+  title: "The Righteous",
+  origins: ["Noble"],
+  classes: ["Knight"],
+  cost: 5,
+  ability: {
+    name: "Divine Judgement",
+    description: "Kayle shields an ally, making them immune to damage.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Shield Duration",
+        value: "2s / 2.5s / 3s"
+      },
+      {
+        type: "Extra Targets",
+        value: "0 / 1 / 2"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 60,
+      attack_speed: 1.0,
+      dps: 66,
+      range: 3
+    },
+    defense: {
+      health: 750,
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+kennen = Champion.create(
+  id: 24,
+  key: "kennen",
+  name: "Kennen",
+  title: "The Heart of the Tempest",
+  origins: ["Ninja", "Yordle"],
+  classes: ["Elementalist"],
+  cost: 3,
+  ability: {
+    name: "Slicing Maelstrom",
+    description: "Kennen summons a storm around him, dealing damage and stunning enemies inside of it.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "225 / 450 / 675"
+      },
+      {
+        type: "Stun Duration",
+        value: "1.5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.65,
+      dps: 36,
+      range: 2
+    },
+    defense: {
+      health: 550,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+khazix = Champion.create(
+  id: 25,
+  key: "khazix",
+  name: "Kha'Zix",
+  title: "The Voidreaver",
+  origins: ["Void"],
+  classes: ["Assassin"],
+  cost: 1,
+  ability: {
+    name: "Taste Their Fear",
+    description: "Kha'Zix slashes the closest enemy, dealing bonus damage to enemies that are alone.",
+    type: "Active",
+    mana_cost: 65,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 250 / 350"
+      },
+      {
+        type: "Isolation Damage",
+        value: "400 / 600 / 800"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 55,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 1
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+kindred = Champion.create(
+  id: 26,
+  key: "kindred",
+  name: "Kindred",
+  title: "The Eternal Hunters",
+  origins: ["Phantom"],
+  classes: ["Ranger"],
+  cost: 4,
+  ability: {
+    name: "Lamb's Respite",
+    description: "Kindred creates a zone around herself that prevents allies from dying.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Duration",
+        value: "3s / 4s / 5s"
+      },
+      {
+        type: "Minimum HP",
+        value: "300 / 600 / 900"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 60,
+      attack_speed: 0.70,
+      dps: 36,
+      range: 3
+    },
+    defense: {
+      health: 600,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+leona = Champion.create(
+  id: 27,
+  key: "leona",
+  name: "Leona",
+  title: "The Radiant Dawn",
+  origins: ["Noble"],
+  classes: ["Guardian"],
+  cost: 4,
+  ability: {
+    name: "Solar Flare",
+    description: "Leona calls down a solar ray, stunning enemies in the center and dealing damage to enemies inside it.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "175 / 250 / 325"
+      },
+      {
+        type: "Stun Duration",
+        value: "5s / 7s / 9s"
+      },
+      {
+        type: "Stun Delay",
+        value: "0.625s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 45,
+      attack_speed: 0.55,
+      dps: 25,
+      range: 1
+    },
+    defense: {
+      health: 800,
+      armor: 100,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+lissandra = Champion.create(
+  id: 28,
+  key: "lissandra",
+  name: "Lissandra",
+  title: "The Ice Witch",
+  origins: ["Glacial"],
+  classes: ["Elementalist"],
+  cost: 2,
+  ability: {
+    name: "Frozen Tomb",
+    description: "Lissandra encases the target in ice, dealing damage to nearby enemies. When below half HP, Lissandra instead encases herself, becoming untargetable.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "175 / 325 / 475"
+      },
+      {
+        type: "Enemy Stun Duration",
+        value: "1.5s"
+      },
+      {
+        type: "Untargetable Duration",
+        value: "2s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 40,
+      attack_speed: 0.60,
+      dps: 24,
+      range: 3
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+lucian = Champion.create(
+  id: 29,
+  key: "lucian",
+  name: "Lucian",
+  title: "The Purifier",
+  origins: ["Noble"],
+  classes: ["Gunslinger"],
+  cost: 2,
+  ability: {
+    name: "Relentless Pursuit",
+    description: "Lucian dashes away to safety and attacks an enemy twice, once with Attack Damage and once with Spell Damage.",
+    type: "Active",
+    mana_cost: 35,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Second Shot Damage",
+        value: "125 / 250 / 375"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.65,
+      dps: 42,
+      range: 3
+    },
+    defense: {
+      health: 600,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+lulu = Champion.create(
+  id: 30,
+  key: "lulu",
+  name: "Lulu",
+  title: "The Purifier",
+  origins: ["Yordle"],
+  classes: ["Sorcerer"],
+  cost: 2,
+  ability: {
+    name: "Wild Growth",
+    description: "Lulu grants an ally bonus Health, knocking up enemies near them.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Bonus Health",
+        value: "300 / 400 / 500"
+      },
+      {
+        type: "Duration",
+        value: "6s"
+      },
+      {
+        type: "Extra Targets",
+        value: "0 / 1 / 2"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 2
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+missfortune = Champion.create(
+  id: 31,
+  key: "missfortune",
+  name: "Miss Fortune",
+  title: "The Bounty Hunter",
+  origins: ["Pirate"],
+  classes: ["Gunslinger"],
+  cost: 5,
+  ability: {
+    name: "Bullet Time",
+    description: "Miss Fortune channels and fires several waves of bullets in a cone.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "1300 / 2000 / 2700"
+      },
+      {
+        type: "Channel Duration",
+        value: "3s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 75,
+      attack_speed: 0.95,
+      dps: 64,
+      range: 3
+    },
+    defense: {
+      health: 750,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+mordekaiser = Champion.create(
+  id: 32,
+  key: "mordekaiser",
+  name: "Mordekaiser",
+  title: "The Iron Revenant",
+  origins: ["Phantom"],
+  classes: ["Knight"],
+  cost: 1,
+  ability: {
+    name: "Obliterate",
+    description: "Mordekaiser slams his mace in front him, dealing damage in a line.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "250 / 500 / 750"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.50,
+      dps: 25,
+      range: 1
+    },
+    defense: {
+      health: 550,
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+morgana = Champion.create(
+  id: 33,
+  key: "morgana",
+  name: "Morgana",
+  title: "The Fallen",
+  origins: ["Demon"],
+  classes: ["Sorcerer"],
+  cost: 3,
+  ability: {
+    name: "Soul Shackles",
+    description: "Morgana fires chains to nearby enemies, dealing damage and stunning after a short delay if they are still nearby.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "175 / 300 / 425"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 4s / 6s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 2
+    },
+    defense: {
+      health: 650,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+nidalee = Champion.create(
+  id: 34,
+  key: "nidalee",
+  name: "Nidalee",
+  title: "The Bestial Huntress",
+  origins: ["Wild"],
+  classes: ["Shapeshifter"],
+  cost: 1,
+  ability: {
+    name: "Primal Surge",
+    description: "Nidalee heals herself and two allies, then transforms.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Heal Amount",
+        value: "150 / 225 / 600"
+      },
+      {
+        type: "Transform Attack Damage",
+        value: "20 / 70 / 120"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.65,
+      dps: 33,
+      range: 3
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+pantheon = Champion.create(
+  id: 56,
+  key: "pantheon",
+  name: "Pantheon",
+  title: "The Unbreakable Spear",
+  origins: ["Dragon"],
+  classes: ["Guardian"],
+  cost: 5,
+  ability: {
+    name: "Grand Starfall",
+    description: "Pantheon leaps in the air, crashing down towards the farthest enemy, stunning them. Enemies in Pantheon's path take % of their Maximum Health as Magic Damage. They then burn for an additional 20% of their Maximum Health as True Damage over 10 seconds. Applies Grievous Wounds.",
+    type: "Active",
+    mana_cost: 200,
+    mana_start: 150,
+    stats: [
+      {
+        type: "Damage",
+        value: "10% / 20% 30% Max Health"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 2s / 2s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 75,
+      attack_speed: 0.75,
+      dps: 60,
+      range: 1
+    },
+    defense: {
+      health: 850,
+      armor: 80,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+poppy = Champion.create(
+  id: 35,
+  key: "poppy",
+  name: "Poppy",
+  title: "Keeper of the Hammer",
+  origins: ["Yordle"],
+  classes: ["Knight"],
+  cost: 3,
+  ability: {
+    name: "Keeper's Verdict",
+    description: "Poppy brings down her hammer, knocking away and stunning nearby enemies.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "300 / 500 / 700"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 2s / 2s"
+      },
+      {
+        type: "Number of Targets Hit",
+        value: "1 / 2 / 3"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.50,
+      dps: 25,
+      range: 1
+    },
+    defense: {
+      health: 700,
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+pyke = Champion.create(
+  id: 36,
+  key: "pyke",
+  name: "Pyke",
+  title: "The Bloodharbor Ripper",
+  origins: ["Pirate"],
+  classes: ["Assassin"],
+  cost: 2,
+  ability: {
+    name: "Phantom Undertow",
+    description: "Pyke dashes behind the furthest enemy, creating an afterimage that stuns enemies it passes through.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 200 / 250"
+      },
+      {
+        type: "Stun Duration",
+        value: "1.5s / 2s / 2.5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 60,
+      attack_speed: 0.60,
+      dps: 36,
+      range: 1
+    },
+    defense: {
+      health: 600,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+reksai = Champion.create(
+  id: 37,
+  key: "reksai",
+  name: "Rek'Sai",
+  title: "The Void Burrower",
+  origins: ["Void"],
+  classes: ["Brawler"],
+  cost: 2,
+  ability: {
+    name: "Burrow",
+    description: "Rek'Sai burrows for a short duration becoming untargetable and healing. When Rek'Sai unburrows she deals damage and knocks up the closest enemy.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 350 / 500"
+      },
+      {
+        type: "Heal Amount",
+        value: "150 / 300 / 450"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.60,
+      dps: 26,
+      range: 1
+    },
+    defense: {
+      health: 650,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+rengar = Champion.create(
+  id: 38,
+  key: "rengar",
+  name: "Rengar",
+  title: "The Pridestalker",
+  origins: ["Wild"],
+  classes: ["Assassin"],
+  cost: 3,
+  ability: {
+    name: "Savagery",
+    description: "Rengar leaps to the lowest health enemy and stabs them for bonus on-hit damage. After dealing damage, Rengar gains Attack Speed and 25% Critical Strike Chance.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Attack Damage Scaling",
+        value: "200% / 300% / 400%"
+      },
+      {
+        type: "Attack Speed",
+        value: "30% / 50% / 70%"
+      },
+      {
+        type: "Buff Duration",
+        value: "6s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 70,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 1
+    },
+    defense: {
+      health: 550,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+sejuani = Champion.create(
+  id: 39,
+  key: "sejuani",
+  name: "Sejuani",
+  title: "Fury of the North",
+  origins: ["Glacial"],
+  classes: ["Knight"],
+  cost: 4,
+  ability: {
+    name: "Glacial Prison",
+    description: "Sejuani creates a large glacial storm, stunning enemies within it after a short delay.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "100 / 175 / 250"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 3.5s / 5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 45,
+      attack_speed: 0.55,
+      dps: 25,
+      range: 1
+    },
+    defense: {
+      health: 800,
+      armor: 40,
+      magic_resist: 25
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+shen = Champion.create(
+  id: 40,
+  key: "shen",
+  name: "Shen",
+  title: "The Eye of Twilight",
+  origins: ["Ninja"],
+  classes: ["Blademaster"],
+  cost: 2,
+  ability: {
+    name: "Spirit's Refuge",
+    description: "Shen creates a zone around himself, allowing allies to dodge all attacks.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 100,
+    stats: [
+      {
+        type: "Zone Duration",
+        value: "3s / 4s / 5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.75,
+      dps: 39,
+      range: 1
+    },
+    defense: {
+      health: 700,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+shyvana = Champion.create(
+  id: 41,
+  key: "shyvana",
+  name: "Shyvana",
+  title: "The Half-Dragon",
+  origins: ["Dragon"],
+  classes: ["Shapeshifter"],
+  cost: 3,
+  ability: {
+    name: "Dragon's Descent",
+    description: "Shyvana dashes and transforms, gaining Attack Damage and Attack Range. When transformed, her attacks set enemies on fire.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 300 / 400"
+      },
+      {
+        type: "Transform Attack Damage",
+        value: "100 / 150 / 200"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.70,
+      dps: 33,
+      range: 1
+    },
+    defense: {
+      health: 650,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+swain = Champion.create(
+  id: 42,
+  key: "swain",
+  name: "Swain",
+  title: "The Noxian Grand General",
+  origins: ["Imperial", "Demon"],
+  classes: ["Shapeshifter"],
+  cost: 5,
+  ability: {
+    name: "Demonflare",
+    description: "Swain transforms, draining health from all nearby enemies. At the end of his transformation, Swain sends out a burst of energy dealing damage to nearby enemies.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage Per Tick",
+        value: "40 / 80 / 120"
+      },
+      {
+        type: "Heal Per Tick",
+        value: "30 / 60 / 90"
+      },
+      {
+        type: "Soul Flare Damage",
+        value: "300 / 600 / 900"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.65,
+      dps: 42,
+      range: 2
+    },
+    defense: {
+      health: 850,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+tristana = Champion.create(
+  id: 43,
+  key: "tristana",
+  name: "Tristana",
+  title: "The Yordle Gunner",
+  origins: ["Yordle"],
+  classes: ["Gunslinger"],
+  cost: 1,
+  ability: {
+    name: "Explosive Charge",
+    description: "Tristana places a bomb on her current target that detonates after 3 attacks, damaging nearby enemies.",
+    type: "Active",
+    mana_cost: 50,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Minimum Damage",
+        value: "70 / 110 / 150"
+      },
+      {
+        type: "Maximum Damage",
+        value: "175 / 275 / 375"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.65,
+      dps: 35,
+      range: 4
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+twistedfate = Champion.create(
+  id: 51,
+  key: "twistedfate",
+  name: "Twisted Fate",
+  title: "The Card Master",
+  origins: ["Pirate"],
+  classes: ["Sorcerer"],
+  cost: 2,
+  ability: {
+    name: "Pick a Card",
+    description: "Twisted Fate throws a card that either stuns, deals damage around his target, or restores mana to himself and nearby allies.",
+    type: "Active",
+    mana_cost: 50,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 250 / 350"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 3s / 4s"
+      },
+      {
+        type: "Mana Restore",
+        value: "30 / 50 / 70"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 40,
+      attack_speed: 0.70,
+      dps: 28,
+      range: 3
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+varus = Champion.create(
+  id: 44,
+  key: "varus",
+  name: "Varus",
+  title: "The Arrow of Retribution",
+  origins: ["Demon"],
+  classes: ["Ranger"],
+  cost: 2,
+  ability: {
+    name: "Piercing Arrow",
+    description: "Varus charges and fires an arrow, dealing damage to all enemies in a line.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "300 / 550 / 800"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.70,
+      dps: 35,
+      range: 4
+    },
+    defense: {
+      health: 500,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+vayne = Champion.create(
+  id: 45,
+  key: "vayne",
+  name: "Vayne",
+  title: "The Night Hunter",
+  origins: ["Noble"],
+  classes: ["Ranger"],
+  cost: 1,
+  ability: {
+    name: "Silver Bolts",
+    description: "Vayne deals bonus true damage every third attack based on the enemy's maximum health.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Max Health Damage",
+        value: "8% / 12% / 16%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 40,
+      attack_speed: 0.70,
+      dps: 27,
+      range: 3
+    },
+    defense: {
+      health: 550,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+veigar = Champion.create(
+  id: 46,
+  key: "veigar",
+  name: "Veigar",
+  title: "The Tiny Master of Evil",
+  origins: ["Yordle"],
+  classes: ["Sorcerer"],
+  cost: 3,
+  ability: {
+    name: "Primordial Burst",
+    description: "Veigar blasts an enemy with magical energy. This spell instantly kills if the enemy is a lower star level than Veigar.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "650 / 650 / 950"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 45,
+      attack_speed: 0.55,
+      dps: 25,
+      range: 3
+    },
+    defense: {
+      health: 500,
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+vi = Champion.create(
+  id: 55,
+  key: "vi",
+  name: "Vi",
+  title: "The Piltover Enforcer",
+  origins: ["Hextech"],
+  classes: ["Brawler"],
+  cost: 3,
+  ability: {
+    name: "Assault and Battery",
+    description: "Vi charges down the furthest enemy, knocking aside anyone in her way. When she reaches her target, she deals magic damage and knocks them up. Other enemies knocked aside take the same damage.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 75,
+    stats: [
+      {
+        type: "Damage",
+        value: "300 / 500 / 700"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 2.5s / 3s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 55,
+      attack_speed: 0.65,
+      dps: 36,
+      range: 1
+    },
+    defense: {
+      health: 700,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+volibear = Champion.create(
+  id: 47,
+  key: "volibear",
+  name: "Volibear",
+  title: "The Thunder's Roar",
+  origins: ["Glacial"],
+  classes: ["Brawler"],
+  cost: 3,
+  ability: {
+    name: "Thunder Claws",
+    description: "Volibear empowers his attacks to chain between enemies, applying on-hit effects.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: " Maximum Bounces",
+        value: "3 / 4 / 5"
+      },
+      {
+        type: "Chain Damage Multiplier",
+        value: "80% / 90% / 100%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 70,
+      attack_speed: 0.65,
+      dps: 38,
+      range: 1
+    },
+    defense: {
+      health: 750,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+warwick = Champion.create(
+  id: 48,
+  key: "warwick",
+  name: "Warwick",
+  title: "The Uncaged Wrath of Zaun",
+  origins: ["Wild"],
+  classes: ["Brawler"],
+  cost: 1,
+  ability: {
+    name: "Infinite Duress",
+    description: "Warwick pounces onto the lowest health enemy, stunning and damaging them.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 225 / 300"
+      },
+      {
+        type: "Stun Duration",
+        value: "1.5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 50,
+      attack_speed: 0.60,
+      dps: 30,
+      range: 1
+    },
+    defense: {
+      health: 650,
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+yasuo = Champion.create(
+  id: 49,
+  key: "yasuo",
+  name: "Yasuo",
+  title: "The Unforgiven",
+  origins: ["Exile"],
+  classes: ["Blademaster"],
+  cost: 5,
+  ability: {
+    name: "Steel Tempest",
+    description: "Yasuo stabs forward, damaging two enemies in a line. On the third cast, Yasuo instead launches a tornado dealing damage and knocking up enemies in a line. Applies on hit effects.",
+    type: "Active",
+    mana_cost: 25,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 350 / 550"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 75,
+      attack_speed: 1.0,
+      dps: 65,
+      range: 1
+    },
+    defense: {
+      health: 750,
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
+zed = Champion.create(
+  id: 50,
+  key: "zed",
+  name: "Zed",
+  title: "The Master of Shadows",
+  origins: ["Ninja"],
+  classes: ["Assassin"],
+  cost: 2,
+  ability: {
+    name: "Razor Shuriken",
+    description: "Zed fires a shuriken in a line, damaging enemies it passes through.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 350 / 500"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage: 65,
+      attack_speed: 0.70,
+      dps: 39,
+      range: 1
+    },
+    defense: {
+      health: 550,
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"],
+  active: true
+)
 
 #Origins
 demon = Team.create(
@@ -1764,7 +2354,7 @@ demon = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "45 mana returned"
 )
-demon.champions << [aatrox, brand, elise, evelynn]
+demon.champions << [aatrox, brand, elise, evelynn, morgana, swain, varus]
 dragon = Team.create(
   id: 2,
   name: "Dragon",
@@ -1772,7 +2362,7 @@ dragon = Team.create(
   team_type: "Origin",
   description: "While 2 Dragons are in play, all Dragons take 75% reduced magic damage"
 )
-dragon.champions << [aurelionsol]
+dragon.champions << [aurelionsol, pantheon, shyvana]
 exile = Team.create(
   id: 3,
   name: "Exile",
@@ -1780,7 +2370,7 @@ exile = Team.create(
   team_type: "Origin",
   description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health"
 )
-exile.champions << []
+exile.champions << [yasuo]
 glacial = Team.create(
   id: 4,
   name: "Glacial",
@@ -1794,7 +2384,7 @@ glacial = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "50% chance"
 )
-glacial.champions << [anivia, ashe, braum]
+glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
 hextech = Team.create(
   id: 24,
   name: "Hextech",
@@ -1806,7 +2396,7 @@ hextech = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "Affects units within 2 hexes of the bomb"
 )
-hextech.champions << [camille, jayce, jinx]
+hextech.champions << [camille, jayce, jinx, vi]
 imperial = Team.create(
   id: 5,
   name: "Imperial",
@@ -1818,7 +2408,7 @@ imperial = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "All Imperials"
 )
-imperial.champions << [darius, draven]
+imperial.champions << [darius, draven, katarina, swain]
 ninja = Team.create(
   id: 6,
   name: "Ninja",
@@ -1830,7 +2420,7 @@ ninja = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "All Ninjas gain 80 attack damage/ability power"
 )
-ninja.champions << [akali]
+ninja.champions << [akali, kennen, shen, zed]
 noble = Team.create(
   id: 7,
   name: "Noble",
@@ -1842,7 +2432,7 @@ noble = Team.create(
   upgrade_2_number: "6:",
   upgrade_2_description: "All allies"
 )
-noble.champions << [fiora, garen]
+noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
 phantom = Team.create(
   id: 8,
   name: "Phantom",
@@ -1850,7 +2440,7 @@ phantom = Team.create(
   team_type: "Origin",
   description: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
 )
-phantom.champions << [karthus]
+phantom.champions << [karthus, kindred, mordekaiser]
 pirate = Team.create(
   id: 9,
   name: "Pirate",
@@ -1858,7 +2448,7 @@ pirate = Team.create(
   team_type: "Origin",
   description: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold"
 )
-pirate.champions << [gangplank, graves]
+pirate.champions << [gangplank, graves, missfortune, pyke, twistedfate]
 robot = Team.create(
   id: 10,
   name: "Robot",
@@ -1878,7 +2468,7 @@ void = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "All Voidlings"
 )
-void.champions << [chogath, kaisa]
+void.champions << [chogath, kaisa, kassadin, khazix, reksai]
 wild = Team.create(
   id: 12,
   name: "Wild",
@@ -1890,7 +2480,7 @@ wild = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "Fury benefits all allies and their attacks cannot be dodged"
 )
-wild.champions << [ahri, gnar]
+wild.champions << [ahri, gnar, nidalee, rengar, warwick]
 yordle = Team.create(
   id: 13,
   name: "Yordle",
@@ -1904,7 +2494,7 @@ yordle = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "90% chance"
 )
-yordle.champions << [gnar]
+yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
 
 #Classes
 assassin = Team.create(
@@ -1920,7 +2510,7 @@ assassin = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "+225% damage/+30% chance"
 )
-assassin.champions << [akali, evelynn, kaisa]
+assassin.champions << [akali, evelynn, kaisa, katarina, khazix, pyke, rengar, zed]
 blademaster = Team.create(
   id: 15,
   name: "Blademaster",
@@ -1934,7 +2524,7 @@ blademaster = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "Quadruple Strike"
 )
-blademaster.champions << [aatrox, camille, draven, fiora, gangplank]
+blademaster.champions << [aatrox, camille, draven, fiora, gangplank, shen, yasuo]
 brawler = Team.create(
   id: 16,
   name: "Brawler",
@@ -1948,7 +2538,7 @@ brawler = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "+900 maximum health"
 )
-brawler.champions << [blitzcrank, chogath]
+brawler.champions << [blitzcrank, chogath, reksai, vi, volibear, warwick]
 elementalist = Team.create(
   id: 17,
   name: "Elementalist",
@@ -1956,7 +2546,7 @@ elementalist = Team.create(
   team_type: "Class",
   description: "Beginning combat with 3 Elementalists will summon an Elemental adjacent to one of your Elementalists"
 )
-elementalist.champions << [anivia, brand]
+elementalist.champions << [anivia, brand, kennen, lissandra]
 guardian = Team.create(
   id: 18,
   name: "Guardian",
@@ -1964,7 +2554,7 @@ guardian = Team.create(
   team_type: "Class",
   description: "Beginning combat with 2 Guardians will grant 45 armor to all units that start adjacent to a Guardian"
 )
-guardian.champions << [braum]
+guardian.champions << [braum, leona, pantheon]
 gunslinger = Team.create(
   id: 19,
   name: "Gunslinger",
@@ -1978,7 +2568,7 @@ gunslinger = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "Attacks hit four additional random enemies"
 )
-gunslinger.champions << [gangplank, graves, jinx]
+gunslinger.champions << [gangplank, graves, jinx, lucian, missfortune, tristana]
 knight = Team.create(
   id: 20,
   name: "Knight",
@@ -1992,7 +2582,7 @@ knight = Team.create(
   upgrade_3_number: "6:",
   upgrade_3_description: "60 damage ignored"
 )
-knight.champions << [darius, garen]
+knight.champions << [darius, garen, kayle, mordekaiser, poppy, sejuani]
 ranger = Team.create(
   id: 21,
   name: "Ranger",
@@ -2004,7 +2594,7 @@ ranger = Team.create(
   upgrade_2_number: "4:",
   upgrade_2_description: "75% chance"
 )
-ranger.champions << [ashe, kaisa]
+ranger.champions << [ashe, kaisa, kindred, varus, vayne]
 shapeshifter = Team.create(
   id: 22,
   name: "Shapeshifter",
@@ -2016,7 +2606,7 @@ shapeshifter = Team.create(
   upgrade_2_number: "6:",
   upgrade_2_description: "100% bonus health"
 )
-shapeshifter.champions << [elise, gnar, jayce]
+shapeshifter.champions << [elise, gnar, jayce, nidalee, shyvana, swain]
 sorcerer = Team.create(
   id: 23,
   name: "Sorcerer",
@@ -2030,4 +2620,4 @@ sorcerer = Team.create(
   upgrade_3_number: "9:",
   upgrade_3_description: "+175% bonus spell power"
 )
-sorcerer.champions << [ahri, aurelionsol, karthus]
+sorcerer.champions << [ahri, aurelionsol, karthus, kassadin, lulu, morgana, twistedfate, veigar]
