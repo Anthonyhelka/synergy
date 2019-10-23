@@ -1,20 +1,19 @@
 /* Containers */
 #page-container {
-  width: 90% !important;
-  height: 100vh !important;
+  display: inline-block !important;
   border-radius: 0px !important;
   margin: auto !important;
   padding: 14px !important;
-  background-color: green !important;
+  background-color: #000000 !important;
 }
 
 #search-container {
   width: 32.5% !important;
-  height: 100% !important;
+  height: 100vh !important;
   float: left !important;
   margin: 0px !important;
   border: none !important;
-  background-color: yellow !important;
+  background-color: #FFFFFF !important;
 }
 
 #champion-container {
@@ -23,10 +22,11 @@
   float: right !important;
   margin: 0px !important;
   border: none !important;
-  background-color: yellow !important;
+  background-color: #FFFFFF !important;
 }
 
 /* Champion Container */
+
 /* Champion Row One */
 
 #champion-row-one {
@@ -125,6 +125,8 @@
   width: 2.1vw !important;
   height: auto !important;
 }
+
+/* Left Column */
 
 /* Champion Row Two */
 
@@ -255,18 +257,35 @@
   padding: 0px 0px 14px 0px !important;
 }
 
+/* Right Column */
 
-
-
-#test-title {
-
+#right-column {
+  background-color: #000000 !important;
+  padding: 0px !important;
+  border: 3px solid #2185D0 !important;
+  border-radius: 0px !important;
 }
-#test-type {
 
-}
-#test-mana {
+/* Statistics Row */
 
+#statistics-container {
+  border: none !important;
+  border-radius: 0px !important;
+  text-align: center !important;
 }
+
+#statistics-list {
+  text-align: center !important;
+}
+#statistics-list-item {
+  padding: 5px 20px 5px 20px !important;
+}
+
+#statistics-list-item img {
+  width: 4vh!important;
+  height: auto !important;
+}
+
 /* Helpers */
 
 .tier-1 {

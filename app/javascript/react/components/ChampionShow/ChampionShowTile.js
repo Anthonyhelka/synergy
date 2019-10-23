@@ -35,6 +35,12 @@ class ChampionShowTile extends Component {
       )
     });
 
+    let abilityStatList = this.props.champion.ability.stats.map(stat => {
+      return (
+        <p>{stat.type}: {stat.value}</p>
+      )
+    });
+
     return (
       <div>
         <Segment id='page-container'>
@@ -99,7 +105,7 @@ class ChampionShowTile extends Component {
                             <Grid.Row id='champion-ability-row-three'>
                               <Grid.Column id='champion-ability-ability-extra-container' width='16'>
                                 <Segment id='champion-ability-ability-extra' basic>
-                                  <span>Damage: [200, 350, 500]</span>
+                                  <span>{abilityStatList}</span>
                                 </Segment>
                               </Grid.Column>
                             </Grid.Row>
@@ -121,11 +127,55 @@ class ChampionShowTile extends Component {
                 </Grid.Column>
 
                 <Grid.Column width='11'>
-                  <Segment>
+                  <Segment id='right-column'>
                     <Grid.Row columns='3'>
                       <Grid.Column>
-                        <Segment>
-                          Statistics
+                        <Segment id='statistics-container'>
+                          <List id='statistics-list' horizontal>
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/health.png')} />
+                              <List.Content>
+                                <List.Header>Health</List.Header>
+                                  {this.props.champion.stats.defense.health}
+                                </List.Content>
+                            </List.Item>
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/armor.png')} />
+                              <List.Content>
+                                <List.Header>Armor</List.Header>
+                                  {this.props.champion.stats.defense.armor}
+                                </List.Content>
+                            </List.Item>
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/magic_resist.png')} />
+                              <List.Content>
+                                <List.Header>Magic Resist</List.Header>
+                                  {this.props.champion.stats.defense.magic_resist}
+                                </List.Content>
+                            </List.Item>
+                            <br />
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/attack_damage.png')} />
+                              <List.Content>
+                                <List.Header>Attack Damage</List.Header>
+                                  {this.props.champion.stats.offense.damage}
+                                </List.Content>
+                            </List.Item>
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/attack_speed.png')} />
+                              <List.Content>
+                                <List.Header>Attack Speed</List.Header>
+                                  {this.props.champion.stats.offense.attack_speed}
+                                </List.Content>
+                            </List.Item>
+                            <List.Item id='statistics-list-item'>
+                              <Image src={require('../../../../../public/stat_icons/attack_range.png')} />
+                              <List.Content>
+                                <List.Header>Range</List.Header>
+                                  {this.props.champion.stats.offense.range}
+                                </List.Content>
+                            </List.Item>
+                          </List>
                         </Segment>
                       </Grid.Column>
                       <Grid.Column>
@@ -153,3 +203,47 @@ class ChampionShowTile extends Component {
 }
 
 export default ChampionShowTile;
+
+
+
+
+// <Grid>
+//   <Grid.Row columns='6'>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Health</p>
+//         <p>{this.props.champion.stats.defense.health}</p>
+//       </Segment>
+//     </Grid.Column>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Armor</p>
+//         <p>{this.props.champion.stats.defense.armor}</p>
+//       </Segment>
+//     </Grid.Column>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Magic Resist</p>
+//         <p>{this.props.champion.stats.defense.magic_resist}</p>
+//       </Segment>
+//     </Grid.Column>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Attack Damage</p>
+//         <p>{this.props.champion.stats.offense.damage}</p>
+//       </Segment>
+//     </Grid.Column>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Attack Speed</p>
+//         <p>{this.props.champion.stats.offense.attack_speed}</p>
+//       </Segment>
+//     </Grid.Column>
+//     <Grid.Column>
+//       <Segment>
+//         <p>Attack Range</p>
+//         <p>{this.props.champion.stats.offense.range}</p>
+//       </Segment>
+//     </Grid.Column>
+//   </Grid.Row>
+// </Grid>
