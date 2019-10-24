@@ -35,16 +35,11 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
   end
 
   create_table "teams", force: :cascade do |t|
+    t.string "key", null: false
     t.string "name", null: false
-    t.string "icon", null: false
-    t.string "team_type", null: false
-    t.string "description"
-    t.string "upgrade_1_number"
-    t.string "upgrade_1_description"
-    t.string "upgrade_2_number"
-    t.string "upgrade_2_description"
-    t.string "upgrade_3_number"
-    t.string "upgrade_3_description"
+    t.string "trait_type", null: false
+    t.string "description", null: false
+    t.json "upgrades"
   end
 
 end
