@@ -2346,7 +2346,7 @@ demon = Team.create(
   name: "Demon",
   icon: "./demon",
   team_type: "Origin",
-  description: "Attacks from Demons have a 40% chance to burn 20 mana from their target and return mana to the attacker.",
+  description: "Attacks from Demons have a 40% chance to burn 20 mana from their target and return mana to the attacker",
   upgrade_1_number: "2:",
   upgrade_1_description: "15 mana returned",
   upgrade_2_number: "4:",

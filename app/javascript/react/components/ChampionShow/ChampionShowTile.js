@@ -13,13 +13,12 @@ class ChampionShowTile extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(event, name) {
-    browserHistory.push(`/champions/${name}`);
+  handleClick(event, key) {
+    browserHistory.push(`/champions/${key}`);
     window.location.reload();
   }
 
   render() {
-    const championFileName = `./${this.props.champion.key}`;
     const pathToIcon = require.context('../../../../../public/icons', true);
     const pathToBanner = require.context('../../../../../public/banners', true);
     const pathToAbility = require.context('../../../../../public/abilities', true);
@@ -41,9 +40,48 @@ class ChampionShowTile extends Component {
       )
     });
 
+    let synergies = this.props.champion.teams.map(synergy => {
+      let champions = synergy.champions.map(champion => {
+        return (<List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}><Image src={`${pathToIcon(`./${champion.key}`, true)}`} size='mini'/></List.Item>);
+      });
+      return (
+        <Grid.Row className='synergy-row' columns='2'>
+            <Grid.Column id='synergy-header-column' width='2'>
+              <Segment id='synergy-header-container' basic>
+                <Image src={`${pathToSynergyIcon(synergy.icon, true)}`}/>
+                <p>{synergy.name}</p>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column id='synergy-details-column' width='14'>
+              <Grid.Row>
+                <Segment id='synergy-details-column-champions' basic>
+                  <List horizontal>
+                    {champions}
+                  </List>
+                </Segment>
+              </Grid.Row>
+              <Grid.Row>
+                <Segment id='synergy-details-column-description' basic>
+                  <span>{synergy.description}</span>
+                </Segment>
+              </Grid.Row>
+              <Grid.Row>
+                <Segment id='synergy-details-column-stats' basic>
+                  <List id='synergy-details-column-stats-list'>
+                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>2</span> 15 mana returned</List.Item>
+                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>4</span> 30 mana returned</List.Item>
+                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>6</span> 45 mana returned</List.Item>
+                  </List>
+                </Segment>
+              </Grid.Row>
+            </Grid.Column>
+        </Grid.Row>
+      )
+    });
+
     return (
       <div>
-        <Segment id='page-container'>
+        <Segment id='page-container' basic>
 
           <Segment id='search-container'>
             Search Container
@@ -57,7 +95,7 @@ class ChampionShowTile extends Component {
                   <Segment id='champion-header'>
                     <Label id='champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.cost}</Label>
                     <div id='champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
-                    <Image id='champion-header-image' src={`${pathToBanner(championFileName, true)}`} />
+                    <Image id='champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}`, true)}`} />
                     <div id='champion-header-synergies-container'>
                       {synergiesIconList}
                     </div>
@@ -65,15 +103,15 @@ class ChampionShowTile extends Component {
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row id='champion-row-two' columns='2' stretched>
-                <Grid.Column width='5'>
-                  <Segment id='champion-left-column' basic>
-                    <Grid>
+              <Grid.Row id='champion-row-two'>
+                <Grid.Column id='champion-left-column-container' width='5'>
+                  <Segment id='champion-left-column' basic fluid>
+                    <Grid id='champion-left-column-grid'>
                       <Grid.Row id='champion-ability-row' columns='1'>
 
-                        <Grid.Column>
-                          <Grid stackable>
-                            <Grid.Row id='champion-ability-row-one' width='16'>
+                        <Grid.Column id='champion-ability-column' width='16'>
+                          <Grid id='champion-ability-grid'>
+                            <Grid.Row id='champion-ability-row-one'>
                               <Grid.Column id='champion-ability-title-container' width='10'>
                                 <Segment id='champion-ability-title-container' basic>
                                   <span>{this.props.champion.ability.name}</span>
@@ -91,12 +129,12 @@ class ChampionShowTile extends Component {
 
                             <Grid.Row id='champion-ability-row-two'>
                               <Grid.Column id='champion-ability-image-container' width='4' stretched>
-                                <Segment id='champion-ability-image' basic>
-                                  <Image src={`${pathToAbility(championFileName, true)}`}  />
+                                <Segment id='champion-ability-image' inverted basic>
+                                  <Image src={`${pathToAbility(`./${this.props.champion.key}`, true)}`}  />
                                 </Segment>
                               </Grid.Column>
                               <Grid.Column id='champion-ability-description-container' width='12'>
-                                <Segment id='champion-ability-description' basic>
+                                <Segment id='champion-ability-description' inverted basic>
                                   <span>{this.props.champion.ability.description}</span>
                                 </Segment>
                               </Grid.Column>
@@ -116,76 +154,72 @@ class ChampionShowTile extends Component {
 
                       <Grid.Row id='champion-render-row' columns='1'>
                         <Grid.Column id='champion-render-container'>
-                          <Segment id='champion-render' basic>
-                            <Image src={`${pathToRender(championFileName, true)}`}  />
+                          <Segment id='champion-render' basic fluid>
+                            <Image src={`${pathToRender(`./${this.props.champion.key}`, true)}`}  />
                           </Segment>
                         </Grid.Column>
                       </Grid.Row>
-
                     </Grid>
                   </Segment>
                 </Grid.Column>
 
-                <Grid.Column width='11'>
-                  <Segment id='right-column'>
+                <Grid.Column id='champion-right-column-container' width='11'>
+                  <Segment id='champion-right-column' basic>
                     <Grid.Row columns='3'>
                       <Grid.Column>
-                        <Segment id='statistics-container'>
+                        <Segment id='statistics-container' inverted>
                           <List id='statistics-list' horizontal>
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/health.png')} />
                               <List.Content>
-                                <List.Header>Health</List.Header>
+                                <List.Header id='statistic-list-item-header'>Health</List.Header>
                                   {this.props.champion.stats.defense.health}
                                 </List.Content>
                             </List.Item>
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/armor.png')} />
                               <List.Content>
-                                <List.Header>Armor</List.Header>
+                                <List.Header id='statistic-list-item-header'>Armor</List.Header>
                                   {this.props.champion.stats.defense.armor}
                                 </List.Content>
                             </List.Item>
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/magic_resist.png')} />
                               <List.Content>
-                                <List.Header>Magic Resist</List.Header>
+                                <List.Header id='statistic-list-item-header'>Magic Resist</List.Header>
                                   {this.props.champion.stats.defense.magic_resist}
                                 </List.Content>
                             </List.Item>
                             <br />
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/attack_damage.png')} />
                               <List.Content>
-                                <List.Header>Attack Damage</List.Header>
+                                <List.Header id='statistic-list-item-header'>Attack Damage</List.Header>
                                   {this.props.champion.stats.offense.damage}
                                 </List.Content>
                             </List.Item>
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/attack_speed.png')} />
                               <List.Content>
-                                <List.Header>Attack Speed</List.Header>
+                                <List.Header id='statistic-list-item-header'>Attack Speed</List.Header>
                                   {this.props.champion.stats.offense.attack_speed}
                                 </List.Content>
                             </List.Item>
-                            <List.Item id='statistics-list-item'>
+                            <List.Item id='statistic-list-item'>
                               <Image src={require('../../../../../public/stat_icons/attack_range.png')} />
                               <List.Content>
-                                <List.Header>Range</List.Header>
+                                <List.Header id='statistic-list-item-header'>Range</List.Header>
                                   {this.props.champion.stats.offense.range}
                                 </List.Content>
                             </List.Item>
                           </List>
                         </Segment>
                       </Grid.Column>
-                      <Grid.Column>
-                        <Segment>
-                          Synergy 1
-                        </Segment>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Segment>
-                          Synergy 2
+                      <Grid.Column id='right-column-synergies-column'>
+                        <Segment id='synergies-container'>
+                          <Grid id='synergies-grid'>
+                            {synergies}
+                          </Grid>
                         </Segment>
                       </Grid.Column>
                     </Grid.Row>
@@ -203,47 +237,3 @@ class ChampionShowTile extends Component {
 }
 
 export default ChampionShowTile;
-
-
-
-
-// <Grid>
-//   <Grid.Row columns='6'>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Health</p>
-//         <p>{this.props.champion.stats.defense.health}</p>
-//       </Segment>
-//     </Grid.Column>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Armor</p>
-//         <p>{this.props.champion.stats.defense.armor}</p>
-//       </Segment>
-//     </Grid.Column>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Magic Resist</p>
-//         <p>{this.props.champion.stats.defense.magic_resist}</p>
-//       </Segment>
-//     </Grid.Column>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Attack Damage</p>
-//         <p>{this.props.champion.stats.offense.damage}</p>
-//       </Segment>
-//     </Grid.Column>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Attack Speed</p>
-//         <p>{this.props.champion.stats.offense.attack_speed}</p>
-//       </Segment>
-//     </Grid.Column>
-//     <Grid.Column>
-//       <Segment>
-//         <p>Attack Range</p>
-//         <p>{this.props.champion.stats.offense.range}</p>
-//       </Segment>
-//     </Grid.Column>
-//   </Grid.Row>
-// </Grid>
