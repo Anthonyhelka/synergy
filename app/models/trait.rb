@@ -5,4 +5,5 @@ class Trait < ApplicationRecord
   validates :name, presence: true
   validates :trait_type, presence: true
   validates :description, presence: true
+  validates :active, presence: true
 end

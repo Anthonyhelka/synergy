@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.string "trait_type", null: false
     t.string "description", null: false
     t.json "upgrades"
+    t.boolean "active", null: false
   end
 
 end
