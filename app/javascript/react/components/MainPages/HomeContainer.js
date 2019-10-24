@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Responsive, Segment, Search, Button, Icon, Image, List, Dropdown } from 'semantic-ui-react';
 
-import NavigationBar from './NavigationBar';
-import SearchBar from './SearchBar';
+import NavigationBar from '../Components/NavigationBar';
+import SearchBar from '../Components/SearchBar';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -38,8 +38,8 @@ class HomeContainer extends Component {
       <div>
         <NavigationBar page='home' />
 
-        <Responsive as={Image} id='home-page-logo-mobile-tablet' src={require('../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
-        <Responsive as={Image} id='home-page-logo-computer' src={require('../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
+        <Responsive as={Image} id='home-page-logo-mobile-tablet' src={require('../../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
+        <Responsive as={Image} id='home-page-logo-computer' src={require('../../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
 
         <SearchBar />
 

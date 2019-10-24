@@ -93,7 +93,7 @@ class ChampionShowTile extends Component {
               <Grid.Row id='champion-row-one' columns='1'>
                 <Grid.Column>
                   <Segment id='champion-header'>
-                    <Label id='champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'><Icon fitted name='dollar sign' />&nbsp;{this.props.champion.cost}</Label>
+                    <Label id='champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'>{this.props.champion.cost}</Label>
                     <div id='champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
                     <Image id='champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}`, true)}`} />
                     <div id='champion-header-synergies-container'>

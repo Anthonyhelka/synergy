@@ -44,7 +44,7 @@ class ChampionTile extends Component {
         <Responsive minWidth={1024}>
           <Card id={cardId} as={ Link } to={`/champions/${this.props.champion.key}`}>
             <Image id='champion-card-image' src={`${pathToSplashart(championFileName, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
-            <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label content={this.props.champion.cost} size='mini' icon='dollar sign' /></Header></Card.Content>
+            <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label id='champion-card-label' className={`tier-${this.props.champion.cost}`} content={this.props.champion.cost} size='small' /></Header></Card.Content>
           </Card>
         </Responsive>
       </List.Item>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown, Message, Responsive, Image, Segment, Divider } from 'semantic-ui-react';
 
-import NavigationBar from './NavigationBar';
-import SearchBar from './SearchBar';
+import NavigationBar from '../Components/NavigationBar';
+import SearchBar from '../Components/SearchBar';
 
 class SummonerShow extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class SummonerShow extends Component {
 
   render() {
 
-    const pathToRankedEmblem = require.context('../../../../public/emblems', true);
+    const pathToRankedEmblem = require.context('../../../../../public/emblems', true);
 
     let summonerDisplay;
     if (this.state.updated === true) {

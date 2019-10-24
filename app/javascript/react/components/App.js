@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Router, browserHistory, Route} from 'react-router';
 import 'semantic-ui-css/semantic.min.css';
 
-import HomeContainer from './HomeContainer';
+import HomeContainer from './MainPages/HomeContainer';
 import ChampionsOverview from  './Overview/ChampionsOverview';
 import ChampionsOrigins from  './Synergies/ChampionsOrigins';
 import ChampionsClasses from  './Synergies/ChampionsClasses';
 import ChampionShow from  './ChampionShow/ChampionShow';
-import ItemsContainer from  './ItemsContainer';
-import NewsContainer from  './NewsContainer';
-import SummonerShow from './SummonerShow';
+import ItemsContainer from  './MainPages/ItemsContainer';
+import NewsContainer from  './MainPages/NewsContainer';
+import SummonerShow from './/Summoner/SummonerShow';
 
 
 class App extends Component {

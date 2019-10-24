@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Message } from 'semantic-ui-react';
 
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../Components/NavigationBar';
 
 class NewsContainer extends Component {
   render() {

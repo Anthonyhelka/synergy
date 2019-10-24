@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Icon } from 'semantic-ui-react';
 
-import NavigationBar from '../NavigationBar';
+import NavigationBar from '../Components/NavigationBar';
 import ChampionsOverviewTile from './ChampionsOverviewTile';
 
 class ChampionsOverview extends Component {
