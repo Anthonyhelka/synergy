@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
 import NavigationBar from '../Components/NavigationBar';
-import SynergyTile from './SynergyTile';
+import TraitTile from './TraitTile';
 
-class ChampionsClasses extends Component {
+class ChampionsOrigins extends Component {
   constructor(props) {
     super(props);
     this.state={
-      synergies: []
+      traits: []
     }
   }
 
   componentDidMount() {
-    fetch('/api/v1/champions/classes')
+    fetch('/api/v1/champions/origins')
       .then(response => {
         if (response.ok) {
           return response;
@@ -24,33 +24,33 @@ class ChampionsClasses extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ synergies: body.classes })
+        this.setState({ traits: body.origins })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
 
-    let synergies = this.state.synergies.map(synergy => {
+    let traits = this.state.traits.map(trait => {
       return (
-        <SynergyTile
-          key={synergy.id}
-          id={synergy.id}
-          synergy={synergy}
+        <TraitTile
+          key={trait.id}
+          id={trait.id}
+          trait={trait}
         />
       )
     });
 
     return (
       <div>
-        <NavigationBar page='classes' />
+        <NavigationBar page='origins' />
 
         <div>
-          {synergies}
+          {traits}
         </div>
       </div>
     )
   }
 }
 
-export default ChampionsClasses;
+export default ChampionsOrigins;

@@ -96,7 +96,7 @@ class ChampionsOverview extends Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell sorted={nameOrder} onClick={event => this.handleSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>
-              <Table.HeaderCell>Synergies</Table.HeaderCell>
+              <Table.HeaderCell>Traits</Table.HeaderCell>
               <Table.HeaderCell width='3' sorted={tierOrder} onClick={event => this.handleSort(event, 'tierSort')} ><Icon name='dollar sign' /></Table.HeaderCell>
               <Table.HeaderCell>Ability</Table.HeaderCell>
             </Table.Row>

@@ -376,10 +376,12 @@
 
 #synergy-details-column-stats-list {
   padding-bottom: 10px !important;
+  display: inline-block !important;
 }
 
 #synergy-details-column-stats-list-item {
   line-height: 20px !important;
+  text-align: left !important;
 }
 
 #synergy-details-column-stats-upgrade-number {

@@ -20,7 +20,6 @@ class ChampionTile extends Component {
   }
 
   render() {
-    const championFileName = `./${this.props.champion.key}`;
     const pathToIcon = require.context('../../../../../public/icons', true);
     const pathToSplashart = require.context('../../../../../public/splasharts', true);
 
@@ -38,12 +37,12 @@ class ChampionTile extends Component {
       <List.Item id='champion-card-div'>
         <Responsive maxWidth={1023}>
           <Card as={ Link } to={`/champions/${this.props.champion.key}`}>
-            <Image src={`${pathToIcon(championFileName, true)}`} size='tiny' />
+            <Image src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} size='tiny' />
           </Card>
         </Responsive>
         <Responsive minWidth={1024}>
           <Card id={cardId} as={ Link } to={`/champions/${this.props.champion.key}`}>
-            <Image id='champion-card-image' src={`${pathToSplashart(championFileName, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
+            <Image id='champion-card-image' src={`${pathToSplashart(`./${this.props.champion.key}`, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
             <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label id='champion-card-label' className={`tier-${this.props.champion.cost}`} content={this.props.champion.cost} size='small' /></Header></Card.Content>
           </Card>
         </Responsive>

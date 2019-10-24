@@ -23,13 +23,13 @@ class ChampionShowTile extends Component {
     const pathToBanner = require.context('../../../../../public/banners', true);
     const pathToAbility = require.context('../../../../../public/abilities', true);
     const pathToRender = require.context('../../../../../public/renders', true);
-    const pathToSynergyIcon = require.context('../../../../../public/synergies', true);
+    const pathToTraitIcon = require.context('../../../../../public/traits', true);
 
-    let synergiesIconList = this.props.champion.teams.map(synergy => {
+    let synergiesIconList = this.props.champion.traits.map(trait => {
       return (
         <div id='champion-header-synergy'>
-          <Image src={`${pathToSynergyIcon(synergy.icon, true)}`}  />
-          <span>&nbsp;{synergy.name}</span>
+          <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}  />
+          <span>&nbsp;{trait.name}</span>
         </div>
       )
     });
@@ -40,16 +40,21 @@ class ChampionShowTile extends Component {
       )
     });
 
-    let synergies = this.props.champion.teams.map(synergy => {
-      let champions = synergy.champions.map(champion => {
+    let synergies = this.props.champion.traits.map(trait => {
+      let upgrades = trait.upgrades.map(upgrade => {
+        return (
+          <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
+        )
+      })
+      let champions = trait.champions.map(champion => {
         return (<List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}><Image src={`${pathToIcon(`./${champion.key}`, true)}`} size='mini'/></List.Item>);
       });
       return (
         <Grid.Row className='synergy-row' columns='2'>
             <Grid.Column id='synergy-header-column' width='2'>
               <Segment id='synergy-header-container' basic>
-                <Image src={`${pathToSynergyIcon(synergy.icon, true)}`}/>
-                <p>{synergy.name}</p>
+                <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
+                <p>{trait.name}</p>
               </Segment>
             </Grid.Column>
             <Grid.Column id='synergy-details-column' width='14'>
@@ -62,15 +67,13 @@ class ChampionShowTile extends Component {
               </Grid.Row>
               <Grid.Row>
                 <Segment id='synergy-details-column-description' basic>
-                  <span>{synergy.description}</span>
+                  <span>{trait.description}</span>
                 </Segment>
               </Grid.Row>
               <Grid.Row>
                 <Segment id='synergy-details-column-stats' basic>
                   <List id='synergy-details-column-stats-list'>
-                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>2</span> 15 mana returned</List.Item>
-                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>4</span> 30 mana returned</List.Item>
-                    <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>6</span> 45 mana returned</List.Item>
+                    {upgrades}
                   </List>
                 </Segment>
               </Grid.Row>
