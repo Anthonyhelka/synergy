@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.boolean "active", null: false
   end
 
-  create_table "champions_teams", id: false, force: :cascade do |t|
+  create_table "champions_traits", id: false, force: :cascade do |t|
     t.bigint "champion_id", null: false
-    t.bigint "team_id", null: false
-    t.index ["champion_id", "team_id"], name: "index_champions_teams_on_champion_id_and_team_id"
+    t.bigint "trait_id", null: false
+    t.index ["champion_id", "trait_id"], name: "index_champions_traits_on_champion_id_and_trait_id"
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "traits", force: :cascade do |t|
     t.string "key", null: false
     t.string "name", null: false
     t.string "trait_type", null: false

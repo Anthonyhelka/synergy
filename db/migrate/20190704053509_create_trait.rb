@@ -1,6 +1,6 @@
-class CreateTeam < ActiveRecord::Migration[5.2]
+class CreateTrait < ActiveRecord::Migration[5.2]
   def change
-    create_table :teams do |t|
+    create_table :traits do |t|
       t.string :key, null: false
       t.string :name, null: false
       t.string :trait_type, null: false

@@ -1,5 +1,5 @@
 Champion.delete_all
-Team.delete_all
+Trait.delete_all
 
 #Champions
 aatrox = Champion.create(
@@ -2341,7 +2341,7 @@ zed = Champion.create(
 )
 
 #Origins
-demon = Team.create(
+demon = Trait.create(
   id: 1,
   key: "demon",
   name: "Demon",
@@ -2362,37 +2362,47 @@ demon = Team.create(
     }
   ]
 )
-# demon.champions << [aatrox, brand, elise, evelynn, morgana, swain, varus]
-# dragon = Team.create(
-#   id: 2,
-#   name: "Dragon",
-#   icon: "./dragon",
-#   team_type: "Origin",
-#   description: "While 2 Dragons are in play, all Dragons take 75% reduced magic damage"
-# )
-# dragon.champions << [aurelionsol, pantheon, shyvana]
-# exile = Team.create(
-#   id: 3,
-#   name: "Exile",
-#   icon: "./exile",
-#   team_type: "Origin",
-#   description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health"
-# )
-# exile.champions << [yasuo]
-# glacial = Team.create(
-#   id: 4,
-#   name: "Glacial",
-#   icon: "./glacial",
-#   team_type: "Origin",
-#   description: "Glacials gain a chance to stun for 1.5 seconds with each attack",
-#   upgrade_1_number: "2:",
-#   upgrade_1_description: "20% chance",
-#   upgrade_2_number: "4:",
-#   upgrade_2_description: "33% chance",
-#   upgrade_3_number: "6:",
-#   upgrade_3_description: "50% chance"
-# )
-# glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
+demon.champions << [aatrox, brand, elise, evelynn, morgana, swain, varus]
+dragon = Trait.create(
+  id: 2,
+  key: "dragon",
+  name: "Dragon",
+  trait_type: "Origin",
+  description: "While 2 Dragons are in play, all allied Dragons take 75% reduced magic damage",
+  upgrades: []
+)
+dragon.champions << [aurelionsol, pantheon, shyvana]
+exile = Trait.create(
+  id: 3,
+  key: "exile",
+  name: "Exile",
+  trait_type: "Origin",
+  description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health",
+  upgrades: []
+)
+exile.champions << [yasuo]
+glacial = Trait.create(
+  id: 4,
+  key: "glacial",
+  name: "Glacial",
+  trait_type: "Origin",
+  description: "Glacials gain a chance to stun for 1.5 seconds with each attack",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "20% chance"
+    },
+    {
+      threshhold: "4",
+      description: "33% chance"
+    },
+    {
+      threshhold: "6",
+      description: "50% chance"
+    }
+  ]
+)
+glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
 # hextech = Team.create(
 #   id: 24,
 #   name: "Hextech",

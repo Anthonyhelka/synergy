@@ -1,5 +1,5 @@
 class Champion < ApplicationRecord
-  has_and_belongs_to_many :teams
+  has_and_belongs_to_many :traits
   validates :key, presence: true
   validates :name, presence: true
   validates :title, presence: true
