@@ -2581,7 +2581,7 @@ assassin = Trait.create(
   key: "assassin",
   name: "Assassin",
   trait_type: "Class",
-  description: "Assassins gain bonus critical strike damage and chance",
+  description: "Assassins gain bonus critical strike damage/chance",
   upgrades: [
     {
       threshhold: "3",
