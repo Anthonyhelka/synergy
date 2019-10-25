@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
+import ChampionSearch from '../Components/ChampionSearch';
+
 import '../../../assets/stylesheets/ChampionShow.scss';
 
 class ChampionShowTile extends Component {
@@ -11,6 +13,14 @@ class ChampionShowTile extends Component {
       update: false
     }
     this.handleClick = this.handleClick.bind(this)
+  }
+
+  componentDidMount() {
+    document.body.classList.add(`grey-background-color`);
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove(`grey-background-color`);
   }
 
   handleClick(event, key) {
@@ -46,8 +56,16 @@ class ChampionShowTile extends Component {
           <List.Item id='trait-details-column-stats-list-item'><span id='trait-details-column-stats-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
         )
       })
-      let champions = trait.champions.map(champion => {
-        return (<List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}><Image src={`${pathToIcon(`./${champion.key}`, true)}`} size='mini'/></List.Item>);
+      let traitChampions = trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
+      let champions = traitChampions.map(champion => {
+        return (
+          <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
+            <div id='champion-show-icon-container'>
+              <div id='champion-show-icon-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
+              <Image id='champion-show-icon' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}`, true)}`} />
+            </div>
+          </List.Item>
+        );
       });
       return (
         <Grid.Row className='trait-row' columns='2'>
@@ -87,10 +105,10 @@ class ChampionShowTile extends Component {
         <Segment id='page-container' basic>
 
           <Segment id='search-container'>
-            Search Container
+            <ChampionSearch />
           </Segment>
 
-          <Segment id='champion-container'>
+          <Segment id='champion-container' basic>
             <Grid stackable>
 
               <Grid.Row id='champion-row-one' columns='1'>
