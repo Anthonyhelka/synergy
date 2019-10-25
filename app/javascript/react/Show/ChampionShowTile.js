@@ -19,11 +19,11 @@ class ChampionShowTile extends Component {
   }
 
   render() {
-    const pathToIcon = require.context('../../../../public/icons', true);
-    const pathToBanner = require.context('../../../../public/banners', true);
-    const pathToAbility = require.context('../../../../public/abilities', true);
-    const pathToRender = require.context('../../../../public/renders', true);
-    const pathToTraitIcon = require.context('../../../../public/traits', true);
+    const pathToIcon = require.context('../../../assets/images/icons', true);
+    const pathToBanner = require.context('../../../assets/images/banners', true);
+    const pathToAbility = require.context('../../../assets/images/abilities', true);
+    const pathToRender = require.context('../../../assets/images/renders', true);
+    const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
     let synergiesIconList = this.props.champion.traits.map(trait => {
       return (
@@ -173,21 +173,21 @@ class ChampionShowTile extends Component {
                         <Segment id='statistics-container' inverted>
                           <List id='statistics-list' horizontal>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/health.png')} />
+                              <Image src={require('../../../assets/images/stat_icons/health.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Health</List.Header>
                                   {this.props.champion.stats.defense.health}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/armor.png')} />
+                              <Image src={require('../../../assets/images/stat_icons/armor.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Armor</List.Header>
                                   {this.props.champion.stats.defense.armor}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/magic_resist.png')} />
+                              <Image src={require('../../../assets/images/stat_icons/magic_resist.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Magic Resist</List.Header>
                                   {this.props.champion.stats.defense.magic_resist}
@@ -195,21 +195,21 @@ class ChampionShowTile extends Component {
                             </List.Item>
                             <br />
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/attack_damage.png')} />
+                              <Image src={require('../../../assets/images/stat_icons/attack_damage.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Attack Damage</List.Header>
                                   {this.props.champion.stats.offense.damage}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/attack_speed.png')} />
+                              <Image src={require('../../../assets/images/stat_icons/attack_speed.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Attack Speed</List.Header>
                                   {this.props.champion.stats.offense.attack_speed}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../public/stat_icons/attack_range.png')} />
+                              <Image src={require('../../../assets/images//stat_icons/attack_range.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Range</List.Header>
                                   {this.props.champion.stats.offense.range}

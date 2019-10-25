@@ -23,7 +23,7 @@ class TraitTile extends Component {
       )
     });
 
-    const pathToTraitIcon = require.context('../../../../public/traits', true);
+    const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
     return (
       <div>

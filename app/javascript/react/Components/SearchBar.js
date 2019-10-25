@@ -77,7 +77,7 @@ class SearchBar extends Component {
     }));
 
     const resultRenderer = ({ title, image, id }) => {
-      const pathToIcon = require.context('../../../../public/icons', true);
+      const pathToIcon = require.context('../../../assets/images/icons', true);
       return [
         <Segment fluid basic='very' textAlign='left' onClick={event => this.handleResultSelect(event, title)}>
           <img id='search-bar-result-image' key={id} src={`${pathToIcon(image, true)}`} />

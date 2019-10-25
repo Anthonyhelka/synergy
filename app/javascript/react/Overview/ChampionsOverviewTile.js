@@ -15,8 +15,8 @@ class ChampionsOverviewTile extends Component {
   }
 
   render(){
-    const pathToIcon = require.context('../../../../public/icons', true);
-    const pathToTraitIcon = require.context('../../../../public/traits', true);
+    const pathToIcon = require.context('../../../assets/images/icons', true);
+    const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
     let synergies = this.props.champion.traits.map(trait => {
       return (

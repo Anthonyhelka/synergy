@@ -38,7 +38,7 @@ class SummonerShow extends Component {
 
   render() {
 
-    const pathToRankedEmblem = require.context('../../../../public/emblems', true);
+    const pathToRankedEmblem = require.context('../../../assets/images/emblems', true);
 
     let summonerDisplay;
     if (this.state.updated === true) {

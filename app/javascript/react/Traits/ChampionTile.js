@@ -22,8 +22,8 @@ class ChampionTile extends Component {
   }
 
   render() {
-    const pathToIcon = require.context('../../../../public/icons', true);
-    const pathToSplashart = require.context('../../../../public/splasharts', true);
+    const pathToIcon = require.context('../../../assets/images/icons', true);
+    const pathToSplashart = require.context('../../../assets/images/splasharts', true);
 
     let cardId;
     let cardExtraId;

@@ -40,8 +40,8 @@ class HomeContainer extends Component {
       <div>
         <NavigationBar page='home' />
 
-        <Responsive as={Image} id='logo-mobile-tablet' src={require('../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
-        <Responsive as={Image} id='logo-computer' src={require('../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
+        <Responsive as={Image} id='logo-mobile-tablet' src={require('../../../assets/images/logos/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
+        <Responsive as={Image} id='logo-computer' src={require('../../../assets/images/logos/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
 
         <SearchBar />
 
