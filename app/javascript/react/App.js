@@ -6,7 +6,7 @@ import HomeContainer from './MainPages/HomeContainer';
 import ChampionsOverview from  './Overview/ChampionsOverview';
 import ChampionsOrigins from  './Traits/ChampionsOrigins';
 import ChampionsClasses from  './Traits/ChampionsClasses';
-import ChampionShow from  './ChampionShow/ChampionShow';
+import ChampionShow from  './Show/ChampionShow';
 import ItemsContainer from  './MainPages/ItemsContainer';
 import NewsContainer from  './MainPages/NewsContainer';
 import SummonerShow from './/Summoner/SummonerShow';

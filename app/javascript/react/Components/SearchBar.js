@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Responsive, Image, Segment, Search, Button, Icon, Dropdown } from 'semantic-ui-react';
 
+import '../../../assets/stylesheets/SearchBar.scss';
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -75,10 +77,10 @@ class SearchBar extends Component {
     }));
 
     const resultRenderer = ({ title, image, id }) => {
-      const pathToIcon = require.context('../../../../../public/icons', true);
+      const pathToIcon = require.context('../../../../public/icons', true);
       return [
         <Segment fluid basic='very' textAlign='left' onClick={event => this.handleResultSelect(event, title)}>
-          <img id='search-bar-result-image' key={id} src={`${pathToIcon(image , true)}`} />
+          <img id='search-bar-result-image' key={id} src={`${pathToIcon(image, true)}`} />
           <span id='search-bar-result-title'>&nbsp;&nbsp;{title}</span>
         </Segment>
       ];

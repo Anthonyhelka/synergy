@@ -1,0 +1,87 @@
+/* Champion Cards */
+div.ui.header {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+#trait-popup-description {
+  text-align: center;
+  text-align-last: center;
+}
+
+.ui.card, .ui.cards>.card {
+  width: auto !important;
+}
+
+div.item {
+  margin: 0px !important;
+  padding: 3px !important;
+  padding-top: 0px !important;
+}
+
+#champion-card {
+  background-color: #1B1C1D !important;
+  border: 3px solid #1B1C1D !important;
+  border-radius: 9px !important;
+  transform: scale(1) !important;
+}
+
+#champion-card-extra {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#champion-card-extra,
+#champion-card-extra p {
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
+}
+
+#champion-card-label {
+  padding: 3px 12px 3px 12px !important;
+  font-size: 0.8vw !important;
+}
+
+#champion-card-hover {
+  background-color: #36A9E0 !important;
+  border: 3px solid #36A9E0 !important;
+  border-radius: 9px !important;
+  transform: scale(1.1) !important;
+}
+
+#champion-card-extra-hover {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#champion-card-extra-hover,
+#champion-card-extra-hover p {
+  border: none !important;
+  color: #FFFFFF !important;
+  background-color: #36A9E0 !important;
+}
+
+/* Helpers */
+.tier-1 {
+  background-color: #7A8292 !important;
+  border-color: #7A8292 !important;
+}
+.tier-2 {
+  background-color: #21BA45 !important;
+  border-color: #21BA45 !important;
+}
+.tier-3 {
+  background-color: #2185D0 !important;
+  border-color: #2185D0 !important;
+}
+.tier-4 {
+  background-color: #A332C8 !important;
+  border-color: #A332C8 !important;
+}
+.tier-5 {
+  background-color: #FBBD07 !important;
+  border-color: #FBBD07 !important;
+}

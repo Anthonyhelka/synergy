@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { List, Responsive, Card, Header, Label, Image } from 'semantic-ui-react';
 
+import '../../../assets/stylesheets/Traits.scss';
+
 class ChampionTile extends Component {
   constructor(props) {
     super(props);
@@ -20,8 +22,8 @@ class ChampionTile extends Component {
   }
 
   render() {
-    const pathToIcon = require.context('../../../../../public/icons', true);
-    const pathToSplashart = require.context('../../../../../public/splasharts', true);
+    const pathToIcon = require.context('../../../../public/icons', true);
+    const pathToSplashart = require.context('../../../../public/splasharts', true);
 
     let cardId;
     let cardExtraId;

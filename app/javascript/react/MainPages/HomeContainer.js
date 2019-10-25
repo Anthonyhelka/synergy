@@ -5,6 +5,8 @@ import { Responsive, Segment, Search, Button, Icon, Image, List, Dropdown } from
 import NavigationBar from '../Components/NavigationBar';
 import SearchBar from '../Components/SearchBar';
 
+import '../../../assets/stylesheets/HomeContainer.scss';
+
 class HomeContainer extends Component {
   constructor(props) {
     super(props);
@@ -38,8 +40,8 @@ class HomeContainer extends Component {
       <div>
         <NavigationBar page='home' />
 
-        <Responsive as={Image} id='home-page-logo-mobile-tablet' src={require('../../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
-        <Responsive as={Image} id='home-page-logo-computer' src={require('../../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
+        <Responsive as={Image} id='logo-mobile-tablet' src={require('../../../../public/logo/transparentLogoBlack.png')} centered size='medium' maxWidth={800} />
+        <Responsive as={Image} id='logo-computer' src={require('../../../../public/logo/transparentLogoWhite.png')} centered size='medium' minWidth={801} />
 
         <SearchBar />
 

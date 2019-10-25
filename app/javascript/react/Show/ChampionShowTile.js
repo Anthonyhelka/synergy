@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
-import '../../../../assets/stylesheets/ChampionShow.css';
+import '../../../assets/stylesheets/ChampionShow.scss';
 
 class ChampionShowTile extends Component {
   constructor(props) {
@@ -19,15 +19,15 @@ class ChampionShowTile extends Component {
   }
 
   render() {
-    const pathToIcon = require.context('../../../../../public/icons', true);
-    const pathToBanner = require.context('../../../../../public/banners', true);
-    const pathToAbility = require.context('../../../../../public/abilities', true);
-    const pathToRender = require.context('../../../../../public/renders', true);
-    const pathToTraitIcon = require.context('../../../../../public/traits', true);
+    const pathToIcon = require.context('../../../../public/icons', true);
+    const pathToBanner = require.context('../../../../public/banners', true);
+    const pathToAbility = require.context('../../../../public/abilities', true);
+    const pathToRender = require.context('../../../../public/renders', true);
+    const pathToTraitIcon = require.context('../../../../public/traits', true);
 
     let synergiesIconList = this.props.champion.traits.map(trait => {
       return (
-        <div id='champion-header-synergy'>
+        <div id='champion-header-trait'>
           <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}  />
           <span>&nbsp;{trait.name}</span>
         </div>
@@ -43,36 +43,36 @@ class ChampionShowTile extends Component {
     let synergies = this.props.champion.traits.map(trait => {
       let upgrades = trait.upgrades.map(upgrade => {
         return (
-          <List.Item id='synergy-details-column-stats-list-item'><span id='synergy-details-column-stats-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
+          <List.Item id='trait-details-column-stats-list-item'><span id='trait-details-column-stats-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
         )
       })
       let champions = trait.champions.map(champion => {
         return (<List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}><Image src={`${pathToIcon(`./${champion.key}`, true)}`} size='mini'/></List.Item>);
       });
       return (
-        <Grid.Row className='synergy-row' columns='2'>
-            <Grid.Column id='synergy-header-column' width='2'>
-              <Segment id='synergy-header-container' basic>
+        <Grid.Row className='trait-row' columns='2'>
+            <Grid.Column id='trait-header-column' width='2'>
+              <Segment id='trait-header-container' basic>
                 <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
                 <p>{trait.name}</p>
               </Segment>
             </Grid.Column>
-            <Grid.Column id='synergy-details-column' width='14'>
+            <Grid.Column id='trait-details-column' width='14'>
               <Grid.Row>
-                <Segment id='synergy-details-column-champions' basic>
+                <Segment id='trait-details-column-champions' basic>
                   <List horizontal>
                     {champions}
                   </List>
                 </Segment>
               </Grid.Row>
               <Grid.Row>
-                <Segment id='synergy-details-column-description' basic>
+                <Segment id='trait-details-column-description' basic>
                   <span>{trait.description}</span>
                 </Segment>
               </Grid.Row>
               <Grid.Row>
-                <Segment id='synergy-details-column-stats' basic>
-                  <List id='synergy-details-column-stats-list'>
+                <Segment id='trait-details-column-stats' basic>
+                  <List id='trait-details-column-stats-list'>
                     {upgrades}
                   </List>
                 </Segment>
@@ -173,21 +173,21 @@ class ChampionShowTile extends Component {
                         <Segment id='statistics-container' inverted>
                           <List id='statistics-list' horizontal>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/health.png')} />
+                              <Image src={require('../../../../public/stat_icons/health.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Health</List.Header>
                                   {this.props.champion.stats.defense.health}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/armor.png')} />
+                              <Image src={require('../../../../public/stat_icons/armor.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Armor</List.Header>
                                   {this.props.champion.stats.defense.armor}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/magic_resist.png')} />
+                              <Image src={require('../../../../public/stat_icons/magic_resist.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Magic Resist</List.Header>
                                   {this.props.champion.stats.defense.magic_resist}
@@ -195,21 +195,21 @@ class ChampionShowTile extends Component {
                             </List.Item>
                             <br />
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/attack_damage.png')} />
+                              <Image src={require('../../../../public/stat_icons/attack_damage.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Attack Damage</List.Header>
                                   {this.props.champion.stats.offense.damage}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/attack_speed.png')} />
+                              <Image src={require('../../../../public/stat_icons/attack_speed.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Attack Speed</List.Header>
                                   {this.props.champion.stats.offense.attack_speed}
                                 </List.Content>
                             </List.Item>
                             <List.Item id='statistic-list-item'>
-                              <Image src={require('../../../../../public/stat_icons/attack_range.png')} />
+                              <Image src={require('../../../../public/stat_icons/attack_range.png')} />
                               <List.Content>
                                 <List.Header id='statistic-list-item-header'>Range</List.Header>
                                   {this.props.champion.stats.offense.range}

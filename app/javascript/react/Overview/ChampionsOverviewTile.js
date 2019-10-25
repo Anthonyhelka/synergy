@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { Popup, Grid, Header, Table, Responsive, Image } from 'semantic-ui-react';
 
+import '../../../assets/stylesheets/ChampionOverview.scss';
+
 class ChampionsOverviewTile extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +15,8 @@ class ChampionsOverviewTile extends Component {
   }
 
   render(){
-    const championFileName = `./${this.props.champion.key}`;
-    const pathToIcon = require.context('../../../../../public/icons', true);
-    const pathToTraitIcon = require.context('../../../../../public/traits', true);
+    const pathToIcon = require.context('../../../../public/icons', true);
+    const pathToTraitIcon = require.context('../../../../public/traits', true);
 
     let synergies = this.props.champion.traits.map(trait => {
       return (
@@ -27,7 +28,7 @@ class ChampionsOverviewTile extends Component {
               </Header>
             </Grid.Row>
             <Grid.Row>
-              <span id='synergy-popup-description'>{trait.description}</span>
+              <span id='trait-popup-description'>{trait.description}</span>
             </Grid.Row>
           </Grid>
         </Popup>
@@ -36,9 +37,9 @@ class ChampionsOverviewTile extends Component {
 
     return (
       <Table.Row>
-        <Responsive as={Table.Cell} maxWidth={500} textAlign='center' onClick={event => this.handleClick(event, this.props.champion.key)}><img id='image-mobile' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><br /><span id='search-title'>{this.props.champion.name}</span></Responsive>
-        <Responsive as={Table.Cell} minWidth={501} maxWidth={1249} onClick={event => this.handleClick(event, this.props.champion.key)}><img id='image-tablet-computer' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><span id='search-title'>&nbsp;&nbsp;{this.props.champion.name}</span></Responsive>
-        <Responsive as={Table.Cell} minWidth={1250} onClick={event => this.handleClick(event, this.props.champion.key)}><img id='image-large-computer' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><span id='search-title'>&nbsp;&nbsp;{this.props.champion.name}</span></Responsive>
+        <Responsive as={Table.Cell} maxWidth={500} textAlign='center' onClick={event => this.handleClick(event, this.props.champion.key)}><img id='champion-icon-mobile' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><br /><span id='search-title'>{this.props.champion.name}</span></Responsive>
+        <Responsive as={Table.Cell} minWidth={501} maxWidth={1249} onClick={event => this.handleClick(event, this.props.champion.key)}><img id='champion-icon-tablet-computer' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><span id='search-title'>&nbsp;&nbsp;{this.props.champion.name}</span></Responsive>
+        <Responsive as={Table.Cell} minWidth={1250} onClick={event => this.handleClick(event, this.props.champion.key)}><img id='champion-icon-large-computer' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} /><span id='search-title'>&nbsp;&nbsp;{this.props.champion.name}</span></Responsive>
 
         <Responsive as={Table.Cell} maxWidth={500} textAlign='center'>{synergies}</Responsive>
         <Responsive as={Table.Cell} minWidth={501}>{synergies}</Responsive>

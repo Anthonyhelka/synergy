@@ -110,7 +110,7 @@
   z-index: -1;
 }
 
-#champion-header-synergy {
+#champion-header-trait {
   display: flex !important;
   align-items: center !important;
   position: relative !important;
@@ -120,7 +120,7 @@
   font-weight: bold !important;
 }
 
-#champion-header-synergy img {
+#champion-header-trait img {
   width: 2.1vw !important;
   height: auto !important;
 }
@@ -333,17 +333,17 @@
   background-color: #2185D0 !important;
 }
 
-.synergy-row {
+.trait-row {
   padding: 0px !important;
   padding-bottom: 15px !important;
   border-right: 3px solid #2185D0 !important;
 }
 
-#synergy-header-column {
+#trait-header-column {
   padding: 0px !important;
 }
 
-#synergy-header-container {
+#trait-header-container {
   width: 100% !important;
   height: 100% !important;
   margin: auto !important;
@@ -355,36 +355,36 @@
   background-color: #2185D0 !important;
 }
 
-#synergy-header-container img {
+#trait-header-container img {
   width: 3vw !important;
   height: auto !important;
   margin: auto !important;
 }
 
-#synergy-details-column {
+#trait-details-column {
   padding: 0px 20px 0px 20px !important;
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
 
-#synergy-details-column-champions,
-#synergy-details-column-description,
-#synergy-details-column-stats {
+#trait-details-column-champions,
+#trait-details-column-description,
+#trait-details-column-stats {
   padding: 10px 0px 0px 0px !important;
   text-align: center !important;
 }
 
-#synergy-details-column-stats-list {
+#trait-details-column-stats-list {
   padding-bottom: 10px !important;
   display: inline-block !important;
 }
 
-#synergy-details-column-stats-list-item {
+#trait-details-column-stats-list-item {
   line-height: 20px !important;
   text-align: left !important;
 }
 
-#synergy-details-column-stats-upgrade-number {
+#trait-details-column-stats-upgrade-number {
   background: #2185D0 !important;
   padding: 1px 3px 1px 3px !important;
   border-radius: 3px !important;

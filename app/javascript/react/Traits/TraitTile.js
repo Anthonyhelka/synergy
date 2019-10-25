@@ -3,6 +3,8 @@ import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-u
 
 import ChampionTile from './ChampionTile';
 
+import '../../../assets/stylesheets/Traits.scss';
+
 class TraitTile extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class TraitTile extends Component {
       )
     });
 
-    const pathToTraitIcon = require.context('../../../../../public/traits', true);
+    const pathToTraitIcon = require.context('../../../../public/traits', true);
 
     return (
       <div>
@@ -35,12 +37,12 @@ class TraitTile extends Component {
                 </Header>
               </Grid.Row>
               <Grid.Row>
-                <span id='synergy-popup-description'>{this.props.trait.description}</span>
+                <span id='trait-popup-description'>{this.props.trait.description}</span>
               </Grid.Row>
             </Grid>
           </Popup>
 
-          <List id='synergy-list-div' horizontal size='mini'>
+          <List id='trait-list-div' horizontal size='mini'>
             {champions}
           </List>
 
