@@ -75,16 +75,30 @@ class ChampionSearch extends Component {
 
     return (
       <div id='champion-search-container'>
-        <div id='champion-search-form'>
-          <Form>
-            <Form.Field value={this.state.query} onChange={this.handleChange}>
-              <input placeholder='Search' />
-            </Form.Field>
-          </Form>
-        </div>
-        <List id='champions-list' horizontal>
-          {champions}
-        </List>
+        <Responsive maxWidth={1023}>
+          <div id='champion-search-form-mobile'>
+            <Form>
+              <Form.Field value={this.state.query} onChange={this.handleChange}>
+                <input placeholder='Search' />
+              </Form.Field>
+            </Form>
+          </div>
+          <List id='champions-list-mobile' horizontal>
+            {champions}
+          </List>
+        </Responsive>
+        <Responsive minWidth={1023}>
+          <div id='champion-search-form'>
+            <Form>
+              <Form.Field value={this.state.query} onChange={this.handleChange}>
+                <input placeholder='Search' />
+              </Form.Field>
+            </Form>
+          </div>
+          <List id='champions-list' horizontal>
+            {champions}
+          </List>
+        </Responsive>
       </div>
     )
   }

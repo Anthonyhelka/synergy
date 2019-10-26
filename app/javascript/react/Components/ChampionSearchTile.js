@@ -20,10 +20,18 @@ class ChampionSearchTile extends Component {
 
     return (
       <List.Item>
-        <div id='champion-icon-container'>
-          <div id='champion-icon-label' className={`tier-${this.props.champion.cost}`}>{this.props.champion.cost}</div>
-          <Image id='champion-icon' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
-        </div>
+        <Responsive maxWidth={1023}>
+          <div id='champion-icon-container'>
+            <Image id='champion-icon-tablet-mobile' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
+          </div>
+        </Responsive>
+
+        <Responsive minWidth={1024}>
+            <div id='champion-icon-container'>
+              <div id='champion-icon-label' className={`tier-${this.props.champion.cost}`}>{this.props.champion.cost}</div>
+              <Image id='champion-icon' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
+            </div>
+        </Responsive>
       </List.Item>
     );
   }

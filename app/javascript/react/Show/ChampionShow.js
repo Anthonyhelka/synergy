@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Responsive } from 'semantic-ui-react';
 
 import NavigationBar from '../Components/NavigationBar';
-import ChampionShowTile from './ChampionShowTile';
+import ChampionShowTileDesktop from './ChampionShowTileDesktop';
+import ChampionShowTileMobile from './ChampionShowTileMobile';
 
 class ChampionShow extends Component {
   constructor(props) {
@@ -32,12 +34,25 @@ class ChampionShow extends Component {
   }
 
   render() {
-    let championShowTile;
+    let championShowTileDesktop;
     if (this.state.updated === false) {
-      championShowTile = '';
+      championShowTileDesktop = '';
     } else {
-      championShowTile = (
-        <ChampionShowTile
+      championShowTileDesktop = (
+        <ChampionShowTileDesktop
+          key={this.state.champion.id}
+          id={this.state.champion.id}
+          champion={this.state.champion}
+        />
+      );
+    }
+
+    let championShowTileMobile;
+    if (this.state.updated === false) {
+      championShowTileMobile = '';
+    } else {
+      championShowTileMobile = (
+        <ChampionShowTileMobile
           key={this.state.champion.id}
           id={this.state.champion.id}
           champion={this.state.champion}
@@ -48,8 +63,12 @@ class ChampionShow extends Component {
     return (
       <div>
         <NavigationBar />
-
-        {championShowTile}
+        <Responsive maxWidth={1023}>
+          {championShowTileMobile}
+        </Responsive>
+        <Responsive minWidth={1024}>
+          {championShowTileDesktop}
+        </Responsive>
       </div>
     )
   }

@@ -20,6 +20,7 @@ body, html {
   background-color: #1B1C1D !important;
 }
 
+/* Desktop */
 #search-container {
   flex: 1 !important;
   margin: 0px 7px 0px 0px !important;
@@ -185,8 +186,8 @@ body, html {
 
 #champion-ability-row-one {
   padding: 0px !important;
-  background-color: #2185D0 !important;
   color: #FFFFFF !important;
+  background-color: #2185D0 !important;
   font-weight: bold !important;
 }
 
@@ -289,6 +290,7 @@ body, html {
   height: auto !important;
   max-height: 100% !important;
   margin: auto !important;
+  padding: 10px 0px 10px 0px !important;
 }
 /* Champion Row Three */
 
@@ -411,7 +413,7 @@ body, html {
 #champion-show-icon-label {
   position: absolute !important;
   width: 1vw !important;
-  height: 4vh !important;
+  height: auto !important;
   padding: 0px !important;
   font-size: 0.8vw !important;
   font-weight: bold !important;
@@ -425,9 +427,225 @@ body, html {
   max-width: 3.5vw !important;
   height: auto !important;
   max-height: 11vh !important;
+}
+
+/* Tablet */
+#page-container-tablet {
+  border-radius: 0px !important;
+  margin: auto !important;
+  margin-top: 13px !important;
+  padding: 0px !important;
+  background-color: #FFFFFF !important;
+}
+
+#champion-container-tablet {
+  height: 100% !important;
+  width: 100% !important;
+  padding-bottom: 0px !important;
+}
+
+#champion-left-column-container-tablet {
+  padding: 0px !important;
+  background-color: #FFFFFF !important;
+}
+
+/* Mobile */
+#champion-container-mobile {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 550px !important;
+  padding: 0px !important;
+  margin: auto !important;
+  margin-top: 10px !important;
+  border-top: 3px solid #2185D0 !important;
+  border-bottom: 3px solid #2185D0 !important;
+}
+
+#champion-container-grid-mobile {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0px !important;
+}
+
+#champion-header-row-mobile {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0px !important;
+  margin: 0px 0px 0px 0px !important;
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
+  z-index: 1 !important;
+}
+
+#champion-header-image-mobile {
+  width: 50px !important;
+  height: auto !important;
+  padding: 0px !important;
+}
+
+#champion-header-title-mobile {
+  padding: 0px 0px 0px 10px !important;
+}
+
+#champion-header-slanted-div-mobile {
+    display: flex !important;
+    align-items: center !important;
+    position: absolute !important;
+    width: 15% !important;
+    height: 100% !important;
+    padding: 10px !important;
+    margin: 0px !important;
+    right: 0px !important;
+    background-color: #2185D0 !important;
+}
+
+#champion-header-slanted-div-mobile::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0 !important;
+  background-color: inherit !important;
+  -webkit-transform-origin: 100% -10px;
+  transform-origin: 100% -12px;
+  -webkit-transform: skew(-40deg);
+  transform: skew(-40deg);
+  z-index: -1;
+}
+
+#champion-header-tier-mobile {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 30px !important;
+  width: 30px !important;
   border-radius: 3px !important;
 }
 
+#champion-statistics-row-mobile {
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  color: white !important;
+  background: #1B1C1D !important;
+}
+
+#champion-statistics-container-mobile {
+  padding: 0px !important;
+  text-align: center !important;
+}
+
+#champion-statistics-list-mobile {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+}
+
+#champion-statistic-list-item-mobile {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px 5px 5px 5px !important;
+}
+
+#champion-statistic-list-item-mobile img {
+  width: 15px !important;
+  height: auto !important;
+  margin: 0px 5px 0px 0px !important;
+}
+
+#champion-ability-row-mobile {
+  padding: 0px !important;
+}
+
+#champion-ability-grid-mobile {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0px !important;
+}
+
+#champion-ability-row-one-mobile {
+  padding: 0px !important;
+  border-left: 3px solid #2185D0 !important;
+  border-right: 3px solid #2185D0 !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+  font-weight: bold !important;
+}
+
+#champion-ability-row-two-mobile {
+  border-left: 3px solid #2185D0 !important;
+  border-right: 3px solid #2185D0 !important;
+  padding: 0px !important;
+  background-color: #1B1C1D !important;
+  font-weight: bold !important;
+}
+
+#champion-ability-image-mobile {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0px !important;
+}
+
+#champion-ability-image-mobile img {
+  width: 50px !important;
+  height: 50px !important;
+  border: 3px solid #000000 !important;
+  border-radius: 3px !important;
+}
+
+#champion-render-row-mobile {
+  padding: 0px !important;
+  background-color: #1B1C1D !important;
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+}
+
+#trait-row-mobile {
+  padding: 0px !important;
+  border-left: 3px solid #2185D0 !important;
+  border-right: 3px solid #2185D0 !important;
+  font-weight: bold !important;
+}
+
+#trait-header-container-mobile {
+  width: 100% !important;
+  height: 100% !important;
+  margin: auto !important;
+  padding: 0px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+
+#trait-header-container-mobile img {
+  width: 40px !important;
+  height: auto !important;
+  margin: auto !important;
+}
+
+#trait-champions-list-mobile {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#champion-show-icon-mobile {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+#champion-search-container-container-mobile {
+  padding: 0px !important;
+  margin: 10px 0px 0px 0px !important;
+}
 /* Helpers */
 .tier-1 {
   color: #FFFFFF !important;
