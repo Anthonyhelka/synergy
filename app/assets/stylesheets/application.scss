@@ -151,6 +151,7 @@ div.results.transition.visible {
   max-height: 200px !important;
 }
 div.results.transition.visible::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
   background-color: #FFFFFF !important;
 }
 div.results.transition.visible::-webkit-scrollbar-thumb {
@@ -232,6 +233,7 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
   border-top: 0px !important;
 }
 #champions-search-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
   background-color: #FFFFFF !important;
 }
 #champions-search-list::-webkit-scrollbar-thumb {
@@ -314,9 +316,9 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
   width: 100% !important;
   min-width: 100% !important;
   max-width: 100% !important;
-  height: 300px !important;
-  min-height: 300px !important;
-  max-height: 300px !important;
+  height: 200px !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
   text-align: center !important;
   box-sizing: border-box !important;
   background-color: #1B1C1D !important;
@@ -324,6 +326,7 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
   border-top: 0px !important;
 }
 #champions-search-list-mobile::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
   background-color: #FFFFFF !important;
 }
 #champions-search-list-mobile::-webkit-scrollbar-thumb {

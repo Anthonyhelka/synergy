@@ -88,6 +88,9 @@ class ChampionShowTileMobile extends Component {
 
     return (
       <div>
+        <Segment id='champion-search-container-container-mobile' basic>
+          <ChampionSearch />
+        </Segment>
         <Segment id='champion-container-mobile' basic>
             <Grid id='champion-container-grid-mobile'>
               <Grid.Row id='champion-header-row-mobile' columns='1'>
@@ -188,9 +191,6 @@ class ChampionShowTileMobile extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-          </Segment>
-          <Segment id='champion-search-container-container-mobile' basic>
-            <ChampionSearch />
           </Segment>
       </div>
     );
