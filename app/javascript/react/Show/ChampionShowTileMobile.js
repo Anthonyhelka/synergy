@@ -64,7 +64,7 @@ class ChampionShowTileMobile extends Component {
             <Grid.Column id='trait-details-column' width='16'>
               <Grid.Row>
                 <Segment id='trait-details-column-champions' basic>
-                  <List id='trait-champions-list-mobile' horizontal>
+                  <List id='trait-champions-list-mobile'>
                     {champions}
                   </List>
                 </Segment>

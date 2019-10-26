@@ -243,9 +243,9 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
 }
 #champion-search-icon {
   width: auto !important;
-  max-width: 3.5vw !important;
+  max-width: 50px !important;
   height: auto !important;
-  max-height: 11vh !important;
+  max-height: 50px !important;
 }
 #champion-search-icon-label {
   position: absolute !important;
@@ -272,8 +272,9 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
 }
 #champion-search-icon-tablet-mobile {
   width: auto !important;
+  max-width: 50px !important;
   height: auto !important;
-  max-height: 11vh !important;
+  max-height: 50px !important;
 }
 #champion-search-header-traits-container-mobile {
   display: flex !important;
@@ -1074,6 +1075,7 @@ body, html {
 
 #trait-champions-list-mobile {
   display: flex !important;
+  flex-wrap: wrap !important;
   align-items: center !important;
   justify-content: center !important;
 }
