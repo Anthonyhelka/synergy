@@ -16,46 +16,31 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
   enable_extension "plpgsql"
 
   create_table "champions", force: :cascade do |t|
+    t.string "key", null: false
     t.string "name", null: false
-    t.string "icon", null: false
-    t.string "ability_name", null: false
-    t.string "ability_icon", null: false
-    t.string "ability_type", null: false
-    t.string "ability_description", null: false
-    t.integer "tier", null: false
-    t.string "tier_color", null: false
-    t.string "origin_1", null: false
-    t.string "origin_2"
-    t.string "character_class_1", null: false
-    t.string "character_class_2"
-    t.integer "health", default: [], null: false, array: true
-    t.integer "starting_mana", null: false
-    t.integer "mana_cost", null: false
-    t.integer "attack_damage", null: false
-    t.float "attack_speed", null: false
-    t.integer "attack_range", null: false
-    t.integer "armor", null: false
-    t.integer "magic_resist", null: false
-    t.integer "player_damage", default: [], null: false, array: true
+    t.string "title", null: false
+    t.string "origins", default: [], null: false, array: true
+    t.string "classes", default: [], null: false, array: true
+    t.integer "cost", null: false
+    t.json "ability", null: false
+    t.json "stats", null: false
+    t.string "items", default: [], null: false, array: true
+    t.boolean "active", null: false
   end
 
-  create_table "champions_teams", id: false, force: :cascade do |t|
+  create_table "champions_traits", id: false, force: :cascade do |t|
     t.bigint "champion_id", null: false
-    t.bigint "team_id", null: false
-    t.index ["champion_id", "team_id"], name: "index_champions_teams_on_champion_id_and_team_id"
+    t.bigint "trait_id", null: false
+    t.index ["champion_id", "trait_id"], name: "index_champions_traits_on_champion_id_and_trait_id"
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "traits", force: :cascade do |t|
+    t.string "key", null: false
     t.string "name", null: false
-    t.string "icon", null: false
-    t.string "team_type", null: false
-    t.string "description"
-    t.string "upgrade_1_number"
-    t.string "upgrade_1_description"
-    t.string "upgrade_2_number"
-    t.string "upgrade_2_description"
-    t.string "upgrade_3_number"
-    t.string "upgrade_3_description"
+    t.string "trait_type", null: false
+    t.string "description", null: false
+    t.json "upgrades"
+    t.boolean "active", null: false
   end
 
 end

@@ -72,3 +72,7 @@ gem 'pry-rails', group: [:development, :test]
 gem 'httparty'
 
 gem 'dotenv-rails'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end

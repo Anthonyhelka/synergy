@@ -4,28 +4,29 @@ class Api::V1::ChampionsController < ApplicationController
   def overview
     champions = Champion.all
     render json: {
-      champions: ActiveModel::Serializer::CollectionSerializer.new(champions, each_serializer: TeamSerializer)
+      champions: ActiveModel::Serializer::CollectionSerializer.new(champions, each_serializer: TraitSerializer)
     }
   end
 
   def origins
-    origins = Team.where(team_type: "Origin")
+    origins = Trait.where(trait_type: "Origin")
     render json: {
-      origins: ActiveModel::Serializer::CollectionSerializer.new(origins, each_serializer: TeamSerializer)
+      origins: ActiveModel::Serializer::CollectionSerializer.new(origins, each_serializer: TraitSerializer)
     }
   end
 
   def classes
-    classes = Team.where(team_type: "Class")
+    classes = Trait.where(trait_type: "Origin")
     render json: {
-      classes: ActiveModel::Serializer::CollectionSerializer.new(classes, each_serializer: TeamSerializer)
+      classes: ActiveModel::Serializer::CollectionSerializer.new(classes, each_serializer: TraitSerializer)
     }
   end
 
   def show
-    champion = Champion.where(name: params[:id])
+    champion_key = params[:id].downcase
+    champion = Champion.where(key: champion_key)
     render json: {
-      champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TeamSerializer)
+      champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TraitSerializer)
     }
   end
 end
