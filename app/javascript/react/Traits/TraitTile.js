@@ -3,8 +3,6 @@ import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-u
 
 import ChampionTile from './ChampionTile';
 
-import '../../../assets/stylesheets/Traits.scss';
-
 class TraitTile extends Component {
   constructor(props) {
     super(props);

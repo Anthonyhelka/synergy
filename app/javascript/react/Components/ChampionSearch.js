@@ -4,8 +4,6 @@ import { Responsive, Image, Segment, Search, Button, Icon, Dropdown, Form, List 
 
 import ChampionSearchTile from './ChampionSearchTile';
 
-import '../../../assets/stylesheets/ChampionSearch.scss';
-
 class ChampionSearch extends Component {
   constructor(props) {
     super(props);
@@ -83,7 +81,7 @@ class ChampionSearch extends Component {
               </Form.Field>
             </Form>
           </div>
-          <List id='champions-list-mobile' horizontal>
+          <List id='champions-search-list-mobile' horizontal>
             {champions}
           </List>
         </Responsive>
@@ -95,7 +93,7 @@ class ChampionSearch extends Component {
               </Form.Field>
             </Form>
           </div>
-          <List id='champions-list' horizontal>
+          <List id='champions-search-list' horizontal>
             {champions}
           </List>
         </Responsive>

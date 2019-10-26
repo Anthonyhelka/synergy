@@ -3,9 +3,6 @@ import { browserHistory } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
 import ChampionSearch from '../Components/ChampionSearch';
-import SearchBar from '../Components/SearchBar';
-
-import '../../../assets/stylesheets/ChampionShow.scss';
 
 class ChampionShowTileMobile extends Component {
   constructor(props) {

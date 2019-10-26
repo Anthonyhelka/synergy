@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Responsive, Menu, Dropdown, Image, Segment } from 'semantic-ui-react';
 
-import '../../../assets/stylesheets/NavigationBar.scss';
-
 class NavigationBar extends Component {
   constructor(props) {
     super(props);

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { List, Responsive, Card, Header, Label, Image } from 'semantic-ui-react';
 
-import '../../../assets/stylesheets/Traits.scss';
-
 class ChampionTile extends Component {
   constructor(props) {
     super(props);
@@ -28,15 +26,15 @@ class ChampionTile extends Component {
     let cardId;
     let cardExtraId;
     if(this.state.isHovered === false) {
-      cardId = 'champion-card';
-      cardExtraId = 'champion-card-extra';
+      cardId = 'traits-champion-card';
+      cardExtraId = 'traits-champion-card-extra';
     } else {
-      cardId = 'champion-card-hover';
-      cardExtraId = 'champion-card-extra-hover';
+      cardId = 'traits-champion-card-hover';
+      cardExtraId = 'traits-champion-card-extra-hover';
     }
 
     return (
-      <List.Item id='champion-card-div'>
+      <List.Item id='traits-champion-card-div'>
         <Responsive maxWidth={1023}>
           <Card as={ Link } to={`/champions/${this.props.champion.key}`}>
             <Image src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} size='tiny' />
@@ -44,8 +42,8 @@ class ChampionTile extends Component {
         </Responsive>
         <Responsive minWidth={1024}>
           <Card id={cardId} as={ Link } to={`/champions/${this.props.champion.key}`}>
-            <Image id='champion-card-image' src={`${pathToSplashart(`./${this.props.champion.key}`, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
-            <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label id='champion-card-label' className={`tier-${this.props.champion.cost}`} content={this.props.champion.cost} size='small' /></Header></Card.Content>
+            <Image id='traits-champion-card-image' src={`${pathToSplashart(`./${this.props.champion.key}`, true)}`} onMouseEnter={event => this.handleHover(event)} onMouseLeave={event => this.handleHover(event)} size='small' />
+            <Card.Content extra id={cardExtraId}><Header as='p'>{this.props.champion.name}&nbsp;&nbsp;<Label id='traits-champion-card-label' className={`tier-${this.props.champion.cost}`} content={this.props.champion.cost} size='small' /></Header></Card.Content>
           </Card>
         </Responsive>
       </List.Item>

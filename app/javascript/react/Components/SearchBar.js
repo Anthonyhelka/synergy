@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Responsive, Image, Segment, Search, Button, Icon, Dropdown } from 'semantic-ui-react';
 
-import '../../../assets/stylesheets/SearchBar.scss';
-
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -87,7 +85,7 @@ class SearchBar extends Component {
     };
 
     return (
-      <div className='search-bar'>
+      <div id='search-bar'>
         <Segment id='search-bar-container' textAlign='center' basic>
           <Segment id='search-bar-region-button-container' compact basic textAlign='center'>
             <Dropdown id='search-bar-region-button' as={Button} compact primary text={this.state.region}>

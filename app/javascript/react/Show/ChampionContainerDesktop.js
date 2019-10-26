@@ -4,8 +4,6 @@ import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, 
 
 import ChampionSearch from '../Components/ChampionSearch';
 
-import '../../../assets/stylesheets/ChampionShow.scss';
-
 class ChampionShowTile extends Component {
   constructor(props) {
     super(props);
