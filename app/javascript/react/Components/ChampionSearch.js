@@ -77,7 +77,7 @@ class ChampionSearch extends Component {
           <div id='champion-search-form-mobile'>
             <Form>
               <Form.Field value={this.state.query} onChange={this.handleChange}>
-                <input placeholder='Search' />
+                <input placeholder='Champion Name' />
               </Form.Field>
             </Form>
           </div>
