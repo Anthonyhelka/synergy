@@ -71,9 +71,8 @@ class ChampionSearch extends Component {
     });
   }
 
-    return (
-      <div id='champion-search-container'>
-        <Responsive maxWidth={1023}>
+    return [
+        <Responsive id='champion-search-container' as='div' key='mobile/tablet' maxWidth={1023}>
           <div id='champion-search-form-mobile'>
             <Form>
               <Form.Field value={this.state.query} onChange={this.handleChange}>
@@ -84,8 +83,8 @@ class ChampionSearch extends Component {
           <List id='champions-search-list-mobile' horizontal>
             {champions}
           </List>
-        </Responsive>
-        <Responsive minWidth={1023}>
+        </Responsive>,
+        <Responsive id='champion-search-container' as='div' key='mobile/tablet' minWidth={1024}>
           <div id='champion-search-form'>
             <Form>
               <Form.Field value={this.state.query} onChange={this.handleChange}>
@@ -97,8 +96,7 @@ class ChampionSearch extends Component {
             {champions}
           </List>
         </Responsive>
-      </div>
-    )
+    ]
   }
 }
 
