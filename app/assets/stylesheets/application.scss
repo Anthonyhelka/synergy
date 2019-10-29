@@ -440,7 +440,6 @@ div.item {
 }
 
 /* ChampionShow */
-/* Containers */
 body, html {
   height: 100% !important;
 }
@@ -452,18 +451,21 @@ body, html {
   background-position: 125% 57px !important;
 }
 
-#page-container-desktop {
+/* Desktop */
+#ChampionShow-page-container-desktop {
   display: flex !important;
-  width: 100% !important;
+  width: 1500px !important;
+  max-width: 100% !important;
   height: 1000px !important;
+  max-height: 100% !important;
   border-radius: 0px !important;
   margin: auto !important;
   padding: 14px !important;
   background-color: green !important;
 }
 
-/* Desktop */
-#search-container-desktop {
+/* Search Container */
+#ChampionShow-search-container-desktop {
   flex: 1 !important;
   width: 100% !important;
   height: 50% !important;
@@ -473,7 +475,8 @@ body, html {
   border-radius: 0px !important;
 }
 
-#champion-container-desktop {
+/* Champion Container */
+#ChampionShow-champion-container-desktop {
   flex: 4 !important;
   width: 100% !important;
   height: 100% !important;
@@ -482,37 +485,19 @@ body, html {
   background-color: #FFFFFF !important;
 }
 
-/* Champion Container */
-
-#champion-container-grid-desktop {
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0px !important;
-}
-
-/* Champion Row One */
-
-#champion-row-one-desktop {
-  width: 100% !important;
-  height: 15% !important;
-  padding: 0px !important;
-  margin: 0px 0px 14px 0px !important;
-}
-
-#champion-row-one-column-desktop {
-  padding: 0px !important;
-}
-
-#champion-header-desktop {
+#ChampionShow-champion-header-desktop {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
-  height: 15% !important;
+  height: auto !important;
+  max-height: 15% !important;
   padding: 0px !important;
   border: 5px solid #2185D0 !important;
 }
 
-#champion-header-tier-desktop {
+/* Header */
+#ChampionShow-champion-header-tier-desktop {
+  border: none !important;
   border-radius: 0px !important;
   border-bottom-right-radius: 3px !important;
   font-size: 15px !important;
@@ -520,365 +505,388 @@ body, html {
   z-index: 2 !important;
 }
 
-#champion-header-title {
+#ChampionShow-champion-header-title {
   position: absolute !important;
   margin: auto !important;
-  margin-left: 4vw !important;
+  margin-left: 6% !important;
   color: #FFFFFF !important;
-  line-height: 3vh !important;
-  font-size: 1.2vw !important;
   font-weight: bold !important;
   z-index: 2 !important;
 }
 
-#champion-header-title span {
-  font-size: 1.4vw !important;
+#ChampionShow-champion-header-title span {
+  font-size: 30px !important;
 }
 
-#champion-header-title p {
+#ChampionShow-champion-header-title p {
+  font-size: 20px !important;
   font-style: italic !important;
 }
 
-#champion-header-image {
+#ChampionShow-champion-header-image {
   width: 100% !important;
-  max-width: 100% !important;
   height: 100% !important;
-  max-height: 100% !important;
   margin: auto !important;
+  object-fit: contain !important;
   z-index: 1 !important;
 }
 
-
-#champion-header-synergies-container {
+#ChampionShow-champion-header-synergies-container {
   display: flex !important;
   justify-content: center !important;
   flex-direction: column !important;
   position: absolute !important;
   width: 15% !important;
-  height: 100% !important;
-  right: 0px !important;
-  line-height: 2vh !important;
-  background-color: #1B1C1D !important;
+  height: 105% !important;
+  right: -1px !important;
+  background-color: #2185D0 !important;
   z-index: 2 !important;
 }
 
-#champion-header-synergies-container::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
+#ChampionShow-champion-header-synergies-container::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform-origin: 100% -10px !important;
+  transform: skew(-40deg) !important;
   background-color: inherit !important;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% -10px;
-  -ms-transform: skew(-40deg);
-  transform: skew(-40deg);
-  z-index: -1;
+  z-index: -1 !important;
 }
 
-#champion-header-trait {
+#ChampionShow-champion-header-trait {
   display: flex !important;
   align-items: center !important;
-  position: relative !important;
-  right: 0.5vw !important;
-  color: #FFFFFF !important;
-  font-size: 1.1vw !important;
+  font-size: 15px !important;
   font-weight: bold !important;
+  color: #FFFFFF !important;
 }
 
-#champion-header-trait img {
-  width: 2.1vw !important;
+#ChampionShow-champion-header-trait img {
+  width: 25px !important;
   height: auto !important;
 }
 
-/* Left Column */
-#champion-left-column-container {
+/* Details Container */
+#ChampionShow-champion-details-desktop {
+  display: flex !important;
+  height: 85% !important;
   padding: 0px !important;
-  background: #1B1C1D;
 }
 
-#champion-left-column {
-  padding: 0px 14px 14px 14px !important;
-  border-radius: 0px !important;
-  background: #FFFFFF !important;
+/* Ability Container */
+#ChampionShow-champion-details-ability-container-desktop {
+  flex: 1 !important;
+  padding: 0px !important;
+  margin: 0px 7px 0px 0px !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
 }
 
-/* Champion Row Two */
-
-#champion-row-two-desktop {
-  padding: 14px 0px 0px 0px !important;
-}
-
-#champion-left-column-grid {
+#ChampionShow-champion-details-ability-grid {
   width: 100% !important;
   height: 100% !important;
   margin: 0px !important;
 }
 
-#champion-ability-row {
-  padding: 0px !important;
-}
-
-#champion-ability-grid {
+#ChampionShow-champion-details-ability-grid-row-one {
   width: 100% !important;
-  height: auto !important;
-  margin: 0px !important;
-}
-
-#champion-render-row {
+  height: 6% !important;
   padding: 0px !important;
-  background-color: #1B1C1D !important;
-  border: 3px solid #2185D0 !important;
-  border-top: 0px !important;
-}
-
-#champion-ability-column {
-  padding: 0px !important;
-}
-
-#champion-ability-row-one {
-  padding: 0px !important;
-  color: #FFFFFF !important;
   background-color: #2185D0 !important;
-  font-weight: bold !important;
 }
 
-#champion-ability-title-container {
+#ChampionShow-champion-details-ability-grid-row-one-column-one {
   display: grid !important;
   padding: 0px !important;
 }
 
-#champion-ability-title-container {
-}
-
-#champion-ability-title-container span {
-  padding-left: .5vw !important;
-}
-
-#champion-ability-type-mana-container {
-  padding: 0px !important;
-  margin: 0px !important;
-}
-
-#champion-ability-type-container,
-#champion-ability-mana-container {
-  padding: 0px 5px 0px 0px !important;
-  margin: 0px !important;
-  text-align: right !important;
-}
-
-#champion-ability-title-container span {
+#ChampionShow-champion-details-ability-grid-row-one-column-one-title {
   position: absolute !important;
   width: 100% !important;
   top: 50% !important;
   left: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;
+  padding: 0px 0px 0px 5px !important;
 }
 
-#champion-ability-row-two {
+#ChampionShow-champion-details-ability-grid-row-one-column-two {
   padding: 0px !important;
-  background-color: #1B1C1D !important;
+  margin: 0px !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-one-column-two-type,
+#ChampionShow-champion-details-ability-grid-row-one-column-two-mana {
+  float: right !important;
+  padding: 0px 5px 0px 0px !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-two {
+  width: 100% !important;
+  height: 19% !important;
+  padding: 0px !important;
   border-left: 3px solid #2185D0 !important;
   border-right: 3px solid #2185D0 !important;
+  background-color: #1B1C1D !important;
 }
 
-#champion-ability-image-container {
-  padding: 0px 0px 0px 10px !important;
-}
-
-#champion-ability-image {
+#ChampionShow-champion-details-ability-grid-row-two-column-one {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 0px !important;
+  height: 100% !important;
+  padding: 7px !important;
 }
 
-#champion-ability-image img {
-  width: auto !important;
-  max-width: 3.5vw !important;
+#ChampionShow-champion-details-ability-grid-row-two-column-one-image {
+  width: 100% !important;
+  max-width: 50px !important;
   height: auto !important;
-  max-height: 11vh !important;
-  border: 3px solid #000000 !important;
-  border-radius: 3px !important;
+  max-height: 50px !important;
+  border: 2px solid #FFFFFF !important;
+  border-radius: 1px !important;
 }
 
-#champion-ability-description-container {
-  padding: 0px !important;
+#ChampionShow-champion-details-ability-grid-row-two-column-two {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 14px 0px 14px 0px !important;
+  overflow-y: scroll !important;
 }
 
-#champion-ability-row-three {
+#ChampionShow-champion-details-ability-grid-row-two-column-two-description {
+  margin: auto !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-track {
+  background-color: #1B1C1D !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-thumb {
+  background-color: #A78E5A !important;
+  border-radius: 0px !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-three {
+  width: 100% !important;
+  height: 15% !important;
   padding: 0px !important;
   background-color: #2185D0 !important;
-  color: #FFFFFF !important;
-  font-weight: bold !important;
 }
 
-#champion-ability-ability-extra-container {
+#ChampionShow-champion-details-ability-grid-row-three-column-one {
   padding: 0px !important;
   border-left: 3px solid #2185D0 !important;
   border-right: 3px solid #2185D0 !important;
   background-color: #1B1C1D !important;
 }
 
-#champion-ability-ability-extra {
+#ChampionShow-champion-details-ability-grid-row-three-column-one-stats {
   text-align: center !important;
   background-color: #2185D0 !important;
 }
 
-#champion-render-container {
+#ChampionShow-champion-details-ability-grid-row-four {
+  width: 100% !important;
+  height: 45% !important;
   padding: 0px !important;
 }
 
-#champion-render {
-  padding: 0px !important;
-  width: 100%!important;
-  height: 35vh !important;
-  margin: auto !important;
+#ChampionShow-champion-details-ability-grid-row-four-column-one {
+  width: 100% !important;
+  height: 100% !important;
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  background-color: #1B1C1D !important;
 }
 
-#champion-render img {
-  width: auto !important;
-  max-width: 100% !important;
+#ChampionShow-champion-details-ability-grid-row-four-column-one-image {
+  width: 100% !important;
   height: auto !important;
   max-height: 100% !important;
   margin: auto !important;
-  padding: 10px 0px 10px 0px !important;
-}
-/* Champion Row Three */
-
-#champion-row-three {
-  padding: 0px 0px 14px 0px !important;
 }
 
-/* Right Column */
-#champion-right-column-container {
+#ChampionShow-champion-details-ability-grid-row-five {
+  width: 100% !important;
+  height: 15% !important;
   padding: 0px !important;
+}
+
+#ChampionShow-champion-details-ability-grid-row-five-column-one {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
+  border: 3px solid #2185D0 !important;
+  border-top: 0px !important;
   background: #1B1C1D !important;
 }
 
-#champion-right-column {
-  padding: 0px 14px 14px 14px;
-  background: #FFFFFF !important;
-}
-
-/* Statistics Row */
-
-#statistics-container {
-  border: 3px solid #2185D0 !important;
-  border-bottom: 15px solid #2185D0 !important;
-  border-radius: 0px !important;
-  text-align: center !important;
-}
-
-#statistics-list {
-  text-align: center !important;
-}
-
-#statistic-list-item {
-  padding: 5px 20px 5px 20px !important;
-}
-
-#statistic-list-item img {
-  width: 4vh!important;
-  height: auto !important;
-}
-
-#statistic-list-item-header {
-  color: #FFFFFF !important;
-}
-/* Synergies Row */
-#right-column-synergies-column {
-  padding: 0px !important
-}
-
-#synergies-container {
-  border: 0px !important;
-  border-radius: 0px !important;
-}
-
-#synergies-grid {
+#ChampionShow-champion-details-ability-grid-row-five-column-one-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 40% !important;
+  margin: 0px !important;
   background-color: #2185D0 !important;
 }
 
-.trait-row {
+#ChampionShow-champion-details-ability-grid-row-five-column-one-items {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 60% !important;
+  margin: 0px !important;
+  background-color: #1B1C1D !important;
+}
+/* Traits Container */
+#ChampionShow-champion-details-traits-container-desktop {
+  flex: 3 !important;
   padding: 0px !important;
-  padding-bottom: 15px !important;
-  border-right: 3px solid #2185D0 !important;
+  margin: 0px 0px 0px 7px !important;
 }
 
-#trait-header-column {
-  padding: 0px !important;
+#ChampionShow-champion-details-traits-statistics-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 20% !important;
+  margin: 0px !important;
+  border: 3px solid #2185D0 !important;
+  border-bottom: 15px solid #2185D0 !important;
+  border-radius: 0px !important;
 }
 
-#trait-header-container {
+#ChampionShow-champion-details-traits-statistics-list {
+  text-align: center !important;
+}
+
+#ChampionShow-champion-details-traits-statistics-list-item {
+  padding: 5px 20px 5px 20px !important;
+}
+
+#ChampionShow-champion-details-traits-statistics-list-item img {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+#ChampionShow-champion-details-traits-statistics-list-item-header {
+  color: #FFFFFF !important;
+}
+
+#ChampionShow-champion-details-traits-traits-container {
+  width: 100% !important;
+  height: 80% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  background: green;
+}
+
+#ChampionShow-champion-details-traits-traits-grid {
   width: 100% !important;
   height: 100% !important;
-  margin: auto !important;
+  margin: 0px !important;
+  background-color: #2185D0 !important;
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one {
+  padding: 0px !important;
+  border-right: 3px solid #2185D0 !important;
+  border-bottom: 15px solid #2185D0 !important;
+  background-color: #1B1C1D !important;
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-one {
+  height: 100% !important;
   padding: 0px !important;
   text-align: center !important;
-  font-size: 0.9vw !important;
+  font-size: 12px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
 
-#trait-header-container img {
-  width: 3vw !important;
-  height: auto !important;
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-one-image {
+  width: 40px !important;
+  height: 40px !important;
   margin: auto !important;
 }
 
-#trait-details-column {
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two {
   padding: 0px 20px 0px 20px !important;
+  margin: auto !important;
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
 
-#trait-details-column-champions,
-#trait-details-column-description,
-#trait-details-column-stats {
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions {
   padding: 10px 0px 0px 0px !important;
-  text-align: center !important;
+  margin: 0px !important;
 }
 
-#trait-details-column-stats-list {
-  padding-bottom: 10px !important;
-  display: inline-block !important;
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-#trait-details-column-stats-list-item {
-  line-height: 20px !important;
-  text-align: left !important;
-}
-
-#trait-details-column-stats-upgrade-number {
-  background: #2185D0 !important;
-  padding: 1px 3px 1px 3px !important;
-  border-radius: 3px !important;
-  font-weight: bold !important;
-}
-
-#champion-show-icon-container {
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container {
   position: relative !important;
 }
 
-#champion-show-icon-label {
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label {
   position: absolute !important;
-  width: 1vw !important;
-  height: auto !important;
+  width: 12px !important;
+  height: 20px !important;
   padding: 0px !important;
-  font-size: 0.8vw !important;
+  font-size: 12px !important;
   font-weight: bold !important;
-  color: #FFFFFF !important;
   border-bottom-right-radius: 3px !important;
   z-index: 2 !important;
 }
 
-#champion-show-icon {
-  width: auto !important;
-  max-width: 3.5vw !important;
-  height: auto !important;
-  max-height: 11vh !important;
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image {
+  width: 50px !important;
+  height: 50px !important;
 }
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-description {
+  padding: 10px 0px 0px 0px !important;
+  text-align: center !important;
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-container {
+  padding: 10px 0px 0px 0px !important;
+  text-align: center !important;
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list {
+  display: inline-block !important
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item {
+  line-height: 20px !important;
+  text-align: left !important;
+}
+
+#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item-upgrade-number {
+  padding: 1px 3px 1px 3px !important;
+  border-radius: 3px !important;
+  font-weight: bold !important;
+  background-color: #2185D0 !important;
+}
+
+/* End Container */
+#ChampionShow-champion-items-desktop {
+  height: 8% !important;
+}
+
+
 
 /* Tablet */
 #page-container-tablet {
