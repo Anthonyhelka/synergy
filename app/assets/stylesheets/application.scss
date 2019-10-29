@@ -456,7 +456,7 @@ body, html {
   display: flex !important;
   width: 1500px !important;
   max-width: 100% !important;
-  height: 900px !important;
+  height: 1000px !important;
   max-height: 100% !important;
   border-radius: 0px !important;
   margin: auto !important;
@@ -572,7 +572,7 @@ body, html {
 #ChampionShowDesktop-champion-details {
   display: flex !important;
   height: 85% !important;
-  padding: 0px !important;
+  padding: 0px 0px 7px 0px !important;
 }
 
 /* Ability Container */
@@ -695,6 +695,7 @@ body, html {
 }
 
 #ChampionShowDesktop-champion-details-ability-grid-row-four-column-one {
+  display: flex !important;
   width: 100% !important;
   height: 100% !important;
   border: 3px solid #2185D0 !important;
@@ -708,6 +709,7 @@ body, html {
   height: auto !important;
   max-height: 100% !important;
   margin: auto !important;
+  padding: 0px 14px 14px 14px !important;
 }
 
 #ChampionShowDesktop-champion-details-ability-grid-row-five {
@@ -862,7 +864,7 @@ body, html {
 }
 
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-container {
-  padding: 10px 0px 0px 0px !important;
+  padding: 10px 0px 10px 0px !important;
   text-align: center !important;
 }
 

@@ -90,12 +90,12 @@ class ChampionShowTileDesktop extends Component {
     return (
       <div>
         <Responsive minWidth={1024}>
-          <Segment id='ChampionShowDesktop-page-container'>
-            <Segment id='ChampionShowDesktop-search-container'>
+          <Segment id='ChampionShowDesktop-page-container' basic>
+            <Segment id='ChampionShowDesktop-search-container' basic>
               <ChampionSearch />
             </Segment>
             <Segment id='ChampionShowDesktop-champion-container' basic>
-              <Segment id='ChampionShowDesktop-champion-header'>
+              <Segment id='ChampionShowDesktop-champion-header' basic>
                 <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<Label id='ChampionShowDesktop-champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'>{this.props.champion.cost}</Label>}>Cost</Popup>
                   <div id='ChampionShowDesktop-champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
                   <Image id='ChampionShowDesktop-champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}`, true)}`} />
@@ -145,7 +145,7 @@ class ChampionShowTileDesktop extends Component {
                     </Grid.Row>
                   </Grid>
                 </Segment>
-                <Segment id='ChampionShowDesktop-champion-details-traits-container'>
+                <Segment id='ChampionShowDesktop-champion-details-traits-container' basic>
                   <Segment id='ChampionShowDesktop-champion-details-traits-statistics-container' inverted basic>
                     <List id='ChampionShowDesktop-champion-details-traits-statistics-list' horizontal>
                       <List.Item id='ChampionShowDesktop-champion-details-traits-statistics-list-item'>
