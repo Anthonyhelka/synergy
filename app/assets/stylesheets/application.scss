@@ -452,20 +452,20 @@ body, html {
 }
 
 /* Desktop */
-#ChampionShow-page-container-desktop {
+#ChampionShowDesktop-page-container {
   display: flex !important;
   width: 1500px !important;
   max-width: 100% !important;
-  height: 1000px !important;
+  height: 900px !important;
   max-height: 100% !important;
   border-radius: 0px !important;
   margin: auto !important;
   padding: 14px !important;
-  background-color: green !important;
+  background-color: #1B1C1D !important;
 }
 
 /* Search Container */
-#ChampionShow-search-container-desktop {
+#ChampionShowDesktop-search-container {
   flex: 1 !important;
   width: 100% !important;
   height: 50% !important;
@@ -476,7 +476,7 @@ body, html {
 }
 
 /* Champion Container */
-#ChampionShow-champion-container-desktop {
+#ChampionShowDesktop-champion-container{
   flex: 4 !important;
   width: 100% !important;
   height: 100% !important;
@@ -485,7 +485,7 @@ body, html {
   background-color: #FFFFFF !important;
 }
 
-#ChampionShow-champion-header-desktop {
+#ChampionShowDesktop-champion-header {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
@@ -496,7 +496,7 @@ body, html {
 }
 
 /* Header */
-#ChampionShow-champion-header-tier-desktop {
+#ChampionShowDesktop-champion-header-tier {
   border: none !important;
   border-radius: 0px !important;
   border-bottom-right-radius: 3px !important;
@@ -505,7 +505,7 @@ body, html {
   z-index: 2 !important;
 }
 
-#ChampionShow-champion-header-title {
+#ChampionShowDesktop-champion-header-title {
   position: absolute !important;
   margin: auto !important;
   margin-left: 6% !important;
@@ -514,16 +514,16 @@ body, html {
   z-index: 2 !important;
 }
 
-#ChampionShow-champion-header-title span {
+#ChampionShowDesktop-champion-header-title span {
   font-size: 30px !important;
 }
 
-#ChampionShow-champion-header-title p {
+#ChampionShowDesktop-champion-header-title p {
   font-size: 20px !important;
   font-style: italic !important;
 }
 
-#ChampionShow-champion-header-image {
+#ChampionShowDesktop-champion-header-image {
   width: 100% !important;
   height: 100% !important;
   margin: auto !important;
@@ -531,7 +531,7 @@ body, html {
   z-index: 1 !important;
 }
 
-#ChampionShow-champion-header-synergies-container {
+#ChampionShowDesktop-champion-header-synergies-container {
   display: flex !important;
   justify-content: center !important;
   flex-direction: column !important;
@@ -543,7 +543,7 @@ body, html {
   z-index: 2 !important;
 }
 
-#ChampionShow-champion-header-synergies-container::after {
+#ChampionShowDesktop-champion-header-synergies-container::after {
   content: '' !important;
   position: absolute !important;
   width: 100% !important;
@@ -554,7 +554,7 @@ body, html {
   z-index: -1 !important;
 }
 
-#ChampionShow-champion-header-trait {
+#ChampionShowDesktop-champion-header-trait {
   display: flex !important;
   align-items: center !important;
   font-size: 15px !important;
@@ -562,20 +562,20 @@ body, html {
   color: #FFFFFF !important;
 }
 
-#ChampionShow-champion-header-trait img {
+#ChampionShowDesktop-champion-header-trait img {
   width: 25px !important;
   height: auto !important;
 }
 
 /* Details Container */
-#ChampionShow-champion-details-desktop {
+#ChampionShowDesktop-champion-details {
   display: flex !important;
   height: 85% !important;
   padding: 0px !important;
 }
 
 /* Ability Container */
-#ChampionShow-champion-details-ability-container-desktop {
+#ChampionShowDesktop-champion-details-ability-container {
   flex: 1 !important;
   padding: 0px !important;
   margin: 0px 7px 0px 0px !important;
@@ -583,25 +583,25 @@ body, html {
   font-weight: bold !important;
 }
 
-#ChampionShow-champion-details-ability-grid {
+#ChampionShowDesktop-champion-details-ability-grid {
   width: 100% !important;
   height: 100% !important;
   margin: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-one {
   width: 100% !important;
   height: 6% !important;
   padding: 0px !important;
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-one-column-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-one-column-one {
   display: grid !important;
   padding: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-one-column-one-title {
+#ChampionShowDesktop-champion-details-ability-grid-row-one-column-one-title {
   position: absolute !important;
   width: 100% !important;
   top: 50% !important;
@@ -610,18 +610,18 @@ body, html {
   padding: 0px 0px 0px 5px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-one-column-two {
+#ChampionShowDesktop-champion-details-ability-grid-row-one-column-two {
   padding: 0px !important;
   margin: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-one-column-two-type,
-#ChampionShow-champion-details-ability-grid-row-one-column-two-mana {
+#ChampionShowDesktop-champion-details-ability-grid-row-one-column-two-type,
+#ChampionShowDesktop-champion-details-ability-grid-row-one-column-two-mana {
   float: right !important;
   padding: 0px 5px 0px 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two {
+#ChampionShowDesktop-champion-details-ability-grid-row-two {
   width: 100% !important;
   height: 19% !important;
   padding: 0px !important;
@@ -630,7 +630,7 @@ body, html {
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-one {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -638,7 +638,7 @@ body, html {
   padding: 7px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-one-image {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-one-image {
   width: 100% !important;
   max-width: 50px !important;
   height: auto !important;
@@ -647,7 +647,7 @@ body, html {
   border-radius: 1px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-two {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-two {
   display: flex !important;
   align-items: center !important;
   height: 100% !important;
@@ -655,45 +655,45 @@ body, html {
   overflow-y: scroll !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-two-description {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-two-description {
   margin: auto !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-track {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-track {
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-thumb {
+#ChampionShowDesktop-champion-details-ability-grid-row-two-column-two::-webkit-scrollbar-thumb {
   background-color: #A78E5A !important;
   border-radius: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-three {
+#ChampionShowDesktop-champion-details-ability-grid-row-three {
   width: 100% !important;
   height: 15% !important;
   padding: 0px !important;
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-three-column-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-three-column-one {
   padding: 0px !important;
   border-left: 3px solid #2185D0 !important;
   border-right: 3px solid #2185D0 !important;
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-three-column-one-stats {
+#ChampionShowDesktop-champion-details-ability-grid-row-three-column-one-stats {
   text-align: center !important;
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-four {
+#ChampionShowDesktop-champion-details-ability-grid-row-four {
   width: 100% !important;
   height: 45% !important;
   padding: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-four-column-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-four-column-one {
   width: 100% !important;
   height: 100% !important;
   border: 3px solid #2185D0 !important;
@@ -702,20 +702,20 @@ body, html {
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-four-column-one-image {
+#ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image {
   width: 100% !important;
   height: auto !important;
   max-height: 100% !important;
   margin: auto !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-five {
+#ChampionShowDesktop-champion-details-ability-grid-row-five {
   width: 100% !important;
   height: 15% !important;
   padding: 0px !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-five-column-one {
+#ChampionShowDesktop-champion-details-ability-grid-row-five-column-one {
   width: 100% !important;
   height: 100% !important;
   padding: 0px !important;
@@ -724,7 +724,7 @@ body, html {
   background: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-five-column-one-header {
+#ChampionShowDesktop-champion-details-ability-grid-row-five-column-one-header {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -734,7 +734,7 @@ body, html {
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-ability-grid-row-five-column-one-items {
+#ChampionShowDesktop-champion-details-ability-grid-row-five-column-one-items {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -744,13 +744,13 @@ body, html {
   background-color: #1B1C1D !important;
 }
 /* Traits Container */
-#ChampionShow-champion-details-traits-container-desktop {
+#ChampionShowDesktop-champion-details-traits-container {
   flex: 3 !important;
   padding: 0px !important;
   margin: 0px 0px 0px 7px !important;
 }
 
-#ChampionShow-champion-details-traits-statistics-container {
+#ChampionShowDesktop-champion-details-traits-statistics-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -762,24 +762,24 @@ body, html {
   border-radius: 0px !important;
 }
 
-#ChampionShow-champion-details-traits-statistics-list {
+#ChampionShowDesktop-champion-details-traits-statistics-list {
   text-align: center !important;
 }
 
-#ChampionShow-champion-details-traits-statistics-list-item {
+#ChampionShowDesktop-champion-details-traits-statistics-list-item {
   padding: 5px 20px 5px 20px !important;
 }
 
-#ChampionShow-champion-details-traits-statistics-list-item img {
+#ChampionShowDesktop-champion-details-traits-statistics-list-item img {
   width: 25px !important;
   height: 25px !important;
 }
 
-#ChampionShow-champion-details-traits-statistics-list-item-header {
+#ChampionShowDesktop-champion-details-traits-statistics-list-item-header {
   color: #FFFFFF !important;
 }
 
-#ChampionShow-champion-details-traits-traits-container {
+#ChampionShowDesktop-champion-details-traits-traits-container {
   width: 100% !important;
   height: 80% !important;
   padding: 0px !important;
@@ -787,21 +787,21 @@ body, html {
   background: green;
 }
 
-#ChampionShow-champion-details-traits-traits-grid {
+#ChampionShowDesktop-champion-details-traits-traits-grid {
   width: 100% !important;
   height: 100% !important;
   margin: 0px !important;
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one {
   padding: 0px !important;
   border-right: 3px solid #2185D0 !important;
   border-bottom: 15px solid #2185D0 !important;
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-one {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-one {
   height: 100% !important;
   padding: 0px !important;
   text-align: center !important;
@@ -811,35 +811,35 @@ body, html {
   background-color: #2185D0 !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-one-image {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-one-image {
   width: 40px !important;
   height: 40px !important;
   margin: auto !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two {
   padding: 0px 20px 0px 20px !important;
   margin: auto !important;
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions {
   padding: 10px 0px 0px 0px !important;
   margin: 0px !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container {
   position: relative !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label {
   position: absolute !important;
   width: 12px !important;
   height: 20px !important;
@@ -850,43 +850,36 @@ body, html {
   z-index: 2 !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image {
   width: 50px !important;
   height: 50px !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-description {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-description {
   padding: 10px 0px 0px 0px !important;
   text-align: center !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-container {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-container {
   padding: 10px 0px 0px 0px !important;
   text-align: center !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-list {
   display: inline-block !important
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item {
   line-height: 20px !important;
   text-align: left !important;
 }
 
-#ChampionShow-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item-upgrade-number {
+#ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-list-item-upgrade-number {
   padding: 1px 3px 1px 3px !important;
   border-radius: 3px !important;
   font-weight: bold !important;
   background-color: #2185D0 !important;
 }
-
-/* End Container */
-#ChampionShow-champion-items-desktop {
-  height: 8% !important;
-}
-
-
 
 /* Tablet */
 #page-container-tablet {
