@@ -84,17 +84,21 @@ class ChampionSearch extends Component {
             {champions}
           </List>
         </Responsive>,
-        <Responsive id='champion-search-container' as='div' key='mobile/tablet' minWidth={1024}>
-          <div id='champion-search-form'>
-            <Form>
+
+        <Responsive id='ChampionSearchDesktop-container' as='div' key='desktop' minWidth={1024}>
+          <div id='ChampionSearchDesktop-form-container'>
+            <Form id='ChampionSearchDesktop-form'>
               <Form.Field value={this.state.query} onChange={this.handleChange}>
-                <input placeholder='Champion Name...' />
+                <input id='ChampionSearchDesktop-form-input'placeholder='Champion Name...' />
               </Form.Field>
             </Form>
           </div>
-          <List id='champions-search-list' horizontal>
-            {champions}
-          </List>
+          
+          <div id='ChampionSearchDesktop-results-container'>
+            <div id='ChampionSearchDesktop-champions-container'>
+              {champions}
+            </div>
+          </div>
         </Responsive>
     ]
   }
