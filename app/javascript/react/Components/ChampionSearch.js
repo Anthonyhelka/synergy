@@ -10,10 +10,12 @@ class ChampionSearch extends Component {
     this.state={
       query: '',
       champions: [],
-      filteredChampions: []
+      filteredChampions: [],
+      sort: 'up'
     }
     this.handleChange = this.handleChange.bind(this);
     this.filterChampions = this.filterChampions.bind(this);
+    this.handleSortChange = this.handleSortChange.bind(this);
   }
 
   componentDidMount() {
@@ -47,10 +49,16 @@ class ChampionSearch extends Component {
     this.setState({ filteredChampions: filteredChampions })
   }
 
+  handleSortChange(event){
+    (this.state.sort === 'up') ? this.setState({ sort: 'down' }) : this.setState({ sort: 'up' });
+  }
+
   render() {
     let champions;
+    let championsSortOrder;
     if (this.state.query === '') {
-      champions = this.state.champions.map(champion => {
+      championsSortOrder = (this.state.sort === 'up') ? this.state.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.state.champions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
+      champions = championsSortOrder.map(champion => {
         return (
           <ChampionSearchTile
             key={champion.id}
@@ -60,47 +68,35 @@ class ChampionSearch extends Component {
         )
       });
     } else {
-      champions = this.state.filteredChampions.map(champion => {
-      return (
-        <ChampionSearchTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-  }
+        championsSortOrder = (this.state.sort === 'up') ? this.state.filteredChampions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.state.filteredChampions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
+        champions = championsSortOrder.map(champion => {
+        return (
+          <ChampionSearchTile
+            key={champion.id}
+            id={champion.id}
+            champion={champion}
+          />
+        )
+      });
+    }
 
-    return [
-        <Responsive id='champion-search-container' as='div' key='mobile/tablet' maxWidth={1023}>
-          <div id='champion-search-form-mobile'>
-            <Form>
-              <Form.Field value={this.state.query} onChange={this.handleChange}>
-                <input placeholder='Champion Name...' />
-              </Form.Field>
-            </Form>
-          </div>
-          <List id='champions-search-list-mobile' horizontal>
+    return (
+      <div id='ChampionSearch-container'>
+        <div id='ChampionSearch-form-container'>
+          <Form id='ChampionSearch-form'>
+            <Form.Field id='ChampionSearch-form-field' value={this.state.query} onChange={this.handleChange}>
+              <input id='ChampionSearch-form-input' placeholder='Champion Name...' />
+              <Icon id='ChampionSearch-form-sort-icon' name={`sort amount ${this.state.sort}`} onClick={this.handleSortChange} />
+            </Form.Field>
+          </Form>
+        </div>
+        <div id='ChampionSearch-results-container'>
+          <div id='ChampionSearch-champions-container'>
             {champions}
-          </List>
-        </Responsive>,
-
-        <Responsive id='ChampionSearchDesktop-container' as='div' key='desktop' minWidth={1024}>
-          <div id='ChampionSearchDesktop-form-container'>
-            <Form id='ChampionSearchDesktop-form'>
-              <Form.Field value={this.state.query} onChange={this.handleChange}>
-                <input id='ChampionSearchDesktop-form-input'placeholder='Champion Name...' />
-              </Form.Field>
-            </Form>
           </div>
-          
-          <div id='ChampionSearchDesktop-results-container'>
-            <div id='ChampionSearchDesktop-champions-container'>
-              {champions}
-            </div>
-          </div>
-        </Responsive>
-    ]
+        </div>
+      </div>
+    );
   }
 }
 

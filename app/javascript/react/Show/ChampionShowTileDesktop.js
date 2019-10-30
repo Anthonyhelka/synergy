@@ -30,7 +30,7 @@ class ChampionShowTileDesktop extends Component {
     const pathToRender = require.context('../../../assets/images/renders', true);
     const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
-    let synergiesIconList = this.props.champion.traits.map(trait => {
+    let traitsIconList = this.props.champion.traits.map(trait => {
       return (
         <div id='ChampionShowDesktop-champion-header-trait'>
           <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}  />
@@ -39,7 +39,7 @@ class ChampionShowTileDesktop extends Component {
       )
     });
 
-    let abilityStatList = this.props.champion.ability.stats.map(stat => {
+    let abilityUpgradeList = this.props.champion.ability.stats.map(stat => {
       return (
         <p>{stat.type}: {stat.value}</p>
       )
@@ -99,8 +99,8 @@ class ChampionShowTileDesktop extends Component {
                 <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<Label id='ChampionShowDesktop-champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'>{this.props.champion.cost}</Label>}>Cost</Popup>
                   <div id='ChampionShowDesktop-champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
                   <Image id='ChampionShowDesktop-champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}`, true)}`} />
-                  <div id='ChampionShowDesktop-champion-header-synergies-container'>
-                    {synergiesIconList}
+                  <div id='ChampionShowDesktop-champion-header-traits-container'>
+                    {traitsIconList}
                   </div>
               </Segment>
               <Segment id='ChampionShowDesktop-champion-details' basic>
@@ -125,7 +125,7 @@ class ChampionShowTileDesktop extends Component {
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-three'>
                       <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-three-column-one' width='16'>
-                        <Segment id='ChampionShowDesktop-champion-details-ability-grid-row-three-column-one-stats' basic>{abilityStatList}</Segment>
+                        <Segment id='ChampionShowDesktop-champion-details-ability-grid-row-three-column-one-stats' basic>{abilityUpgradeList}</Segment>
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-four'>
