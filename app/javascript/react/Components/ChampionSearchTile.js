@@ -17,20 +17,10 @@ class ChampionSearchTile extends Component {
     const pathToIcon = require.context('../../../assets/images/icons', true);
 
     return (
-      <List.Item>
-        <Responsive maxWidth={1023}>
-          <div id='champion-search-icon-container'>
-            <Image id='champion-search-icon-tablet-mobile' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
-          </div>
-        </Responsive>
-
-        <Responsive minWidth={1024}>
-            <div id='champion-search-icon-container'>
-              <div id='champion-search-icon-label' className={`tier-${this.props.champion.cost}`}>{this.props.champion.cost}</div>
-              <Image id='champion-search-icon' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
-            </div>
-        </Responsive>
-      </List.Item>
+      <div id='ChampionSearch-champions-item-container'>
+        <div id='ChampionSearch-champions-item-label' className={`tier-${this.props.champion.cost}`}>{this.props.champion.cost}</div>
+        <Image id='ChampionSearch-champions-item-image' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
+      </div>
     );
   }
 }

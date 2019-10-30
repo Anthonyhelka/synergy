@@ -31,7 +31,7 @@ class ChampionShowTileMobile extends Component {
       )
     });
 
-    let abilityStatList = this.props.champion.ability.stats.map(stat => {
+    let abilityUpgradeList = this.props.champion.ability.stats.map(stat => {
       return (
         <p>{stat.type}: {stat.value}</p>
       )
@@ -40,158 +40,141 @@ class ChampionShowTileMobile extends Component {
     let traits = this.props.champion.traits.map(trait => {
       let upgrades = trait.upgrades.map(upgrade => {
         return (
-          <List.Item id='trait-details-column-stats-list-item'><span id='trait-details-column-stats-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
+          <List.Item id='ChampionShowMobile-champion-traits-grid-row-column-two-upgrade-list-item'><span id='ChampionShowMobile-champion-traits-grid-row-column-two-upgrade-list-item-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</List.Item>
         )
       })
-      let traitChampions = trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
-      let champions = traitChampions.map(champion => {
+      let sortedChampions = trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
+      let champions = sortedChampions.map(champion => {
         return (
           <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
-            <div id='champion-show-icon-container'>
-              <Image id='champion-show-icon-mobile' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}`, true)}`} />
+            <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-container'>
+              <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
+              <Image id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}`, true)}`} />
             </div>
           </List.Item>
         );
       });
       return (
-        <Grid.Row id='trait-row-mobile' columns='2'>
-            <Grid.Column id='trait-header-column' width='16'>
-              <Segment id='trait-header-container-mobile' basic>
-                <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
-                <p>{trait.name}</p>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column id='trait-details-column' width='16'>
-              <Grid.Row>
-                <Segment id='trait-details-column-champions' basic>
-                  <List id='trait-champions-list-mobile'>
-                    {champions}
-                  </List>
-                </Segment>
-              </Grid.Row>
-              <Grid.Row>
-                <Segment id='trait-details-column-description' basic>
-                  <span>{trait.description}</span>
-                </Segment>
-              </Grid.Row>
-              <Grid.Row>
-                <Segment id='trait-details-column-stats' basic>
-                  <List id='trait-details-column-stats-list'>
-                    {upgrades}
-                  </List>
-                </Segment>
-              </Grid.Row>
-            </Grid.Column>
+        <Grid.Row id='ChampionShowMobile-champion-traits-grid-row' columns='2'>
+          <Grid.Column id='ChampionShowMobile-champion-traits-grid-row-column-one' width='16'>
+            <Image id='ChampionShowMobile-champion-traits-grid-row-column-one-image'src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
+            <p>{trait.name}</p>
+          </Grid.Column>
+          <Grid.Column id='ChampionShowMobile-champion-traits-grid-row-column-two' width='16'>
+            <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-container' basic>
+              <List id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list'>
+                {champions}
+              </List>
+            </Segment>
+            <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-description-container' basic>
+              <span>{trait.description}</span>
+            </Segment>
+            {trait.upgrades.length !== 0 ? (
+              <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-upgrade-list-container' basic>
+                <List id='ChampionShowMobile-champion-traits-grid-row-column-two-upgrade-list'>
+                  {upgrades}
+                </List>
+              </Segment> ) : (<span></span>)
+            }
+          </Grid.Column>
         </Grid.Row>
       )
     });
 
     return (
       <div>
-        <Segment id='champion-search-container-container-mobile' basic>
-          <ChampionSearch />
-        </Segment>
-        <Segment id='champion-container-mobile' basic>
-            <Grid id='champion-container-grid-mobile'>
-              <Grid.Row id='champion-header-row-mobile' columns='1'>
-                <Grid.Column id='champion-header-image-mobile' width='4'>
-                  <Image src={`${pathToIcon(`./${this.props.champion.key}`, true)}`}  />
-                </Grid.Column>
-                <Grid.Column id='champion-header-title-mobile' width='8'>
-                  <span>{this.props.champion.name}</span>
+        <Responsive maxWidth={1023}>
+          <Segment id='ChampionShowMobile-page-container' basic>
+            <Segment id='ChampionShowMobile-search-container' basic>
+              <ChampionSearch />
+            </Segment>
+
+            <Segment id='ChampionShowMobile-champion-container' basic>
+              <Segment id='ChampionShowMobile-champion-header-container' basic>
+                <Image id='ChampionShowMobile-champion-header-image' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`}  />
+                <div id='ChampionShowMobile-champion-header-title-container'>
+                  <span id='ChampionShowMobile-champion-header-title-name'>{this.props.champion.name}</span>
                   <br />
-                  <span>{this.props.champion.title}</span>
-                </Grid.Column>
-                <Segment id='champion-header-slanted-div-mobile' basic>
-                  <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<div id='champion-header-tier-mobile' className={`tier-${this.props.champion.cost}`}><span>{this.props.champion.cost}</span></div>}>Cost</Popup>
-                </Segment>
-              </Grid.Row>
-              <Grid.Row id='champion-statistics-row-mobile' columns='1'>
-                <Grid.Column id='champion-statistics-container-mobile' width='16'>
-                  <List id='champion-statistics-list-mobile' horizontal>
-                      <List.Item id='champion-statistic-list-item-mobile'>
-                        <Popup on='click' key='health' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
-                        {this.props.champion.stats.defense.health}
-                      </List.Item>
-                    <List.Item id='champion-statistic-list-item-mobile'>
-                      <Popup on='click' key='armor' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/armor.png')} />}>Armor</Popup>
-                      {this.props.champion.stats.defense.armor}
+                  <span id='ChampionShowMobile-champion-header-title-title'>{this.props.champion.title}</span>
+                </div>
+                <div id='ChampionShowMobile-champion-header-tier-container'>
+                  <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<div id='ChampionShowMobile-champion-header-tier' className={`tier-${this.props.champion.cost}`}><span>{this.props.champion.cost}</span></div>}>Cost</Popup>
+                </div>
+              </Segment>
+
+              <Segment id='ChampionShowMobile-champion-statistics-container' basic>
+                <List id='ChampionShowMobile-champion-statistics-list' horizontal>
+                    <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                      <Popup on='click' key='health' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
+                      <span>{this.props.champion.stats.defense.health}</span>
                     </List.Item>
-                    <List.Item id='champion-statistic-list-item-mobile'>
-                      <Popup on='click' key='magic_resist' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/magic_resist.png')} />}>Magic Resist</Popup>
-                      {this.props.champion.stats.defense.magic_resist}
-                    </List.Item>
-                    <List.Item id='champion-statistic-list-item-mobile'>
-                      <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
-                      {this.props.champion.stats.offense.damage}
-                    </List.Item>
-                    <List.Item id='champion-statistic-list-item-mobile'>
-                      <Popup on='click' key='attack_speed' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/attack_speed.png')} />}>Attack Speed</Popup>
-                      {this.props.champion.stats.offense.attack_speed}
-                    </List.Item>
-                    <List.Item id='champion-statistic-list-item-mobile'>
-                      <Popup on='click' key='range' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/range.png')} />}>Range</Popup>
-                      {this.props.champion.stats.offense.range}
-                    </List.Item>
-                  </List>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row id='champion-ability-row-mobile' columns='1'>
-                <Grid.Column id='champion-ability-column' width='16'>
-                  <Grid id='champion-ability-grid-mobile'>
-                    <Grid.Row id='champion-ability-row-one-mobile'>
-                      <Grid.Column id='champion-ability-title-container' width='10'>
-                        <Segment id='champion-ability-title-container' basic>
-                          <span>{this.props.champion.ability.name}</span>
-                        </Segment>
-                      </Grid.Column>
-                      <Grid.Column id='champion-ability-type-mana-container' width='6'>
-                        <Segment id='champion-ability-type-container' basic>
-                          <span>{this.props.champion.ability.type}</span>
-                        </Segment>
-                        <Segment id='champion-ability-mana-container' basic>
-                          <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Mana</Popup>
-                        </Segment>
-                      </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row id='champion-ability-row-two-mobile'>
-                      <Grid.Column id='champion-ability-image-container' width='4' stretched>
-                        <Segment id='champion-ability-image-mobile' inverted basic>
-                          <Image src={`${pathToAbility(`./${this.props.champion.key}`, true)}`}  />
-                        </Segment>
-                      </Grid.Column>
-                      <Grid.Column id='champion-ability-description-container' width='12'>
-                        <Segment id='champion-ability-description' inverted basic>
-                          <span>{this.props.champion.ability.description}</span>
-                        </Segment>
-                      </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row id='champion-ability-row-three'>
-                      <Grid.Column id='champion-ability-ability-extra-container' width='16'>
-                        <Segment id='champion-ability-ability-extra' basic>
-                          <span>{abilityStatList}</span>
-                        </Segment>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row id='champion-render-row-mobile' columns='1'>
-                <Grid.Column id='champion-render-container'>
-                  <Segment id='champion-render' basic fluid>
-                    <Image src={`${pathToRender(`./${this.props.champion.key}`, true)}`}  />
-                  </Segment>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column>
-                  <Grid>
-                    {traits}
-                  </Grid>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+                  <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                    <Popup on='click' key='armor' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/armor.png')} />}>Armor</Popup>
+                    <span>{this.props.champion.stats.defense.armor}</span>
+                  </List.Item>
+                  <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                    <Popup on='click' key='magic_resist' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/magic_resist.png')} />}>Magic Resist</Popup>
+                    <span>{this.props.champion.stats.defense.magic_resist}</span>
+                  </List.Item>
+                  <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                    <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
+                    <span>{this.props.champion.stats.offense.damage}</span>
+                  </List.Item>
+                  <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                    <Popup on='click' key='attack_speed' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_speed.png')} />}>Attack Speed</Popup>
+                    <span>{this.props.champion.stats.offense.attack_speed}</span>
+                  </List.Item>
+                  <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
+                    <Popup on='click' key='range' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/range.png')} />}>Range</Popup>
+                    <span>{this.props.champion.stats.offense.range}</span>
+                  </List.Item>
+                </List>
+              </Segment>
+
+
+              <Segment id='ChampionShowMobile-champion-ability-container' basic>
+                <Grid id='ChampionShowMobile-champion-ability-grid'>
+                  <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-one'>
+                    <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-one-column-one' width='10'>
+                        <span>{this.props.champion.ability.name}</span>
+                    </Grid.Column>
+                    <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-one-column-two' width='6'>
+                        <span>{this.props.champion.ability.type}</span>
+                        <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Mana</Popup>
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-two'>
+                    <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-two-column-one' width='3'>
+                      <Image id='ChampionShowMobile-champion-ability-grid-row-two-column-one-image' src={`${pathToAbility(`./${this.props.champion.key}`, true)}`}  />
+                    </Grid.Column>
+                    <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-two-column-two' width='13'>
+                      <span id='ChampionShowMobile-champion-ability-grid-row-two-column-two-description'>{this.props.champion.ability.description}</span>
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-three'>
+                    <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-three-column-one' width='16'>
+                      <Segment id='ChampionShowMobile-champion-ability-grid-row-three-column-one-upgrades-container' basic>
+                        {abilityUpgradeList}
+                      </Segment>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Segment>
+
+              <Segment id='ChampionShowMobile-champion-render-container' basic>
+                <Image id='ChampionShowMobile-champion-render-image' src={`${pathToRender(`./${this.props.champion.key}`, true)}`}  />
+              </Segment>
+
+            </Segment>
+
+            <Segment id='ChampionShowMobile-champion-traits-container' basic>
+              <Grid id='ChampionShowMobile-champion-traits-grid'>
+                {traits}
+              </Grid>
+            </Segment>
+
           </Segment>
+        </Responsive>
       </div>
     );
   }
