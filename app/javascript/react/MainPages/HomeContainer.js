@@ -47,12 +47,6 @@ class HomeContainer extends Component {
                       <Icon name='chess pawn' />
                     </Button.Content>
                   </Button>
-                  <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions/origins'}>
-                    <Button.Content visible>Synergies</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='group' />
-                    </Button.Content>
-                  </Button>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/items'}>
                     <Button.Content visible>Items</Button.Content>
                     <Button.Content hidden>
