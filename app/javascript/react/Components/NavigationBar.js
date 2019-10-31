@@ -1,40 +1,48 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
-import { Responsive, Menu, Dropdown, Image, Segment } from 'semantic-ui-react';
+import { Responsive, Menu, Dropdown, Image, Segment, Sidebar, Icon, Header, Input } from 'semantic-ui-react';
+
+import SummonerSearch from '../Components/SummonerSearch';
 
 class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state={
-      home: false,
-      champions: false,
-      overview: false,
-      origins: false,
-      classes: false,
-      items: false,
-      news: false,
+      home: 'inactive',
+      overview: 'inactive',
+      origins: 'inactive',
+      classes: 'inactive',
+      items: 'inactive',
+      news: 'inactive',
+      sidebarStatus: 'invisible',
+      sidebarVisible: false
     }
+    this.handleSidebar = this.handleSidebar.bind(this);
+  }
+
+  handleSidebar(event) {
+    (this.state.sidebarStatus === 'invisible') ? this.setState({ sidebarStatus: 'visible', sidebarVisible: true }) : this.setState({ sidebarStatus: 'invisible', sidebarVisible: false });
   }
 
   componentWillMount() {
     switch(this.props.page) {
       case 'home':
-        this.setState({ home: true })
+        this.setState({ home: 'active' })
         break;
       case 'overview':
-        this.setState({ champions: true, overview: true })
+        this.setState({ overview: 'active' })
         break;
       case 'origins':
-        this.setState({ champions: true, origins: true })
+        this.setState({ origins: 'active' })
         break;
       case 'classes':
-        this.setState({ champions: true, classes: true })
+        this.setState({ classes: 'active' })
         break;
       case 'items':
-        this.setState({ items: true })
+        this.setState({ items: 'active' })
         break;
       case 'news':
-        this.setState({ news: true })
+        this.setState({ news: 'active' })
         break;
       default:
         break;
@@ -43,33 +51,33 @@ class NavigationBar extends Component {
 
   render() {
     return (
-      <div>
-        <Responsive as={Menu} id='navigation-bar' inverted fluid stackable widths='1' maxWidth={500}>
-          <Dropdown item trigger={<Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/>}>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Home' as={ Link } to='/' active={this.state.home} />
-              <Dropdown.Item text='Champions' as={ Link } to='/champions/overview' active={this.state.overview} />
-              <Dropdown.Item text='Origins' as={ Link } to='/champions/origins' active={this.state.origins} />
-              <Dropdown.Item text='Classes' as={ Link } to='/champions/classes' active={this.state.classes} />
-              <Dropdown.Item text='Items' as={ Link } to='/items' active={this.state.items} />
-              <Dropdown.Item text='News' as={ Link } to='/news' active={this.state.news}  id='navigation-bar-item-mobile-last'/>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Responsive>
+        <Responsive>
+          <Menu id='NavigationBarDesktop-container'>
 
-        <Responsive as={Menu} id='navigation-bar' inverted fluid widths='4' size='small' minWidth={501}>
-          <Menu.Item name='home' as={ Link } to='/' active={this.state.home}><Image id='navigation-bar-logo' src={require('../../../../public/favicon.ico')}/></Menu.Item>
-          <Dropdown as={Menu.Item} item text='Champions' active={this.state.champions}>
-            <Dropdown.Menu>
-              <Dropdown.Item text='Overview' as={ Link } to='/champions/overview' active={this.state.overview} />
-              <Dropdown.Item text='Origin Synergies' as={ Link } to='/champions/origins' active={this.state.origins} />
-              <Dropdown.Item text='Class Synergies' as={ Link } to='/champions/classes' active={this.state.classes} />
-            </Dropdown.Menu>
-          </Dropdown>
-          <Menu.Item name='items' as={ Link } to='/items' active={this.state.items}><p>Items</p></Menu.Item>
-          <Menu.Item name='news' as={ Link } to='/news' active={this.state.news}><p>News</p></Menu.Item>
+            <Menu.Item id='NavigationBarDesktop-item-one-container'>
+              <div id={`NavigationBarDesktop-item-one-sidebar-button-${this.state.sidebarStatus}`} onClick={this.handleSidebar} animation='overlay'>
+                <Icon id='NavigationBarDesktop-item-one-icon' name='bars' />
+              </div>
+            </Menu.Item>
+
+            <Menu.Item id='NavigationBarDesktop-item-two-container'>
+              <Image id='NavigationBarDesktop-item-two-image' src={require('../../../assets/images/logos/logo.png')} />
+            </Menu.Item>
+
+            <Menu.Item id='NavigationBarDesktop-item-three-container'>
+              <SummonerSearch />
+            </Menu.Item>
+          </Menu>
+
+          <Sidebar id='NavigationBarDesktop-sidebar-container' as={Menu} vertical visible={this.state.sidebarVisible}>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.overview}`} as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
+            <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.news}`} as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
+          </Sidebar>
         </Responsive>
-      </div>
     )
   }
 }

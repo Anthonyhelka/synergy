@@ -45,7 +45,7 @@ class ChampionsClasses extends Component {
       <div>
         <NavigationBar page='classes' />
 
-        <div>
+        <div id='ChampionClassesDesktop-page-container'>
           {traits}
         </div>
       </div>
