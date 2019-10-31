@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { Menu, Container, Header, List, Dropdown, Message, Responsive, Image, Segment, Divider } from 'semantic-ui-react';
 
 import NavigationBar from '../Components/NavigationBar';
-import SearchBar from '../Components/SearchBar';
+import SummonerSearch from '../Components/SummonerSearch';
 
 class SummonerShow extends Component {
   constructor(props) {
@@ -84,10 +84,6 @@ class SummonerShow extends Component {
     return (
       <div>
         <NavigationBar />
-
-        <br />
-
-        <SearchBar />
 
         <br />
 
