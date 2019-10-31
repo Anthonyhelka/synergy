@@ -77,11 +77,11 @@ class ChampionShowTileDesktop extends Component {
               <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-description' basic>
                 <span>{trait.description}</span>
               </Segment>
-              <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-container' basic>
-                  <List id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-list'>
-                    {upgrades}
-                  </List>
-                </Segment>
+              {trait.upgrades.length !== 0 ? (
+                <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-container' basic>
+                  <List id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-listt'>{upgrades}</List>
+                </Segment> ) : (<span></span>)
+              }
             </Grid.Column>
         </Grid.Row>
       )

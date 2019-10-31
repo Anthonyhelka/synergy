@@ -1,3 +1,8 @@
+/* Colors
+Blue: #2185D0
+Grey: #1B1C1D
+*/
+
 body {
   background-image: url(asset-path('backgrounds/square-background.png')) !important;
   background-color: #F4F4F4 !important;
@@ -10,72 +15,146 @@ body {
   background-color: #000000 !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
-  background-position: 125% 57px !important;
+  background-position: 135% 57px !important;
 }
-.background-aatrox { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-aatrox.jpg") !important; }
-.background-ahri { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-ahri.jpg") !important; }
-.background-akali { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-akali.jpg") !important; }
-.background-anivia { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-anivia.jpg") !important; }
-.background-ashe { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-ashe.jpg") !important; }
-.background-aurelionsol { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-aurelionsol.jpg") !important; }
-.background-blitzcrank { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg") !important; }
-.background-brand { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-brand.jpg") !important; }
-.background-braum { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-braum.jpg") !important; }
-.background-camille { background-image: none !important; }
-.background-chogath { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-chogath.jpg") !important; }
-.background-darius { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-darius.jpg") !important; }
-.background-draven { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-draven.jpg") !important; }
-.background-elise { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-elise.jpg") !important; }
-.background-evelynn { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-evelynn.jpg") !important; }
-.background-fiora { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-fiora.jpg") !important; }
-.background-gangplank { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-gangplank.jpg") !important; }
-.background-garen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-garen.jpg") !important; }
-.background-gnar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-gnar.jpg") !important; }
-.background-graves { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-graves.jpg") !important; }
-.background-jayce { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-jayce.jpg") !important; }
-.background-jinx { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-jinx.jpg") !important; }
-.background-kaisa { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kaisa.jpg") !important; }
-.background-karthus { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-karthus.jpg") !important; }
-.background-kassadin { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kassadin.jpg") !important; }
-.background-katarina { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-katarina.jpg") !important; }
-.background-kayle { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kayle.jpg") !important; }
-.background-kennen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kennen.jpg") !important; }
-.background-khazix { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-khazix.jpg") !important; }
-.background-kindred { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-kindred.jpg") !important; }
-.background-leona { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-leona.jpg") !important; }
-.background-lissandra { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lissandra.jpg") !important; }
-.background-lucian { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lucian.jpg") !important; }
-.background-lulu { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-lulu.jpg") !important; }
-.background-missfortune { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-missfortune.jpg") !important; }
-.background-mordekaiser { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-mordekaiser.jpg") !important; }
-.background-morgana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-morgana.jpg") !important; }
-.background-nidalee { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-nidalee.jpg") !important; }
-.background-pantheon { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-pantheon.jpg") !important; }
-.background-poppy { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-poppy.jpg") !important; }
-.background-pyke { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-pyke.jpg") !important; }
-.background-reksai { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-reksai.jpg") !important; }
-.background-rengar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-rengar.jpg") !important; }
-.background-sejuani { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-sejuani.jpg") !important; }
-.background-shen { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-shen.jpg") !important; }
-.background-shyvana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-shyvana.jpg") !important; }
-.background-swain { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-swain.jpg") !important; }
 .background-tristana { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-tristana.jpg") !important; }
-.background-twistedfate { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-twistedfate.jpg") !important; }
-.background-varus { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-varus.jpg") !important; }
-.background-vayne { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-vayne.jpg") !important; }
-.background-vi { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-vi.jpg") !important; }
-.background-veigar { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-veigar.jpg") !important; }
-.background-volibear { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-volibear.jpg") !important; }
-.background-warwick { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-warwick.jpg") !important; }
-.background-yasuo { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-yasuo.jpg") !important; }
-.background-zed { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-zed.jpg") !important; }
 
 /* HomeContainer */
-#home-container-logo-mobile-tablet {
-  margin-top: 50px !important;
+
+/* Desktop */
+#HomeContainerDesktop-page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 500px;
+  max-width: 720px;
+  height: 600px !important;
+  padding: 0px !important;
+  margin: auto !important;
 }
-#home-container-logo-computer {
-  margin-top: 75px !important;
+#HomeContainerDesktop-logo-container {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 40% !important;
+  padding: 0px !important;
+  margin: 0px;
+}
+#HomeContainerDesktop-logo {
+  width: auto !important;
+  height: 90% !important;
+  max-height: 90% !important;
+}
+#HomeContainerDesktop-search-container {
+  width: 100% !important;
+  height: 60% !important;
+  padding: 0px !important;
+  margin: 0px;
+}
+#HomeContainerDesktop-summoner-search-container {
+  width: 60% !important;
+  height: 18% !important;
+  margin: auto !important;
+}
+#HomeContainerDesktop-button-group-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 14% !important;
+  padding: 0px 0px 14px 0px !important;
+  margin: 0px !important;
+}
+#HomeContainerDesktop-button-group {
+  width: auto !important;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+#HomeContainerDesktop-button-group-button {
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+#HomeContainerDesktop-button-group-button:hover {
+  color: #2185D0 !important;
+  background-color: #FFFFFF !important;
+}
+#HomeContainerDesktop-champion-search-container {
+  width: 100% !important;
+  height: 68% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  background-color: #FFFFFF !important;
+}
+
+/* Mobile */
+#HomeContainerMobile-page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 600px !important;
+  padding: 0px !important;
+  margin: auto !important;
+}
+#HomeContainerMobile-logo-container {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 40% !important;
+  padding: 0px !important;
+  margin: 0px;
+}
+#HomeContainerMobile-logo {
+  width: auto !important;
+  height: 90% !important;
+  max-height: 90% !important;
+}
+#HomeContainerMobile-search-container {
+  width: 100% !important;
+  height: 60% !important;
+  padding: 0px !important;
+  margin: 0px;
+}
+#HomeContainerMobile-summoner-search-container {
+  width: 90% !important;
+  height: 18% !important;
+  margin: auto !important;
+}
+#HomeContainerMobile-button-group-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 14% !important;
+  padding: 0px 0px 14px 0px !important;
+  margin: 0px !important;
+}
+#HomeContainerMobile-button-group {
+  width: 90% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+#HomeContainerMobile-button-group-button {
+  width: 33.3% !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+#HomeContainerMobile-button-group-button:hover {
+  color: #2185D0 !important;
+  background-color: #FFFFFF !important;
+}
+#HomeContainerMobile-champion-search-container {
+  width: 100% !important;
+  height: 68% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  background-color: #FFFFFF !important;
 }
 
 /* NavigationBar */
@@ -92,103 +171,92 @@ body {
   border-bottom: 3px solid #2185D0 !important;
 }
 
-/* SearchBar */
-#search-bar {
+/* SummonerSearch */
+#SummonerSearch-grid-container {
+  width: 100% !important;
+  height: 100% !important;
   padding: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
-  margin: auto !important;
-  transform: scale(0.9) !important;
+  margin: 0px !important;
+  border: 1px solid #2185D0 !important;
 }
-#search-bar-container {
-  display: flex !important;
-  flex-direction: row !important;
-  margin-bottom: 0px !important;
+#SummonerSearch-grid-row-one {
+  width: 100% !important;
+  height: 100% !important;
   padding: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
+}
+#SummonerSearch-grid-row-one-column-one {
+  width: 20% !important;
+  height: 100% !important;
+  padding: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-one-button {
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-}
-#search-bar-region-button-container,
-#search-bar-go-button-container {
-  display: inline-block !important;
-  margin: 0px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  height: 100% !important;
   padding: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
-}
-#search-bar-region-button,
-#search-bar-go-button {
   border-radius: 0px !important;
-  margin: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-one-button-menu {
+  width: 100% !important;
+  height: 150px !important;
+  max-height: 150px !important;
+  overflow-y: scroll !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
+}
+#SummonerSearch-grid-row-one-column-one-button-menu-item {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+#SummonerSearch-grid-row-one-column-one-button-menu-item:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
+}
+#SummonerSearch-grid-row-one-column-one-button-menu::-webkit-scrollbar-track {
+  background-color: #FFFFFF !important;
+}
+#SummonerSearch-grid-row-one-column-one-button-menu::-webkit-scrollbar-thumb {
+  background-color: #A78E5A !important;
+  border-radius: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-two {
+  width: 65% !important;
+  height: 100% !important;
+  padding: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-two-form {
+  width: 100% !important;
   height: 100% !important;
 }
-#search-bar-search-form-container {
-  display: inline-block !important;
+#SummonerSearch-grid-row-one-column-two-form-field {
+  width: 100% !important;
+  height: 100% !important;
+}
+#SummonerSearch-grid-row-one-column-two-form-input {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px 10px 0px 10px !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-three {
+  width: 15% !important;
+  height: 100% !important;
+  padding: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-three-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
-}
-#search-bar-search-form {
-  width: 225px !important;
   border-radius: 0px !important;
-  min-height: 38px !important;
-  height: 38px !important;
-}
-#search-bar-button-group-mobile {
-  margin: auto !important;
-  padding-top: 5px !important;
-  padding-bottom: 0px !important;
-  width: 225px !important;
-  border-radius: 0px !important;
-}
-/* Results */
-div.results.transition.visible {
-  width: 100% !important;
-  max-width: 100vw !important;
-  position: absolute !important;
-  overflow-y: scroll;
-  max-height: 200px !important;
-}
-div.results.transition.visible::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
-  background-color: #FFFFFF !important;
-}
-div.results.transition.visible::-webkit-scrollbar-thumb {
-  background-color: #2185D0 !important;
-}
-.results.transition.visible div {
-  padding: 0px !important;
-}
-.results.transition.visible {
-  position:relative !important;
-}
-#search-bar-result-image {
-  height: auto !important;
-  margin: auto !important;
-  vertical-align: middle !important;
-  width: 20% !important;
-}
-#search-bar-result-title {
-  vertical-align: middle !important;
-  font-weight: 800 !important;
-}
-/* Home Page Button Group */
-#home-page-button-group-container {
-  margin-top: -5px !important;
-  z-index: -1 !important;
-  position: absolute !important;
-  left: 50% !important;
-  transform: translate(-50%,0) !important;
-}
-.ui.animated.button {
-  color: #FFFFFF !important;
-  background-color: #2185D0 !important;
-  margin-right: -1px !important;
-}
-.ui.animated.button:hover {
-  color: #2185D0 !important;
-  background-color: #FFFFFF !important;
 }
 
 /* ChampionSearch */
@@ -235,7 +303,6 @@ div.results.transition.visible::-webkit-scrollbar-thumb {
   overflow-y: scroll !important;
   border: 3px solid #2185D0 !important;
   border-top: 0px !important;
-  background-color: #1B1C1D !important;
 }
 #ChampionSearch-results-container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
@@ -415,6 +482,7 @@ body, html {
   margin: 0px 7px 0px 0px !important;
   border: none !important;
   border-radius: 0px !important;
+  background-color: #FFFFFF !important;
 }
 /* Champion Container */
 #ChampionShowDesktop-champion-container {
@@ -719,6 +787,7 @@ body, html {
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two {
   padding: 0px 20px 0px 20px !important;
   margin: auto !important;
+  font-weight: bold !important;
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
@@ -749,11 +818,16 @@ body, html {
   height: 50px !important;
 }
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-description {
-  padding: 10px 0px 0px 0px !important;
+  padding: 10px 0px 10px 0px !important;
+  margin: 0px !important;
   text-align: center !important;
 }
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-container {
-  padding: 10px 0px 10px 0px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0px 0px 10px 0px !important;
+  margin: 0px !important;
   text-align: center !important;
 }
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-list {
@@ -787,6 +861,7 @@ body, html {
   margin: 14px 0px 14px 0px !important;
   border: none !important;
   border-radius: 0px !important;
+  background-color: #1B1C1D !important;
 }
 /* Champion Container */
 #ChampionShowMobile-champion-container {
