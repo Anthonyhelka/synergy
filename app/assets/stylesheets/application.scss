@@ -1,6 +1,7 @@
 /* Colors
 Blue: #2185D0
 Grey: #1B1C1D
+Red: #D03120
 */
 
 body {
@@ -258,8 +259,14 @@ body {
   color: #FFFFFF !important;
   background: #2085D0 !important;
 }
+#NavigationBarDesktop-sidebar-item-container-close {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  background: #D03120 !important;
+}
 #NavigationBarDesktop-sidebar-item-container-inactive:hover,
-#NavigationBarDesktop-sidebar-item-container-active:hover {
+#NavigationBarDesktop-sidebar-item-container-active:hover,
+#NavigationBarDesktop-sidebar-item-container-close {
   box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
 }
 /* Mobile */
@@ -356,8 +363,14 @@ body {
   color: #FFFFFF !important;
   background: #2085D0 !important;
 }
+#NavigationBarMobile-sidebar-item-container-close {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  background: #D03120 !important;
+}
 #NavigationBarMobile-sidebar-item-container-inactive:hover,
-#NavigationBarMobile-sidebar-item-container-active:hover {
+#NavigationBarMobile-sidebar-item-container-active:hover,
+#NavigationBarMobile-sidebar-item-container-close:hover {
   box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
 }
 

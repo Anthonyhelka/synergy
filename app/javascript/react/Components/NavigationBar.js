@@ -31,6 +31,7 @@ class NavigationBar extends Component {
   }
 
   componentWillMount() {
+    document.addEventListener('click', this.handleNonSidebarClick, false);
     switch(this.props.page) {
       case 'home':
         this.setState({ home: 'active' })
@@ -78,6 +79,7 @@ class NavigationBar extends Component {
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.news}`} as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
       </Responsive>,
 
@@ -102,6 +104,7 @@ class NavigationBar extends Component {
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.news}`} as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
       </Responsive>
     ]
