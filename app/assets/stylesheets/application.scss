@@ -98,7 +98,7 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   height: 600px !important;
-  padding: 0px !important;
+  padding: 40px 0px 0px 0px !important;
   margin: auto !important;
 }
 #HomeContainerMobile-logo-container {
@@ -168,6 +168,7 @@ body {
 }
 
 /* NavigationBar */
+/* Desktop */
 #NavigationBarDesktop-container {
   position: fixed !important;
   width: 100% !important;
@@ -205,7 +206,8 @@ body {
   justify-content: center !important;
   width: 100% !important;
   height: 100% !important;
-  background: #2185D0 !important;
+  color: #2185D0 !important;
+  background-color: #FFFFFF !important;
 }
 #NavigationBarDesktop-item-one-sidebar-button-invisible:hover,
 #NavigationBarDesktop-item-one-sidebar-button-visible:hover {
@@ -260,7 +262,104 @@ body {
 #NavigationBarDesktop-sidebar-item-container-active:hover {
   box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
 }
-
+/* Mobile */
+#NavigationBarMobile-container {
+  position: fixed !important;
+  width: 100% !important;
+  height: 40px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background-color: #1B1C1D !important;
+  z-index: 1000 !important;
+}
+#NavigationBarMobile-item-one-container {
+  width: 15%;
+  height: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
+  border-top: 3px solid #1B1C1D !important;
+  border-bottom: 3px solid #1B1C1D !important;
+  border-radius: 0px !important;
+  color: #FFFFFF !important;
+}
+#NavigationBarMobile-item-one-sidebar-button-invisible {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #2185D0 !important;
+  float: left !important;
+}
+#NavigationBarMobile-item-one-sidebar-button-visible {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  color: #2185D0 !important;
+  background-color: #FFFFFF !important;
+}
+#NavigationBarMobile-item-one-sidebar-button-invisible:hover,
+#NavigationBarMobile-item-one-sidebar-button-visible:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
+}
+#NavigationBarMobile-item-one-icon {
+  padding: 0px !important;
+  margin: auto !important;
+  font-size: 18px !important;
+}
+#NavigationBarMobile-item-two-container {
+  width: 20% !important;
+  height: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
+  border-top: 3px solid #1B1C1D !important;
+  border-bottom: 3px solid #1B1C1D !important;
+}
+#NavigationBarMobile-item-two-image {
+  width: auto !important;
+  height: 100% !important;
+  margin: auto !important;
+}
+#NavigationBarMobile-item-three-container {
+  width: 65% !important;
+  height: 100% !important;
+  padding: 3px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
+  border-top: 3px solid #1B1C1D !important;
+  border-bottom: 3px solid #1B1C1D !important;
+}
+/* Sidebar */
+#NavigationBarMobile-sidebar-container {
+  width: 50% !important;
+  height: auto !important;
+  margin: 40px 0px 0px !important;
+  border: 3px solid #1B1C1D !important;
+  border-top: 0px !important;
+  box-shadow: none !important;
+  background-color: #1B1C1D !important;
+}
+#NavigationBarMobile-sidebar-item-container-inactive {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+#NavigationBarMobile-sidebar-item-container-active {
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  background: #2085D0 !important;
+}
+#NavigationBarMobile-sidebar-item-container-inactive:hover,
+#NavigationBarMobile-sidebar-item-container-active:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
+}
 
 /* SummonerSearch */
 #SummonerSearch-grid-container {
@@ -288,6 +387,9 @@ body {
   height: 100% !important;
   padding: 0px !important;
   border-radius: 0px !important;
+}
+#SummonerSearch-grid-row-one-column-one-button i {
+  margin: 0px 5px 0px 5px !important;
 }
 #SummonerSearch-grid-row-one-column-one-button-menu {
   width: 100% !important;
@@ -464,6 +566,7 @@ body {
   width: 100% !important;
   z-index: -1 !important;
   position: absolute !important;
+  margin: 40px 0px 0px 0px !important;
 }
 #summoner-show-page-container-computer {
   width: 50% !important;
@@ -947,7 +1050,7 @@ body, html {
   width: 100% !important;
   max-width: 500px !important;
   height: 800px !important;
-  padding: 0px !important;
+  padding: 40px 0px 0px 0px !important;
   margin: auto !important;
   border-radius: 0px !important;
 }
