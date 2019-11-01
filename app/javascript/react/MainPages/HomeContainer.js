@@ -9,19 +9,28 @@ import ChampionSearch from '../Components/ChampionSearch';
 class HomeContainer extends Component {
   constructor(props) {
     super(props);
+    this.state={
+      background: ''
+    }
+  }
+
+  componentWillMount() {
+    let backgroundImages = ['ivern', 'maokai', 'nasus', 'taliyah'];
+    let randomImage = backgroundImages[Math.floor(Math.random()*backgroundImages.length)];
+    this.setState({ background: randomImage })
   }
 
   componentDidMount() {
     if (window.innerWidth >= 501) {
       document.body.classList.add(`black-background-color`);
-      document.body.classList.add(`background-tristana`);
+      document.body.classList.add(`background-${this.state.background}`);
     }
   }
 
   componentWillUnmount() {
     if (window.innerWidth >= 501) {
-      document.body.classList.remove(`black-background-color`);
-      document.body.classList.remove(`background-tristana`);
+      document.body.classList.add(`black-background-color`);
+      document.body.classList.add(`background-${this.state.background}`);
     }
   }
 
