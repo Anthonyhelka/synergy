@@ -65,22 +65,26 @@ body {
   margin: auto !important;
 }
 #HomeContainerDesktop-button-group-container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   width: 100% !important;
   height: 14% !important;
-  padding: 0px 0px 14px 0px !important;
+  padding: 0px !important;
   margin: 0px !important;
+  border: 3px solid #2185D0 !important;
+  border-bottom: 0px !important;
 }
 #HomeContainerDesktop-button-group {
-  width: auto !important;
-  max-width: 100% !important;
+  width: 100% !important;
   height: 100% !important;
 }
 #HomeContainerDesktop-button-group-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 25% !important;
+  height: 100% !important;
+  border-radius: 0px !important;
   color: #FFFFFF !important;
-  background-color: #2185D0 !important;
+  background-color: #1B1C1D !important;
 }
 #HomeContainerDesktop-button-group-button:hover {
   color: #2185D0 !important;
@@ -143,6 +147,8 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   height: 100% !important;
+  border: 3px solid #2185D0 !important;
+  border-bottom: 0px !important;
 }
 #HomeContainerMobile-button-group-button {
   display: flex !important;
@@ -394,6 +400,43 @@ body {
 }
 
 /* SummonerSearch */
+#SummonerSearch-region-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
+  border-radius: 3px !important;
+  background-color: #2085D0 !important;
+}
+#SummonerSearch-grid-region-row-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 15% !important;
+  height: 80% !important;
+  padding: 1px 0px 0px 0px !important;
+  margin: 2px !important;
+  font-size: 12px !important;
+  color: #2185D0 !important;
+  background: #FFFFFF !important;
+}
+#SummonerSearch-grid-region-row-button-close {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 25% !important;
+  height: 80% !important;
+  padding: 0px !important;
+  margin: 2px !important;
+  color: #FFFFFF !important;
+  background-color: #D03120 !important;
+}
+#SummonerSearch-grid-region-row-button-close i {
+  margin: 0px !important;
+}
 #SummonerSearch-grid-container {
   width: 100% !important;
   height: 100% !important;
@@ -410,6 +453,7 @@ body {
   height: 100% !important;
   padding: 0px !important;
 }
+
 #SummonerSearch-grid-row-one-column-one-button {
   display: flex !important;
   align-items: center !important;
@@ -419,6 +463,8 @@ body {
   height: 100% !important;
   padding: 0px !important;
   border-radius: 0px !important;
+  color: #FFFFFF !important;
+  background-color: #2085D0 !important;
 }
 #SummonerSearch-grid-row-one-column-one-button i {
   margin: 0px 5px 0px 5px !important;
@@ -484,6 +530,8 @@ body {
   padding: 0px !important;
   margin: 0px !important;
   border-radius: 0px !important;
+  color: #FFFFFF !important;
+  background-color: #2085D0 !important;
 }
 
 /* ChampionSearch */
