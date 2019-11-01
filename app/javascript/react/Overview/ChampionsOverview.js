@@ -92,7 +92,7 @@ class ChampionsOverview extends Component {
       <div>
         <NavigationBar page='overview' />
 
-        <Table celled selectable unstackable striped fixed sortable>
+        <Table id='ChampionOverviewDesktop-table' celled selectable unstackable striped fixed sortable>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell sorted={nameOrder} onClick={event => this.handleSort(event, 'nameSort')} color='red' >Name</Table.HeaderCell>

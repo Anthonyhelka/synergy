@@ -16,7 +16,7 @@ class Api::V1::ChampionsController < ApplicationController
   end
 
   def classes
-    classes = Trait.where(trait_type: "Origin")
+    classes = Trait.where(trait_type: "Class")
     render json: {
       classes: ActiveModel::Serializer::CollectionSerializer.new(classes, each_serializer: TraitSerializer)
     }

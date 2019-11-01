@@ -8,8 +8,9 @@ class NewsContainer extends Component {
     return (
       <div>
         <NavigationBar page='news' />
-
-        <Message warning icon='wrench' header='This Page (News) is Still Under Development' content='We are sorry for the inconvenience' />
+        <div id='NewsContainer-page-container'>
+          <Message warning icon='wrench' header='This Page (News) is Still Under Development' content='We are sorry for the inconvenience' />
+        </div>
       </div>
     )
   }
