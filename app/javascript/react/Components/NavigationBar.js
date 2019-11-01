@@ -83,7 +83,7 @@ class NavigationBar extends Component {
             <SummonerSearch />
           </Menu.Item>
         </Menu>
-        <Sidebar id='NavigationBarMobile-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} vertical visible={this.state.sidebarVisible}>
+        <Sidebar id='NavigationBarMobile-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} animation='overlay' vertical visible={this.state.sidebarVisible}>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.home}`} className='NavigationBarMobile-sidebar' as={Link} to='/'><Icon name='home' />Home</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.overview}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.origins}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
@@ -108,7 +108,7 @@ class NavigationBar extends Component {
             <SummonerSearch />
           </Menu.Item>
         </Menu>
-        <Sidebar id='NavigationBarDesktop-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} vertical visible={this.state.sidebarVisible}>
+        <Sidebar id='NavigationBarDesktop-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} animation='overlay' vertical visible={this.state.sidebarVisible}>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.home}`} className='NavigationBarMobile-sidebar' as={Link} to='/'><Icon name='home' />Home</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.overview}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.origins}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
