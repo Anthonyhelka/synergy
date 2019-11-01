@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
-import { Responsive, Image, Segment, Search, Button, Icon, Dropdown, Form, List } from 'semantic-ui-react';
+import { Responsive, Image, Segment, Search, Button, Icon, Dropdown, Form, List, Dimmer, Loader } from 'semantic-ui-react';
 
 import ChampionSearchTile from './ChampionSearchTile';
 
@@ -11,7 +11,8 @@ class ChampionSearch extends Component {
       query: '',
       champions: [],
       filteredChampions: [],
-      sort: 'up'
+      sort: 'up',
+      loading: true
     }
     this.handleChange = this.handleChange.bind(this);
     this.filterChampions = this.filterChampions.bind(this);
@@ -31,17 +32,17 @@ class ChampionSearch extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ champions: body.champions })
+        this.setState({ champions: body.champions, loading: false })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState({ query: event.target.value });
     this.filterChampions(event.target.value);
   }
 
-  filterChampions(query){
+  filterChampions(query) {
     let champions = this.state.champions;
     let filteredChampions = champions.filter(champion => {
       return champion.name.toLowerCase().includes(query.toLowerCase());
@@ -49,7 +50,7 @@ class ChampionSearch extends Component {
     this.setState({ filteredChampions: filteredChampions })
   }
 
-  handleSortChange(event){
+  handleSortChange(event) {
     (this.state.sort === 'up') ? this.setState({ sort: 'down' }) : this.setState({ sort: 'up' });
   }
 
@@ -92,6 +93,7 @@ class ChampionSearch extends Component {
         </div>
         <div id='ChampionSearch-results-container'>
           <div id='ChampionSearch-champions-container'>
+            <Loader id='ChampionSearch-champions-loader' active={this.state.loading}/>
             {champions}
           </div>
         </div>
