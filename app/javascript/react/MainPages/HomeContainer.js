@@ -29,8 +29,8 @@ class HomeContainer extends Component {
 
   componentWillUnmount() {
     if (window.innerWidth >= 501) {
-      document.body.classList.add(`black-background-color`);
-      document.body.classList.add(`background-${this.state.background}`);
+      document.body.classList.remove(`black-background-color`);
+      document.body.classList.remove(`background-${this.state.background}`);
     }
   }
 

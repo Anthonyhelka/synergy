@@ -50,8 +50,11 @@ class SummonerSearch extends Component {
 
   handleGoClick(event){
     let region = (this.state.region).toLowerCase();
-    browserHistory.push(`/summoner/${region}-${this.state.query}`);
-    window.location.reload();
+    let query = this.state.query.trim();
+    if (query !== '') {
+      browserHistory.push(`/summoner/${region}-${this.state.query}`);
+      window.location.reload();
+    }
   }
 
   componentDidMount() {
