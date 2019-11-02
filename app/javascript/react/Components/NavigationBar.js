@@ -19,6 +19,11 @@ class NavigationBar extends Component {
     }
     this.handleSidebar = this.handleSidebar.bind(this);
     this.handleLogoClick = this.handleLogoClick.bind(this);
+    this.handleClickOutsideSidebar = this.handleClickOutsideSidebar.bind(this);
+  }
+
+  handleClickOutsideSidebar(event) {
+    if (!event.target.className.includes('NavigationBarMobile-sidebar')) { this.setState({ sidebarStatus: 'invisible', sidebarVisible: false }); }
   }
 
   handleSidebar(event) {
@@ -56,38 +61,44 @@ class NavigationBar extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('click', this.handleClickOutsideSidebar);
+  }
+
+  componentWillUnmount() {
+    document.addEventListener('click', this.handleClickOutsideSidebar);
+  }
+
   render() {
     return [
       <Responsive key='mobile/tablet' maxWidth={1023}>
         <Menu id='NavigationBarMobile-container'>
-          <Menu.Item id='NavigationBarMobile-item-one-container'>
-            <div id={`NavigationBarMobile-item-one-sidebar-button-${this.state.sidebarStatus}`} onClick={this.handleSidebar} animation='overlay'>
-              <Icon id='NavigationBarMobile-item-one-icon' name='bars' />
+          <Menu.Item id={`NavigationBarDesktop-item-one-container-${this.state.sidebarStatus}`} className='NavigationBarMobile-sidebar'>
+            <div id={`NavigationBarMobile-item-one-sidebar-button-${this.state.sidebarStatus}`} className='NavigationBarMobile-sidebar' onClick={this.handleSidebar} animation='overlay'>
+              <Icon id='NavigationBarMobile-item-one-icon' className='NavigationBarMobile-sidebar' name='bars' />
             </div>
           </Menu.Item>
-          <Menu.Item id='NavigationBarMobile-item-two-container'>
-            <Image id='NavigationBarMobile-item-two-image' src={require('../../../assets/images/logos/logo.png')} onClick={this.handleLogoClick} />
-          </Menu.Item>
+          {this.state.sidebarVisible === false ? (<Menu.Item id='NavigationBarMobile-item-two-container'><Image id='NavigationBarMobile-item-two-image' src={require('../../../assets/images/logos/logo.png')} onClick={this.handleLogoClick} /></Menu.Item>) : (<span></span>)}
           <Menu.Item id='NavigationBarMobile-item-three-container'>
             <SummonerSearch />
           </Menu.Item>
         </Menu>
-        <Sidebar id='NavigationBarMobile-sidebar-container' as={Menu} vertical visible={this.state.sidebarVisible}>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.overview}`} as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.news}`} as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
+        <Sidebar id='NavigationBarMobile-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} animation='overlay' vertical visible={this.state.sidebarVisible}>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.home}`} className='NavigationBarMobile-sidebar' as={Link} to='/'><Icon name='home' />Home</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.overview}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.origins}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.classes}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.items}`} className='NavigationBarMobile-sidebar' as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.state.news}`} className='NavigationBarMobile-sidebar' as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} className='NavigationBarMobile-sidebar' onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
       </Responsive>,
 
       <Responsive key='desktop' minWidth={1024}>
         <Menu id='NavigationBarDesktop-container'>
-          <Menu.Item id='NavigationBarDesktop-item-one-container'>
-            <div id={`NavigationBarDesktop-item-one-sidebar-button-${this.state.sidebarStatus}`} onClick={this.handleSidebar} animation='overlay'>
-              <Icon id='NavigationBarDesktop-item-one-icon' name='bars' />
+          <Menu.Item id='NavigationBarDesktop-item-one-container' className='NavigationBarMobile-sidebar'>
+            <div id={`NavigationBarDesktop-item-one-sidebar-button-${this.state.sidebarStatus}`} className='NavigationBarMobile-sidebar' onClick={this.handleSidebar} animation='overlay'>
+              <Icon id='NavigationBarDesktop-item-one-icon' className='NavigationBarMobile-sidebar' name='bars' />
             </div>
           </Menu.Item>
           <Menu.Item id='NavigationBarDesktop-item-two-container'>
@@ -97,14 +108,14 @@ class NavigationBar extends Component {
             <SummonerSearch />
           </Menu.Item>
         </Menu>
-        <Sidebar id='NavigationBarDesktop-sidebar-container' as={Menu} vertical visible={this.state.sidebarVisible}>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.overview}`} as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.news}`} as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
+        <Sidebar id='NavigationBarDesktop-sidebar-container' className='NavigationBarMobile-sidebar' as={Menu} animation='overlay' vertical visible={this.state.sidebarVisible}>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.home}`} className='NavigationBarMobile-sidebar' as={Link} to='/'><Icon name='home' />Home</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.overview}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.origins}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.classes}`} className='NavigationBarMobile-sidebar' as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.items}`} className='NavigationBarMobile-sidebar' as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.news}`} className='NavigationBarMobile-sidebar' as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} className='NavigationBarMobile-sidebar' onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
       </Responsive>
     ]
