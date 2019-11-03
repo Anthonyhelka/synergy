@@ -1453,20 +1453,21 @@ div.item {
 }
 
 /* Footer */
-#Footer-container {
+/* Desktop */
+#FooterDesktop-container {
   flex-shrink: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-direction: row !important;
   width: 100% !important;
-  height: 100px !important;
+  height: 50px !important;
   padding: 0px !important;
   margin: 0px !important;
   border-top: 3px solid #2185D0 !important;
   background-color: #1B1C1D !important;
 }
-#Footer-left-container {
+#FooterDesktop-left-container {
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1482,7 +1483,7 @@ div.item {
   background-color: #2185D0 !important;
   z-index: 4 !important;
 }
-#Footer-left-container::after {
+#FooterDesktop-left-container::after {
   content: '' !important;
   position: absolute !important;
   width: 100% !important;
@@ -1492,16 +1493,16 @@ div.item {
   background-color: inherit !important;
   z-index: 3 !important;
 }
-#Footer-left-item {
+#FooterDesktop-left-item {
   padding: 0px 0px 0px 5px !important;
   color: #FFFFFF !important;
   z-index: 5 !important;
 }
-#Footer-left-item:hover {
+#FooterDesktop-left-item:hover {
   color: #1B1C1D !important;
   z-index: 5 !important;
 }
-#Footer-center-container {
+#FooterDesktop-center-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1511,20 +1512,20 @@ div.item {
   z-index: 2 !important;
   border-bottom: 3px solid #2185D0 !important;
 }
-#Footer-center-item {
+#FooterDesktop-center-item {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   width: auto !important;
   height: 100% !important;
 }
-#Footer-center-item img {
+#FooterDesktop-center-item img {
   width: auto !important;
   max-width: 90% !important;
   height: auto !important;
   max-height: 90% !important;
 }
-#Footer-right-container {
+#FooterDesktop-right-container {
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1540,7 +1541,7 @@ div.item {
   background-color: #2185D0 !important;
   z-index: 4 !important;
 }
-#Footer-right-container::before {
+#FooterDesktop-right-container::before {
   content: '' !important;
   position: absolute !important;
   width: 100% !important;
@@ -1550,7 +1551,7 @@ div.item {
   background-color: inherit !important;
   z-index: 3 !important;
 }
-#Footer-right-item {
+#FooterDesktop-right-item {
   padding: 0px 5px 0px 0px !important;
   color: #FFFFFF !important;
   z-index: 5 !important;

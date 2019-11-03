@@ -25,7 +25,11 @@
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
 
-  <%= render "layouts/footer" %>
+  <% if detect_device == "mobile" %>
+    <%= render "layouts/footer_mobile" %>
+  <% else %>
+    <%= render "layouts/footer_desktop" %>
+  <% end %>
 
   <%= yield :extra_footer %>
 </body>
