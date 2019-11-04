@@ -7,6 +7,19 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+  <script>
+    let timeout;
+    function scrollToTop() {
+      if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
+        window.scrollBy(0, -50);
+        timeout = setTimeout('scrollToTop()', 10);
+      } else {
+        clearTimeout(timeout)
+      }
+    }
+  </script>
+
 </head>
 <body>
 
@@ -24,6 +37,8 @@
     <%- end -%>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>
+
+  <i id='BackToTop-container' class="arrow alternate circle up icon" onclick="scrollToTop();return false;" ></i>
 
   <% if detect_device == "mobile" %>
     <%= render "layouts/footer_mobile" %>
