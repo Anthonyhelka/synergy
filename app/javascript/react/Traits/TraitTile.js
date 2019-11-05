@@ -10,7 +10,7 @@ class TraitTile extends Component {
 
   render(){
 
-    this.props.trait.champions.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
+    this.props.trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
     let champions = this.props.trait.champions.map(champion => {
       return (
         <ChampionTile
