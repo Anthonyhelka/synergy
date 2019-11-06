@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Icon, Loader } from 'semantic-ui-react';
+import { Responsive, Table, Icon, Loader } from 'semantic-ui-react';
 
 import NavigationBar from '../Components/NavigationBar';
 import ChampionsOverviewTile from './ChampionsOverviewTile';
@@ -159,30 +159,58 @@ class ChampionsOverview extends Component {
       )
     });
 
-    return (
-      <div>
-        <NavigationBar page='overview' />
+    return [
+      <Responsive maxWidth={1023}>
+        <div id='ChampionOverviewMobile-page-container'>
+          <NavigationBar page='overview' />
+          <div id='ChampionOverviewMobile-spacing-div'></div>
+          <div id='ChampionOverviewMobile-table-container'>
+            <table id='ChampionOverviewMobile-table'>
+              <tbody>
+                <tr id='ChampionOverviewMobile-table-header-row'>
+                  <th id='ChampionOverviewMobile-table-header-row-name' onClick={event => this.handleSort(event, 'name')}>Name&nbsp;<Icon name={`sort${this.state.name}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-traits' onClick={event => this.handleSort(event, 'traits')}>Traits&nbsp;<Icon name={`sort${this.state.traits}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-cost' onClick={event => this.handleSort(event, 'cost')}>Cost&nbsp;<Icon name={`sort${this.state.cost}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-health' onClick={event => this.handleSort(event, 'health')}>Health&nbsp;<Icon name={`sort${this.state.health}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-armor' onClick={event => this.handleSort(event, 'armor')}>Armor&nbsp;<Icon name={`sort${this.state.armor}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-magic-resist' onClick={event => this.handleSort(event, 'magicResist')}>MR&nbsp;<Icon name={`sort${this.state.magicResist}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-dps' onClick={event => this.handleSort(event, 'dps')}>DPS&nbsp;<Icon name={`sort${this.state.dps}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-attack-damage' onClick={event => this.handleSort(event, 'attackDamage')}>Atk. Dmg.&nbsp;<Icon name={`sort${this.state.attackDamage}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-attack-speed' onClick={event => this.handleSort(event, 'attackSpeed')}>Atk. Speed&nbsp;<Icon name={`sort${this.state.attackSpeed}`}/></th>
+                  <th id='ChampionOverviewMobile-table-header-row-range' onClick={event => this.handleSort(event, 'range')}>Range&nbsp;<Icon name={`sort${this.state.range}`}/></th>
+                </tr>
+                <Loader id='ChampionOverviewMobile-loader' active={this.state.loading}/>
+                {champions}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Responsive>,
 
-        <table id='ChampionOverviewDesktop-table'>
-          <tbody>
-            <tr id='ChampionOverviewDesktop-table-header-row'>
-              <th id='ChampionOverviewDesktop-table-header-row-name' onClick={event => this.handleSort(event, 'name')}>Name&nbsp;<Icon name={`sort${this.state.name}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-traits' onClick={event => this.handleSort(event, 'traits')}>Traits&nbsp;<Icon name={`sort${this.state.traits}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-cost' onClick={event => this.handleSort(event, 'cost')}>Cost&nbsp;<Icon name={`sort${this.state.cost}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-health' onClick={event => this.handleSort(event, 'health')}>Health&nbsp;<Icon name={`sort${this.state.health}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-armor' onClick={event => this.handleSort(event, 'armor')}>Armor&nbsp;<Icon name={`sort${this.state.armor}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-magic-resist' onClick={event => this.handleSort(event, 'magicResist')}>MR&nbsp;<Icon name={`sort${this.state.magicResist}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-dps' onClick={event => this.handleSort(event, 'dps')}>DPS&nbsp;<Icon name={`sort${this.state.dps}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-attack-damage' onClick={event => this.handleSort(event, 'attackDamage')}>Atk. Dmg.&nbsp;<Icon name={`sort${this.state.attackDamage}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-attack-speed' onClick={event => this.handleSort(event, 'attackSpeed')}>Atk. Speed&nbsp;<Icon name={`sort${this.state.attackSpeed}`}/></th>
-              <th id='ChampionOverviewDesktop-table-header-row-range' onClick={event => this.handleSort(event, 'range')}>Range&nbsp;<Icon name={`sort${this.state.range}`}/></th>
-            </tr>
-            <Loader id='ChampionSearch-champions-loader' active={this.state.loading}/>
-            {champions}
-          </tbody>
-        </table>
-      </div>
-    )
+      <Responsive minWidth={1024}>
+        <div id='ChampionOverviewDesktop-page-container'>
+          <NavigationBar page='overview' />
+          <table id='ChampionOverviewDesktop-table'>
+            <tbody>
+              <tr id='ChampionOverviewDesktop-table-header-row'>
+                <th id='ChampionOverviewDesktop-table-header-row-name' onClick={event => this.handleSort(event, 'name')}>Name&nbsp;<Icon name={`sort${this.state.name}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-traits' onClick={event => this.handleSort(event, 'traits')}>Traits&nbsp;<Icon name={`sort${this.state.traits}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-cost' onClick={event => this.handleSort(event, 'cost')}>Cost&nbsp;<Icon name={`sort${this.state.cost}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-health' onClick={event => this.handleSort(event, 'health')}>Health&nbsp;<Icon name={`sort${this.state.health}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-armor' onClick={event => this.handleSort(event, 'armor')}>Armor&nbsp;<Icon name={`sort${this.state.armor}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-magic-resist' onClick={event => this.handleSort(event, 'magicResist')}>MR&nbsp;<Icon name={`sort${this.state.magicResist}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-dps' onClick={event => this.handleSort(event, 'dps')}>DPS&nbsp;<Icon name={`sort${this.state.dps}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-attack-damage' onClick={event => this.handleSort(event, 'attackDamage')}>Atk. Dmg.&nbsp;<Icon name={`sort${this.state.attackDamage}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-attack-speed' onClick={event => this.handleSort(event, 'attackSpeed')}>Atk. Speed&nbsp;<Icon name={`sort${this.state.attackSpeed}`}/></th>
+                <th id='ChampionOverviewDesktop-table-header-row-range' onClick={event => this.handleSort(event, 'range')}>Range&nbsp;<Icon name={`sort${this.state.range}`}/></th>
+              </tr>
+              <Loader id='ChampionOverviewDesktop-loader' active={this.state.loading}/>
+              {champions}
+            </tbody>
+          </table>
+        </div>
+      </Responsive>
+    ]
   }
 }
 
