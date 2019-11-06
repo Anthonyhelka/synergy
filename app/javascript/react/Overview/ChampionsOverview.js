@@ -159,13 +159,23 @@ class ChampionsOverview extends Component {
       )
     });
 
+    let tableContainerId;
+    let tableId;
+    if (navigator.userAgent.indexOf("Chrome") != -1) {
+      tableContainerId = 'ChampionOverviewMobile-table-container';
+      tableId = 'ChampionOverviewMobile-table';
+    } else {
+      tableContainerId = 'ChampionOverviewMobile-table-container-not-chrome';
+      tableId = 'ChampionOverviewMobile-table-not-chrome';
+    }
+
     return [
       <Responsive maxWidth={1023}>
         <div id='ChampionOverviewMobile-page-container'>
           <NavigationBar page='overview' />
           <div id='ChampionOverviewMobile-spacing-div'></div>
-          <div id='ChampionOverviewMobile-table-container'>
-            <table id='ChampionOverviewMobile-table'>
+          <div id={tableContainerId}>
+            <table id={tableId}>
               <tbody>
                 <tr id='ChampionOverviewMobile-table-header-row'>
                   <th id='ChampionOverviewMobile-table-header-row-name' onClick={event => this.handleSort(event, 'name')}>Name&nbsp;<Icon name={`sort${this.state.name}`}/></th>
