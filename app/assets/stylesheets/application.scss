@@ -933,6 +933,10 @@ body {
 }
 #ChampionOverviewMobile-table-container {
   overflow-x: auto !important;
+  -ms-transform: rotateX(180deg) !important;
+  -webkit-transform: rotateX(180deg) !important;
+  -moz-transform: rotateX(180deg) !important;
+  -o-transform: rotateX(180deg) !important;
   transform: rotateX(180deg) !important;
 }
 #ChampionOverviewMobile-table-container::-webkit-scrollbar-track {
@@ -947,6 +951,10 @@ body {
   height: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
+  -ms-transform: rotateX(180deg) !important;
+  -webkit-transform: rotateX(180deg) !important;
+  -moz-transform: rotateX(180deg) !important;
+  -o-transform: rotateX(180deg) !important;
   transform: rotateX(180deg) !important;
   border: 0px !important;
   border-spacing: 0px !important;
