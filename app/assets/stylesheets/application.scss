@@ -933,11 +933,6 @@ body {
 }
 #ChampionOverviewMobile-table-container {
   overflow-x: auto !important;
-  -ms-transform: rotateX(180deg) !important;
-  -webkit-transform: rotateX(180deg) !important;
-  -moz-transform: rotateX(180deg) !important;
-  -o-transform: rotateX(180deg) !important;
-  transform: rotateX(180deg) !important;
 }
 #ChampionOverviewMobile-table-container::-webkit-scrollbar-track {
   background-color: #1B1C1D !important;
@@ -951,35 +946,10 @@ body {
   height: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
-  -ms-transform: rotateX(180deg) !important;
-  -webkit-transform: rotateX(180deg) !important;
-  -moz-transform: rotateX(180deg) !important;
-  -o-transform: rotateX(180deg) !important;
-  transform: rotateX(180deg) !important;
   border: 0px !important;
   border-spacing: 0px !important;
   background-color: #1B1C1D !important;
 
-}
-/* Not Chrome */
-#ChampionOverviewMobile-table-container-not-chrome {
-  overflow-x: auto !important;
-}
-#ChampionOverviewMobile-table-container-not-chrome::-webkit-scrollbar-track {
-  background-color: #1B1C1D !important;
-}
-#ChampionOverviewMobile-table-container-not-chrome::-webkit-scrollbar-thumb {
-  background-color: #A78E5A !important;
-  border-radius: 0px !important;
-}
-#ChampionOverviewMobile-table-not-chrome {
-  width: 285% !important;
-  height: 100% !important;
-  padding: 0px !important;
-  margin: 0px !important;
-  border: 0px !important;
-  border-spacing: 0px !important;
-  background-color: #1B1C1D !important;
 }
 /* Header Row */
 #ChampionOverviewMobile-table-header-row {
@@ -997,7 +967,6 @@ body {
 #ChampionOverviewMobile-table-header-row-attack-speed,
 #ChampionOverviewMobile-table-header-row-range {
   border: 0px !important;
-  border-top: 3px solid #1B1C1D !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
@@ -1046,7 +1015,7 @@ body {
 }
 /* Champion Row */
 #ChampionOverviewMobile-loader {
-  top: 150px !important;
+  top: 100px !important;
 }
 #ChampionOverviewMobile-table-champion-row {
   color: #FFFFFF !important;
@@ -1230,6 +1199,7 @@ div.item {
   padding: 0px !important;
   overflow: hidden !important;
   border: 5px solid #2185D0 !important;
+  background-color: #2185D0 !important;
 }
 #ChampionShowDesktop-champion-header-tier {
   border: none !important;

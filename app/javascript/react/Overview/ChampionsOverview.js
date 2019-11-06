@@ -64,6 +64,7 @@ class ChampionsOverview extends Component {
   }
 
   componentDidMount() {
+    document.body.classList.add(`grey-background-color`);
     fetch('/api/v1/champions/overview')
       .then(response => {
         if (response.ok) {
@@ -79,6 +80,10 @@ class ChampionsOverview extends Component {
         this.setState({ champions: body.champions, updated: true, loading: false })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove(`grey-background-color`);
   }
 
   render() {
@@ -159,23 +164,13 @@ class ChampionsOverview extends Component {
       )
     });
 
-    let tableContainerId;
-    let tableId;
-    if (navigator.userAgent.indexOf("Chrome") != -1) {
-      tableContainerId = 'ChampionOverviewMobile-table-container';
-      tableId = 'ChampionOverviewMobile-table';
-    } else {
-      tableContainerId = 'ChampionOverviewMobile-table-container-not-chrome';
-      tableId = 'ChampionOverviewMobile-table-not-chrome';
-    }
-
     return [
       <Responsive maxWidth={1023}>
         <div id='ChampionOverviewMobile-page-container'>
           <NavigationBar page='overview' />
           <div id='ChampionOverviewMobile-spacing-div'></div>
-          <div id={tableContainerId}>
-            <table id={tableId}>
+          <div id='ChampionOverviewMobile-table-container'>
+            <table id='ChampionOverviewMobile-table'>
               <tbody>
                 <tr id='ChampionOverviewMobile-table-header-row'>
                   <th id='ChampionOverviewMobile-table-header-row-name' onClick={event => this.handleSort(event, 'name')}>Name&nbsp;<Icon name={`sort${this.state.name}`}/></th>
