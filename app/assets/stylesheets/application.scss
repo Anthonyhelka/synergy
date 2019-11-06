@@ -805,26 +805,121 @@ body {
 }
 
 /* ChampionOverview */
+/* Desktop */
 #ChampionOverviewDesktop-table {
+  width: 100% !important;
+  height: 100% !important;
+  table-layout: fixed !important;
   padding: 40px 0px 0px 0px !important;
   margin: 0px !important;
+  border: 0px !important;
+  border-spacing: 0px !important;
+  background-color: #1B1C1D !important;
 }
-#champion-overview-champion-icon-mobile,
-#champion-overview-champion-icon-tablet-computer,
-#champion-overview-champion-icon-large-computer {
-  height: auto !important;
-  margin: auto !important;
-  vertical-align: middle !important;
+/* Header Row */
+#ChampionOverviewDesktop-table-header-row {
+  width: 100% !important;
+  height: 30px !important;
 }
-#champion-overview-champion-icon-mobile {
-  width: 60% !important;
+#ChampionOverviewDesktop-table-header-row-name,
+#ChampionOverviewDesktop-table-header-row-traits,
+#ChampionOverviewDesktop-table-header-row-cost,
+#ChampionOverviewDesktop-table-header-row-health,
+#ChampionOverviewDesktop-table-header-row-armor,
+#ChampionOverviewDesktop-table-header-row-magic-resist,
+#ChampionOverviewDesktop-table-header-row-dps,
+#ChampionOverviewDesktop-table-header-row-attack-damage,
+#ChampionOverviewDesktop-table-header-row-attack-speed,
+#ChampionOverviewDesktop-table-header-row-range {
+  border: 0px !important;
+  border-radius: 0px !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
 }
-#champion-overview-champion-icon-tablet-computer {
-  width: 15% !important;
+#ChampionOverviewDesktop-table-header-row-name:hover,
+#ChampionOverviewDesktop-table-header-row-traits:hover,
+#ChampionOverviewDesktop-table-header-row-cost:hover,
+#ChampionOverviewDesktop-table-header-row-health:hover,
+#ChampionOverviewDesktop-table-header-row-armor:hover,
+#ChampionOverviewDesktop-table-header-row-magic-resist:hover,
+#ChampionOverviewDesktop-table-header-row-dps:hover,
+#ChampionOverviewDesktop-table-header-row-attack-damage:hover,
+#ChampionOverviewDesktop-table-header-row-attack-speed:hover,
+#ChampionOverviewDesktop-table-header-row-range:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
 }
-#champion-overview-champion-icon-large-computer {
+#ChampionOverviewDesktop-table-header-row-name {
   width: 10% !important;
 }
+#ChampionOverviewDesktop-table-header-row-traits {
+  width: 12.5% !important;
+}
+#ChampionOverviewDesktop-table-header-row-cost {
+  width: 7.5% !important;
+}
+#ChampionOverviewDesktop-table-header-row-health {
+  width: 10% !important;
+}
+#ChampionOverviewDesktop-table-header-row-armor {
+  width: 10% !important;
+}
+#ChampionOverviewDesktop-table-header-row-magic-resist {
+  width: 7.5% !important;
+}
+#ChampionOverviewDesktop-table-header-row-dps {
+  width: 7.5% !important;
+}
+#ChampionOverviewDesktop-table-header-row-attack-damage {
+  width: 10% !important;
+}
+#ChampionOverviewDesktop-table-header-row-attack-speed {
+  width: 10% !important;
+}
+#ChampionOverviewDesktop-table-header-row-range {
+  width: 10% !important;
+}
+/* Champion Row */
+#ChampionOverviewDesktop-table-champion-row {
+  color: #FFFFFF !important;
+  background-color: #1B1C1D !important;
+}
+#ChampionOverviewDesktop-table-champion-row-name {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+#ChampionOverviewDesktop-table-champion-row-name-image {
+  width: 40px !important;
+  height: 40px !important;
+}
+#ChampionOverviewDesktop-table-champion-row-name-title {
+  font-weight: bold !important;
+}
+#ChampionOverviewDesktop-table-champion-row:hover {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+#ChampionOverviewDesktop-table-champion-row-trait-images-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#ChampionOverviewDesktop-table-champion-row-trait-image {
+  width: 30px !important;
+  height: 30px !important;
+}
+#ChampionOverviewDesktop-table-champion-row-cost,
+#ChampionOverviewDesktop-table-champion-row-health,
+#ChampionOverviewDesktop-table-champion-row-armor,
+#ChampionOverviewDesktop-table-champion-row-magic-resist,
+#ChampionOverviewDesktop-table-champion-row-dps,
+#ChampionOverviewDesktop-table-champion-row-attack-damage,
+#ChampionOverviewDesktop-table-champion-row-attack-speed,
+#ChampionOverviewDesktop-table-champion-row-range {
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
 #trait-popup-description {
   text-align: center;
   text-align-last: center;
