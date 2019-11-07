@@ -15,23 +15,23 @@ class ChampionShow extends Component {
   }
 
   componentDidMount() {
-  let championKey = this.props.params.key
-  fetch(`/api/v1/champions/${championKey}`)
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`;
-        let error = new Error(errorMessage);
-        throw error;
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ champion: body.champion[0], updated: true });
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+    let championKey = this.props.params.key
+    fetch(`/api/v1/champions/${championKey}`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ champion: body.champion[0], updated: true });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+    }
 
   render() {
     let championShowTileDesktop;

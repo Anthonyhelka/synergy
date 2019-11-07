@@ -22,7 +22,6 @@
 
 </head>
 <body>
-
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
@@ -45,6 +44,10 @@
   <% else %>
     <%= render "layouts/footer_desktop" %>
   <% end %>
+
+  <script type="text/javascript">
+    window.onunload = function(){};
+  </script>
 
   <%= yield :extra_footer %>
 </body>
