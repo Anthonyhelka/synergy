@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router';
 import { Responsive } from 'semantic-ui-react';
 
 import NavigationBar from '../Components/NavigationBar';
@@ -9,28 +10,39 @@ class ChampionShow extends Component {
   constructor(props) {
     super(props);
     this.state={
+      championKey: '',
       champion: {},
       updated: false
     }
+    this.getData = this.getData.bind(this);
+  }
+
+  getData(championKey) {
+    fetch(`/api/v1/champions/${championKey}`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ championKey: championKey, champion: body.champion[0], updated: true });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
-  let championKey = this.props.params.key
-  fetch(`/api/v1/champions/${championKey}`)
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`;
-        let error = new Error(errorMessage);
-        throw error;
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ champion: body.champion[0], updated: true });
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    this.getData(this.props.params.key);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.params.key !== prevProps.params.key) {
+       this.getData(this.props.params.key);
+    }
   }
 
   render() {

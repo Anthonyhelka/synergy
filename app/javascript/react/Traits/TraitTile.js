@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router';
 import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
@@ -10,7 +11,7 @@ class TraitTile extends Component {
 
   render(){
 
-    this.props.trait.champions.sort((a, b) => parseFloat(a.tier) - parseFloat(b.tier));
+    this.props.trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
     let champions = this.props.trait.champions.map(champion => {
       return (
         <ChampionTile
