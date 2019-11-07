@@ -806,13 +806,16 @@ body {
 /* ChampionOverview */
 /* Desktop */
 #ChampionOverviewDesktop-page-container {
-
+}
+#ChampionOverviewDesktop-spacing-div {
+  width: 100% !important;
+  height: 40px !important;
 }
 #ChampionOverviewDesktop-table {
   width: 100% !important;
   height: 100% !important;
   table-layout: fixed !important;
-  padding: 40px 0px 0px 0px !important;
+  padding: 0px !important;
   margin: 0px !important;
   border: 0px !important;
   border-spacing: 0px !important;
@@ -823,33 +826,22 @@ body {
   width: 100% !important;
   height: 30px !important;
 }
-#ChampionOverviewDesktop-table-header-row-name,
-#ChampionOverviewDesktop-table-header-row-traits,
-#ChampionOverviewDesktop-table-header-row-cost,
-#ChampionOverviewDesktop-table-header-row-health,
-#ChampionOverviewDesktop-table-header-row-armor,
-#ChampionOverviewDesktop-table-header-row-magic-resist,
-#ChampionOverviewDesktop-table-header-row-dps,
-#ChampionOverviewDesktop-table-header-row-attack-damage,
-#ChampionOverviewDesktop-table-header-row-attack-speed,
-#ChampionOverviewDesktop-table-header-row-range {
+.ChampionOverviewDesktop-table-header-row-item {
   border: 0px !important;
+  border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewDesktop-table-header-row-name:hover,
-#ChampionOverviewDesktop-table-header-row-traits:hover,
-#ChampionOverviewDesktop-table-header-row-cost:hover,
-#ChampionOverviewDesktop-table-header-row-health:hover,
-#ChampionOverviewDesktop-table-header-row-armor:hover,
-#ChampionOverviewDesktop-table-header-row-magic-resist:hover,
-#ChampionOverviewDesktop-table-header-row-dps:hover,
-#ChampionOverviewDesktop-table-header-row-attack-damage:hover,
-#ChampionOverviewDesktop-table-header-row-attack-speed:hover,
-#ChampionOverviewDesktop-table-header-row-range:hover {
-  color: #000000 !important;
-  background-color: #FFFFFF !important;
+.ChampionOverviewDesktop-table-header-row-item:hover {
+  border-bottom: 3px solid #FFFFFF !important;
+}
+.ChampionOverviewDesktop-table-header-row-item-active {
+  border: 0px !important;
+  border-bottom: 3px solid #2185D0 !important;
+  border-radius: 0px !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
 }
 #ChampionOverviewDesktop-table-header-row-name {
   width: 10% !important;
@@ -881,70 +873,20 @@ body {
 #ChampionOverviewDesktop-table-header-row-range {
   width: 10% !important;
 }
-/* Champion Row */
-#ChampionOverviewDesktop-loader {
-  top: 100px !important;
-}
-#ChampionOverviewDesktop-table-champion-row:nth-child(odd) {
-  color: #FFFFFF !important;
-  background-color: #1B1C1D !important;
-}
-#ChampionOverviewDesktop-table-champion-row:nth-child(even) {
-  color: #FFFFFF !important;
-  background-color: #353637 !important;
-}
-#ChampionOverviewDesktop-table-champion-row:hover {
-  color: #000000 !important;
-  background-color: #FFFFFF !important;
-}
-#ChampionOverviewDesktop-table-champion-row-name {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-}
-#ChampionOverviewDesktop-table-champion-row-name-image {
-  width: 40px !important;
-  height: 40px !important;
-}
-#ChampionOverviewDesktop-table-champion-row-name-title {
-  font-weight: bold !important;
-}
-#ChampionOverviewDesktop-table-champion-row-trait-images-container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-#ChampionOverviewDesktop-table-champion-row-trait-image {
-  width: 30px !important;
-  height: 30px !important;
-}
-#ChampionOverviewDesktop-table-champion-row-cost,
-#ChampionOverviewDesktop-table-champion-row-health,
-#ChampionOverviewDesktop-table-champion-row-armor,
-#ChampionOverviewDesktop-table-champion-row-magic-resist,
-#ChampionOverviewDesktop-table-champion-row-dps,
-#ChampionOverviewDesktop-table-champion-row-attack-damage,
-#ChampionOverviewDesktop-table-champion-row-attack-speed,
-#ChampionOverviewDesktop-table-champion-row-range {
-  font-weight: bold !important;
-  text-align: center !important;
-}
 /* Mobile */
 #ChampionOverviewMobile-page-container {
+  overflow-x: auto !important;
+}
+#ChampionOverviewMobile-page-container::-webkit-scrollbar-track {
+  background-color: #1B1C1D !important;
+}
+#ChampionOverviewMobile-page-container::-webkit-scrollbar-thumb {
+  border-radius: 0px !important;
+  background-color: #A78E5A !important;
 }
 #ChampionOverviewMobile-spacing-div {
   width: 100% !important;
   height: 40px !important;
-}
-#ChampionOverviewMobile-table-container {
-  overflow-x: auto !important;
-}
-#ChampionOverviewMobile-table-container::-webkit-scrollbar-track {
-  background-color: #1B1C1D !important;
-}
-#ChampionOverviewMobile-table-container::-webkit-scrollbar-thumb {
-  background-color: #A78E5A !important;
-  border-radius: 0px !important;
 }
 #ChampionOverviewMobile-table {
   width: 285% !important;
@@ -954,40 +896,27 @@ body {
   border: 0px !important;
   border-spacing: 0px !important;
   background-color: #1B1C1D !important;
-
 }
 /* Header Row */
 #ChampionOverviewMobile-table-header-row {
   width: 100% !important;
   height: 30px !important;
 }
-#ChampionOverviewMobile-table-header-row-name,
-#ChampionOverviewMobile-table-header-row-traits,
-#ChampionOverviewMobile-table-header-row-cost,
-#ChampionOverviewMobile-table-header-row-health,
-#ChampionOverviewMobile-table-header-row-armor,
-#ChampionOverviewMobile-table-header-row-magic-resist,
-#ChampionOverviewMobile-table-header-row-dps,
-#ChampionOverviewMobile-table-header-row-attack-damage,
-#ChampionOverviewMobile-table-header-row-attack-speed,
-#ChampionOverviewMobile-table-header-row-range {
+.ChampionOverviewMobile-table-header-row-item {
   border: 0px !important;
+  border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewMobile-table-header-row-name:hover,
-#ChampionOverviewMobile-table-header-row-traits:hover,
-#ChampionOverviewMobile-table-header-row-cost:hover,
-#ChampionOverviewMobile-table-header-row-health:hover,
-#ChampionOverviewMobile-table-header-row-armor:hover,
-#ChampionOverviewMobile-table-header-row-magic-resist:hover,
-#ChampionOverviewMobile-table-header-row-dps:hover,
-#ChampionOverviewMobile-table-header-row-attack-damage:hover,
-#ChampionOverviewMobile-table-header-row-attack-speed:hover,
-#ChampionOverviewMobile-table-header-row-range:hover {
-  color: #000000 !important;
-  background-color: #FFFFFF !important;
+.ChampionOverviewMobile-table-header-row-item:hover {
+  border-bottom: 3px solid #FFFFFF !important;
+}
+.ChampionOverviewMobile-table-header-row-item-active {
+  font-weight: bold !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
 }
 #ChampionOverviewMobile-table-header-row-name {
   width: 10% !important;
@@ -1019,53 +948,56 @@ body {
 #ChampionOverviewMobile-table-header-row-range {
   width: 10% !important;
 }
-/* Champion Row */
+/* Loader */
+#ChampionOverviewDesktop-loader {
+  top: 100px !important;
+}
 #ChampionOverviewMobile-loader {
   top: 100px !important;
 }
-#ChampionOverviewMobile-table-champion-row:nth-child(odd) {
+/* Champion Row */
+#ChampionOverview-table-champion-row:nth-child(odd) {
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
-#ChampionOverviewDesktop-table-champion-row:nth-child(even) {
+#ChampionOverview-table-champion-row:nth-child(even) {
   color: #FFFFFF !important;
   background-color: #353637 !important;
 }
-#ChampionOverviewMobile-table-champion-row-name {
+#ChampionOverview-table-champion-row:nth-child(odd):hover,
+#ChampionOverview-table-champion-row:nth-child(even):hover {
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+.ChampionOverview-table-champion-row-item {
+  font-weight: bold !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+  background-color: inherit !important;
+}
+.ChampionOverview-table-champion-row-item-active {
+  font-weight: bold !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+#ChampionOverview-table-champion-row-name {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
 }
-#ChampionOverviewMobile-table-champion-row-name-image {
+#ChampionOverview-table-champion-row-name-image {
   width: 40px !important;
   height: 40px !important;
 }
-#ChampionOverviewMobile-table-champion-row-name-title {
-  font-weight: bold !important;
-}
-#ChampionOverviewMobile-table-champion-row:hover {
-  color: #000000 !important;
-  background-color: #FFFFFF !important;
-}
-#ChampionOverviewMobile-table-champion-row-trait-images-container {
+#ChampionOverview-table-champion-row-trait-images-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
-#ChampionOverviewMobile-table-champion-row-trait-image {
+#ChampionOverview-table-champion-row-trait-image {
   width: 30px !important;
   height: 30px !important;
-}
-#ChampionOverviewMobile-table-champion-row-cost,
-#ChampionOverviewMobile-table-champion-row-health,
-#ChampionOverviewMobile-table-champion-row-armor,
-#ChampionOverviewMobile-table-champion-row-magic-resist,
-#ChampionOverviewMobile-table-champion-row-dps,
-#ChampionOverviewMobile-table-champion-row-attack-damage,
-#ChampionOverviewMobile-table-champion-row-attack-speed,
-#ChampionOverviewMobile-table-champion-row-range {
-  font-weight: bold !important;
-  text-align: center !important;
 }
 
 /* SummonerShow */
