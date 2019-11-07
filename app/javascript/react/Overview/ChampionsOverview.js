@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router';
 import { Responsive, Table, Icon, Loader } from 'semantic-ui-react';
 
 import NavigationBar from '../Components/NavigationBar';

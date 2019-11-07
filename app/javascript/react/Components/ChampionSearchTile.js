@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { List, Responsive, Card, Header, Label, Image } from 'semantic-ui-react';
 
 class ChampionSearchTile extends Component {
@@ -10,7 +10,6 @@ class ChampionSearchTile extends Component {
 
   handleClick(event, key) {
     browserHistory.push(`/champions/${key}`);
-    window.location.reload();
   }
 
   render() {

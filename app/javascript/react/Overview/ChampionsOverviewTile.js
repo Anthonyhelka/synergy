@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { Popup, Grid, Header, Table, Responsive, Image } from 'semantic-ui-react';
 
 class ChampionsOverviewTile extends Component {

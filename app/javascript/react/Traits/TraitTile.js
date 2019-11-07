@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router';
 import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-ui-react';
 
 import ChampionTile from './ChampionTile';
