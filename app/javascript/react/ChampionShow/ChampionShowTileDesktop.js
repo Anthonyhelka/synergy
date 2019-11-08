@@ -20,7 +20,6 @@ class ChampionShowTileDesktop extends Component {
 
   handleClick(event, key) {
     browserHistory.push(`/champions/${key}`);
-    window.location.reload();
   }
 
   render() {

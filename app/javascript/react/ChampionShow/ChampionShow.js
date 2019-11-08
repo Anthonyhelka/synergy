@@ -30,6 +30,7 @@ class ChampionShow extends Component {
       })
       .then(response => response.json())
       .then(body => {
+        window.scrollTo(0, 0);
         this.setState({ championKey: championKey, champion: body.champion[0], updated: true });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
