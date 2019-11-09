@@ -1,9 +1,32 @@
+#Clear DB
+Season.delete_all
 Champion.delete_all
 Trait.delete_all
 
-#Champions
-aatrox = Champion.create(
+#Functions
+def damage_scaling(base_damage, damage_scale_factor)
+  return ([(base_damage).ceil, (base_damage * damage_scale_factor).ceil, (base_damage * damage_scale_factor * 2).ceil])
+end
+
+def health_scaling(base_health, health_scale_factor)
+  return ([(base_health).ceil, (base_health * health_scale_factor).ceil, (base_health * health_scale_factor * 2).ceil])
+end
+
+#Seasons
+season_1 = Season.create(
   id: 1,
+  name: "1"
+)
+season_2 = Season.create(
+  id: 2,
+  name: "2"
+)
+
+#Season 1
+#Champions
+aatrox_1 = Champion.create(
+  id: 1,
+  season_id: 1,
   key: "aatrox",
   name: "Aatrox",
   title: "The Darkin Blade",
@@ -25,22 +48,24 @@ aatrox = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.65,
       dps: 42,
       range: 1
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 35,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-ahri = Champion.create(
+ahri_1 = Champion.create(
   id: 2,
+  season_id: 1,
   key: "ahri",
   name: "Ahri",
   title: "The Nine-Tailed Fox",
@@ -62,22 +87,24 @@ ahri = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.55,
       dps: 28,
       range: 3
     },
     defense: {
-      health: 450,
+      health_scale_factor: 1.80,
+      health: health_scaling(450, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-akali = Champion.create(
+akali_1 = Champion.create(
   id: 3,
+  season_id: 1,
   key: "akali",
   name: "Akali",
   title: "The Rogue Assassin",
@@ -99,22 +126,24 @@ akali = Champion.create(
   },
   stats: {
     offense: {
-      damage: 80,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(80, 1.25),
       attack_speed: 0.80,
       dps: 53,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-anivia = Champion.create(
+anivia_1 = Champion.create(
   id: 4,
+  season_id: 1,
   key: "anivia",
   name: "Anivia",
   title: "The Cryophoenix",
@@ -144,22 +173,24 @@ anivia = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.80,
       dps: 24,
       range: 3
     },
     defense: {
-      health: 750,
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-ashe = Champion.create(
+ashe_1 = Champion.create(
   id: 5,
+  season_id: 1,
   key: "ashe",
   name: "Ashe",
   title: "The Frost Archer",
@@ -185,22 +216,24 @@ ashe = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.70,
       dps: 42,
       range: 4
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-aurelionsol = Champion.create(
+aurelionsol_1 = Champion.create(
   id: 6,
+  season_id: 1,
   key: "aurelionsol",
   name: "Aurelion Sol",
   title: "The Star Forger",
@@ -226,22 +259,24 @@ aurelionsol = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.60,
       dps: 24,
       range: 3
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-blitzcrank = Champion.create(
+blitzcrank_1 = Champion.create(
   id: 7,
+  season_id: 1,
   key: "blitzcrank",
   name: "Blitzcrank",
   title: "The Great Steam Golem",
@@ -267,22 +302,24 @@ blitzcrank = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.50,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 35,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-brand = Champion.create(
+brand_1 = Champion.create(
   id: 8,
+  season_id: 1,
   key: "brand",
   name: "Brand",
   title: "The Burning Vengeance",
@@ -308,22 +345,24 @@ brand = Champion.create(
   },
   stats: {
     offense: {
-      damage: 60,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(60, 1.25),
       attack_speed: 0.60,
       dps: 36,
       range: 3
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-braum = Champion.create(
+braum_1 = Champion.create(
   id: 9,
+  season_id: 1,
   key: "braum",
   name: "Braum",
   title: "The Heart of the Freljord",
@@ -349,22 +388,24 @@ braum = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.60,
       dps: 24,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 75,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-camille = Champion.create(
+camille_1 = Champion.create(
   id: 52,
+  season_id: 1,
   key: "camille",
   name: "Camille",
   title: "The Steel Shadow",
@@ -390,22 +431,24 @@ camille = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-chogath = Champion.create(
+chogath_1 = Champion.create(
   id: 10,
+  season_id: 1,
   key: "chogath",
   name: "Cho'Gath",
   title: "The Terror of the Void",
@@ -435,22 +478,24 @@ chogath = Champion.create(
   },
   stats: {
     offense: {
-      damage: 70,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(70, 1.25),
       attack_speed: 0.60,
       dps: 39,
       range: 1
     },
     defense: {
-      health: 1000,
+      health_scale_factor: 1.80,
+      health: health_scaling(1000, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-darius = Champion.create(
+darius_1 = Champion.create(
   id: 11,
+  season_id: 1,
   key: "darius",
   name: "Darius",
   title: "The Hand of Noxus",
@@ -476,22 +521,24 @@ darius = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.50,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 40,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-draven = Champion.create(
+draven_1 = Champion.create(
   id: 12,
+  season_id: 1,
   key: "draven",
   name: "Draven",
   title: "The Glorious Executioner",
@@ -513,22 +560,24 @@ draven = Champion.create(
   },
   stats: {
     offense: {
-      damage: 70,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(70, 1.25),
       attack_speed: 0.75,
       dps: 49,
       range: 3
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-elise = Champion.create(
+elise_1 = Champion.create(
   id: 13,
+  season_id: 1,
   key: "elise",
   name: "Elise",
   title: "The Spider Queen",
@@ -558,22 +607,24 @@ elise = Champion.create(
   },
   stats: {
     offense: {
-      damage: 45,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(45, 1.25),
       attack_speed: 0.6,
       dps: 40,
       range: 2
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-evelynn = Champion.create(
+evelynn_1 = Champion.create(
   id: 14,
+  season_id: 1,
   key: "evelynn",
   name: "Evelynn",
   title: "Agony's Embrace",
@@ -603,22 +654,24 @@ evelynn = Champion.create(
   },
   stats: {
     offense: {
-      damage: 70,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(70, 1.25),
       attack_speed: 0.6,
       dps: 50,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-fiora = Champion.create(
+fiora_1 = Champion.create(
   id: 15,
+  season_id: 1,
   key: "fiora",
   name: "Fiora",
   title: "The Grand Duelist",
@@ -640,22 +693,24 @@ fiora = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 1.0,
       dps: 28,
       range: 1
     },
     defense: {
-      health: 450,
+      health_scale_factor: 1.80,
+      health: health_scaling(450, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-gangplank = Champion.create(
+gangplank_1 = Champion.create(
   id: 16,
+  season_id: 1,
   key: "gangplank",
   name: "Gangplank",
   title: "The Saltwater Scourge",
@@ -677,22 +732,24 @@ gangplank = Champion.create(
   },
   stats: {
     offense: {
-      damage: 60,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(60, 1.25),
       attack_speed: 0.65,
       dps: 33,
       range: 1
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-garen = Champion.create(
+garen_1 = Champion.create(
   id: 17,
+  season_id: 1,
   key: "garen",
   name: "Garen",
   title: "The Might of Demacia",
@@ -718,22 +775,24 @@ garen = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 40,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-gnar = Champion.create(
+gnar_1 = Champion.create(
   id: 18,
+  season_id: 1,
   key: "gnar",
   name: "Gnar",
   title: "The Missing Link",
@@ -767,22 +826,24 @@ gnar = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.70,
       dps: 31,
       range: 2
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-graves = Champion.create(
+graves_1 = Champion.create(
   id: 19,
+  season_id: 1,
   key: "graves",
   name: "Graves",
   title: "The Outlaw",
@@ -804,22 +865,24 @@ graves = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 0.55,
       dps: 28,
       range: 1
     },
     defense: {
-      health: 450,
+      health_scale_factor: 1.80,
+      health: health_scaling(450, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-jayce = Champion.create(
+jayce_1 = Champion.create(
   id: 53,
+  season_id: 1,
   key: "jayce",
   name: "Jayce",
   title: "The Defender of Tomorrow",
@@ -849,22 +912,24 @@ jayce = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 0.70,
       dps: 39,
       range: 1
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 35,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-jinx = Champion.create(
+jinx_1 = Champion.create(
   id: 54,
+  season_id: 1,
   key: "jinx",
   name: "Jinx",
   title: "The Loose Cannon",
@@ -890,22 +955,24 @@ jinx = Champion.create(
   },
   stats: {
     offense: {
-      damage: 75,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(75, 1.25),
       attack_speed: 0.70,
       dps: 49,
       range: 3
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-kaisa = Champion.create(
+kaisa_1 = Champion.create(
   id: 57,
+  season_id: 1,
   key: "kaisa",
   name: "Kai'Sa",
   title: "Daughter of the Void",
@@ -931,22 +998,24 @@ kaisa = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 1.25,
       dps: 69,
       range: 2
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-karthus = Champion.create(
+karthus_1 = Champion.create(
   id: 20,
+  season_id: 1,
   key: "karthus",
   name: "Karthus",
   title: "The Deathsinger",
@@ -972,22 +1041,24 @@ karthus = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.65,
       dps: 42,
       range: 3
     },
     defense: {
-      health: 850,
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-kassadin = Champion.create(
+kassadin_1 = Champion.create(
   id: 21,
+  season_id: 1,
   key: "kassadin",
   name: "Kassadin",
   title: "The Void Walker",
@@ -1013,22 +1084,24 @@ kassadin = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.55,
       dps: 29,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 35,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-katarina = Champion.create(
+katarina_1 = Champion.create(
   id: 22,
+  season_id: 1,
   key: "katarina",
   name: "Katarina",
   title: "The Sinister Blade",
@@ -1058,22 +1131,24 @@ katarina = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 450,
+      health_scale_factor: 1.80,
+      health: health_scaling(450, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-kayle = Champion.create(
+kayle_1 = Champion.create(
   id: 23,
+  season_id: 1,
   key: "kayle",
   name: "Kayle",
   title: "The Righteous",
@@ -1099,22 +1174,24 @@ kayle = Champion.create(
   },
   stats: {
     offense: {
-      damage: 60,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(60, 1.25),
       attack_speed: 1.0,
       dps: 66,
       range: 3
     },
     defense: {
-      health: 750,
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
       armor: 40,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-kennen = Champion.create(
+kennen_1 = Champion.create(
   id: 24,
+  season_id: 1,
   key: "kennen",
   name: "Kennen",
   title: "The Heart of the Tempest",
@@ -1140,22 +1217,24 @@ kennen = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.65,
       dps: 36,
       range: 2
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-khazix = Champion.create(
+khazix_1 = Champion.create(
   id: 25,
+  season_id: 1,
   key: "khazix",
   name: "Kha'Zix",
   title: "The Voidreaver",
@@ -1181,22 +1260,24 @@ khazix = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-kindred = Champion.create(
+kindred_1 = Champion.create(
   id: 26,
+  season_id: 1,
   key: "kindred",
   name: "Kindred",
   title: "The Eternal Hunters",
@@ -1222,22 +1303,24 @@ kindred = Champion.create(
   },
   stats: {
     offense: {
-      damage: 60,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(60, 1.25),
       attack_speed: 0.70,
       dps: 36,
       range: 3
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-leona = Champion.create(
+leona_1 = Champion.create(
   id: 27,
+  season_id: 1,
   key: "leona",
   name: "Leona",
   title: "The Radiant Dawn",
@@ -1267,22 +1350,24 @@ leona = Champion.create(
   },
   stats: {
     offense: {
-      damage: 45,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(45, 1.25),
       attack_speed: 0.55,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 800,
+      health_scale_factor: 1.80,
+      health: health_scaling(800, 1.80),
       armor: 100,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-lissandra = Champion.create(
+lissandra_1 = Champion.create(
   id: 28,
+  season_id: 1,
   key: "lissandra",
   name: "Lissandra",
   title: "The Ice Witch",
@@ -1312,22 +1397,24 @@ lissandra = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.60,
       dps: 24,
       range: 3
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-lucian = Champion.create(
+lucian_1 = Champion.create(
   id: 29,
+  season_id: 1,
   key: "lucian",
   name: "Lucian",
   title: "The Purifier",
@@ -1349,22 +1436,24 @@ lucian = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.65,
       dps: 42,
       range: 3
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-lulu = Champion.create(
+lulu_1 = Champion.create(
   id: 30,
+  season_id: 1,
   key: "lulu",
   name: "Lulu",
   title: "The Purifier",
@@ -1394,22 +1483,24 @@ lulu = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 2
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-missfortune = Champion.create(
+missfortune_1 = Champion.create(
   id: 31,
+  season_id: 1,
   key: "missfortune",
   name: "Miss Fortune",
   title: "The Bounty Hunter",
@@ -1435,22 +1526,24 @@ missfortune = Champion.create(
   },
   stats: {
     offense: {
-      damage: 75,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(75, 1.25),
       attack_speed: 0.95,
       dps: 64,
       range: 3
     },
     defense: {
-      health: 750,
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-mordekaiser = Champion.create(
+mordekaiser_1 = Champion.create(
   id: 32,
+  season_id: 1,
   key: "mordekaiser",
   name: "Mordekaiser",
   title: "The Iron Revenant",
@@ -1472,22 +1565,24 @@ mordekaiser = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.50,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 40,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-morgana = Champion.create(
+morgana_1 = Champion.create(
   id: 33,
+  season_id: 1,
   key: "morgana",
   name: "Morgana",
   title: "The Fallen",
@@ -1513,22 +1608,24 @@ morgana = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 2
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-nidalee = Champion.create(
+nidalee_1 = Champion.create(
   id: 34,
+  season_id: 1,
   key: "nidalee",
   name: "Nidalee",
   title: "The Bestial Huntress",
@@ -1554,22 +1651,24 @@ nidalee = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.65,
       dps: 33,
       range: 3
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-pantheon = Champion.create(
+pantheon_1 = Champion.create(
   id: 56,
+  season_id: 1,
   key: "pantheon",
   name: "Pantheon",
   title: "The Unbreakable Spear",
@@ -1595,22 +1694,24 @@ pantheon = Champion.create(
   },
   stats: {
     offense: {
-      damage: 75,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(75, 1.25),
       attack_speed: 0.75,
       dps: 60,
       range: 1
     },
     defense: {
-      health: 850,
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
       armor: 80,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-poppy = Champion.create(
+poppy_1 = Champion.create(
   id: 35,
+  season_id: 1,
   key: "poppy",
   name: "Poppy",
   title: "Keeper of the Hammer",
@@ -1640,22 +1741,24 @@ poppy = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.50,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 40,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-pyke = Champion.create(
+pyke_1 = Champion.create(
   id: 36,
+  season_id: 1,
   key: "pyke",
   name: "Pyke",
   title: "The Bloodharbor Ripper",
@@ -1681,22 +1784,24 @@ pyke = Champion.create(
   },
   stats: {
     offense: {
-      damage: 60,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(60, 1.25),
       attack_speed: 0.60,
       dps: 36,
       range: 1
     },
     defense: {
-      health: 600,
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-reksai = Champion.create(
+reksai_1 = Champion.create(
   id: 37,
+  season_id: 1,
   key: "reksai",
   name: "Rek'Sai",
   title: "The Void Burrower",
@@ -1722,22 +1827,24 @@ reksai = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.60,
       dps: 26,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-rengar = Champion.create(
+rengar_1 = Champion.create(
   id: 38,
+  season_id: 1,
   key: "rengar",
   name: "Rengar",
   title: "The Pridestalker",
@@ -1767,22 +1874,24 @@ rengar = Champion.create(
   },
   stats: {
     offense: {
-      damage: 70,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(70, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-sejuani = Champion.create(
+sejuani_1 = Champion.create(
   id: 39,
+  season_id: 1,
   key: "sejuani",
   name: "Sejuani",
   title: "Fury of the North",
@@ -1808,22 +1917,24 @@ sejuani = Champion.create(
   },
   stats: {
     offense: {
-      damage: 45,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(45, 1.25),
       attack_speed: 0.55,
       dps: 25,
       range: 1
     },
     defense: {
-      health: 800,
+      health_scale_factor: 1.80,
+      health: health_scaling(800, 1.80),
       armor: 40,
       magic_resist: 25
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-shen = Champion.create(
+shen_1 = Champion.create(
   id: 40,
+  season_id: 1,
   key: "shen",
   name: "Shen",
   title: "The Eye of Twilight",
@@ -1845,22 +1956,24 @@ shen = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.75,
       dps: 39,
       range: 1
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-shyvana = Champion.create(
+shyvana_1 = Champion.create(
   id: 41,
+  season_id: 1,
   key: "shyvana",
   name: "Shyvana",
   title: "The Half-Dragon",
@@ -1886,22 +1999,24 @@ shyvana = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.70,
       dps: 33,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-swain = Champion.create(
+swain_1 = Champion.create(
   id: 42,
+  season_id: 1,
   key: "swain",
   name: "Swain",
   title: "The Noxian Grand General",
@@ -1931,22 +2046,24 @@ swain = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.65,
       dps: 42,
       range: 2
     },
     defense: {
-      health: 850,
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-tristana = Champion.create(
+tristana_1 = Champion.create(
   id: 43,
+  season_id: 1,
   key: "tristana",
   name: "Tristana",
   title: "The Yordle Gunner",
@@ -1972,22 +2089,24 @@ tristana = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.65,
       dps: 35,
       range: 4
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-twistedfate = Champion.create(
+twistedfate_1 = Champion.create(
   id: 51,
+  season_id: 1,
   key: "twistedfate",
   name: "Twisted Fate",
   title: "The Card Master",
@@ -2017,22 +2136,24 @@ twistedfate = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.70,
       dps: 28,
       range: 3
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-varus = Champion.create(
+varus_1 = Champion.create(
   id: 44,
+  season_id: 1,
   key: "varus",
   name: "Varus",
   title: "The Arrow of Retribution",
@@ -2054,22 +2175,24 @@ varus = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.70,
       dps: 35,
       range: 4
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-vayne = Champion.create(
+vayne_1 = Champion.create(
   id: 45,
+  season_id: 1,
   key: "vayne",
   name: "Vayne",
   title: "The Night Hunter",
@@ -2091,22 +2214,24 @@ vayne = Champion.create(
   },
   stats: {
     offense: {
-      damage: 40,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(40, 1.25),
       attack_speed: 0.70,
       dps: 27,
       range: 3
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-veigar = Champion.create(
+veigar_1 = Champion.create(
   id: 46,
+  season_id: 1,
   key: "veigar",
   name: "Veigar",
   title: "The Tiny Master of Evil",
@@ -2128,22 +2253,24 @@ veigar = Champion.create(
   },
   stats: {
     offense: {
-      damage: 45,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(45, 1.25),
       attack_speed: 0.55,
       dps: 25,
       range: 3
     },
     defense: {
-      health: 500,
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
       armor: 20,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-vi = Champion.create(
+vi_1 = Champion.create(
   id: 55,
+  season_id: 1,
   key: "vi",
   name: "Vi",
   title: "The Piltover Enforcer",
@@ -2169,22 +2296,24 @@ vi = Champion.create(
   },
   stats: {
     offense: {
-      damage: 55,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(55, 1.25),
       attack_speed: 0.65,
       dps: 36,
       range: 1
     },
     defense: {
-      health: 700,
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-volibear = Champion.create(
+volibear_1 = Champion.create(
   id: 47,
+  season_id: 1,
   key: "volibear",
   name: "Volibear",
   title: "The Thunder's Roar",
@@ -2210,22 +2339,24 @@ volibear = Champion.create(
   },
   stats: {
     offense: {
-      damage: 70,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(70, 1.25),
       attack_speed: 0.65,
       dps: 38,
       range: 1
     },
     defense: {
-      health: 750,
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-warwick = Champion.create(
+warwick_1 = Champion.create(
   id: 48,
+  season_id: 1,
   key: "warwick",
   name: "Warwick",
   title: "The Uncaged Wrath of Zaun",
@@ -2251,22 +2382,24 @@ warwick = Champion.create(
   },
   stats: {
     offense: {
-      damage: 50,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(50, 1.25),
       attack_speed: 0.60,
       dps: 30,
       range: 1
     },
     defense: {
-      health: 650,
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
       armor: 30,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-yasuo = Champion.create(
+yasuo_1 = Champion.create(
   id: 49,
+  season_id: 1,
   key: "yasuo",
   name: "Yasuo",
   title: "The Unforgiven",
@@ -2288,22 +2421,24 @@ yasuo = Champion.create(
   },
   stats: {
     offense: {
-      damage: 75,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(75, 1.25),
       attack_speed: 1.0,
       dps: 65,
       range: 1
     },
     defense: {
-      health: 750,
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
       armor: 35,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-zed = Champion.create(
+zed_1 = Champion.create(
   id: 50,
+  season_id: 1,
   key: "zed",
   name: "Zed",
   title: "The Master of Shadows",
@@ -2325,24 +2460,26 @@ zed = Champion.create(
   },
   stats: {
     offense: {
-      damage: 65,
+      damage_scale_factor: 1.25,
+      attack_damage: damage_scaling(65, 1.25),
       attack_speed: 0.70,
       dps: 39,
       range: 1
     },
     defense: {
-      health: 550,
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
       armor: 25,
       magic_resist: 20
     }
   },
-  items: ["WIP"],
-  active: true
+  items: ["WIP"]
 )
-
+#Traits
 #Origins
 demon = Trait.create(
   id: 1,
+  season_id: 1,
   key: "demon",
   name: "Demon",
   trait_type: "Origin",
@@ -2361,31 +2498,34 @@ demon = Trait.create(
       description: "45 mana returned"
     }
   ],
-  active: true
+
 )
-demon.champions << [aatrox, brand, elise, evelynn, morgana, swain, varus]
+demon.champions << [aatrox_1, brand_1, elise_1, evelynn_1, morgana_1, swain_1, varus_1]
 dragon = Trait.create(
   id: 2,
+  season_id: 1,
   key: "dragon",
   name: "Dragon",
   trait_type: "Origin",
   description: "While 2 Dragons are in play, all allied Dragons take 75% reduced magic damage",
   upgrades: [],
-  active: true
+
 )
-dragon.champions << [aurelionsol, pantheon, shyvana]
+dragon.champions << [aurelionsol_1, pantheon_1, shyvana_1]
 exile = Trait.create(
   id: 3,
+  season_id: 1,
   key: "exile",
   name: "Exile",
   trait_type: "Origin",
   description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health",
   upgrades: [],
-  active: true
+
 )
-exile.champions << [yasuo]
+exile.champions << [yasuo_1]
 glacial = Trait.create(
   id: 4,
+  season_id: 1,
   key: "glacial",
   name: "Glacial",
   trait_type: "Origin",
@@ -2404,11 +2544,12 @@ glacial = Trait.create(
       description: "50% chance"
     }
   ],
-  active: true
+
 )
-glacial.champions << [anivia, ashe, braum, lissandra, sejuani, volibear]
+glacial.champions << [anivia_1, ashe_1, braum_1, lissandra_1, sejuani_1, volibear_1]
 hextech = Trait.create(
   id: 24,
+  season_id: 1,
   key: "hextech",
   name: "Hextech",
   trait_type: "Origin",
@@ -2423,11 +2564,12 @@ hextech = Trait.create(
       description: "Affects units within 2 hexes of the bomb"
     }
   ],
-  active: true
+
 )
-hextech.champions << [camille, jayce, jinx, vi]
+hextech.champions << [camille_1, jayce_1, jinx_1, vi_1]
 imperial = Trait.create(
   id: 5,
+  season_id: 1,
   key: "imperial",
   name: "Imperial",
   trait_type: "Origin",
@@ -2442,11 +2584,12 @@ imperial = Trait.create(
       description: "All Imperials"
     }
   ],
-  active: true
+
 )
-imperial.champions << [darius, draven, katarina, swain]
+imperial.champions << [darius_1, draven_1, katarina_1, swain_1]
 ninja = Trait.create(
   id: 6,
+  season_id: 1,
   key: "ninja",
   name: "Ninja",
   trait_type: "Origin",
@@ -2461,11 +2604,12 @@ ninja = Trait.create(
       description: "All Ninjas gain 80 attack damage/ability power"
     }
   ],
-  active: true
+
 )
-ninja.champions << [akali, kennen, shen, zed]
+ninja.champions << [akali_1, kennen_1, shen_1, zed_1]
 noble = Trait.create(
   id: 7,
+  season_id: 1,
   key: "noble",
   name: "Noble",
   trait_type: "Origin",
@@ -2480,41 +2624,45 @@ noble = Trait.create(
       description: "All allies"
     }
   ],
-  active: true
+
 )
-noble.champions << [fiora, garen, kayle, leona, lucian, vayne]
+noble.champions << [fiora_1, garen_1, kayle_1, leona_1, lucian_1, vayne_1]
 phantom = Trait.create(
   id: 8,
+  season_id: 1,
   key: "phantom",
   name: "Phantom",
   trait_type: "Origin",
   description: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
   upgrades: [],
-  active: true
+
 )
-phantom.champions << [karthus, kindred, mordekaiser]
+phantom.champions << [karthus_1, kindred_1, mordekaiser_1]
 pirate = Trait.create(
   id: 9,
+  season_id: 1,
   key: "pirate",
   name: "Pirate",
   trait_type: "Origin",
   description: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold",
   upgrades: [],
-  active: true
+
 )
-pirate.champions << [gangplank, graves, missfortune, pyke, twistedfate]
+pirate.champions << [gangplank_1, graves_1, missfortune_1, pyke_1, twistedfate_1]
 robot = Trait.create(
   id: 10,
+  season_id: 1,
   key: "robot",
   name: "Robot",
   trait_type: "Origin",
   description: "Robots start combat at full mana",
   upgrades: [],
-  active: true
+
 )
-robot.champions << [blitzcrank]
+robot.champions << [blitzcrank_1]
 void = Trait.create(
   id: 11,
+  season_id: 1,
   key: "void",
   name: "Void",
   trait_type: "Origin",
@@ -2529,11 +2677,12 @@ void = Trait.create(
       description: "All Voidlings"
     }
   ],
-  active: true
+
 )
-void.champions << [chogath, kaisa, kassadin, khazix, reksai]
+void.champions << [chogath_1, kaisa_1, kassadin_1, khazix_1, reksai_1]
 wild = Trait.create(
   id: 12,
+  season_id: 1,
   key: "wild",
   name: "Wild",
   trait_type: "Origin",
@@ -2548,11 +2697,12 @@ wild = Trait.create(
       description: "Fury benefits all allies and their attacks cannot be dodged"
     }
   ],
-  active: true
+
 )
-wild.champions << [ahri, gnar, nidalee, rengar, warwick]
+wild.champions << [ahri_1, gnar_1, nidalee_1, rengar_1, warwick_1]
 yordle = Trait.create(
   id: 13,
+  season_id: 1,
   key: "yordle",
   name: "Yordle",
   trait_type: "Origin",
@@ -2571,13 +2721,13 @@ yordle = Trait.create(
       description: "90% chance"
     }
   ],
-  active: true
-)
-yordle.champions << [gnar, kennen, lulu, poppy, tristana, veigar]
 
+)
+yordle.champions << [gnar_1, kennen_1, lulu_1, poppy_1, tristana_1, veigar_1]
 #Classes
 assassin = Trait.create(
   id: 14,
+  season_id: 1,
   key: "assassin",
   name: "Assassin",
   trait_type: "Class",
@@ -2596,11 +2746,12 @@ assassin = Trait.create(
       description: "+225% damage/+30% chance"
     }
   ],
-  active: true
+
 )
-assassin.champions << [akali, evelynn, kaisa, katarina, khazix, pyke, rengar, zed]
+assassin.champions << [akali_1, evelynn_1, kaisa_1, katarina_1, khazix_1, pyke_1, rengar_1, zed_1]
 blademaster = Trait.create(
   id: 15,
+  season_id: 1,
   key: "blademaster",
   name: "Blademaster",
   trait_type: "Class",
@@ -2619,11 +2770,12 @@ blademaster = Trait.create(
       description: "Quadruple strike"
     }
   ],
-  active: true
+
 )
-blademaster.champions << [aatrox, camille, draven, fiora, gangplank, shen, yasuo]
+blademaster.champions << [aatrox_1, camille_1, draven_1, fiora_1, gangplank_1, shen_1, yasuo_1]
 brawler = Trait.create(
   id: 16,
+  season_id: 1,
   key: "brawler",
   name: "Brawler",
   trait_type: "Class",
@@ -2642,31 +2794,34 @@ brawler = Trait.create(
       description: "+900 maximum health"
     }
   ],
-  active: true
+
 )
-brawler.champions << [blitzcrank, chogath, reksai, vi, volibear, warwick]
+brawler.champions << [blitzcrank_1, chogath_1, reksai_1, vi_1, volibear_1, warwick_1]
 elementalist = Trait.create(
   id: 17,
+  season_id: 1,
   key: "elementalist",
   name: "Elementalist",
   trait_type: "Class",
   description: "When 3 Elementalists are in play, begin combat with an Elemental adjacent to one of your Elementalists",
   upgrades: [],
-  active: true
+
 )
-elementalist.champions << [anivia, brand, kennen, lissandra]
+elementalist.champions << [anivia_1, brand_1, kennen_1, lissandra_1]
 guardian = Trait.create(
   id: 18,
+  season_id: 1,
   key: "guardian",
   name: "Guardian",
   trait_type: "Class",
   description: "When 2 Guardians are in play, grant 45 armor to all units that start adjacent to a Guardian",
   upgrades: [],
-  active: true
+
 )
-guardian.champions << [braum, leona, pantheon]
+guardian.champions << [braum_1, leona_1, pantheon_1]
 gunslinger = Trait.create(
   id: 19,
+  season_id: 1,
   key: "gunslinger",
   name: "Gunslinger",
   trait_type: "Class",
@@ -2685,11 +2840,12 @@ gunslinger = Trait.create(
       description: "Attacks hit four additional random enemy"
     }
   ],
-  active: true
+
 )
-gunslinger.champions << [gangplank, graves, jinx, lucian, missfortune, tristana]
+gunslinger.champions << [gangplank_1, graves_1, jinx_1, lucian_1, missfortune_1, tristana_1]
 knight = Trait.create(
   id: 20,
+  season_id: 1,
   key: "knight",
   name: "Knight",
   trait_type: "Class",
@@ -2708,11 +2864,12 @@ knight = Trait.create(
       description: "60 damage ignored"
     }
   ],
-  active: true
+
 )
-knight.champions << [darius, garen, kayle, mordekaiser, poppy, sejuani]
+knight.champions << [darius_1, garen_1, kayle_1, mordekaiser_1, poppy_1, sejuani_1]
 ranger = Trait.create(
   id: 21,
+  season_id: 1,
   key: "ranger",
   name: "Ranger",
   trait_type: "Class",
@@ -2727,11 +2884,12 @@ ranger = Trait.create(
       description: "75% chance"
     }
   ],
-  active: true
+
 )
-ranger.champions << [ashe, kaisa, kindred, varus, vayne]
+ranger.champions << [ashe_1, kaisa_1, kindred_1, varus_1, vayne_1]
 shapeshifter = Trait.create(
   id: 22,
+  season_id: 1,
   key: "shapeshifter",
   name: "Shapeshifter",
   trait_type: "Class",
@@ -2746,11 +2904,12 @@ shapeshifter = Trait.create(
       description: "100% bonus health"
     }
   ],
-  active: true
+
 )
-shapeshifter.champions << [elise, gnar, jayce, nidalee, shyvana, swain]
+shapeshifter.champions << [elise_1, gnar_1, jayce_1, nidalee_1, shyvana_1, swain_1]
 sorcerer = Trait.create(
   id: 23,
+  season_id: 1,
   key: "sorcerer",
   name: "Sorcerer",
   trait_type: "Class",
@@ -2769,6 +2928,9 @@ sorcerer = Trait.create(
       description: "+175% bonus spell power"
     }
   ],
-  active: true
+
 )
-sorcerer.champions << [ahri, aurelionsol, karthus, kassadin, lulu, morgana, twistedfate, veigar]
+sorcerer.champions << [ahri_1, aurelionsol_1, karthus_1, kassadin_1, lulu_1, morgana_1, twistedfate_1, veigar_1]
+
+#Season 2
+#Champions

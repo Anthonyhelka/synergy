@@ -11,7 +11,7 @@ class ChampionShow extends Component {
     super(props);
     this.state={
       championKey: '',
-      champion: {},
+      championAllSets: [],
       updated: false
     }
     this.getData = this.getData.bind(this);
@@ -31,7 +31,7 @@ class ChampionShow extends Component {
       .then(response => response.json())
       .then(body => {
         window.scrollTo(0, 0);
-        this.setState({ championKey: championKey, champion: body.champion[0], updated: true });
+        this.setState({ championKey: championKey, championAllSets: body.champion_all_sets, updated: true });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -47,18 +47,14 @@ class ChampionShow extends Component {
   }
 
   render() {
-    let championShowTileDesktop;
-    if (this.state.updated === false) {
-      championShowTileDesktop = '';
-    } else {
-      championShowTileDesktop = (
+
+      let championShowTileDesktop = (
         <ChampionShowTileDesktop
           key={this.state.champion.id}
           id={this.state.champion.id}
           champion={this.state.champion}
         />
       );
-    }
 
     let championShowTileMobile;
     if (this.state.updated === false) {

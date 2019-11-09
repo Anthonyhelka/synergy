@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_195003) do
+ActiveRecord::Schema.define(version: 2019_11_08_152749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "champions", force: :cascade do |t|
+    t.bigint "season_id", null: false
     t.string "key", null: false
     t.string "name", null: false
     t.string "title", null: false
@@ -25,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.json "ability", null: false
     t.json "stats", null: false
     t.string "items", default: [], null: false, array: true
-    t.boolean "active", null: false
+    t.index ["season_id"], name: "index_champions_on_season_id"
   end
 
   create_table "champions_traits", id: false, force: :cascade do |t|
@@ -34,13 +35,18 @@ ActiveRecord::Schema.define(version: 2019_07_04_195003) do
     t.index ["champion_id", "trait_id"], name: "index_champions_traits_on_champion_id_and_trait_id"
   end
 
+  create_table "seasons", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
   create_table "traits", force: :cascade do |t|
+    t.bigint "season_id", null: false
     t.string "key", null: false
     t.string "name", null: false
     t.string "trait_type", null: false
     t.string "description", null: false
     t.json "upgrades"
-    t.boolean "active", null: false
+    t.index ["season_id"], name: "index_traits_on_season_id"
   end
 
 end
