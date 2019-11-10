@@ -18,7 +18,7 @@ class ChampionSearchTile extends Component {
     return (
       <div id='ChampionSearch-champions-item-container'>
         <div id='ChampionSearch-champions-item-label' className={`tier-${this.props.champion.cost}`}>{this.props.champion.cost}</div>
-        <Image id='ChampionSearch-champions-item-image' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}`, true)}`} />
+        <Image id='ChampionSearch-champions-item-image' className={`tier-${this.props.champion.cost}`} onClick={event => this.handleClick(event, `${this.props.champion.key}`)} src={`${pathToIcon(`./${this.props.champion.key}_${this.props.champion.season.id}`, true)}`} />
       </div>
     );
   }

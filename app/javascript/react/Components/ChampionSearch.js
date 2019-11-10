@@ -12,11 +12,13 @@ class ChampionSearch extends Component {
       champions: [],
       filteredChampions: [],
       sort: 'up',
+      season: 1,
       loading: true
     }
     this.handleChange = this.handleChange.bind(this);
     this.filterChampions = this.filterChampions.bind(this);
     this.handleSortChange = this.handleSortChange.bind(this);
+    this.handleSeasonChange = this.handleSeasonChange.bind(this);
   }
 
   componentDidMount() {
@@ -33,21 +35,27 @@ class ChampionSearch extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({ champions: body.champions, loading: false })
+        this.filterChampions(this.state.query, this.state.season);
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleChange(event) {
     this.setState({ query: event.target.value });
-    this.filterChampions(event.target.value);
+    this.filterChampions(event.target.value, this.state.season);
   }
 
-  filterChampions(query) {
+  filterChampions(query, season) {
     let champions = this.state.champions;
     let filteredChampions = champions.filter(champion => {
-      return champion.name.toLowerCase().includes(query.toLowerCase());
+      return champion.name.toLowerCase().includes(query.toLowerCase()) && champion.season.id === season;
     });
     this.setState({ filteredChampions: filteredChampions })
+  }
+
+  handleSeasonChange(event, seasonButton) {
+    this.setState({ season: seasonButton })
+    this.filterChampions(this.state.query, seasonButton);
   }
 
   handleSortChange(event) {
@@ -55,31 +63,16 @@ class ChampionSearch extends Component {
   }
 
   render() {
-    let champions;
-    let championsSortOrder;
-    if (this.state.query === '') {
-      championsSortOrder = (this.state.sort === 'up') ? this.state.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.state.champions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
-      champions = championsSortOrder.map(champion => {
-        return (
-          <ChampionSearchTile
-            key={champion.id}
-            id={champion.id}
-            champion={champion}
-          />
-        )
-      });
-    } else {
-        championsSortOrder = (this.state.sort === 'up') ? this.state.filteredChampions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.state.filteredChampions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
-        champions = championsSortOrder.map(champion => {
-        return (
-          <ChampionSearchTile
-            key={champion.id}
-            id={champion.id}
-            champion={champion}
-          />
-        )
-      });
-    }
+    let championsSortOrder = (this.state.sort === 'up') ? this.state.filteredChampions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.state.filteredChampions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
+    let champions = championsSortOrder.map(champion => {
+      return (
+        <ChampionSearchTile
+          key={champion.id}
+          id={champion.id}
+          champion={champion}
+        />
+      )
+    });
 
     return (
       <div id='ChampionSearch-container'>
@@ -91,6 +84,17 @@ class ChampionSearch extends Component {
             </Form.Field>
           </Form>
         </div>
+        {this.state.season === 1 ? (
+          <div id='ChampionSearch-season-button-container'>
+            <Button className='ChampionSearch-season-button-inactive' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
+            <Button className='ChampionSearch-season-button-active' onClick={event => this.handleSeasonChange(event, 1)}>Set 1</Button>
+          </div>
+        ) : (
+          <div id='ChampionSearch-season-button-container'>
+            <Button className='ChampionSearch-season-button-active' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
+            <Button className='ChampionSearch-season-button-inactive' onClick={event => this.handleSeasonChange(event, 1)}>Set 1</Button>
+          </div>
+        )}
         <div id='ChampionSearch-results-container'>
           <div id='ChampionSearch-champions-container'>
             <Loader id='ChampionSearch-champions-loader' active={this.state.loading}/>
