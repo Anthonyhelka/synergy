@@ -2420,7 +2420,7 @@ zed_1 = Champion.create(
 )
 #Traits
 #Origins
-demon = Trait.create(
+demon_1 = Trait.create(
   id: 1,
   season_id: 1,
   key: "demon",
@@ -2443,8 +2443,8 @@ demon = Trait.create(
   ],
 
 )
-demon.champions << [aatrox_1, brand_1, elise_1, evelynn_1, morgana_1, swain_1, varus_1]
-dragon = Trait.create(
+demon_1.champions << [aatrox_1, brand_1, elise_1, evelynn_1, morgana_1, swain_1, varus_1]
+dragon_1 = Trait.create(
   id: 2,
   season_id: 1,
   key: "dragon",
@@ -2454,8 +2454,8 @@ dragon = Trait.create(
   upgrades: [],
 
 )
-dragon.champions << [aurelionsol_1, pantheon_1, shyvana_1]
-exile = Trait.create(
+dragon_1.champions << [aurelionsol_1, pantheon_1, shyvana_1]
+exile_1 = Trait.create(
   id: 3,
   season_id: 1,
   key: "exile",
@@ -2465,8 +2465,8 @@ exile = Trait.create(
   upgrades: [],
 
 )
-exile.champions << [yasuo_1]
-glacial = Trait.create(
+exile_1.champions << [yasuo_1]
+glacial_1 = Trait.create(
   id: 4,
   season_id: 1,
   key: "glacial",
@@ -2489,8 +2489,8 @@ glacial = Trait.create(
   ],
 
 )
-glacial.champions << [anivia_1, ashe_1, braum_1, lissandra_1, sejuani_1, volibear_1]
-hextech = Trait.create(
+glacial_1.champions << [anivia_1, ashe_1, braum_1, lissandra_1, sejuani_1, volibear_1]
+hextech_1 = Trait.create(
   id: 24,
   season_id: 1,
   key: "hextech",
@@ -2509,8 +2509,8 @@ hextech = Trait.create(
   ],
 
 )
-hextech.champions << [camille_1, jayce_1, jinx_1, vi_1]
-imperial = Trait.create(
+hextech_1.champions << [camille_1, jayce_1, jinx_1, vi_1]
+imperial_1 = Trait.create(
   id: 5,
   season_id: 1,
   key: "imperial",
@@ -2529,8 +2529,8 @@ imperial = Trait.create(
   ],
 
 )
-imperial.champions << [darius_1, draven_1, katarina_1, swain_1]
-ninja = Trait.create(
+imperial_1.champions << [darius_1, draven_1, katarina_1, swain_1]
+ninja_1 = Trait.create(
   id: 6,
   season_id: 1,
   key: "ninja",
@@ -2549,8 +2549,8 @@ ninja = Trait.create(
   ],
 
 )
-ninja.champions << [akali_1, kennen_1, shen_1, zed_1]
-noble = Trait.create(
+ninja_1.champions << [akali_1, kennen_1, shen_1, zed_1]
+noble_1 = Trait.create(
   id: 7,
   season_id: 1,
   key: "noble",
@@ -2569,8 +2569,8 @@ noble = Trait.create(
   ],
 
 )
-noble.champions << [fiora_1, garen_1, kayle_1, leona_1, lucian_1, vayne_1]
-phantom = Trait.create(
+noble_1.champions << [fiora_1, garen_1, kayle_1, leona_1, lucian_1, vayne_1]
+phantom_1 = Trait.create(
   id: 8,
   season_id: 1,
   key: "phantom",
@@ -2580,8 +2580,8 @@ phantom = Trait.create(
   upgrades: [],
 
 )
-phantom.champions << [karthus_1, kindred_1, mordekaiser_1]
-pirate = Trait.create(
+phantom_1.champions << [karthus_1, kindred_1, mordekaiser_1]
+pirate_1 = Trait.create(
   id: 9,
   season_id: 1,
   key: "pirate",
@@ -2591,8 +2591,8 @@ pirate = Trait.create(
   upgrades: [],
 
 )
-pirate.champions << [gangplank_1, graves_1, missfortune_1, pyke_1, twistedfate_1]
-robot = Trait.create(
+pirate_1.champions << [gangplank_1, graves_1, missfortune_1, pyke_1, twistedfate_1]
+robot_1 = Trait.create(
   id: 10,
   season_id: 1,
   key: "robot",
@@ -2602,8 +2602,8 @@ robot = Trait.create(
   upgrades: [],
 
 )
-robot.champions << [blitzcrank_1]
-void = Trait.create(
+robot_1.champions << [blitzcrank_1]
+void_1 = Trait.create(
   id: 11,
   season_id: 1,
   key: "void",
@@ -2622,8 +2622,8 @@ void = Trait.create(
   ],
 
 )
-void.champions << [chogath_1, kaisa_1, kassadin_1, khazix_1, reksai_1]
-wild = Trait.create(
+void_1.champions << [chogath_1, kaisa_1, kassadin_1, khazix_1, reksai_1]
+wild_1 = Trait.create(
   id: 12,
   season_id: 1,
   key: "wild",
@@ -2642,8 +2642,8 @@ wild = Trait.create(
   ],
 
 )
-wild.champions << [ahri_1, gnar_1, nidalee_1, rengar_1, warwick_1]
-yordle = Trait.create(
+wild_1.champions << [ahri_1, gnar_1, nidalee_1, rengar_1, warwick_1]
+yordle_1 = Trait.create(
   id: 13,
   season_id: 1,
   key: "yordle",
@@ -2666,9 +2666,9 @@ yordle = Trait.create(
   ],
 
 )
-yordle.champions << [gnar_1, kennen_1, lulu_1, poppy_1, tristana_1, veigar_1]
+yordle_1.champions << [gnar_1, kennen_1, lulu_1, poppy_1, tristana_1, veigar_1]
 #Classes
-assassin = Trait.create(
+assassin_1 = Trait.create(
   id: 14,
   season_id: 1,
   key: "assassin",
@@ -2691,14 +2691,14 @@ assassin = Trait.create(
   ],
 
 )
-assassin.champions << [akali_1, evelynn_1, kaisa_1, katarina_1, khazix_1, pyke_1, rengar_1, zed_1]
-blademaster = Trait.create(
+assassin_1.champions << [akali_1, evelynn_1, kaisa_1, katarina_1, khazix_1, pyke_1, rengar_1, zed_1]
+blademaster_1 = Trait.create(
   id: 15,
   season_id: 1,
   key: "blademaster",
   name: "Blademaster",
   trait_type: "Class",
-  description: "Blademasters gain a 45% chance to perform a multi-attack",
+  description: "Blademasters gain a 45% chance to perform a multi-attack that trigger on-hit effects and generate mana",
   upgrades: [
     {
       threshhold: "3",
@@ -2715,8 +2715,8 @@ blademaster = Trait.create(
   ],
 
 )
-blademaster.champions << [aatrox_1, camille_1, draven_1, fiora_1, gangplank_1, shen_1, yasuo_1]
-brawler = Trait.create(
+blademaster_1.champions << [aatrox_1, camille_1, draven_1, fiora_1, gangplank_1, shen_1, yasuo_1]
+brawler_1 = Trait.create(
   id: 16,
   season_id: 1,
   key: "brawler",
@@ -2739,8 +2739,8 @@ brawler = Trait.create(
   ],
 
 )
-brawler.champions << [blitzcrank_1, chogath_1, reksai_1, vi_1, volibear_1, warwick_1]
-elementalist = Trait.create(
+brawler_1.champions << [blitzcrank_1, chogath_1, reksai_1, vi_1, volibear_1, warwick_1]
+elementalist_1 = Trait.create(
   id: 17,
   season_id: 1,
   key: "elementalist",
@@ -2750,8 +2750,8 @@ elementalist = Trait.create(
   upgrades: [],
 
 )
-elementalist.champions << [anivia_1, brand_1, kennen_1, lissandra_1]
-guardian = Trait.create(
+elementalist_1.champions << [anivia_1, brand_1, kennen_1, lissandra_1]
+guardian_1 = Trait.create(
   id: 18,
   season_id: 1,
   key: "guardian",
@@ -2761,8 +2761,8 @@ guardian = Trait.create(
   upgrades: [],
 
 )
-guardian.champions << [braum_1, leona_1, pantheon_1]
-gunslinger = Trait.create(
+guardian_1.champions << [braum_1, leona_1, pantheon_1]
+gunslinger_1 = Trait.create(
   id: 19,
   season_id: 1,
   key: "gunslinger",
@@ -2785,8 +2785,8 @@ gunslinger = Trait.create(
   ],
 
 )
-gunslinger.champions << [gangplank_1, graves_1, jinx_1, lucian_1, missfortune_1, tristana_1]
-knight = Trait.create(
+gunslinger_1.champions << [gangplank_1, graves_1, jinx_1, lucian_1, missfortune_1, tristana_1]
+knight_1 = Trait.create(
   id: 20,
   season_id: 1,
   key: "knight",
@@ -2809,8 +2809,8 @@ knight = Trait.create(
   ],
 
 )
-knight.champions << [darius_1, garen_1, kayle_1, mordekaiser_1, poppy_1, sejuani_1]
-ranger = Trait.create(
+knight_1.champions << [darius_1, garen_1, kayle_1, mordekaiser_1, poppy_1, sejuani_1]
+ranger_1 = Trait.create(
   id: 21,
   season_id: 1,
   key: "ranger",
@@ -2829,8 +2829,8 @@ ranger = Trait.create(
   ],
 
 )
-ranger.champions << [ashe_1, kaisa_1, kindred_1, varus_1, vayne_1]
-shapeshifter = Trait.create(
+ranger_1.champions << [ashe_1, kaisa_1, kindred_1, varus_1, vayne_1]
+shapeshifter_1 = Trait.create(
   id: 22,
   season_id: 1,
   key: "shapeshifter",
@@ -2849,8 +2849,8 @@ shapeshifter = Trait.create(
   ],
 
 )
-shapeshifter.champions << [elise_1, gnar_1, jayce_1, nidalee_1, shyvana_1, swain_1]
-sorcerer = Trait.create(
+shapeshifter_1.champions << [elise_1, gnar_1, jayce_1, nidalee_1, shyvana_1, swain_1]
+sorcerer_1 = Trait.create(
   id: 23,
   season_id: 1,
   key: "sorcerer",
@@ -2873,7 +2873,463 @@ sorcerer = Trait.create(
   ],
 
 )
-sorcerer.champions << [ahri_1, aurelionsol_1, karthus_1, kassadin_1, lulu_1, morgana_1, twistedfate_1, veigar_1]
+sorcerer_1.champions << [ahri_1, aurelionsol_1, karthus_1, kassadin_1, lulu_1, morgana_1, twistedfate_1, veigar_1]
 
 #Season 2
 #Champions
+
+#Traits
+#Origins
+cloud_2 = Trait.create(
+  id: 25,
+  season_id: 2,
+  key: "cloud",
+  name: "Cloud",
+  trait_type: "Origin",
+  description: "All allies gain a chance to dodge enemy basic attack",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "+15% chance"
+    },
+    {
+      threshhold: "3",
+      description: "+20% chance"
+    },
+    {
+      threshhold: "4",
+      description: "+30% chance"
+    }
+  ]
+)
+#cloud_2.champions << [janna_2, yasuo_2]
+crystal_2 = Trait.create(
+  id: 26,
+  season_id: 2,
+  key: "crystal",
+  name: "Crystal",
+  trait_type: "Origin",
+  description: "Crystal units have a maximum amount of damage they can take from a single attack or ability",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "100 maxium damage"
+    },
+    {
+      threshhold: "4",
+      description: "60 maximum damage"
+    },
+  ]
+)
+#crystal_2.champions << [ashe_2, skarner_2, taric_2]
+desert_2 = Trait.create(
+  id: 27,
+  season_id: 2,
+  key: "desert",
+  name: "Desert",
+  trait_type: "Origin",
+  description: "Desert units reduce the enemy team's armor",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "50% armor reduction"
+    },
+    {
+      threshhold: "4",
+      description: "90% armor reduction"
+    },
+  ]
+)
+#desert_2.champions << [azir_2, khazix_2, renekton_2, sivir_2]
+electic_2 = Trait.create(
+  id: 28,
+  season_id: 2,
+  key: "electic",
+  name: "Electric",
+  trait_type: "Origin",
+  description: "Electric units shock nearby enemies whenever they deal or receive a critical strike",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "70 damage"
+    },
+    {
+      threshhold: "3",
+      description: "250 damage"
+    },
+    {
+      threshhold: "4",
+      description: "500 damage"
+    }
+  ]
+)
+#electic_2.champions << [ornn_2, volibear_2, zed_2]
+glacial_2 = Trait.create(
+  id: 29,
+  season_id: 2,
+  key: "glacial",
+  name: "Glacial",
+  trait_type: "Origin",
+  description: "Glacials' basic attacks have a chance to stun their target for 1.5 seconds",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "20% chance"
+    },
+    {
+      threshhold: "4",
+      description: "40% chance"
+    },
+    {
+      threshhold: "6",
+      description: "60% chance"
+    }
+  ]
+),
+#glacial_2.champions << [braum_2, ezreal_2, olaf_2, volibear_2, warwick_2]
+inferno_2 = Trait.create(
+  id: 30,
+  season_id: 2,
+  key: "inferno",
+  name: "Inferno",
+  trait_type: "Origin",
+  description: "Inferno spell damage burns the ground beneath the target, dealing a percentage of that spell's pre-mitigation damage as magic damage over 5 seconds",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "+80% damage"
+    },
+    {
+      threshhold: "6",
+      description: "+175% damage"
+    },
+    {
+      threshhold: "9",
+      description: "+275% damage"
+    }
+  ]
+)
+#inferno_2.champions << [annie_2, brand_2, diana_2, kindred_2, varus_2, zyra_2]
+light_2 = Trait.create(
+  id: 31,
+  season_id: 2,
+  key: "light",
+  name: "Light",
+  trait_type: "Origin",
+  description: "When a Light unit dies, all other Light units gain bonus attack speed and are healed for 25% of their maximum health",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "+10% attack speed"
+    },
+    {
+      threshhold: "6",
+      description: "+20% attack speed"
+    },
+    {
+      threshhold: "9",
+      description: "+35% attack speed"
+    }
+  ]
+)
+#light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2, vayne_2, yorick_2]
+mountain_2 = Trait.create(
+  id: 32,
+  season_id: 2,
+  key: "mountain",
+  name: "Mountain",
+  trait_type: "Origin",
+  description: "While at least Mountain units are in play, at the start of combat, a random ally gains a 1500 health shield",
+  upgrades: []
+)
+#mountain_2.champions << [malphite_2, taliyah_2]
+ocean_2 = Trait.create(
+  id: 33,
+  season_id: 2,
+  key: "ocean",
+  name: "Ocean",
+  trait_type: "Origin",
+  description: "All allies restore mana every 4 seconds",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "+15 mana"
+    },
+    {
+      threshhold: "4",
+      description: "+30 mana"
+    },
+    {
+      threshhold: "6",
+      description: "+50 mana"
+    }
+  ]
+)
+#ocean_2.champions << [nami_2, nautilus_2, syndra_2, thresh_2, vladimir_2]
+poison_2 = Trait.create(
+  id: 34,
+  season_id: 2,
+  key: "poison",
+  name: "Poison",
+  trait_type: "Origin",
+  description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
+  upgrades: []
+)
+#poison_2.champions << [drmundo_2, kogmaw_2, singed_2, twitch_2]
+shadow_2 = Trait.create(
+  id: 35,
+  season_id: 2,
+  key: "shadow",
+  name: "Shadow",
+  trait_type: "Origin",
+  description: "Shadow units deal increased damage for 5 seconds at the start of combat, refreshed on takedown.",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "+50% increased damage. On self takedown."
+    },
+    {
+      threshhold: "4",
+      description: "+100% increased damage. On any Shadow takedown."
+    }
+  ]
+)
+#shadow_2.champions << [kindred_2, malzahar_2, masteryi_2, sion_2, veigar_2]
+steel_2 = Trait.create(
+  id: 36,
+  season_id: 2,
+  key: "steel",
+  name: "Steel",
+  trait_type: "Origin",
+  description: "Steel units gain damage immunity for a few seconds when they are reduced below 50% health",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "2 seconds"
+    },
+    {
+      threshhold: "3",
+      description: "3 seconds"
+    },
+    {
+      threshhold: "4",
+      description: "4 seconds"
+    }
+  ]
+)
+#steel_2.champions << [nocturne_2, reksai_2]
+woodland_2 = Trait.create(
+  id: 37,
+  season_id: 2,
+  key: "woodland",
+  name: "Woodland",
+  trait_type: "Origin",
+  description: "While at least 3 Woodland units are in play, at the start of combat, a random Woodland champion makes a copy of themselves (excluding items)",
+  upgrades: []
+)
+#woodland_2.champions << [ivern_2, leblanc_2, maokai_2, neeko_2]
+#Classes
+alchemist_2 = Trait.create(
+  id: 38,
+  season_id: 2,
+  key: "alchemist",
+  name: "Alchemist",
+  trait_type: "Class",
+  description: "Alchemists ignore collision and never stop moving.",
+  upgrades: []
+)
+#alchemist.champions << [singed_2]
+assassin_2 = Trait.create(
+  id: 39,
+  season_id: 2,
+  key: "assassin",
+  name: "Assassin",
+  trait_type: "Class",
+  description: "Assassins gain bonus critical strike damage/chance",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "+75% damage/+10% chance"
+    },
+    {
+      threshhold: "6",
+      description: "+150% damage/+20% chance"
+    }
+  ]
+)
+#assassin_2.champions << [diana_2, khazix_2, leblanc_2, nocturne_2, qiyana_2, zed_2]
+avatar_2 = Trait.create(
+  id: 40,
+  season_id: 2,
+  key: "avatar",
+  name: "Avatar",
+  trait_type: "Class",
+  description: "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Origin of that Avatar. An Avatar's Origin is counted twice for Trait bonuses",
+  upgrades: []
+)
+#avatar_2.champions << [lux_2]
+berserker_2 = Trait.create(
+  id: 41,
+  season_id: 2,
+  key: "berserker",
+  name: "Berserker",
+  trait_type: "Class",
+  description: "When Berserkers attack, they have a chance to hit all units in cone in front of them and apply on-hit effects",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "45% chance"
+    },
+    {
+      threshhold: "6",
+      description: "100% chance"
+    }
+  ]
+)
+#berserker_2.champions << [drmundo_2, jax_2, olaf_2, renekton_2, sion_2, volibear_2]
+blademaster_2 = Trait.create(
+  id: 42,
+  season_id: 2,
+  key: "blademaster",
+  name: "Blademaster",
+  trait_type: "Class",
+  description: "Blademasters gain a 40% chance to perform a multi-attack that trigger on-hit effects and generate mana",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "1 additional attack"
+    },
+    {
+      threshhold: "4",
+      description: "2 additional attacks"
+    },
+    {
+      threshhold: "6",
+      description: "3 additional attacks"
+    }
+  ]
+)
+#blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2, yasuo_2]
+druid_2 = Trait.create(
+  id: 43,
+  season_id: 2,
+  key: "druid",
+  name: "Druid",
+  trait_type: "Class",
+  description: "	While at least 2 Druids are in play, Druids regenerate 40 health each second.",
+  upgrades: []
+)
+#druid_2.champions << [ivern_2, maokai_2, neeko_2]
+mage_2 = Trait.create(
+  id: 44,
+  season_id: 2,
+  key: "mage",
+  name: "Mage",
+  trait_type: "Class",
+  description: "Mages have a chance, when casting, to instead Doublecast",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "50% chance"
+    },
+    {
+      threshhold: "6",
+      description: "100% chance"
+    }
+  ]
+)
+#mage_2.champions << [brand_2, leblanc_2, syndra_2, taliyah_2, veigar_2, vladimir_2]
+mystic_2 = Trait.create(
+  id: 45,
+  season_id: 2,
+  key: "mystic",
+  name: "Mystic",
+  trait_type: "Class",
+  description: "All allies gain bonus magic resistance",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "40 magic resistance"
+    },
+    {
+      threshhold: "4",
+      description: "120 magic resistance"
+    }
+  ]
+)
+#mystic_2.champions << [janna_2, masteryi_2, nami_2, soraka_2]
+predator_2 = Trait.create(
+  id: 46,
+  season_id: 2,
+  key: "predator",
+  name: "Predator",
+  trait_type: "Class",
+  description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
+  upgrades: []
+)
+#predator_2.champions << [kogmaw_2, reksai_2, skarner_2, warwick_2]
+ranger_2 = Trait.create(
+  id: 47,
+  season_id: 2,
+  key: "ranger",
+  name: "Ranger",
+  trait_type: "Class",
+  description: "Every 3 seconds, Rangers have a chance to gain double attack speed for 3 seconds",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "30% chance"
+    },
+    {
+      threshhold: "4",
+      description: "60% chance"
+    },
+    {
+      threshhold: "6",
+      description: "100% chance"
+    }
+  ]
+)
+#ranger_2.champions << [ashe_2, ezreal_2, kindred_2, twitch_2, varus_2, vayne_2]
+summoner_2 = Trait.create(
+  id: 48,
+  season_id: 2,
+  key: "summoner",
+  name: "Summoner",
+  trait_type: "Class",
+  description: "Summoned units gain bonus health and last longer",
+  upgrades: [
+    {
+      threshhold: "3",
+      description: "+40% health and duration"
+    },
+    {
+      threshhold: "6",
+      description: "+100% health and duration"
+    }
+  ]
+)
+#summoner_2.champions << [annie_2, azir_2, malzahar_2, yorick_2, zed_2, zyra_2]
+warden_2 = Trait.create(
+  id: 49,
+  season_id: 2,
+  key: "warden",
+  name: "Warden",
+  trait_type: "Class",
+  description: "Wardens gain increased total armor",
+  upgrades: [
+    {
+      threshhold: "2",
+      description: "+125% armor"
+    },
+    {
+      threshhold: "4",
+      description: "+275% armor"
+    },
+    {
+      threshhold: "6",
+      description: "+450% armor"
+    }
+  ]
+)
+#warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2, ornn_2, taric_2, thresh_2]
