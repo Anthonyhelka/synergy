@@ -48,8 +48,8 @@ aatrox_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.65,
       range: 1
     },
@@ -86,8 +86,8 @@ ahri_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.55,
       range: 3
     },
@@ -124,8 +124,8 @@ akali_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(80, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(80, 1.80),
       attack_speed: 0.80,
       range: 1
     },
@@ -170,8 +170,8 @@ anivia_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.80,
       range: 3
     },
@@ -212,8 +212,8 @@ ashe_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.70,
       range: 4
     },
@@ -254,8 +254,8 @@ aurelionsol_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.60,
       range: 3
     },
@@ -296,8 +296,8 @@ blitzcrank_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.50,
       range: 1
     },
@@ -338,8 +338,8 @@ brand_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(60, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
       attack_speed: 0.60,
       range: 3
     },
@@ -380,8 +380,8 @@ braum_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -422,8 +422,8 @@ camille_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -468,8 +468,8 @@ chogath_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(70, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -510,8 +510,8 @@ darius_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.50,
       range: 1
     },
@@ -548,8 +548,8 @@ draven_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(70, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
       attack_speed: 0.75,
       range: 3
     },
@@ -594,8 +594,8 @@ elise_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(45, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
       attack_speed: 0.6,
       range: 2
     },
@@ -640,8 +640,8 @@ evelynn_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(70, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
       attack_speed: 0.6,
       range: 1
     },
@@ -678,8 +678,8 @@ fiora_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 1.0,
       range: 1
     },
@@ -716,8 +716,8 @@ gangplank_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(60, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
       attack_speed: 0.65,
       range: 1
     },
@@ -758,8 +758,8 @@ garen_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -808,8 +808,8 @@ gnar_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.70,
       range: 2
     },
@@ -846,8 +846,8 @@ graves_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
       attack_speed: 0.55,
       range: 1
     },
@@ -892,8 +892,8 @@ jayce_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
       attack_speed: 0.70,
       range: 1
     },
@@ -934,8 +934,8 @@ jinx_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(75, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(75, 1.80),
       attack_speed: 0.70,
       range: 3
     },
@@ -976,9 +976,9 @@ kaisa_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
-      attack_speed: 1.25,
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 1.80,
       range: 2
     },
     defense: {
@@ -1018,8 +1018,8 @@ karthus_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.65,
       range: 3
     },
@@ -1060,8 +1060,8 @@ kassadin_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.55,
       range: 1
     },
@@ -1106,8 +1106,8 @@ katarina_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -1148,8 +1148,8 @@ kayle_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(60, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
       attack_speed: 1.0,
       range: 3
     },
@@ -1190,8 +1190,8 @@ kennen_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.65,
       range: 2
     },
@@ -1232,8 +1232,8 @@ khazix_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -1274,8 +1274,8 @@ kindred_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(60, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
       attack_speed: 0.70,
       range: 3
     },
@@ -1320,8 +1320,8 @@ leona_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(45, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
       attack_speed: 0.55,
       range: 1
     },
@@ -1366,8 +1366,8 @@ lissandra_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.60,
       range: 3
     },
@@ -1404,8 +1404,8 @@ lucian_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.65,
       range: 3
     },
@@ -1450,8 +1450,8 @@ lulu_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.60,
       range: 2
     },
@@ -1492,8 +1492,8 @@ missfortune_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(75, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(75, 1.80),
       attack_speed: 0.95,
       range: 3
     },
@@ -1530,8 +1530,8 @@ mordekaiser_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.50,
       range: 1
     },
@@ -1572,8 +1572,8 @@ morgana_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.60,
       range: 2
     },
@@ -1614,8 +1614,8 @@ nidalee_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.65,
       range: 3
     },
@@ -1656,8 +1656,8 @@ pantheon_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(75, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(75, 1.80),
       attack_speed: 0.75,
       range: 1
     },
@@ -1702,8 +1702,8 @@ poppy_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.50,
       range: 1
     },
@@ -1744,8 +1744,8 @@ pyke_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(60, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -1786,8 +1786,8 @@ reksai_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -1832,8 +1832,8 @@ rengar_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(70, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -1874,8 +1874,8 @@ sejuani_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(45, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
       attack_speed: 0.55,
       range: 1
     },
@@ -1912,8 +1912,8 @@ shen_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.75,
       range: 1
     },
@@ -1954,8 +1954,8 @@ shyvana_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.70,
       range: 1
     },
@@ -2000,8 +2000,8 @@ swain_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.65,
       range: 2
     },
@@ -2042,8 +2042,8 @@ tristana_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.65,
       range: 4
     },
@@ -2088,8 +2088,8 @@ twistedfate_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.70,
       range: 3
     },
@@ -2126,8 +2126,8 @@ varus_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.70,
       range: 4
     },
@@ -2164,8 +2164,8 @@ vayne_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(40, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
       attack_speed: 0.70,
       range: 3
     },
@@ -2202,8 +2202,8 @@ veigar_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(45, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
       attack_speed: 0.55,
       range: 3
     },
@@ -2244,8 +2244,8 @@ vi_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(55, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
       attack_speed: 0.65,
       range: 1
     },
@@ -2286,8 +2286,8 @@ volibear_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(70, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
       attack_speed: 0.65,
       range: 1
     },
@@ -2328,8 +2328,8 @@ warwick_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(50, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
       attack_speed: 0.60,
       range: 1
     },
@@ -2366,8 +2366,8 @@ yasuo_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(75, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(75, 1.80),
       attack_speed: 1.0,
       range: 1
     },
@@ -2404,8 +2404,8 @@ zed_1 = Champion.create(
   },
   stats: {
     offense: {
-      damage_scale_factor: 1.25,
-      attack_damage: damage_scaling(65, 1.25),
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
       attack_speed: 0.70,
       range: 1
     },
@@ -2877,7 +2877,44 @@ sorcerer_1.champions << [ahri_1, aurelionsol_1, karthus_1, kassadin_1, lulu_1, m
 
 #Season 2
 #Champions
-
+aatrox_2 = Champion.create(
+  id: 58,
+  season_id: 2,
+  key: "aatrox",
+  name: "Aatrox",
+  title: "The Darkin Blade",
+  origins: ["Light"],
+  classes: ["Blademaster"],
+  cost: 3,
+  ability: {
+    name: "The Arclight Blade",
+    description: "Aatrox cleaves the area in front of him, dealing damage to enemies inside it.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "250 / 500 / 750"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
