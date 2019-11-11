@@ -86,13 +86,13 @@ class ChampionSearch extends Component {
         </div>
         {this.state.season === 1 ? (
           <div id='ChampionSearch-season-button-container'>
-            <Button className='ChampionSearch-season-button-inactive' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
             <Button className='ChampionSearch-season-button-active' onClick={event => this.handleSeasonChange(event, 1)}>Set 1</Button>
+            <Button className='ChampionSearch-season-button-inactive' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
           </div>
         ) : (
           <div id='ChampionSearch-season-button-container'>
-            <Button className='ChampionSearch-season-button-active' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
             <Button className='ChampionSearch-season-button-inactive' onClick={event => this.handleSeasonChange(event, 1)}>Set 1</Button>
+            <Button className='ChampionSearch-season-button-active' onClick={event => this.handleSeasonChange(event, 2)}>Set 2</Button>
           </div>
         )}
         <div id='ChampionSearch-results-container'>
