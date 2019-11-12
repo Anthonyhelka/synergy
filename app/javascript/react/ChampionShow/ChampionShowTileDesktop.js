@@ -32,7 +32,7 @@ class ChampionShowTileDesktop extends Component {
     let traitsIconList = this.props.champion.traits.map(trait => {
       return (
         <div id='ChampionShowDesktop-champion-header-trait'>
-          <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}  />
+          <Image src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}  />
           <span>&nbsp;{trait.name}</span>
         </div>
       )
@@ -56,7 +56,7 @@ class ChampionShowTileDesktop extends Component {
           <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
             <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container'>
               <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
-              <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}`, true)}`} />
+              <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
             </div>
           </List.Item>
         );
@@ -64,7 +64,7 @@ class ChampionShowTileDesktop extends Component {
       return (
         <Grid.Row id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one' columns='2'>
             <Grid.Column id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-one' width='2'>
-              <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-one-image' src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
+              <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-one-image' src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}/>
               <p>{trait.name}</p>
             </Grid.Column>
             <Grid.Column id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two' width='14'>
@@ -97,7 +97,7 @@ class ChampionShowTileDesktop extends Component {
               <Segment id='ChampionShowDesktop-champion-header' basic>
                 <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<Label id='ChampionShowDesktop-champion-header-tier' className={`tier-${this.props.champion.cost}`} attached='top left'>{this.props.champion.cost}</Label>}>Cost</Popup>
                   <div id='ChampionShowDesktop-champion-header-title'><span>{this.props.champion.name}</span><p>{this.props.champion.title}</p></div>
-                  <Image id='ChampionShowDesktop-champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}`, true)}`} />
+                  <Image id='ChampionShowDesktop-champion-header-image' src={`${pathToBanner(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`} />
                   <div id='ChampionShowDesktop-champion-header-traits-container'>
                     {traitsIconList}
                   </div>
@@ -116,7 +116,7 @@ class ChampionShowTileDesktop extends Component {
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-two'>
                       <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-two-column-one' width='4'>
-                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-two-column-one-image' src={`${pathToAbility(`./${this.props.champion.key}`, true)}`}  />
+                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-two-column-one-image' src={`${pathToAbility(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
                       </Grid.Column>
                       <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-two-column-two' width='12'>
                         <span id='ChampionShowDesktop-champion-details-ability-grid-row-two-column-two-description'>{this.props.champion.ability.description}</span>
@@ -129,7 +129,7 @@ class ChampionShowTileDesktop extends Component {
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-four'>
                       <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one'>
-                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image' src={`${pathToRender(`./${this.props.champion.key}`, true)}`}  />
+                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image' src={`${pathToRender(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-five'>

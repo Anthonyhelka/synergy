@@ -11,7 +11,10 @@ class ChampionShow extends Component {
     super(props);
     this.state={
       championKey: '',
-      championAllSets: [],
+      championAllSeasons: {},
+      championSeason1: {},
+      championSeason2: {},
+      startingSeason: 2,
       updated: false
     }
     this.getData = this.getData.bind(this);
@@ -31,7 +34,14 @@ class ChampionShow extends Component {
       .then(response => response.json())
       .then(body => {
         window.scrollTo(0, 0);
-        this.setState({ championKey: championKey, championAllSets: body.champion_all_sets, updated: true });
+        this.setState({
+          championKey: championKey,
+          championAllSeasons: body.champion_all_seasons,
+          championSeason1: body.champion_season_1,
+          championSeason2: body.champion_season_2,
+          startingSeason: body.starting_season,
+          updated: true
+        });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -47,37 +57,35 @@ class ChampionShow extends Component {
   }
 
   render() {
-
-      let championShowTileDesktop = (
-        <ChampionShowTileDesktop
-          key={this.state.champion.id}
-          id={this.state.champion.id}
-          champion={this.state.champion}
-        />
-      );
-
-    let championShowTileMobile;
+    let championShowTileDesktop;
     if (this.state.updated === false) {
-      championShowTileMobile = '';
+      championShowTileDesktop = '';
     } else {
-      championShowTileMobile = (
-        <ChampionShowTileMobile
-          key={this.state.champion.id}
-          id={this.state.champion.id}
-          champion={this.state.champion}
+      championShowTileDesktop = (
+        <ChampionShowTileDesktop
+          key={'desktop'}
+          champion={this.state.championAllSeasons[1]}
         />
       );
     }
 
+    // let championShowTileMobile;
+    // if (this.state.updated === false) {
+    //   championShowTileMobile = '';
+    // } else {
+    //   championShowTileMobile = (
+    //     <ChampionShowTileMobile
+    //       key={this.state.champion.id}
+    //       id={this.state.champion.id}
+    //       champion={this.state.champion}
+    //     />
+    //   );
+    // }
+
     return (
       <div>
         <NavigationBar />
-        <Responsive maxWidth={1023}>
-          {championShowTileMobile}
-        </Responsive>
-        <Responsive minWidth={1024}>
-          {championShowTileDesktop}
-        </Responsive>
+        {championShowTileDesktop}
       </div>
     )
   }

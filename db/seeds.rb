@@ -3069,6 +3069,7 @@ light_2 = Trait.create(
     }
   ]
 )
+light_2.champions << [aatrox_2]
 #light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2, vayne_2, yorick_2]
 mountain_2 = Trait.create(
   id: 32,
@@ -3246,6 +3247,7 @@ blademaster_2 = Trait.create(
     }
   ]
 )
+blademaster_2.champions << [aatrox_2]
 #blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2, yasuo_2]
 druid_2 = Trait.create(
   id: 43,
