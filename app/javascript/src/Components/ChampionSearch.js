@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import { connect } from 'react-redux';
+
 import { browserHistory, Link } from 'react-router';
 import { Responsive, Image, Segment, Search, Button, Icon, Dropdown, Form, List, Dimmer, Loader } from 'semantic-ui-react';
 
@@ -19,25 +22,6 @@ class ChampionSearch extends Component {
     this.filterChampions = this.filterChampions.bind(this);
     this.handleSortChange = this.handleSortChange.bind(this);
     this.handleSeasonChange = this.handleSeasonChange.bind(this);
-  }
-
-  componentDidMount() {
-    fetch('/api/v1/champions/overview')
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status}(${response.statusText})`;
-          let error = new Error(errorMessage);
-          throw(error);
-        }
-        })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ champions: body.champions, loading: false })
-        this.filterChampions(this.state.query, this.state.season);
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleChange(event) {
@@ -106,4 +90,13 @@ class ChampionSearch extends Component {
   }
 }
 
-export default ChampionSearch;
+const mapStateToProps = (state) => {
+  return {
+    championList: state.champions.championList
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(ChampionSearch)

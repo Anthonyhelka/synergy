@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route} from 'react-router';
+
+import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+
+import { getChampions } from './modules/champions';
+
 import 'semantic-ui-css/semantic.min.css';
 
 import HomeContainer from './MainPages/HomeContainer';
@@ -13,9 +19,14 @@ import SummonerShow from './/Summoner/SummonerShow';
 
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.getChampions();
+  }
+
   render(){
     return (
-      <div>
+      <Provider store={this.props.store}>
         <Router history={browserHistory}>
           <Route path='/' component={HomeContainer}/>
           <Route path='/champions' component={ChampionsOverview}/>
@@ -27,9 +38,18 @@ class App extends Component {
           <Route path='/news' component={NewsContainer}/>
           <Route path='/summoner/:name' component={SummonerShow}/>
         </Router>
-      </div>
+      </Provider>
     )
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getChampions: () => dispatch(getChampions())
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App)
