@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
-import ChampionSearch from '../Components/ChampionSearch';
+import ChampionSearchContainer from '../Components/ChampionSearchContainer';
 
 class ChampionShowTileDesktop extends Component {
   constructor(props) {
@@ -91,7 +91,7 @@ class ChampionShowTileDesktop extends Component {
         <Responsive minWidth={1024}>
           <Segment id='ChampionShowDesktop-page-container' basic>
             <Segment id='ChampionShowDesktop-search-container' basic>
-              <ChampionSearch />
+              <ChampionSearchContainer />
             </Segment>
             <Segment id='ChampionShowDesktop-champion-container' basic>
               <Segment id='ChampionShowDesktop-champion-header' basic>

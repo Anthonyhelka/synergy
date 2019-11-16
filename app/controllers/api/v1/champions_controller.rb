@@ -1,8 +1,15 @@
 class Api::V1::ChampionsController < ApplicationController
   include ::ActionController::Serialization
 
-  def overview
-    champions = Champion.all
+  def season_1
+    champions = Champion.where(season_id: 1)
+    render json: {
+      champions: ActiveModel::Serializer::CollectionSerializer.new(champions, each_serializer: TraitSerializer)
+    }
+  end
+
+  def season_2
+    champions = Champion.where(season_id: 2)
     render json: {
       champions: ActiveModel::Serializer::CollectionSerializer.new(champions, each_serializer: TraitSerializer)
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
-import ChampionSearch from '../Components/ChampionSearch';
+import ChampionSearchContainer from '../Components/ChampionSearchContainer';
 
 class ChampionShowTileMobile extends Component {
   constructor(props) {
@@ -85,7 +85,7 @@ class ChampionShowTileMobile extends Component {
         <Responsive maxWidth={1023}>
           <Segment id='ChampionShowMobile-page-container' basic>
             <Segment id='ChampionShowMobile-search-container' basic>
-              <ChampionSearch />
+              <ChampionSearchContainer />
             </Segment>
 
             <Segment id='ChampionShowMobile-champion-container' basic>

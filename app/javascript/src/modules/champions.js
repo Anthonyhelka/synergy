@@ -1,4 +1,5 @@
 const initialState = {
+  season: 1,
   championList: [],
   isFetching: false
 }
@@ -15,11 +16,16 @@ const champions = (state = initialState, action) => {
       }
     case GET_CHAMPIONS_REQUEST_FAILURE:
       return {...state, isFetching: false }
+    case CHANGE_SEASON:
+      if (state.season === 1) {
+        return {...state, season: 2 }
+      } else {
+        return {...state, season: 1}
+      }
     default:
       return state
   }
 }
-
 
 const GET_CHAMPIONS_REQUEST = 'GET_CHAMPIONS_REQUEST'
 const getChampionsRequest = () => {
@@ -44,10 +50,9 @@ const getChampionsRequestFailure = () => {
 }
 
 const getChampions = () => {
-  return dispatch => {
+  return (dispatch, getState) => {
     dispatch(getChampionsRequest())
-
-    return fetch('/api/v1/champions/overview')
+    return fetch(`/api/v1/champions/season_${getState().champions.season}`)
     .then(response => {
       if(response.ok) {
         return response.json()
@@ -55,16 +60,32 @@ const getChampions = () => {
         dispatch(getChampionsRequestFailure())
       }
     })
-    .then(champions => {
-      debugger
-      if(!champions.error) {
-        dispatch(getChampionsRequestSuccess(champions))
+    .then(response => {
+      if(!response.error) {
+        dispatch(getChampionsRequestSuccess(response.champions))
       }
     })
+  }
+}
+
+const CHANGE_SEASON = 'CHANGE_SEASON'
+const changeSeason = () => {
+  return {
+    type: CHANGE_SEASON
+  }
+}
+
+const handleSeasonChange = (event, desiredSeason) => {
+  return (dispatch, getState) => {
+    if (desiredSeason !== getState().champions.season) {
+      dispatch(changeSeason())
+      dispatch(getChampions())
+    }
   }
 }
 
 export {
   champions,
   getChampions,
+  handleSeasonChange
 }

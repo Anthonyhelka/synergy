@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
+
+import { connect } from 'react-redux';
+import { handleSeasonChange } from '../modules/champions';
+
 import { Responsive, Menu, Dropdown, Image, Segment, Sidebar, Icon, Header, Input } from 'semantic-ui-react';
 
 import SummonerSearch from '../Components/SummonerSearch';
@@ -117,9 +121,35 @@ class NavigationBar extends Component {
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.state.news}`} className='NavigationBarMobile-sidebar' as={Link} to='/news'><Icon name='newspaper' />News</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} className='NavigationBarMobile-sidebar' onClick={this.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
+        {this.props.season === 1 ? (
+          <div id='NavigationBarDesktop-change-season-container'>
+            <div id='NavigationBarDesktop-change-season-item-left' className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
+            <div className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
+          </div>
+        ) : (
+          <div id='NavigationBarDesktop-change-season-container'>
+            <div id='NavigationBarDesktop-change-season-item-left' className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
+            <div className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
+          </div>
+        )}
       </Responsive>
     ]
   }
 }
 
-export default NavigationBar;
+const mapStateToProps = (state) => {
+  return {
+    season: state.champions.season
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSeasonChange: (event, desiredSeason) => dispatch(handleSeasonChange(event, desiredSeason))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavigationBar)

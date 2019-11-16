@@ -4,7 +4,7 @@ import { Responsive, Segment, Search, Button, Icon, Image, List, Dropdown } from
 
 import NavigationBar from '../Components/NavigationBar';
 import SummonerSearch from '../Components/SummonerSearch';
-import ChampionSearch from '../Components/ChampionSearch';
+import ChampionSearchContainer from '../Components/ChampionSearchContainer';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class HomeContainer extends Component {
   }
 
   componentWillMount() {
-    let backgroundImages = ['ivern', 'maokai', 'nasus', 'taliyah'];
+    let backgroundImages = ['nasus', 'taliyah'];
     let randomImage = backgroundImages[Math.floor(Math.random()*backgroundImages.length)];
     this.setState({ background: randomImage })
   }
@@ -71,7 +71,7 @@ class HomeContainer extends Component {
                 </Button.Group>
               </Segment>
               <Segment id='HomeContainerMobile-champion-search-container' basic>
-                <ChampionSearch />
+                <ChampionSearchContainer />
               </Segment>
             </Segment>
           </div>
@@ -115,7 +115,7 @@ class HomeContainer extends Component {
                 </Button.Group>
               </Segment>
               <Segment id='HomeContainerDesktop-champion-search-container' basic>
-                <ChampionSearch />
+                <ChampionSearchContainer />
               </Segment>
             </Segment>
           </div>

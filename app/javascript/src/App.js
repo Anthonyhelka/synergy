@@ -3,7 +3,6 @@ import { Router, browserHistory, Route} from 'react-router';
 
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
-
 import { getChampions } from './modules/champions';
 
 import 'semantic-ui-css/semantic.min.css';
@@ -19,6 +18,9 @@ import SummonerShow from './/Summoner/SummonerShow';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     this.props.getChampions();
