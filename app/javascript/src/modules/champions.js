@@ -1,6 +1,7 @@
+import { loadChampionSearch } from './championSearch.js';
+
 const initialState = {
   season: 1,
-  championList: [],
   isFetching: false
 }
 
@@ -9,19 +10,11 @@ const champions = (state = initialState, action) => {
     case GET_CHAMPIONS_REQUEST:
       return {...state, isFetching: true }
     case GET_CHAMPIONS_REQUEST_SUCCESS:
-      return {
-        ...state,
-        championList: action.champions,
-        isFetching: false
-      }
+      return {...state, isFetching: false}
     case GET_CHAMPIONS_REQUEST_FAILURE:
       return {...state, isFetching: false }
     case CHANGE_SEASON:
-      if (state.season === 1) {
-        return {...state, season: 2 }
-      } else {
-        return {...state, season: 1}
-      }
+      return {...state, season: action.desiredSeason }
     default:
       return state
   }
@@ -35,10 +28,9 @@ const getChampionsRequest = () => {
 }
 
 const GET_CHAMPIONS_REQUEST_SUCCESS = 'GET_CHAMPIONS_REQUEST_SUCCESS'
-const getChampionsRequestSuccess = (champions) => {
+const getChampionsRequestSuccess = () => {
   return {
-    type: GET_CHAMPIONS_REQUEST_SUCCESS,
-    champions: champions
+    type: GET_CHAMPIONS_REQUEST_SUCCESS
   }
 }
 
@@ -62,23 +54,25 @@ const getChampions = () => {
     })
     .then(response => {
       if(!response.error) {
-        dispatch(getChampionsRequestSuccess(response.champions))
+        dispatch(loadChampionSearch(response.champions))
+        dispatch(getChampionsRequestSuccess())
       }
     })
   }
 }
 
 const CHANGE_SEASON = 'CHANGE_SEASON'
-const changeSeason = () => {
+const changeSeason = (desiredSeason) => {
   return {
-    type: CHANGE_SEASON
+    type: CHANGE_SEASON,
+    desiredSeason: desiredSeason
   }
 }
 
 const handleSeasonChange = (event, desiredSeason) => {
   return (dispatch, getState) => {
     if (desiredSeason !== getState().champions.season) {
-      dispatch(changeSeason())
+      dispatch(changeSeason(desiredSeason))
       dispatch(getChampions())
     }
   }

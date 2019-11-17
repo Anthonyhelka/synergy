@@ -1,4 +1,5 @@
 const initialState = {
+  champions: [],
   query: '',
   filteredChampions: [],
   sort: 'up'
@@ -6,6 +7,8 @@ const initialState = {
 
 const championSearch = (state = initialState, action) => {
   switch(action.type) {
+    case HANDLE_LOAD_CHAMPIONS:
+      return {...state, champions: action.champions, filteredChampions: action.champions }
     case HANDLE_QUERY_CHANGE:
       return {...state, query: action.query }
     case FILTER_CHAMPIONS:
@@ -18,6 +21,20 @@ const championSearch = (state = initialState, action) => {
       }
     default:
       return state
+  }
+}
+
+const HANDLE_LOAD_CHAMPIONS = 'HANDLE_LOAD_CHAMPIONS'
+const handleLoadChampions = (champions) => {
+  return {
+    type: HANDLE_LOAD_CHAMPIONS,
+    champions: champions
+  }
+}
+
+const loadChampionSearch = (champions) => {
+  return (dispatch) => {
+    dispatch(handleLoadChampions(champions));
   }
 }
 
@@ -41,7 +58,7 @@ const handleChampionSearch = (event) => {
   return (dispatch, getState) => {
     const query = (event.target.value).trim();
     dispatch(handleQueryChange(query));
-    const champions = getState().champions.championList;
+    const champions = getState().championSearch.champions;
     const filteredChampions = champions.filter(champion => {
       return champion.name.toLowerCase().includes(query.toLowerCase())
     });
@@ -58,6 +75,7 @@ const handleSortChange = () => {
 
 export {
   championSearch,
+  loadChampionSearch,
   handleChampionSearch,
-  handleSortChange
+  handleSortChange,
 }

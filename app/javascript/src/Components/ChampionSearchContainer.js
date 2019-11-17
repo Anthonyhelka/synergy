@@ -1,44 +1,35 @@
 import React, { Component } from 'react';
-
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { handleChampionSearch, handleSortChange } from '../modules/championSearch';
-
-import { Responsive, Image, Segment, Search, Button, Icon, Dropdown, Form, List, Dimmer, Loader } from 'semantic-ui-react';
-
+import { Icon, Form } from 'semantic-ui-react';
 import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears.svg';
 import ChampionSearchTile from './ChampionSearchTile';
 
 class ChampionSearch extends Component {
   constructor(props) {
     super(props);
+    this.handleChampionClick = this.handleChampionClick.bind(this);
+  }
+
+  handleChampionClick(event, key) {
+    browserHistory.push(`/champions/${key}`);
   }
 
   render() {
-    let championsSortOrder;
-    let champions;
-    if (this.props.query === '') {
-      championsSortOrder = (this.props.sort === 'up') ? this.props.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.props.champions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
-      champions = championsSortOrder.map(champion => {
-        return (
-          <ChampionSearchTile
-            key={champion.id}
-            id={champion.id}
-            champion={champion}
-          />
-        )
-      });
-    } else {
-      championsSortOrder = (this.props.sort === 'up') ? this.props.filteredChampions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.props.filteredChampions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
-      champions = championsSortOrder.map(champion => {
-        return (
-          <ChampionSearchTile
-            key={champion.id}
-            id={champion.id}
-            champion={champion}
-          />
-        )
-      });
-    }
+    let sortedChampions = (this.props.sort === 'up') ? this.props.filteredChampions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)) : this.props.filteredChampions.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost));
+    let champions = sortedChampions.map(champion => {
+      return (
+        <ChampionSearchTile
+          key={champion.key}
+          id={champion.id}
+          championKey={champion.key}
+          cost={champion.cost}
+          seasonId={champion.season_id}
+          handleChampionClick={this.handleChampionClick}
+        />
+      )
+    });
 
     return (
       <div id='ChampionSearch-container'>
@@ -52,11 +43,19 @@ class ChampionSearch extends Component {
         </div>
         <div id='ChampionSearch-results-container'>
           {this.props.isFetching ? (
-            <Image id='ChampionSearch-loading-gears' src={loading_gears} />
+            <img id='ChampionSearch-loading-gears' src={loading_gears} />
           ) : (
-            <div id='ChampionSearch-champions-container'>
-              {champions}
-            </div>
+            (champions.length === 0) ? (
+              <div id='ChampionSearch-no-results-alert-container'>
+                <span id='ChampionSearch-no-results-alert-text'>We couldn't find any champions with the name '{this.props.query}'</span>
+                <br />
+                <Icon id='ChampionSearch-no-results-alert-icon' name='question' />
+              </div>
+            ) : (
+              <div id='ChampionSearch-champions-container'>
+                {champions}
+              </div>
+            )
           )}
         </div>
       </div>
@@ -66,7 +65,7 @@ class ChampionSearch extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    champions: state.champions.championList,
+    allChampions: state.champions.championList,
     isFetching: state.champions.isFetching,
     query: state.championSearch.query,
     filteredChampions: state.championSearch.filteredChampions,

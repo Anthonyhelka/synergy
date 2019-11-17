@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getChampions();
   }
 
