@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { handleChampionSearch, handleSortChange } from '../modules/championSearch';
+import { handleChampionSearch, handleSortChange } from '../Redux/modules/championSearch';
 import { Icon, Form } from 'semantic-ui-react';
 import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears.svg';
 import ChampionSearchTile from './ChampionSearchTile';

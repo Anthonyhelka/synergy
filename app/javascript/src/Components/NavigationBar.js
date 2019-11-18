@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 
 import { connect } from 'react-redux';
-import { handleSeasonChange } from '../modules/champions';
+import { handleSeasonChange } from '../Redux/modules/champions';
 
 import { Responsive, Menu, Dropdown, Image, Segment, Sidebar, Icon, Header, Input } from 'semantic-ui-react';
 

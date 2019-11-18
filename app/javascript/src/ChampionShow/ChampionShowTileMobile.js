@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { List, Popup, Grid, Header, Segment, Divider, Responsive, Image, Label, Icon, Table } from 'semantic-ui-react';
 
-import ChampionSearchContainer from '../Components/ChampionSearchContainer';
+import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
 
 class ChampionShowTileMobile extends Component {
   constructor(props) {

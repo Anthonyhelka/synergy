@@ -4,7 +4,7 @@ import { Responsive, Segment, Search, Button, Icon, Image, List, Dropdown } from
 
 import NavigationBar from '../Components/NavigationBar';
 import SummonerSearch from '../Components/SummonerSearch';
-import ChampionSearchContainer from '../Components/ChampionSearchContainer';
+import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
 
 class HomeContainer extends Component {
   constructor(props) {
