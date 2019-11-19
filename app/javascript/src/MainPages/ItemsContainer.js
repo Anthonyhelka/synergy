@@ -8,7 +8,7 @@ class ItemsContainer extends Component {
   render() {
     return (
       <div>
-        <NavigationBar page='items' />
+        <NavigationBar />
         <div id='ItemsContainer-page-container'>
           <Message warning icon='wrench' header='This Page (Items) is Still Under Development' content='We are sorry for the inconvenience' />
         </div>

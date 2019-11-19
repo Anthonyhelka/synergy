@@ -20,7 +20,5 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index]
 
-  resources :news, only: [:index]
-
   resources :summoner, only: [:show]
 end

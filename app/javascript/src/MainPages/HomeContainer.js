@@ -37,7 +37,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <NavigationBar page='home' />
+        <NavigationBar />
 
         <Responsive maxWidth={500}>
           <div id='HomeContainerMobile-page-container'>
@@ -56,16 +56,16 @@ class HomeContainer extends Component {
                       <Icon name='chess pawn' />
                     </Button.Content>
                   </Button>
+                  <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions/origins'}>
+                    <Button.Content visible>Synergies</Button.Content>
+                    <Button.Content hidden>
+                      <Icon name='group' />
+                    </Button.Content>
+                  </Button>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/items'}>
                     <Button.Content visible>Items</Button.Content>
                     <Button.Content hidden>
                       <Icon name='shield alternate' />
-                    </Button.Content>
-                  </Button>
-                  <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/news'}>
-                    <Button.Content visible>News</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='newspaper' />
                     </Button.Content>
                   </Button>
                 </Button.Group>
@@ -104,12 +104,6 @@ class HomeContainer extends Component {
                     <Button.Content visible>Items</Button.Content>
                     <Button.Content hidden>
                       <Icon name='shield alternate' />
-                    </Button.Content>
-                  </Button>
-                  <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/news'}>
-                    <Button.Content visible>News</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='newspaper' />
                     </Button.Content>
                   </Button>
                 </Button.Group>

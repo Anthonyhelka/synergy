@@ -177,7 +177,7 @@ class ChampionsOverview extends Component {
     return [
       <Responsive maxWidth={1023}>
         <div id='ChampionOverviewMobile-page-container'>
-          <NavigationBar page='overview' />
+          <NavigationBar />
           <div id='ChampionOverviewMobile-spacing-div'></div>
             <table id='ChampionOverviewMobile-table'>
               <tbody>
