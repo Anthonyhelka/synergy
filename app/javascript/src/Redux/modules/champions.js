@@ -1,4 +1,4 @@
-import { loadChampionSearch } from './championSearch.js';
+import { loadChampionSearch, clearChampionSearch } from './championSearch.js';
 
 const initialState = {
   season: 1,
@@ -55,6 +55,7 @@ const getChampions = () => {
     .then(response => {
       if(!response.error) {
         dispatch(loadChampionSearch(response.champions))
+        dispatch(clearChampionSearch())
         dispatch(getChampionsRequestSuccess())
       }
     })

@@ -35,8 +35,8 @@ class ChampionSearch extends Component {
       <div id='ChampionSearch-container'>
         <div id='ChampionSearch-form-container'>
           <Form id='ChampionSearch-form'>
-            <Form.Field id='ChampionSearch-form-field' value={this.props.query} onChange={this.props.handleChampionSearch}>
-              <input id='ChampionSearch-form-input' placeholder='Champion Name...' />
+            <Form.Field id='ChampionSearch-form-field'>
+              <input id='ChampionSearch-form-input' placeholder='Champion Name...' value={this.props.query} onChange={this.props.handleChampionSearch} />
               <Icon id='ChampionSearch-form-sort-icon' name={`sort amount ${this.props.sort}`} onClick={this.props.handleSortChange} />
             </Form.Field>
           </Form>

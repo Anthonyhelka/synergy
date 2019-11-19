@@ -19,6 +19,8 @@ const championSearch = (state = initialState, action) => {
       } else {
         return {...state, sort: 'up' }
       }
+    case CLEAR_SEARCH:
+      return {...state, query: '' }
     default:
       return state
   }
@@ -73,9 +75,17 @@ const handleSortChange = () => {
   }
 }
 
+const CLEAR_SEARCH = 'CLEAR_SEARCH'
+const clearChampionSearch = () => {
+  return {
+    type: CLEAR_SEARCH
+  }
+}
+
 export {
   championSearch,
   loadChampionSearch,
   handleChampionSearch,
   handleSortChange,
+  clearChampionSearch
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
+import { connect } from 'react-redux';
+import { handleBackground } from '../Redux/modules/homeContainer';
 import { Responsive, Segment, Search, Button, Icon, Image, List, Dropdown } from 'semantic-ui-react';
-
 import NavigationBar from '../Components/NavigationBar';
 import SummonerSearch from '../Components/SummonerSearch';
 import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
@@ -9,28 +10,17 @@ import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
 class HomeContainer extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      background: ''
-    }
-  }
-
-  componentWillMount() {
-    let backgroundImages = ['nasus', 'taliyah'];
-    let randomImage = backgroundImages[Math.floor(Math.random()*backgroundImages.length)];
-    this.setState({ background: randomImage })
   }
 
   componentDidMount() {
     if (window.innerWidth >= 501) {
-      document.body.classList.add(`black-background-color`);
-      document.body.classList.add(`background-${this.state.background}`);
+      this.props.handleBackground('mount', document.body);
     }
   }
 
   componentWillUnmount() {
     if (window.innerWidth >= 501) {
-      document.body.classList.remove(`black-background-color`);
-      document.body.classList.remove(`background-${this.state.background}`);
+      this.props.handleBackground('unmount', document.body);
     }
   }
 
@@ -119,4 +109,19 @@ class HomeContainer extends Component {
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = (state) => {
+  return {
+    background: state.homeContainer.background
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleBackground: (action, documentBody) => dispatch(handleBackground(action, documentBody))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeContainer)
