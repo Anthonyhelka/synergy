@@ -32,7 +32,7 @@ class HomeContainer extends Component {
         <Responsive maxWidth={500}>
           <div id='HomeContainerMobile-page-container'>
             <Segment id='HomeContainerMobile-logo-container' basic>
-              <Image id='HomeContainerMobile-logo' src={require('../../../assets/images/logos/logoBlack.png')} />
+              <Image id='HomeContainerMobile-logo' src={require('../../../assets/images/logos/logoBlack.png')} alt='Synergy Logo'/>
             </Segment>
             <Segment id='HomeContainerMobile-search-container' basic>
               <Segment id='HomeContainerMobile-summoner-search-container' basic>
@@ -42,21 +42,15 @@ class HomeContainer extends Component {
                 <Button.Group id='HomeContainerMobile-button-group'>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions'}>
                     <Button.Content visible>Champions</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='chess pawn' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='chess pawn' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions/origins'}>
                     <Button.Content visible>Synergies</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='group' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='group' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/items'}>
                     <Button.Content visible>Items</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='shield alternate' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='shield alternate' /></Button.Content>
                   </Button>
                 </Button.Group>
               </Segment>
@@ -70,7 +64,7 @@ class HomeContainer extends Component {
         <Responsive minWidth={501}>
           <div id='HomeContainerDesktop-page-container'>
             <Segment id='HomeContainerDesktop-logo-container' basic>
-              <Image id='HomeContainerDesktop-logo' src={require('../../../assets/images/logos/logoWhite.png')} />
+              <Image id='HomeContainerDesktop-logo' src={require('../../../assets/images/logos/logoWhite.png')} alt='Synergy Logo' />
             </Segment>
             <Segment id='HomeContainerDesktop-search-container' basic>
               <Segment id='HomeContainerDesktop-summoner-search-container' basic>
@@ -80,21 +74,15 @@ class HomeContainer extends Component {
                 <Button.Group id='HomeContainerDesktop-button-group'>
                   <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/champions'}>
                     <Button.Content visible>Champions</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='chess pawn' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='chess pawn' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/champions/origins'}>
                     <Button.Content visible>Synergies</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='group' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='group' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/items'}>
                     <Button.Content visible>Items</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='shield alternate' />
-                    </Button.Content>
+                    <Button.Content hidden><Icon name='shield alternate' /></Button.Content>
                   </Button>
                 </Button.Group>
               </Segment>

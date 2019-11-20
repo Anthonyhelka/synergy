@@ -1,5 +1,5 @@
 const initialState = {
-  backgroundList: ['taliyah', 'nasus'],
+  backgroundList: ['yasuo'],
   background: ''
 }
 

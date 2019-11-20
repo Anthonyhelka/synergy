@@ -35,7 +35,7 @@ class NavigationBar extends Component {
               <Icon id='NavigationBarMobile-item-one-icon' className='NavigationBar-sidebar' name='bars' />
             </div>
           </Menu.Item>
-          {this.props.sidebarVisible === false ? (<Menu.Item id='NavigationBarMobile-item-two-container'><Image id='NavigationBarMobile-item-two-image' src={require('../../../assets/images/logos/logo.png')} onClick={this.handleLogoClick} /></Menu.Item>) : (<span></span>)}
+          {this.props.sidebarVisible === false ? (<Menu.Item id='NavigationBarMobile-item-two-container'><Image id='NavigationBarMobile-item-two-image' onClick={this.handleLogoClick} src={require('../../../assets/images/logos/logo.png')} alt='Synergy Logo' /></Menu.Item>) : (<span></span>)}
           <Menu.Item id='NavigationBarMobile-item-three-container'>
             <SummonerSearch />
           </Menu.Item>
@@ -69,7 +69,7 @@ class NavigationBar extends Component {
             </div>
           </Menu.Item>
           <Menu.Item id='NavigationBarDesktop-item-two-container'>
-            <Image id='NavigationBarDesktop-item-two-image' src={require('../../../assets/images/logos/logo.png')} onClick={this.handleLogoClick} />
+            <Image id='NavigationBarDesktop-item-two-image' onClick={this.handleLogoClick} src={require('../../../assets/images/logos/logo.png')} alt='Synegy Logo'  />
           </Menu.Item>
           <Menu.Item id='NavigationBarDesktop-item-three-container'>
             <SummonerSearch />

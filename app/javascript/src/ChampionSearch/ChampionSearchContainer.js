@@ -23,6 +23,7 @@ class ChampionSearch extends Component {
         <ChampionSearchTile
           key={champion.key}
           id={champion.id}
+          name={champion.name}
           championKey={champion.key}
           cost={champion.cost}
           seasonId={champion.season_id}

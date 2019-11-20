@@ -5,7 +5,7 @@ const ChampionSearchTile = (props) => {
   return (
     <div id='ChampionSearch-champions-item-container'>
       <div id='ChampionSearch-champions-item-label' className={`tier-${props.cost}`}>{props.cost}</div>
-      <img id='ChampionSearch-champions-item-image' className={`tier-${props.cost}`} onClick={event => props.handleChampionClick(event, `${props.championKey}`)} src={`${pathToIcon(`./${props.championKey}_${props.seasonId}`, true)}`} />
+      <img id='ChampionSearch-champions-item-image' className={`tier-${props.cost}`} onClick={event => props.handleChampionClick(event, `${props.championKey}`)} src={`${pathToIcon(`./${props.championKey}_${props.seasonId}`, true)}`} alt={`${props.name} Name`} />
     </div>
   );
 }

@@ -10,6 +10,7 @@ Synergy is an application that was developed to help users improve at the popula
 **Built with:**
 * [Ruby on Rails](https://rubyonrails.org/) v5.2.3
 * [React](https://reactjs.org/) v16.8.6
+* [Redux](https://redux.js.org/) v4.0.0
 * [Semantic UI React](https://react.semantic-ui.com/) v0.87.2
 
 **Tested with:**
