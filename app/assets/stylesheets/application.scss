@@ -853,15 +853,15 @@ body {
   padding: 40px 0px 0px 0px !important;
 }
 
-/* ChampionOverview */
+/* ChampionTable */
 /* Desktop */
-#ChampionOverviewDesktop-page-container {
+#ChampionTableDesktop-page-container {
 }
-#ChampionOverviewDesktop-spacing-div {
+#ChampionTableDesktop-spacing-div {
   width: 100% !important;
   height: 40px !important;
 }
-#ChampionOverviewDesktop-table {
+#ChampionTableDesktop-table {
   width: 100% !important;
   height: 100% !important;
   table-layout: fixed !important;
@@ -872,83 +872,83 @@ body {
   background-color: #1B1C1D !important;
 }
 /* Header Row */
-#ChampionOverviewDesktop-table-header-row {
+#ChampionTableDesktop-table-header-row {
   width: 100% !important;
   height: 30px !important;
 }
-.ChampionOverviewDesktop-table-header-row-item {
+.ChampionTableDesktop-table-header-row-item {
   border: 0px !important;
   border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverviewDesktop-table-header-row-item:hover {
+.ChampionTableDesktop-table-header-row-item:hover {
   border-bottom: 3px solid #FFFFFF !important;
 }
-.ChampionOverviewDesktop-table-header-row-item-active {
+.ChampionTableDesktop-table-header-row-item-active {
   border: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewDesktop-table-header-row-name {
+#ChampionTableDesktop-table-header-row-name {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-traits {
+#ChampionTableDesktop-table-header-row-traits {
   width: 12.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-cost {
+#ChampionTableDesktop-table-header-row-cost {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-health {
+#ChampionTableDesktop-table-header-row-health {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-armor {
+#ChampionTableDesktop-table-header-row-armor {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-magic-resist {
+#ChampionTableDesktop-table-header-row-magic-resist {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-dps {
+#ChampionTableDesktop-table-header-row-dps {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-attack-damage {
+#ChampionTableDesktop-table-header-row-attack-damage {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-attack-speed {
+#ChampionTableDesktop-table-header-row-attack-speed {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-range {
+#ChampionTableDesktop-table-header-row-range {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-loading-gears-container {
+#ChampionTableDesktop-loading-gears-container {
   position: absolute !important;
   width: 100% !important;
   padding: 7px 0px 7px 0px !important;
   text-align: center !important;
 }
-#ChampionOverviewDesktop-loading-gears {
+#ChampionTableDesktop-loading-gears {
   width: 60px !important;
   height: 60px !important;
 }
 /* Mobile */
-#ChampionOverviewMobile-page-container {
+#ChampionTableMobile-page-container {
   overflow-x: auto !important;
 }
-#ChampionOverviewMobile-page-container::-webkit-scrollbar-track {
+#ChampionTableMobile-page-container::-webkit-scrollbar-track {
   background-color: #1B1C1D !important;
 }
-#ChampionOverviewMobile-page-container::-webkit-scrollbar-thumb {
+#ChampionTableMobile-page-container::-webkit-scrollbar-thumb {
   border-radius: 0px !important;
   background-color: #A78E5A !important;
 }
-#ChampionOverviewMobile-spacing-div {
+#ChampionTableMobile-spacing-div {
   width: 100% !important;
   height: 40px !important;
 }
-#ChampionOverviewMobile-table {
+#ChampionTableMobile-table {
   width: 285% !important;
   height: 100% !important;
   padding: 0px !important;
@@ -958,114 +958,114 @@ body {
   background-color: #1B1C1D !important;
 }
 /* Header Row */
-#ChampionOverviewMobile-table-header-row {
+#ChampionTableMobile-table-header-row {
   width: 100% !important;
   height: 30px !important;
 }
-.ChampionOverviewMobile-table-header-row-item {
+.ChampionTableMobile-table-header-row-item {
   border: 0px !important;
   border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverviewMobile-table-header-row-item:hover {
+.ChampionTableMobile-table-header-row-item:hover {
   border-bottom: 3px solid #FFFFFF !important;
 }
-.ChampionOverviewMobile-table-header-row-item-active {
+.ChampionTableMobile-table-header-row-item-active {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewMobile-table-header-row-name {
+#ChampionTableMobile-table-header-row-name {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-traits {
+#ChampionTableMobile-table-header-row-traits {
   width: 12.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-cost {
+#ChampionTableMobile-table-header-row-cost {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-health {
+#ChampionTableMobile-table-header-row-health {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-armor {
+#ChampionTableMobile-table-header-row-armor {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-magic-resist {
+#ChampionTableMobile-table-header-row-magic-resist {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-dps {
+#ChampionTableMobile-table-header-row-dps {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-attack-damage {
+#ChampionTableMobile-table-header-row-attack-damage {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-attack-speed {
+#ChampionTableMobile-table-header-row-attack-speed {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-range {
+#ChampionTableMobile-table-header-row-range {
   width: 10% !important;
 }
 /* Loader */
-#ChampionOverviewDesktop-loader {
+#ChampionTableDesktop-loader {
   top: 100px !important;
 }
-#ChampionOverviewMobile-loader {
+#ChampionTableMobile-loader {
   top: 100px !important;
 }
 /* Champion Row */
-#ChampionOverview-table-champion-row:nth-child(odd) {
+#ChampionTable-table-champion-row:nth-child(odd) {
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
-#ChampionOverview-table-champion-row:nth-child(even) {
+#ChampionTable-table-champion-row:nth-child(even) {
   color: #FFFFFF !important;
   background-color: #353637 !important;
 }
-#ChampionOverview-table-champion-row:nth-child(odd):hover,
-#ChampionOverview-table-champion-row:nth-child(even):hover {
+#ChampionTable-table-champion-row:nth-child(odd):hover,
+#ChampionTable-table-champion-row:nth-child(even):hover {
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverview-table-champion-row-item {
+.ChampionTable-table-champion-row-item {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: inherit !important;
 }
-.ChampionOverview-table-champion-row-item-active {
+.ChampionTable-table-champion-row-item-active {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverview-table-champion-row-name {
+#ChampionTable-table-champion-row-name {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
 }
-#ChampionOverview-table-champion-row-name-image {
+#ChampionTable-table-champion-row-name-image {
   width: 40px !important;
   height: 40px !important;
 }
-#ChampionOverview-table-champion-row-trait-images-container {
+#ChampionTable-table-champion-row-trait-images-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
-#ChampionOverview-table-champion-row-trait-image {
+#ChampionTable-table-champion-row-trait-image {
   width: 30px !important;
   height: 30px !important;
 }
-#ChampionOverviewMobile-loading-gears-container {
+#ChampionTableMobile-loading-gears-container {
   position: absolute !important;
   width: 100% !important;
   padding: 7px 0px 7px 0px !important;
   text-align: center !important;
 }
-#ChampionOverviewMobile-loading-gears {
+#ChampionTableMobile-loading-gears {
   width: 60px !important;
   height: 60px !important;
 }

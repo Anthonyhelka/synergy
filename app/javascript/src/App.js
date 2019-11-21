@@ -26,7 +26,6 @@ class App extends Component {
         <Router history={browserHistory}>
           <Route path='/' component={HomeContainer}/>
           <Route path='/champions' component={ChampionTableContainer}/>
-          <Route path='/champions/overview' component={ChampionTableContainer}/>
           <Route path='/champions/origins' component={ChampionsOrigins}/>
           <Route path='/champions/classes' component={ChampionsClasses}/>
           <Route path='/champions/:key' component={ChampionShow}/>

@@ -1,6 +1,6 @@
 const initialState = {
   home: 'inactive',
-  overview: 'inactive',
+  table: 'inactive',
   origins: 'inactive',
   classes: 'inactive',
   items: 'inactive',
@@ -14,8 +14,8 @@ const navigationBar = (state = initialState, action) => {
       switch(action.location) {
         case '/':
           return {...initialState, home: 'active' }
-        case '/champions/overview':
-          return {...initialState, overview: 'active' }
+        case '/champions':
+          return {...initialState, table: 'active' }
         case '/champions/origins':
           return {...initialState, origins: 'active' }
         case '/champions/classes':

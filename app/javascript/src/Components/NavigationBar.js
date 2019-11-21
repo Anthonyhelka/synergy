@@ -53,7 +53,7 @@ class NavigationBar extends Component {
             </div>
           )}
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.overview}`} as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.table}`} as={Link} to='/champions'><Icon name='chess pawn' />Champions</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
@@ -88,7 +88,7 @@ class NavigationBar extends Component {
             </div>
           )}
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.overview}`} as={Link} to='/champions/overview'><Icon name='chess pawn' />Champions</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.table}`} as={Link} to='/champions'><Icon name='chess pawn' />Champions</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
@@ -103,7 +103,7 @@ const mapStateToProps = (state) => {
   return {
     season: state.champions.season,
     home: state.navigationBar.home,
-    overview: state.navigationBar.overview,
+    table: state.navigationBar.table,
     origins: state.navigationBar.origins,
     classes: state.navigationBar.classes,
     items: state.navigationBar.items,

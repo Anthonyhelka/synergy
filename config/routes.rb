@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'champions/overview', to: 'champions#overview', as: 'overview'
+  get 'champions', to: 'champions#table', as: 'table'
   get 'champions/origins', to: 'champions#origins', as: 'origins'
   get 'champions/classes', to: 'champions#classes', as: 'classes'
   resources :champions, only: [:index, :show]

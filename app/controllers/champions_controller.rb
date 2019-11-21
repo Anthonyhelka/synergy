@@ -1,5 +1,5 @@
 class ChampionsController < ApplicationController
-  def overview
+  def table
   end
 
   def origins
