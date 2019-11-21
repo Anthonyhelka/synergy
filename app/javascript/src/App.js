@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
 import { getChampions } from './Redux/modules/champions';
 import HomeContainer from './MainPages/HomeContainer';
-import ChampionsOverview from  './ChampionsOverview/ChampionsOverview';
+import ChampionTableContainer from  './ChampionTable/ChampionTableContainer';
 import ChampionsOrigins from  './Traits/ChampionsOrigins';
 import ChampionsClasses from  './Traits/ChampionsClasses';
 import ChampionShow from  './ChampionShow/ChampionShow';
@@ -25,8 +25,8 @@ class App extends Component {
       <Provider store={this.props.store}>
         <Router history={browserHistory}>
           <Route path='/' component={HomeContainer}/>
-          <Route path='/champions' component={ChampionsOverview}/>
-          <Route path='/champions/overview' component={ChampionsOverview}/>
+          <Route path='/champions' component={ChampionTableContainer}/>
+          <Route path='/champions/overview' component={ChampionTableContainer}/>
           <Route path='/champions/origins' component={ChampionsOrigins}/>
           <Route path='/champions/classes' component={ChampionsClasses}/>
           <Route path='/champions/:key' component={ChampionShow}/>

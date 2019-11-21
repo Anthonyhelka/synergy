@@ -1,4 +1,5 @@
 import { loadChampionSearch, clearChampionSearch } from './championSearch.js';
+import { loadChampionTable } from './championTable.js';
 
 const initialState = {
   season: 1,
@@ -56,6 +57,7 @@ const getChampions = () => {
       if(!response.error) {
         dispatch(loadChampionSearch(response.champions))
         dispatch(clearChampionSearch())
+        dispatch(loadChampionTable(response.champions))
         dispatch(getChampionsRequestSuccess())
       }
     })

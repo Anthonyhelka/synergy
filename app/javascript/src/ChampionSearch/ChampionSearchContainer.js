@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { handleChampionSearch, handleSortChange } from '../Redux/modules/championSearch';
 import { Icon, Form } from 'semantic-ui-react';
-import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears.svg';
+import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears_grey.svg';
 import ChampionSearchTile from './ChampionSearchTile';
 
 class ChampionSearch extends Component {
@@ -21,12 +21,12 @@ class ChampionSearch extends Component {
     let champions = sortedChampions.map(champion => {
       return (
         <ChampionSearchTile
-          key={champion.key}
+          key={champion.id}
           id={champion.id}
-          name={champion.name}
           championKey={champion.key}
-          cost={champion.cost}
           seasonId={champion.season_id}
+          name={champion.name}
+          cost={champion.cost}
           handleChampionClick={this.handleChampionClick}
         />
       )
@@ -66,7 +66,6 @@ class ChampionSearch extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    allChampions: state.champions.championList,
     isFetching: state.champions.isFetching,
     query: state.championSearch.query,
     filteredChampions: state.championSearch.filteredChampions,

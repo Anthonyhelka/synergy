@@ -13,15 +13,15 @@ const navigationBar = (state = initialState, action) => {
     case HANDLE_CURRENT_PAGE:
       switch(action.location) {
         case '/':
-          return {...state, home: 'active', overview: 'inactive', origins: 'inactive', classes: 'inactive', items: 'inactive', news: 'inactive' }
+          return {...initialState, home: 'active' }
         case '/champions/overview':
-          return {...state, home: 'inactive', overview: 'active', origins: 'inactive', classes: 'inactive', items: 'inactive', news: 'inactive' }
+          return {...initialState, overview: 'active' }
         case '/champions/origins':
-          return {...state, home: 'inactive', overview: 'inactive', origins: 'active', classes: 'inactive', items: 'inactive', news: 'inactive' }
+          return {...initialState, origins: 'active' }
         case '/champions/classes':
-          return {...state, home: 'inactive', overview: 'inactive', origins: 'inactive', classes: 'active', items: 'inactive', news: 'inactive' }
+          return {...initialState, classes: 'active' }
         case '/items':
-          return {...state, home: 'inactive', overview: 'inactive', origins: 'inactive', classes: 'inactive', items: 'active', news: 'inactive' }
+          return {...initialState, items: 'active' }
         default:
           return state
       }
