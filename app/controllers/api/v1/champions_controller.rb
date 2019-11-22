@@ -21,27 +21,9 @@ class Api::V1::ChampionsController < ApplicationController
 
   def show
     champion_key = params[:id].downcase
-    champion_all_seasons = Champion.where(key: champion_key)
-    champion_season_1 = Champion.where(key: champion_key, season_id: 1)
-    champion_season_2 = Champion.where(key: champion_key, season_id: 2)
-    if !champion_season_1.empty? && !champion_season_2.empty?
-      starting_season = 2
-    end
-    if champion_season_1.empty?
-      champion_season_1 = nil
-      starting_season = 2
-    else
-      champion_season_1 = champion_season_1[0]
-    end
-    if champion_season_2.empty?
-      champion_season_2 = nil
-      starting_season = 1
-    else
-      champion_season_2 = champion_season_2[0]
-    end
+    champion = Champion.where(key: champion_key, season: 1)
     render json: {
-      champion_all_seasons: ActiveModel::Serializer::CollectionSerializer.new(champion_all_seasons, each_serializer: TraitSerializer),
-      starting_season: starting_season
+      champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TraitSerializer)
     }
   end
 end

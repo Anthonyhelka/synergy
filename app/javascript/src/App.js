@@ -6,9 +6,9 @@ import { getData } from './Redux/modules/data';
 import HomeContainer from './MainPages/HomeContainer';
 import ChampionTableContainer from  './ChampionTable/ChampionTableContainer';
 import TraitContainer from  './Traits/TraitContainer';
-import ChampionShow from  './ChampionShow/ChampionShow';
+import ChampionShowContainer from  './ChampionShow/ChampionShowContainer';
 import ItemsContainer from  './MainPages/ItemsContainer';
-import SummonerShow from './/Summoner/SummonerShow';
+import SummonerShow from './Summoner/SummonerShow';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends Component {
           <Route path='/' component={HomeContainer}/>
           <Route path='/champions' component={ChampionTableContainer}/>
           <Route path='/champions/traits' component={TraitContainer}/>
-          <Route path='/champions/:key' component={ChampionShow}/>
+          <Route path='/champions/:key' component={ChampionShowContainer}/>
           <Route path='/items' component={ItemsContainer}/>
           <Route path='/summoner/:name' component={SummonerShow}/>
         </Router>

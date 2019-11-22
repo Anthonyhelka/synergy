@@ -6,6 +6,7 @@ import { navigationBar } from '../modules/navigationBar';
 import { homeContainer } from '../modules/homeContainer';
 import { championTable } from '../modules/championTable';
 import { traitContainer } from '../modules/traitContainer';
+import { championShow } from '../modules/championShow';
 
 const rootReducer = combineReducers({
   data,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   navigationBar,
   homeContainer,
   championTable,
-  traitContainer
+  traitContainer,
+  championShow
 });
 
 export default rootReducer;
