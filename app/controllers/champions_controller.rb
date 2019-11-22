@@ -2,10 +2,7 @@ class ChampionsController < ApplicationController
   def table
   end
 
-  def origins
-  end
-
-  def classes
+  def traits
   end
 
   def show

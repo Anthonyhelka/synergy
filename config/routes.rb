@@ -5,18 +5,15 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'champions/season_1', to: 'champions#season_1', as: 'season_1'
       get 'champions/season_2', to: 'champions#season_2', as: 'season_2'
-      get 'champions/origins', to: 'champions#origins', as: 'origins'
-      get 'champions/classes', to: 'champions#classes', as: 'classes'
-      resources :champions, only: [:index, :show]
+      resources :champions, only: [:show]
 
       resources :summoner, only: [:show]
     end
   end
 
   get 'champions', to: 'champions#table', as: 'table'
-  get 'champions/origins', to: 'champions#origins', as: 'origins'
-  get 'champions/classes', to: 'champions#classes', as: 'classes'
-  resources :champions, only: [:index, :show]
+  get 'champions/traits', to: 'champions#traits', as: 'traits'
+  resources :champions, only: [:show]
 
   resources :items, only: [:index]
 

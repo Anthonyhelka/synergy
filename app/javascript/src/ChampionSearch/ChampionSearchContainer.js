@@ -48,7 +48,7 @@ class ChampionSearch extends Component {
           ) : (
             (champions.length === 0) ? (
               <div id='ChampionSearch-no-results-alert-container'>
-                <span id='ChampionSearch-no-results-alert-text'>We couldn't find any champions with the name '{this.props.query}'</span>
+                <span id='ChampionSearch-no-results-alert-text'>We couldn't find any champions with the name "{this.props.query}"</span>
                 <br />
                 <Icon id='ChampionSearch-no-results-alert-icon' name='question' />
               </div>
@@ -66,7 +66,7 @@ class ChampionSearch extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.champions.isFetching,
+    isFetching: state.data.isFetching,
     query: state.championSearch.query,
     filteredChampions: state.championSearch.filteredChampions,
     sort: state.championSearch.sort

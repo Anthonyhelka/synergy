@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { connect } from 'react-redux';
-import { handleSeasonChange } from '../Redux/modules/champions';
+import { handleSeasonChange } from '../Redux/modules/data';
 import { handleCurrentPage, handleSidebarClick, handleSidebarOutsideClick } from '../Redux/modules/navigationBar';
 import { Responsive, Menu, Dropdown, Image, Segment, Sidebar, Icon, Header, Input } from 'semantic-ui-react';
 import SummonerSearch from '../Components/SummonerSearch';
@@ -54,8 +54,7 @@ class NavigationBar extends Component {
           )}
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.table}`} as={Link} to='/champions'><Icon name='chess pawn' />Champions</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
-          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
+          <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.traits}`} as={Link} to='/champions/traits'><Icon name='group' />Traits</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-close`} onClick={this.props.handleSidebar}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
@@ -89,8 +88,7 @@ class NavigationBar extends Component {
           )}
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.table}`} as={Link} to='/champions'><Icon name='chess pawn' />Champions</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.origins}`} as={Link} to='/champions/origins'><Icon name='group' />Origins</Menu.Item>
-          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.classes}`} as={Link} to='/champions/classes'><Icon name='group' />Classes</Menu.Item>
+          <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.traits}`} as={Link} to='/champions/traits'><Icon name='group' />Traits</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-${this.props.items}`} as={Link} to='/items'><Icon name='shield alternate' />Items</Menu.Item>
           <Menu.Item id={`NavigationBarDesktop-sidebar-item-container-close`} onClick={this.props.handleSidebarClick}><Icon name='close' />Close</Menu.Item>
         </Sidebar>
@@ -101,11 +99,10 @@ class NavigationBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    season: state.champions.season,
+    season: state.data.season,
     home: state.navigationBar.home,
     table: state.navigationBar.table,
-    origins: state.navigationBar.origins,
-    classes: state.navigationBar.classes,
+    traits: state.navigationBar.traits,
     items: state.navigationBar.items,
     sidebarStatus: state.navigationBar.sidebarStatus,
     sidebarVisible: state.navigationBar.sidebarVisible

@@ -1,17 +1,19 @@
 import { combineReducers } from 'redux';
 
-import { champions } from '../modules/champions';
+import { data } from '../modules/data';
 import { championSearch } from '../modules/championSearch';
 import { navigationBar } from '../modules/navigationBar';
 import { homeContainer } from '../modules/homeContainer';
 import { championTable } from '../modules/championTable';
+import { traitContainer } from '../modules/traitContainer';
 
 const rootReducer = combineReducers({
-  champions,
+  data,
   championSearch,
   navigationBar,
   homeContainer,
-  championTable
+  championTable,
+  traitContainer
 });
 
 export default rootReducer;

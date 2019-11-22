@@ -2978,10 +2978,10 @@ desert_2 = Trait.create(
   ]
 )
 #desert_2.champions << [azir_2, khazix_2, renekton_2, sivir_2]
-electic_2 = Trait.create(
+electric_2 = Trait.create(
   id: 28,
   season_id: 2,
-  key: "electic",
+  key: "electric",
   name: "Electric",
   trait_type: "Origin",
   description: "Electric units shock nearby enemies whenever they deal or receive a critical strike",
@@ -3000,7 +3000,7 @@ electic_2 = Trait.create(
     }
   ]
 )
-#electic_2.champions << [ornn_2, volibear_2, zed_2]
+#electric_2.champions << [ornn_2, volibear_2, zed_2]
 glacial_2 = Trait.create(
   id: 29,
   season_id: 2,

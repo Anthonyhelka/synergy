@@ -36,6 +36,7 @@ const handleLoadChampions = (champions) => {
 
 const loadChampionSearch = (champions) => {
   return (dispatch) => {
+    dispatch(clearChampionSearch());
     dispatch(handleLoadChampions(champions));
   }
 }

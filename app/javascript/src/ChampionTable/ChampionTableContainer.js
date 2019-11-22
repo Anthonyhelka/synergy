@@ -213,7 +213,7 @@ class ChampionTableContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     champions: state.championTable.champions,
-    isFetching: state.champions.isFetching,
+    isFetching: state.data.isFetching,
     selectedColumn: state.championTable.selectedColumn,
     direction: state.championTable.direction
   }

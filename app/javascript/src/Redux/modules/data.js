@@ -1,18 +1,19 @@
-import { loadChampionSearch, clearChampionSearch } from './championSearch.js';
+import { loadChampionSearch } from './championSearch.js';
 import { loadChampionTable } from './championTable.js';
+import { loadTraitContainer } from './traitContainer.js';
 
 const initialState = {
   season: 1,
   isFetching: false
 }
 
-const champions = (state = initialState, action) => {
+const data = (state = initialState, action) => {
   switch(action.type) {
-    case GET_CHAMPIONS_REQUEST:
+    case GET_DATA_REQUEST:
       return {...state, isFetching: true }
-    case GET_CHAMPIONS_REQUEST_SUCCESS:
+    case GET_DATA_REQUEST_SUCCESS:
       return {...state, isFetching: false}
-    case GET_CHAMPIONS_REQUEST_FAILURE:
+    case GET_DATA_REQUEST_FAILURE:
       return {...state, isFetching: false }
     case CHANGE_SEASON:
       return {...state, season: action.desiredSeason }
@@ -21,44 +22,44 @@ const champions = (state = initialState, action) => {
   }
 }
 
-const GET_CHAMPIONS_REQUEST = 'GET_CHAMPIONS_REQUEST'
-const getChampionsRequest = () => {
+const GET_DATA_REQUEST = 'GET_DATA_REQUEST'
+const getDataRequest = () => {
   return {
-    type: GET_CHAMPIONS_REQUEST
+    type: GET_DATA_REQUEST
   }
 }
 
-const GET_CHAMPIONS_REQUEST_SUCCESS = 'GET_CHAMPIONS_REQUEST_SUCCESS'
-const getChampionsRequestSuccess = () => {
+const GET_DATA_REQUEST_SUCCESS = 'GET_DATA_REQUEST_SUCCESS'
+const getDataRequestSuccess = () => {
   return {
-    type: GET_CHAMPIONS_REQUEST_SUCCESS
+    type: GET_DATA_REQUEST_SUCCESS
   }
 }
 
-const GET_CHAMPIONS_REQUEST_FAILURE = 'GET_CHAMPIONS_REQUEST_FAILURE'
-const getChampionsRequestFailure = () => {
+const GET_DATA_REQUEST_FAILURE = 'GET_DATA_REQUEST_FAILURE'
+const getDataRequestFailure = () => {
   return {
-    type: GET_CHAMPIONS_REQUEST_FAILURE
+    type: GET_DATA_REQUEST_FAILURE
   }
 }
 
-const getChampions = () => {
+const getData = () => {
   return (dispatch, getState) => {
-    dispatch(getChampionsRequest())
-    return fetch(`/api/v1/champions/season_${getState().champions.season}`)
+    dispatch(getDataRequest())
+    return fetch(`/api/v1/champions/season_${getState().data.season}`)
     .then(response => {
       if(response.ok) {
         return response.json()
       } else {
-        dispatch(getChampionsRequestFailure())
+        dispatch(getDataRequestFailure())
       }
     })
     .then(response => {
       if(!response.error) {
         dispatch(loadChampionSearch(response.champions))
-        dispatch(clearChampionSearch())
         dispatch(loadChampionTable(response.champions))
-        dispatch(getChampionsRequestSuccess())
+        dispatch(loadTraitContainer(response.traits))
+        dispatch(getDataRequestSuccess())
       }
     })
   }
@@ -74,15 +75,15 @@ const changeSeason = (desiredSeason) => {
 
 const handleSeasonChange = (event, desiredSeason) => {
   return (dispatch, getState) => {
-    if (desiredSeason !== getState().champions.season) {
+    if (desiredSeason !== getState().data.season) {
       dispatch(changeSeason(desiredSeason))
-      dispatch(getChampions())
+      dispatch(getData())
     }
   }
 }
 
 export {
-  champions,
-  getChampions,
+  data,
+  getData,
   handleSeasonChange
 }

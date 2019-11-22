@@ -1,54 +1,73 @@
 import React, { Component } from 'react';
-import { browserHistory, Link } from 'react-router';
-import { Divider, Container, Popup, Header, Grid, List, Image } from 'semantic-ui-react';
-
+import { Responsive } from 'semantic-ui-react';
 import ChampionTile from './ChampionTile';
 
-class TraitTile extends Component {
-  constructor(props) {
-    super(props);
-  }
+const TraitTile = (props) => {
+  const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
-  render(){
-
-    this.props.trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
-    let champions = this.props.trait.champions.map(champion => {
-      return (
-        <ChampionTile
-          key={champion.id}
-          id={champion.id}
-          champion={champion}
-        />
-      )
-    });
-
-    const pathToTraitIcon = require.context('../../../assets/images/traits', true);
-
+  props.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
+  let champions = props.champions.map(champion => {
     return (
-      <div>
-        <Container fluid textAlign='center'>
+      <ChampionTile
+        key={champion.id}
+        id={champion.id}
+        championKey={champion.key}
+        seasonId={champion.season.id}
+        cost={champion.cost}
+        handleChampionClick={props.handleChampionClick}
+      />
+    )
+  });
 
-          <Popup on='click' inverted wide position='top center' hideOnScroll basic trigger={<Header><Image src={`${pathToTraitIcon(`./${this.props.trait.key}`, true)}`} alt={`{this.props.trait.name}`} avatar verticalAlign='middle' /><br />{this.props.trait.name}</Header>}>
-            <Grid textAlign='center'>
-              <Grid.Row>
-                <Header>
-                  <Image src={`${pathToTraitIcon(`./${this.props.trait.key}`, true)}`} alt={`${this.props.trait.name}`} avatar verticalAlign='middle' />
-                </Header>
-              </Grid.Row>
-              <Grid.Row>
-                <span id='trait-popup-description'>{this.props.trait.description}</span>
-              </Grid.Row>
-            </Grid>
-          </Popup>
+  let upgrades = props.upgrades.map(upgrade => { return (<div id='ChampionTraits-trait-upgrade'><span id='ChampionTraits-trait-upgrade-number'>{upgrade.threshhold}</span> {upgrade.description}</div>) })
 
-          <List id='trait-list-div' horizontal size='mini'>
-            {champions}
-          </List>
-
-        </Container>
+  return [
+    <Responsive maxWidth={1023} key='mobile'>
+      <div id='ChampionTraitsMobile-trait-container'>
+        <div id='ChampionTraitsMobile-trait-header-container'>
+          <img id='ChampionTraitsMobile-trait-image' src={`${pathToTraitIcon(`./${props.traitKey}_${props.seasonId}`, true)}`} alt={`{props.name}`} />
+          <span id='ChampionTraitsMobile-trait-title'>{props.name}</span>
+        </div>
+        <div id='ChampionTraitsMobile-description-container'>{props.description}</div>
+          {props.upgrades.length !== 0 ? (
+            <div id='ChampionTraitsMobile-upgrades-container'>
+              <div id='ChampionTraitsMobile-upgrades'>{upgrades}</div>
+            </div>
+          ) : (
+            <span></span>
+          )}
+        <div id='ChampionTraitsMobile-champions-list'>
+          {champions}
+        </div>
       </div>
-    );
-  }
+    </Responsive>,
+
+    <Responsive minWidth={1024} key='desktop'>
+      <div id='ChampionTraitsDesktop-trait-container'>
+        <div id='ChampionTraitsDesktop-trait-header-container'>
+          <img id='ChampionTraitsDesktop-trait-image' src={`${pathToTraitIcon(`./${props.traitKey}_${props.seasonId}`, true)}`} alt={`{props.name}`} />
+          <span id='ChampionTraitsDesktop-trait-title'>{props.name}</span>
+        </div>
+
+        <div id='ChampionTraitsDesktop-trait-details-container'>
+          <div id='ChampionTraitsDesktop-details-description-container'>{props.description}</div>
+
+          {props.upgrades.length !== 0 ? (
+            <div id='ChampionTraitsDesktop-details-upgrades-container'>
+              <div id='ChampionTraitsDesktop-upgrades'>{upgrades}</div>
+            </div>
+          ) : (
+            <span></span>
+          )}
+
+          <div id='ChampionTraitsDesktop-details-champions-list'>
+            {champions}
+          </div>
+        </div>
+
+      </div>
+    </Responsive>
+  ];
 }
 
 export default TraitTile;

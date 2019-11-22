@@ -1,8 +1,7 @@
 const initialState = {
   home: 'inactive',
   table: 'inactive',
-  origins: 'inactive',
-  classes: 'inactive',
+  traits: 'inactive',
   items: 'inactive',
   sidebarStatus: 'invisible',
   sidebarVisible: false
@@ -16,10 +15,8 @@ const navigationBar = (state = initialState, action) => {
           return {...initialState, home: 'active' }
         case '/champions':
           return {...initialState, table: 'active' }
-        case '/champions/origins':
-          return {...initialState, origins: 'active' }
-        case '/champions/classes':
-          return {...initialState, classes: 'active' }
+        case '/champions/traits':
+          return {...initialState, traits: 'active' }
         case '/items':
           return {...initialState, items: 'active' }
         default:

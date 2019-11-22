@@ -44,8 +44,8 @@ class HomeContainer extends Component {
                     <Button.Content visible>Champions</Button.Content>
                     <Button.Content hidden><Icon name='chess pawn' /></Button.Content>
                   </Button>
-                  <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions/origins'}>
-                    <Button.Content visible>Synergies</Button.Content>
+                  <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/champions/traits'}>
+                    <Button.Content visible>Traits</Button.Content>
                     <Button.Content hidden><Icon name='group' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerMobile-button-group-button' animated as={ Link } to={'/items'}>
@@ -76,8 +76,8 @@ class HomeContainer extends Component {
                     <Button.Content visible>Champions</Button.Content>
                     <Button.Content hidden><Icon name='chess pawn' /></Button.Content>
                   </Button>
-                  <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/champions/origins'}>
-                    <Button.Content visible>Synergies</Button.Content>
+                  <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/champions/traits'}>
+                    <Button.Content visible>Traits</Button.Content>
                     <Button.Content hidden><Icon name='group' /></Button.Content>
                   </Button>
                   <Button id='HomeContainerDesktop-button-group-button' animated as={ Link } to={'/items'}>
