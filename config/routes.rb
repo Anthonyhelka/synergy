@@ -3,23 +3,19 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'champions/overview', to: 'champions#overview', as: 'overview'
-      get 'champions/origins', to: 'champions#origins', as: 'origins'
-      get 'champions/classes', to: 'champions#classes', as: 'classes'
-      resources :champions, only: [:index, :show]
+      get 'champions/season_1', to: 'champions#season_1', as: 'season_1'
+      get 'champions/season_2', to: 'champions#season_2', as: 'season_2'
+      resources :champions, only: [:show]
 
       resources :summoner, only: [:show]
     end
   end
 
-  get 'champions/overview', to: 'champions#overview', as: 'overview'
-  get 'champions/origins', to: 'champions#origins', as: 'origins'
-  get 'champions/classes', to: 'champions#classes', as: 'classes'
-  resources :champions, only: [:index, :show]
+  get 'champions', to: 'champions#table', as: 'table'
+  get 'champions/traits', to: 'champions#traits', as: 'traits'
+  resources :champions, only: [:show]
 
   resources :items, only: [:index]
-
-  resources :news, only: [:index]
 
   resources :summoner, only: [:show]
 end

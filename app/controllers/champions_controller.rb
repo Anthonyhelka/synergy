@@ -1,11 +1,8 @@
 class ChampionsController < ApplicationController
-  def overview
+  def table
   end
 
-  def origins
-  end
-
-  def classes
+  def traits
   end
 
   def show

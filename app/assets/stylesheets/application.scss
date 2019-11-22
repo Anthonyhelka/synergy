@@ -28,12 +28,9 @@ body {
   background-color: #000000 !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
-  background-position: 135% 40px !important;
+  background-position: right !important;
 }
-.background-ivern { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-ivern.jpg") !important; }
-.background-maokai { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-maokai.jpg") !important; }
-.background-nasus { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-nasus.jpg") !important; }
-.background-taliyah { background-image: url("https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-taliyah.jpg") !important; }
+.background-yasuo { background-image: url("backgrounds/yasuo.png") !important; }
 
 /* Components */
 
@@ -101,6 +98,9 @@ body {
   height: 100% !important;
   margin: auto !important;
 }
+#NavigationBarDesktop-item-two-image:hover {
+  transform: scale(1.2) !important;
+}
 #NavigationBarDesktop-item-three-container {
   width: 22.5% !important;
   height: 100% !important;
@@ -108,6 +108,32 @@ body {
   margin: 0px !important;
   border: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
+}
+/* Change Season */
+#NavigationBarDesktop-change-season-container {
+  display: flex !important;
+  width: 100% !important;
+  height: 40px !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+}
+.NavigationBarDesktop-change-season-item-inactive,
+.NavigationBarDesktop-change-season-item-active {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 50% !important;
+  height: 100% !important;
+}
+.NavigationBarDesktop-change-season-item-inactive {
+  background-color: #1B1C1D !important;
+}
+.NavigationBarDesktop-change-season-item-inactive:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
+  background-color: #1B1C1D !important;
+}
+.NavigationBarDesktop-change-season-item-active {
+  background-color: #2185D0 !important;
 }
 /* Sidebar */
 #NavigationBarDesktop-sidebar-container {
@@ -151,7 +177,7 @@ body {
   background-color: #1B1C1D !important;
   z-index: 1000 !important;
 }
-#NavigationBarDesktop-item-one-container-invisible {
+#NavigationBarMobile-item-one-container-invisible {
   width: 15%;
   height: 100% !important;
   padding: 0px !important;
@@ -162,7 +188,7 @@ body {
   border-radius: 0px !important;
   color: #FFFFFF !important;
 }
-#NavigationBarDesktop-item-one-container-visible {
+#NavigationBarMobile-item-one-container-visible {
   width: 35%;
   height: 100% !important;
   padding: 0px !important;
@@ -234,18 +260,19 @@ body {
   box-shadow: none !important;
   background-color: #1B1C1D !important;
 }
-#NavigationBarMobile-sidebar-item-container-inactive {
+#NavigationBarMobile-sidebar-item-container-inactive,
+#NavigationBarMobile-sidebar-item-container-active,
+#NavigationBarMobile-sidebar-item-container-close {
+  width: 100% !important;
+  height: 40px !important;
+  padding: 14px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
 }
 #NavigationBarMobile-sidebar-item-container-active {
-  font-weight: bold !important;
-  color: #FFFFFF !important;
   background: #2185D0 !important;
 }
 #NavigationBarMobile-sidebar-item-container-close {
-  font-weight: bold !important;
-  color: #FFFFFF !important;
   background: #D03120 !important;
 }
 #NavigationBarMobile-sidebar-item-container-inactive:hover,
@@ -395,6 +422,7 @@ body {
   width: 100% !important;
   height: 100% !important;
 }
+/* Form */
 #ChampionSearch-form-container {
   width: 100% !important;
   height: auto !important;
@@ -425,6 +453,7 @@ body {
   font-size: 18px !important;
   color: #FFFFFF !important;
 }
+/* Results */
 #ChampionSearch-results-container {
   width: 100% !important;
   height: 100% !important;
@@ -432,6 +461,7 @@ body {
   overflow-y: scroll !important;
   border: 3px solid #2185D0 !important;
   border-top: 0px !important;
+  text-align: center !important;
 }
 #ChampionSearch-results-container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
@@ -441,17 +471,41 @@ body {
   background-color: #A78E5A !important;
   border-radius: 0px !important;
 }
+/* Loading Gears */
+#ChampionSearch-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
+  margin: auto !important;
+}
+/* No Results */
+#ChampionSearch-no-results-alert-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+#ChampionSearch-no-results-alert-text {
+  font-weight: bold !important;
+}
+#ChampionSearch-no-results-alert-icon {
+  font-size: 30px !important;
+  color: #2185D0 !important;
+}
+/* Results */
 #ChampionSearch-champions-container {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
 }
 #ChampionSearch-champions-loader {
-  top: 100px !important;
+  top: 150px !important;
 }
 #ChampionSearch-champions-item-container {
   position: relative !important;
   padding: 3px !important;
+}
+#ChampionSearch-champions-item-container:hover {
+  transform: scale(1.1) !important;
 }
 #ChampionSearch-champions-item-label {
   display: flex !important;
@@ -470,6 +524,7 @@ body {
   max-width: 50px !important;
   height: 50px !important;
   max-height: 50px !important;
+  background-color: #000000 !important;
 }
 
 /* BackToTop */
@@ -513,15 +568,12 @@ body {
 #FooterDesktop-left-container {
   position: relative !important;
   display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
+  align-items: center !important;
+  text-align: center !important;
+  line-height: 13px !important;
   width: 25% !important;
   height: 100% !important;
   padding: 0px !important;
-  font-weight: bold !important;
-  line-height: 23px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
   z-index: 4 !important;
@@ -541,16 +593,11 @@ body {
   border: 0px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
+  font-size: 12px;
   background-color: #2185D0 !important;
   z-index: 5 !important;
 }
-#FooterDesktop-left-item:hover {
-  border: 0px !important;
-  font-weight: bold !important;
-  color: #1B1C1D !important;
-  background-color: #2185D0 !important;
-  z-index: 5 !important;
-}
+
 #FooterDesktop-center-container {
   display: flex !important;
   align-items: center !important;
@@ -573,6 +620,9 @@ body {
   max-width: 90% !important;
   height: auto !important;
   max-height: 90% !important;
+}
+#FooterDesktop-center-item img:hover {
+  transform: scale(1.2) !important;
 }
 #FooterDesktop-right-container {
   position: relative !important;
@@ -657,7 +707,7 @@ body {
   height: 600px !important;
   padding: 40px 0px 0px 0px !important;
   margin: auto !important;
-  margin-bottom: 40px !important;
+  margin-bottom: 20px !important;
 }
 #HomeContainerDesktop-logo-container {
   display: flex !important;
@@ -700,7 +750,7 @@ body {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 25% !important;
+  width: 33.3% !important;
   height: 100% !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
@@ -803,15 +853,15 @@ body {
   padding: 40px 0px 0px 0px !important;
 }
 
-/* ChampionOverview */
+/* ChampionTable */
 /* Desktop */
-#ChampionOverviewDesktop-page-container {
+#ChampionTableDesktop-page-container {
 }
-#ChampionOverviewDesktop-spacing-div {
+#ChampionTableDesktop-spacing-div {
   width: 100% !important;
   height: 40px !important;
 }
-#ChampionOverviewDesktop-table {
+#ChampionTableDesktop-table {
   width: 100% !important;
   height: 100% !important;
   table-layout: fixed !important;
@@ -822,73 +872,83 @@ body {
   background-color: #1B1C1D !important;
 }
 /* Header Row */
-#ChampionOverviewDesktop-table-header-row {
+#ChampionTableDesktop-table-header-row {
   width: 100% !important;
   height: 30px !important;
 }
-.ChampionOverviewDesktop-table-header-row-item {
+.ChampionTableDesktop-table-header-row-item {
   border: 0px !important;
   border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverviewDesktop-table-header-row-item:hover {
+.ChampionTableDesktop-table-header-row-item:hover {
   border-bottom: 3px solid #FFFFFF !important;
 }
-.ChampionOverviewDesktop-table-header-row-item-active {
+.ChampionTableDesktop-table-header-row-item-active {
   border: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewDesktop-table-header-row-name {
+#ChampionTableDesktop-table-header-row-name {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-traits {
+#ChampionTableDesktop-table-header-row-traits {
   width: 12.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-cost {
+#ChampionTableDesktop-table-header-row-cost {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-health {
+#ChampionTableDesktop-table-header-row-health {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-armor {
+#ChampionTableDesktop-table-header-row-armor {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-magic-resist {
+#ChampionTableDesktop-table-header-row-magic-resist {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-dps {
+#ChampionTableDesktop-table-header-row-dps {
   width: 7.5% !important;
 }
-#ChampionOverviewDesktop-table-header-row-attack-damage {
+#ChampionTableDesktop-table-header-row-attack-damage {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-attack-speed {
+#ChampionTableDesktop-table-header-row-attack-speed {
   width: 10% !important;
 }
-#ChampionOverviewDesktop-table-header-row-range {
+#ChampionTableDesktop-table-header-row-range {
   width: 10% !important;
+}
+#ChampionTableDesktop-loading-gears-container {
+  position: absolute !important;
+  width: 100% !important;
+  padding: 7px 0px 7px 0px !important;
+  text-align: center !important;
+}
+#ChampionTableDesktop-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
 }
 /* Mobile */
-#ChampionOverviewMobile-page-container {
+#ChampionTableMobile-page-container {
   overflow-x: auto !important;
 }
-#ChampionOverviewMobile-page-container::-webkit-scrollbar-track {
+#ChampionTableMobile-page-container::-webkit-scrollbar-track {
   background-color: #1B1C1D !important;
 }
-#ChampionOverviewMobile-page-container::-webkit-scrollbar-thumb {
+#ChampionTableMobile-page-container::-webkit-scrollbar-thumb {
   border-radius: 0px !important;
   background-color: #A78E5A !important;
 }
-#ChampionOverviewMobile-spacing-div {
+#ChampionTableMobile-spacing-div {
   width: 100% !important;
   height: 40px !important;
 }
-#ChampionOverviewMobile-table {
+#ChampionTableMobile-table {
   width: 285% !important;
   height: 100% !important;
   padding: 0px !important;
@@ -898,106 +958,116 @@ body {
   background-color: #1B1C1D !important;
 }
 /* Header Row */
-#ChampionOverviewMobile-table-header-row {
+#ChampionTableMobile-table-header-row {
   width: 100% !important;
   height: 30px !important;
 }
-.ChampionOverviewMobile-table-header-row-item {
+.ChampionTableMobile-table-header-row-item {
   border: 0px !important;
   border-bottom: 3px solid #A78E5A !important;
   border-radius: 0px !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverviewMobile-table-header-row-item:hover {
+.ChampionTableMobile-table-header-row-item:hover {
   border-bottom: 3px solid #FFFFFF !important;
 }
-.ChampionOverviewMobile-table-header-row-item-active {
+.ChampionTableMobile-table-header-row-item-active {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverviewMobile-table-header-row-name {
+#ChampionTableMobile-table-header-row-name {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-traits {
+#ChampionTableMobile-table-header-row-traits {
   width: 12.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-cost {
+#ChampionTableMobile-table-header-row-cost {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-health {
+#ChampionTableMobile-table-header-row-health {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-armor {
+#ChampionTableMobile-table-header-row-armor {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-magic-resist {
+#ChampionTableMobile-table-header-row-magic-resist {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-dps {
+#ChampionTableMobile-table-header-row-dps {
   width: 7.5% !important;
 }
-#ChampionOverviewMobile-table-header-row-attack-damage {
+#ChampionTableMobile-table-header-row-attack-damage {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-attack-speed {
+#ChampionTableMobile-table-header-row-attack-speed {
   width: 10% !important;
 }
-#ChampionOverviewMobile-table-header-row-range {
+#ChampionTableMobile-table-header-row-range {
   width: 10% !important;
 }
 /* Loader */
-#ChampionOverviewDesktop-loader {
+#ChampionTableDesktop-loader {
   top: 100px !important;
 }
-#ChampionOverviewMobile-loader {
+#ChampionTableMobile-loader {
   top: 100px !important;
 }
 /* Champion Row */
-#ChampionOverview-table-champion-row:nth-child(odd) {
+#ChampionTable-table-champion-row:nth-child(odd) {
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
-#ChampionOverview-table-champion-row:nth-child(even) {
+#ChampionTable-table-champion-row:nth-child(even) {
   color: #FFFFFF !important;
   background-color: #353637 !important;
 }
-#ChampionOverview-table-champion-row:nth-child(odd):hover,
-#ChampionOverview-table-champion-row:nth-child(even):hover {
+#ChampionTable-table-champion-row:nth-child(odd):hover,
+#ChampionTable-table-champion-row:nth-child(even):hover {
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-.ChampionOverview-table-champion-row-item {
+.ChampionTable-table-champion-row-item {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: inherit !important;
 }
-.ChampionOverview-table-champion-row-item-active {
+.ChampionTable-table-champion-row-item-active {
   font-weight: bold !important;
   text-align: center !important;
   color: #FFFFFF !important;
   background-color: #2185D0 !important;
 }
-#ChampionOverview-table-champion-row-name {
+#ChampionTable-table-champion-row-name {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
 }
-#ChampionOverview-table-champion-row-name-image {
+#ChampionTable-table-champion-row-name-image {
   width: 40px !important;
   height: 40px !important;
 }
-#ChampionOverview-table-champion-row-trait-images-container {
+#ChampionTable-table-champion-row-trait-images-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
-#ChampionOverview-table-champion-row-trait-image {
+#ChampionTable-table-champion-row-trait-image {
   width: 30px !important;
   height: 30px !important;
+}
+#ChampionTableMobile-loading-gears-container {
+  position: absolute !important;
+  width: 100% !important;
+  padding: 7px 0px 7px 0px !important;
+  text-align: center !important;
+}
+#ChampionTableMobile-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
 }
 
 /* SummonerShow */
@@ -1028,68 +1098,206 @@ body {
 }
 
 /* Traits */
-#ChampionOriginsDesktop-page-container {
-  padding: 40px 0px 0px 0px !important;
-  margin: 0px 0px 15px 0px !important;
+/* Desktop */
+#ChampionTraitsDesktop-page-container {
+  display: flex !important;
+  width: 95% !important;
+  max-width: 1500px !important;
+  height: auto !important;
+  padding: 54px 14px 14px 14px !important;
+  margin: auto !important;
 }
-#ChampionClassesDesktop-page-container {
-  padding: 40px 0px 0px 0px !important;
-  margin: 0px 0px 15px 0px !important;
+#ChampionTraitsDesktop-origins-container,
+#ChampionTraitsDesktop-classes-container {
+  width: 50% !important;
+  height: auto !important;
 }
-div.ui.header {
-  margin-top: 3px !important;
-  margin-bottom: 3px !important;
+#ChampionTraitsDesktop-origins-container {
+  margin-right: 7px !important;
 }
-#trait-popup-description {
-  text-align: center;
-  text-align-last: center;
+#ChampionTraitsDesktop-classes-container {
+  margin-left: 7px !important;
 }
-.ui.card, .ui.cards>.card {
-  width: auto !important;
-}
-div.item {
-  margin: 0px !important;
-  padding: 3px !important;
-  padding-top: 0px !important;
-}
-#traits-champion-card {
-  background-color: #1B1C1D !important;
-  border: 3px solid #1B1C1D !important;
-  border-radius: 9px !important;
-  transform: scale(1) !important;
-}
-#traits-champion-card-extra {
+#ChampionTraitsDesktop-origins-header,
+#ChampionTraitsDesktop-classes-header {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-}
-#traits-champion-card-extra,
-#traits-champion-card-extra p {
-  border: none !important;
+  width: 100% !important;
+  height: 40px !important;
+  font-weight: bold !important;
+  font-size: 17px !important;
   color: #FFFFFF !important;
+  background-color: #2185D0 !important;
+}
+#ChampionTraitsDesktop-loading-gears-container {
+  padding: 7px 0px 0px 0px !important;
+  text-align: center !important;
+}
+.ChampionTraitsDesktop-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
+}
+#ChampionTraitsDesktop-trait-container {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 7px 0px 7px 0px !important;
+  border-radius: 3px !important;
+  background-color: #2185D0 !important;
+}
+#ChampionTraitsDesktop-trait-header-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 18% !important;
+  height: 100% !important;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+#ChampionTraitsDesktop-trait-image {
+  width: 40px !important;
+  height: 40px !important;
+}
+#ChampionTraitsDesktop-trait-title {
+  font-weight: bold !important;
+  word-break: break-word !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+}
+#ChampionTraitsDesktop-trait-details-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 82% !important;
+  height: auto !important;
+  padding: 0px 5px 0px 5px !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  border: 3px solid #2185D0 !important;
+  border-left: 0px !important;
+  border-radius: 3px !important;
   background-color: #1B1C1D !important;
 }
-#traits-champion-card-label {
-  padding: 3px 12px 3px 12px !important;
-  font-size: 0.8vw !important;
+#ChampionTraitsDesktop-details-description-container {
+  width: 100% !important;
+  height: auto !important;
+  padding: 10px 0px 10px 0px !important;
+  text-align: center !important;
 }
-#traits-champion-card-hover {
-  background-color: #36A9E0 !important;
-  border: 3px solid #36A9E0 !important;
-  border-radius: 9px !important;
+#ChampionTraitsDesktop-details-upgrades-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0px 0px 10px 0px;
+}
+#ChampionTraitsDesktop-details-champions-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+/* Mobile */
+#ChampionTraitsMobile-page-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 40px 0px 0px 0px !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  margin: auto !important;
+}
+#ChampionTraitsMobile-traits-container {
+  width: 100% !important;
+  height: auto !important;
+}
+#ChampionTraitsMobile-loading-gears-container {
+  padding: 7px 0px 0px 0px !important;
+  text-align: center !important;
+}
+.ChampionTraitsMobile-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
+}
+#ChampionTraitsMobile-trait-container {
+}
+#ChampionTraitsMobile-trait-header-container {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #2185D0 !important;
+}
+#ChampionTraitsMobile-trait-image {
+  width: 40px !important;
+  height: 40px !important;
+}
+#ChampionTraitsMobile-trait-title {
+}
+#ChampionTraitsMobile-description-container {
+  width: 100% !important;
+  height: auto !important;
+  padding: 10px 0px 10px 0px !important;
+  text-align: center !important;
+}
+
+#ChampionTraitsMobile-upgrades-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0px 0px 10px 0px;
+}
+#ChampionTraitsMobile-champions-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+/* Desktop & Mobile */
+#ChampionTraits-trait-upgrade {
+  line-height: 22px !important;
+  text-align: left !important;
+}
+#ChampionTraits-trait-upgrade-number {
+  padding: 1px 3px 1px 3px !important;
+  border-radius: 3px !important;
+  font-weight: bold !important;
+  background-color: #2185D0 !important;
+}
+#ChampionTraits-champion-list-item {
+  position: relative !important;
+  margin: 0px 3px 10px 3px !important;
+}
+#ChampionTraits-champion-list-item:hover {
   transform: scale(1.1) !important;
 }
-#traits-champion-card-extra-hover {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+#ChampionTraits-champion-list-item-label {
+  position: absolute !important;
+  width: 12px !important;
+  height: 20px !important;
+  padding: 0px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-bottom-right-radius: 3px !important;
+  z-index: 2 !important;
 }
-#traits-champion-card-extra-hover,
-#traits-champion-card-extra-hover p {
-  border: none !important;
-  color: #FFFFFF !important;
-  background-color: #36A9E0 !important;
+#ChampionTraits-champion-list-item-image {
+  width: 50px !important;
+  height: 50px !important;
 }
+
 
 /* ChampionShow */
 .grey-background-color {
