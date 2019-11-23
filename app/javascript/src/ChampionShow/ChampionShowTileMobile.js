@@ -24,7 +24,7 @@ class ChampionShowTileMobile extends Component {
     let traitsIconList = this.props.champion.traits.map(trait => {
       return (
         <div id='champion-header-trait-mobile'>
-          <Image src={`${pathToTraitIcon(`./${trait.key}`, true)}`}  />
+          <Image src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}  />
           <span>&nbsp;{trait.name}</span>
         </div>
       )
@@ -48,7 +48,7 @@ class ChampionShowTileMobile extends Component {
           <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
             <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-container'>
               <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
-              <Image id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}`, true)}`} />
+              <Image id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
             </div>
           </List.Item>
         );
@@ -56,7 +56,7 @@ class ChampionShowTileMobile extends Component {
       return (
         <Grid.Row id='ChampionShowMobile-champion-traits-grid-row' columns='2'>
           <Grid.Column id='ChampionShowMobile-champion-traits-grid-row-column-one' width='16'>
-            <Image id='ChampionShowMobile-champion-traits-grid-row-column-one-image'src={`${pathToTraitIcon(`./${trait.key}`, true)}`}/>
+            <Image id='ChampionShowMobile-champion-traits-grid-row-column-one-image'src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}/>
             <p>{trait.name}</p>
           </Grid.Column>
           <Grid.Column id='ChampionShowMobile-champion-traits-grid-row-column-two' width='16'>
@@ -90,7 +90,7 @@ class ChampionShowTileMobile extends Component {
 
             <Segment id='ChampionShowMobile-champion-container' basic>
               <Segment id='ChampionShowMobile-champion-header-container' basic>
-                <Image id='ChampionShowMobile-champion-header-image' src={`${pathToIcon(`./${this.props.champion.key}`, true)}`}  />
+                <Image id='ChampionShowMobile-champion-header-image' src={`${pathToIcon(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
                 <div id='ChampionShowMobile-champion-header-title-container'>
                   <span id='ChampionShowMobile-champion-header-title-name'>{this.props.champion.name}</span>
                   <br />
@@ -105,7 +105,7 @@ class ChampionShowTileMobile extends Component {
                 <List id='ChampionShowMobile-champion-statistics-list' horizontal>
                     <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
                       <Popup on='click' key='health' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
-                      <span>{this.props.champion.stats.defense.health}</span>
+                      <span>{this.props.champion.stats.defense.health[0]}</span>
                     </List.Item>
                   <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
                     <Popup on='click' key='armor' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/armor.png')} />}>Armor</Popup>
@@ -117,7 +117,7 @@ class ChampionShowTileMobile extends Component {
                   </List.Item>
                   <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
                     <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
-                    <span>{this.props.champion.stats.offense.damage}</span>
+                    <span>{this.props.champion.stats.offense.attack_damage[0]}</span>
                   </List.Item>
                   <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
                     <Popup on='click' key='attack_speed' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_speed.png')} />}>Attack Speed</Popup>
@@ -144,7 +144,7 @@ class ChampionShowTileMobile extends Component {
                   </Grid.Row>
                   <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-two'>
                     <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-two-column-one' width='3'>
-                      <Image id='ChampionShowMobile-champion-ability-grid-row-two-column-one-image' src={`${pathToAbility(`./${this.props.champion.key}`, true)}`}  />
+                      <Image id='ChampionShowMobile-champion-ability-grid-row-two-column-one-image' src={`${pathToAbility(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
                     </Grid.Column>
                     <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-two-column-two' width='13'>
                       <span id='ChampionShowMobile-champion-ability-grid-row-two-column-two-description'>{this.props.champion.ability.description}</span>
@@ -161,7 +161,7 @@ class ChampionShowTileMobile extends Component {
               </Segment>
 
               <Segment id='ChampionShowMobile-champion-render-container' basic>
-                <Image id='ChampionShowMobile-champion-render-image' src={`${pathToRender(`./${this.props.champion.key}`, true)}`}  />
+                <Image id='ChampionShowMobile-champion-render-image' src={`${pathToRender(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
               </Segment>
 
             </Segment>

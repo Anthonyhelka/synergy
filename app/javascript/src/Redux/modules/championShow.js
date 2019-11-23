@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 const initialState = {
   champion: {},
   isFetching: false,
@@ -42,7 +44,7 @@ const getChampionRequestFailure = () => {
 const getChampion = (championKey) => {
   return (dispatch, getState) => {
     dispatch(getChampionRequest())
-    return fetch(`/api/v1/champions/${championKey}`)
+    return fetch(`/api/v1/champions/${championKey}_${getState().data.season}`)
     .then(response => {
       if(response.ok) {
         return response.json()
@@ -52,13 +54,24 @@ const getChampion = (championKey) => {
     })
     .then(response => {
       if(!response.error) {
-        dispatch(getChampionRequestSuccess(response.champion[0]))
+        if (response.champion.length === 0) {
+          dispatch(handleChampionShowRedirect())
+        } else {
+          dispatch(getChampionRequestSuccess(response.champion[0]))
+        }
       }
     })
   }
 }
 
+const handleChampionShowRedirect = () => {
+  return (dispatch) => {
+    browserHistory.push(`/champions`);
+  }
+}
+
 export {
   championShow,
-  getChampion
+  getChampion,
+  handleChampionShowRedirect
 }

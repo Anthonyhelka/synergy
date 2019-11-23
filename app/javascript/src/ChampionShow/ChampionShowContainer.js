@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import { connect } from 'react-redux';
 import { getChampion } from '../Redux/modules/championShow';
+import { handleChampionShowRedirect } from '../Redux/modules/championShow';
 
 import { Responsive } from 'semantic-ui-react';
 
@@ -62,13 +64,15 @@ const mapStateToProps = (state) => {
   return {
     champion: state.championShow.champion,
     isFetching: state.championShow.isFetching,
-    fetched: state.championShow.fetched
+    fetched: state.championShow.fetched,
+    redirect: state.championShow.redirect
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getChampion: (championKey) => dispatch(getChampion(championKey))
+    getChampion: (championKey) => dispatch(getChampion(championKey)),
+    handleChampionShowRedirect: () => dispatch(handleChampionShowRedirect())
   }
 }
 

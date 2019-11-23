@@ -151,7 +151,7 @@ class ChampionShowTileDesktop extends Component {
                         <Popup on='click' key='health' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
                         <List.Content>
                           <List.Header id='ChampionShowDesktop-champion-details-traits-statistics-list-item-header'>Health</List.Header>
-                            {this.props.champion.stats.defense.health}
+                            {this.props.champion.stats.defense.health[0]}
                           </List.Content>
                       </List.Item>
                       <List.Item id='ChampionShowDesktop-champion-details-traits-statistics-list-item'>
@@ -173,7 +173,7 @@ class ChampionShowTileDesktop extends Component {
                         <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} trigger={<Image src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
                         <List.Content>
                           <List.Header id='ChampionShowDesktop-champion-details-traits-statistics-list-item-header'>Attack Damage</List.Header>
-                            {this.props.champion.stats.offense.damage}
+                            {this.props.champion.stats.offense.attack_damage[0]}
                           </List.Content>
                       </List.Item>
                       <List.Item id='ChampionShowDesktop-champion-details-traits-statistics-list-item'>
