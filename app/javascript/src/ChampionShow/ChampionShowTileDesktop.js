@@ -7,7 +7,6 @@ import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
 class ChampionShowTileDesktop extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -16,10 +15,6 @@ class ChampionShowTileDesktop extends Component {
 
   componentWillUnmount() {
     document.body.classList.remove(`grey-background-color`);
-  }
-
-  handleClick(event, key) {
-    browserHistory.push(`/champions/${key}`);
   }
 
   render() {
@@ -53,12 +48,10 @@ class ChampionShowTileDesktop extends Component {
       let sortedChampions = trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
       let champions = sortedChampions.map(champion => {
         return (
-          <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
-            <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container'>
-              <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
-              <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
-            </div>
-          </List.Item>
+          <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-container' key={champion.id} onClick={event => this.props.handleChampionClick(event, `${champion.key}`)}>
+            <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
+            <Image id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
+          </div>
         );
       });
       return (
@@ -68,11 +61,6 @@ class ChampionShowTileDesktop extends Component {
               <p>{trait.name}</p>
             </Grid.Column>
             <Grid.Column id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two' width='14'>
-              <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions' basic>
-                <List id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list' horizontal>
-                  {champions}
-                </List>
-              </Segment>
               <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-description' basic>
                 <span>{trait.description}</span>
               </Segment>
@@ -81,6 +69,11 @@ class ChampionShowTileDesktop extends Component {
                   <List id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-upgrades-listt'>{upgrades}</List>
                 </Segment> ) : (<span></span>)
               }
+              <Segment id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions' basic>
+                <div id='ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list'>
+                  {champions}
+                </div>
+              </Segment>
             </Grid.Column>
         </Grid.Row>
       )

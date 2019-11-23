@@ -78,7 +78,7 @@ const handleSeasonChange = (event, desiredSeason) => {
   return (dispatch, getState) => {
     if (desiredSeason !== getState().data.season) {
       dispatch(changeSeason(desiredSeason))
-      if (window.location.pathname.startsWith('/champions/')) {
+      if (window.location.pathname.startsWith('/champions/') && window.location.pathname !== '/champions/traits') {
         dispatch(handleChampionShowRedirect())
       }
       dispatch(getData())

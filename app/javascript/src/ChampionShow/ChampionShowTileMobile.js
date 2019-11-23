@@ -7,11 +7,6 @@ import ChampionSearchContainer from '../ChampionSearch/ChampionSearchContainer';
 class ChampionShowTileMobile extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(event, key) {
-    browserHistory.push(`/champions/${key}`);
   }
 
   render() {
@@ -45,12 +40,10 @@ class ChampionShowTileMobile extends Component {
       let sortedChampions = trait.champions.sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
       let champions = sortedChampions.map(champion => {
         return (
-          <List.Item key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
-            <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-container'>
-              <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
-              <Image id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.handleClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
-            </div>
-          </List.Item>
+          <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-container' key={champion.id} onClick={event => this.handleClick(event, `${champion.key}`)}>
+            <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-label' className={`tier-${champion.cost}`}>{champion.cost}</div>
+            <Image id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-image' className={`tier-${champion.cost}`} onClick={event => this.props.handleChampionClick(event, `${champion.key}`)} src={`${pathToIcon(`./${champion.key}_${champion.season_id}`, true)}`} />
+          </div>
         );
       });
       return (
@@ -60,11 +53,6 @@ class ChampionShowTileMobile extends Component {
             <p>{trait.name}</p>
           </Grid.Column>
           <Grid.Column id='ChampionShowMobile-champion-traits-grid-row-column-two' width='16'>
-            <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-container' basic>
-              <List id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list'>
-                {champions}
-              </List>
-            </Segment>
             <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-description-container' basic>
               <span>{trait.description}</span>
             </Segment>
@@ -75,6 +63,11 @@ class ChampionShowTileMobile extends Component {
                 </List>
               </Segment> ) : (<span></span>)
             }
+            <Segment id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-container' basic>
+              <div id='ChampionShowMobile-champion-traits-grid-row-column-two-champion-list'>
+                {champions}
+              </div>
+            </Segment>
           </Grid.Column>
         </Grid.Row>
       )

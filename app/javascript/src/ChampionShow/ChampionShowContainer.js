@@ -14,6 +14,7 @@ import ChampionShowTileMobile from './ChampionShowTileMobile';
 class ChampionShowContainer extends Component {
   constructor(props) {
     super(props);
+    this.handleChampionClick = this.handleChampionClick.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,10 @@ class ChampionShowContainer extends Component {
     }
   }
 
+  handleChampionClick(event, key) {
+    this.props.getChampion(key);
+  }
+
   render() {
     let championShowTileMobile;
     let championShowTileDesktop;
@@ -35,6 +40,7 @@ class ChampionShowContainer extends Component {
           key={this.props.champion.id}
           id={this.props.champion.id}
           champion={this.props.champion}
+          handleChampionClick={this.handleChampionClick}
         />
       );
       championShowTileDesktop = (
@@ -42,6 +48,7 @@ class ChampionShowContainer extends Component {
           key={this.props.champion.id}
           id={this.props.champion.id}
           champion={this.props.champion}
+          handleChampionClick={this.handleChampionClick}
         />
       );
     }

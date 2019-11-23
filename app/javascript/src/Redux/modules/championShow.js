@@ -57,6 +57,8 @@ const getChampion = (championKey) => {
         if (response.champion.length === 0) {
           dispatch(handleChampionShowRedirect())
         } else {
+          window.scrollTo(0,0);
+          browserHistory.push(`/champions/${championKey}`);
           dispatch(getChampionRequestSuccess(response.champion[0]))
         }
       }
