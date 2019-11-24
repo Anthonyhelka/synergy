@@ -405,7 +405,7 @@ camille_1 = Champion.create(
   cost: 1,
   ability: {
     name: "The Hextech Ultimatum",
-    description: "Camille singles out an enemy, dealing magic damage and rooting them for few seconds. Camille's allies in range will prioritize attacking that enemy.",
+    description: "Camille singles out an enemy, dealing magic damage and rooting them for a few seconds. Camille's allies in range will prioritize attacking that enemy.",
     type: "Active",
     mana_cost: 150,
     mana_start: 0,

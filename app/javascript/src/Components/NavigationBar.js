@@ -42,14 +42,14 @@ class NavigationBar extends Component {
         </Menu>
         <Sidebar id='NavigationBarMobile-sidebar-container' className='NavigationBar-sidebar' as={Menu} animation='overlay' vertical visible={this.props.sidebarVisible}>
           {this.props.season === 1 ? (
-            <div id='NavigationBarDesktop-change-season-container' className='NavigationBar-sidebar'>
-              <div className='NavigationBarDesktop-change-season-item-active NavigationBar-sidebar' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
-              <div className='NavigationBarDesktop-change-season-item-inactive NavigationBar-sidebar' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
+            <div id='NavigationBarDesktop-change-season-container'>
+              <div className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
+              <div className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
             </div>
           ) : (
-            <div id='NavigationBarDesktop-change-season-container' className='NavigationBar-sidebar'>
-              <div className='NavigationBarDesktop-change-season-item-inactive NavigationBar-sidebar' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
-              <div className='NavigationBarDesktop-change-season-item-active NavigationBar-sidebar' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
+            <div id='NavigationBarDesktop-change-season-container'>
+              <div className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
+              <div className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
             </div>
           )}
           <Menu.Item id={`NavigationBarMobile-sidebar-item-container-${this.props.home}`} as={Link} to='/'><Icon name='home' />Home</Menu.Item>
