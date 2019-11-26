@@ -1646,7 +1646,7 @@ pantheon_1 = Champion.create(
     stats: [
       {
         type: "Damage",
-        value: "10% / 20% 30% Max Health"
+        value: "10% / 20% / 30% Max Health"
       },
       {
         type: "Stun Duration",

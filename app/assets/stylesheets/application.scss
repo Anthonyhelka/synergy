@@ -1429,12 +1429,12 @@ body {
 }
 #ChampionShowDesktop-champion-details-ability-grid {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   margin: 0px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-one {
   width: 100% !important;
-  height: 5% !important;
+  height: 40px !important;
   padding: 0px !important;
   background-color: #2185D0 !important;
 }
@@ -1451,6 +1451,10 @@ body {
   padding: 0px 0px 0px 5px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-one-column-two {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  flex-direction: column !important;
   padding: 0px !important;
   margin: 0px !important;
 }
@@ -1461,7 +1465,7 @@ body {
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-two {
   width: 100% !important;
-  height: 20% !important;
+  height: 100px !important;
   padding: 0px !important;
   border-left: 3px solid #2185D0 !important;
   border-right: 3px solid #2185D0 !important;
@@ -1501,7 +1505,7 @@ body {
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-three {
   width: 100% !important;
-  height: 15% !important;
+  height: auto !important;
   padding: 0px !important;
   background-color: #2185D0 !important;
 }
@@ -1517,29 +1521,26 @@ body {
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-four {
   width: 100% !important;
-  height: 45% !important;
+  height: auto !important;
   padding: 0px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-four-column-one {
-  display: flex !important;
   width: 100% !important;
   height: 100% !important;
+  padding: 14px 0px 14px 0px !important;
   border: 3px solid #2185D0 !important;
   border-top: 0px !important;
   border-bottom: 0px !important;
-  background-color: #1B1C1D !important;
+  background-color: #000000 !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image {
-  width: auto !important;
-  max-width: 100% !important;
+  width: 200px !important;
   height: auto !important;
-  max-height: 100% !important;
   margin: auto !important;
-  padding: 0px 14px 14px 14px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-five {
   width: 100% !important;
-  height: 15% !important;
+  height: auto !important;
   padding: 0px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-five-column-one {
@@ -1555,7 +1556,7 @@ body {
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  height: 40% !important;
+  height: 40px !important;
   margin: 0px !important;
   background-color: #2185D0 !important;
 }
@@ -1564,7 +1565,7 @@ body {
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  height: 60% !important;
+  height: auto !important;
   margin: 0px !important;
   background-color: #1B1C1D !important;
 }

@@ -20,9 +20,9 @@ class ChampionShowTileDesktop extends Component {
   render() {
     const pathToIcon = require.context('../../../assets/images/icons', true);
     const pathToBanner = require.context('../../../assets/images/banners', true);
-    const pathToAbility = require.context('../../../assets/images/abilities', true);
-    const pathToRender = require.context('../../../assets/images/renders', true);
     const pathToTraitIcon = require.context('../../../assets/images/traits', true);
+    const pathToAbility = require.context('../../../assets/images/abilities', true);
+    const pathToSplashart = require.context('../../../assets/images/splasharts', true);
 
     let traitsIconList = this.props.champion.traits.map(trait => {
       return (
@@ -122,7 +122,7 @@ class ChampionShowTileDesktop extends Component {
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-four'>
                       <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one'>
-                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image' src={`${pathToRender(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
+                        <Image id='ChampionShowDesktop-champion-details-ability-grid-row-four-column-one-image' src={`${pathToSplashart(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
                       </Grid.Column>
                     </Grid.Row>
                     <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-five'>

@@ -13,7 +13,7 @@ class ChampionShowTileMobile extends Component {
     const pathToIcon = require.context('../../../assets/images/icons', true);
     const pathToBanner = require.context('../../../assets/images/banners', true);
     const pathToAbility = require.context('../../../assets/images/abilities', true);
-    const pathToRender = require.context('../../../assets/images/renders', true);
+    const pathToSplashart = require.context('../../../assets/images/splasharts', true);
     const pathToTraitIcon = require.context('../../../assets/images/traits', true);
 
     let traitsIconList = this.props.champion.traits.map(trait => {
@@ -154,7 +154,7 @@ class ChampionShowTileMobile extends Component {
               </Segment>
 
               <Segment id='ChampionShowMobile-champion-render-container' basic>
-                <Image id='ChampionShowMobile-champion-render-image' src={`${pathToRender(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
+                <Image id='ChampionShowMobile-champion-render-image' src={`${pathToSplashart(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
               </Segment>
 
             </Segment>
