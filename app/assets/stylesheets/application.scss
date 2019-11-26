@@ -1336,8 +1336,8 @@ body {
   width: 100% !important;
   height: 100% !important;
   margin: 0px 0px 0px 7px !important;
-  padding: 14px !important;
-  background-color: #FFFFFF !important;
+  padding: 0px !important;
+  background-color: #1B1C1D !important;
 }
 /* Header */
 #ChampionShowDesktop-champion-header {
@@ -1346,6 +1346,7 @@ body {
   width: 100% !important;
   height: auto !important;
   max-height: 15% !important;
+  margin: 0px !important;
   padding: 0px !important;
   overflow: hidden !important;
   border: 5px solid #2185D0 !important;
@@ -1417,13 +1418,17 @@ body {
 #ChampionShowDesktop-champion-details {
   display: flex !important;
   height: 85% !important;
-  padding: 0px 0px 7px 0px !important;
+  margin: 0px 0px 14px 0px !important;
+  padding: 0px !important;
+  border: 0px !important;
+  border-top: 14px solid #FFFFFF !important;
+  background-color: #1B1C1D !important;
 }
 /* Ability Container */
 #ChampionShowDesktop-champion-details-ability-container {
   flex: 1 !important;
+  margin: 0px !important;
   padding: 0px !important;
-  margin: 0px 7px 0px 0px !important;
   color: #FFFFFF !important;
   font-weight: bold !important;
 }
@@ -1431,6 +1436,9 @@ body {
   width: 100% !important;
   height: auto !important;
   margin: 0px !important;
+  border: 0px !important;
+  border-left: 14px solid #FFFFFF !important;
+  border-bottom: 14px solid #FFFFFF !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-one {
   width: 100% !important;
@@ -1506,8 +1514,19 @@ body {
 #ChampionShowDesktop-champion-details-ability-grid-row-three {
   width: 100% !important;
   height: auto !important;
+  max-height: 125px !important;
   padding: 0px !important;
+  overflow-y: scroll !important;
+  border-left: 3px solid #2185D0 !important;
+  border-right: 3px solid #2185D0 !important;
   background-color: #2185D0 !important;
+}
+#ChampionShowDesktop-champion-details-ability-grid-row-three::-webkit-scrollbar-track {
+  background-color: #2185D0 !important;
+}
+#ChampionShowDesktop-champion-details-ability-grid-row-three::-webkit-scrollbar-thumb {
+  background-color: #A78E5A !important;
+  border-radius: 0px !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-three-column-one {
   padding: 0px !important;
@@ -1572,8 +1591,12 @@ body {
 /* Traits Container */
 #ChampionShowDesktop-champion-details-traits-container {
   flex: 3 !important;
+  margin: 0px !important;
   padding: 0px !important;
-  margin: 0px 0px 0px 7px !important;
+  border: 0px !important;
+  border-left: 14px solid #FFFFFF !important;
+  border-right: 14px solid #FFFFFF !important;
+  border-bottom: 14px solid #FFFFFF !important;
 }
 #ChampionShowDesktop-champion-details-traits-statistics-container {
   display: flex !important;
@@ -1796,7 +1819,7 @@ body {
   padding: 5px !important;
   margin: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
-  color: white !important;
+  color: #FFFFFF !important;
   background: #1B1C1D !important;
 }
 #ChampionShowMobile-champion-statistics-list {
