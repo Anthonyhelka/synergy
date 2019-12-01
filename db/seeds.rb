@@ -793,10 +793,6 @@ gnar_1 = Champion.create(
         value: "200 / 300 / 400"
       },
       {
-        type: "Transform Duration",
-        value: "60s"
-      },
-      {
         type: "Transform Bonus Health",
         value: "250 / 450 / 650"
       },

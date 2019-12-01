@@ -1314,7 +1314,7 @@ body {
   display: flex !important;
   width: 1500px !important;
   max-width: 100% !important;
-  height: 1000px !important;
+  height: auto !important;
   max-height: 100% !important;
   border-radius: 0px !important;
   margin: auto !important;
@@ -1325,7 +1325,7 @@ body {
 #ChampionShowDesktop-search-container {
   flex: 1 !important;
   width: 100% !important;
-  height: 50% !important;
+  height: 500px !important;
   padding: 0px !important;
   margin: 0px 7px 0px 0px !important;
   border: none !important;
@@ -1420,10 +1420,9 @@ body {
 #ChampionShowDesktop-champion-details {
   display: flex !important;
   height: 85% !important;
-  margin: 0px 0px 14px 0px !important;
+  margin: 14px 0px 14px 0px !important;
   padding: 0px !important;
   border: 0px !important;
-  border-top: 14px solid #FFFFFF !important;
   background-color: #1B1C1D !important;
 }
 /* Ability Container */
@@ -1439,8 +1438,6 @@ body {
   height: auto !important;
   margin: 0px !important;
   border: 0px !important;
-  border-left: 14px solid #FFFFFF !important;
-  border-bottom: 14px solid #FFFFFF !important;
 }
 #ChampionShowDesktop-champion-details-ability-grid-row-one {
   width: 100% !important;
@@ -1516,9 +1513,7 @@ body {
 #ChampionShowDesktop-champion-details-ability-grid-row-three {
   width: 100% !important;
   height: auto !important;
-  max-height: 125px !important;
   padding: 0px !important;
-  overflow-y: scroll !important;
   border-left: 3px solid #2185D0 !important;
   border-right: 3px solid #2185D0 !important;
   background-color: #2185D0 !important;
@@ -1595,10 +1590,8 @@ body {
   flex: 3 !important;
   margin: 0px !important;
   padding: 0px !important;
+  margin-left: 14px !important;
   border: 0px !important;
-  border-left: 14px solid #FFFFFF !important;
-  border-right: 14px solid #FFFFFF !important;
-  border-bottom: 14px solid #FFFFFF !important;
 }
 #ChampionShowDesktop-champion-details-traits-statistics-container {
   display: flex !important;
@@ -1746,20 +1739,19 @@ body {
 /* Champion Container */
 #ChampionShowMobile-champion-container {
   width: 100% !important;
-  height: 650px !important;
+  height: auto !important;
   padding: 0px !important;
-  margin: 0px !important;
+  margin: 0px 0px 7px 0px !important;
   border: 3px solid #2185D0 !important;
   border-top: 0px !important;
   border-bottom: 0px !important;
-  background-color: #FFFFFF !important;
 }
 /* Header */
 #ChampionShowMobile-champion-header-container {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
-  height: 8.6% !important;
+  height: 50px;
   padding: 0px !important;
   margin: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
@@ -1817,7 +1809,7 @@ body {
 /* Statistics */
 #ChampionShowMobile-champion-statistics-container {
   width: 100% !important;
-  height: 6.4% !important;
+  height: 40px !important;
   padding: 5px !important;
   margin: 0px !important;
   border-bottom: 3px solid #2185D0 !important;
@@ -1844,7 +1836,7 @@ body {
 /* Ability */
 #ChampionShowMobile-champion-ability-container {
   width: 100% !important;
-  height: 40% !important;
+  height: auto !important;
   padding: 0px !important;
   margin: 0px !important;
 }
@@ -1856,7 +1848,7 @@ body {
 }
 #ChampionShowMobile-champion-ability-grid-row-one {
   width: 100% !important;
-  height: 15% !important;
+  height: 40px !important;
   padding: 0px !important;
   margin: 0px !important;
   font-weight: bold !important;
@@ -1881,9 +1873,8 @@ body {
 }
 #ChampionShowMobile-champion-ability-grid-row-two {
   width: 100% !important;
-  height: 42.5% !important;
+  height: 100px !important;
   padding: 0px !important;
-  border-bottom: 3px solid #2185D0 !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
   background-color: #1B1C1D !important;
@@ -1922,7 +1913,7 @@ body {
 }
 #ChampionShowMobile-champion-ability-grid-row-three {
   width: 100% !important;
-  height: 42.5% !important;
+  height: auto !important;
   padding: 0px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
@@ -1937,7 +1928,7 @@ body {
   background-color: #2185D0 !important;
 }
 /* Render */
-#ChampionShowMobile-champion-render-container {
+#ChampionShowMobile-champion-splashart-container {
   width: 100% !important;
   height: 45% !important;
   padding: 0px !important;
@@ -1945,7 +1936,7 @@ body {
   border-bottom: 3px solid #2185D0 !important;
   background-color: #1B1C1D !important;
 }
-#ChampionShowMobile-champion-render-image {
+#ChampionShowMobile-champion-splashart-image {
   width: auto !important;
   max-width: 100% !important;
   height: auto !important;

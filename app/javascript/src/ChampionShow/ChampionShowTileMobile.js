@@ -9,6 +9,14 @@ class ChampionShowTileMobile extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    document.body.classList.add(`grey-background-color`);
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove(`grey-background-color`);
+  }
+  
   render() {
     const pathToIcon = require.context('../../../assets/images/icons', true);
     const pathToBanner = require.context('../../../assets/images/banners', true);
@@ -150,11 +158,6 @@ class ChampionShowTileMobile extends Component {
               </Grid.Row>
             </Grid>
           </Segment>
-
-          <Segment id='ChampionShowMobile-champion-render-container' basic>
-            <Image id='ChampionShowMobile-champion-render-image' src={`${pathToSplashart(`./${this.props.champion.key}_${this.props.champion.season_id}`, true)}`}  />
-          </Segment>
-
         </Segment>
 
         <Segment id='ChampionShowMobile-champion-traits-container' basic>
