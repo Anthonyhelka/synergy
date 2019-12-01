@@ -18,6 +18,7 @@ class ChampionShowContainer extends Component {
   }
 
   componentDidMount() {
+    document.body.classList.add(`grey-background-color`);
     this.props.getChampion(this.props.params.key);
   }
 
@@ -25,6 +26,10 @@ class ChampionShowContainer extends Component {
     if (this.props.params.key !== prevProps.params.key) {
        this.props.getChampion(this.props.params.key);
     }
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove(`grey-background-color`);
   }
 
   handleChampionClick(event, key) {

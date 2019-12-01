@@ -9,14 +9,6 @@ class ChampionShowTileDesktop extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    document.body.classList.add(`grey-background-color`);
-  }
-
-  componentWillUnmount() {
-    document.body.classList.remove(`grey-background-color`);
-  }
-
   render() {
     const pathToIcon = require.context('../../../assets/images/icons', true);
     const pathToBanner = require.context('../../../assets/images/banners', true);

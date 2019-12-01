@@ -1741,7 +1741,7 @@ body {
   width: 100% !important;
   height: auto !important;
   padding: 0px !important;
-  margin: 0px 0px 7px 0px !important;
+  margin: 0px !important;
   border: 3px solid #2185D0 !important;
   border-top: 0px !important;
   border-bottom: 0px !important;
@@ -1944,6 +1944,28 @@ body {
   margin: auto !important;
 }
 /* Traits */
+#ChampionShowMobile-trait-icon-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  height: 69px !important;
+  margin: auto !important;
+  padding: 0px 25px 0px 25px !important;
+}
+#ChampionShowMobile-trait-icon-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-grow: 1 !important;
+  margin: 7px 0px 7px 0px !important;
+}
+#ChampionShowMobile-trait-icon-image {
+  width: 40px !important;
+  height: 40px !important;
+}
 #ChampionShowMobile-champion-traits-container {
   width: 100% !important;
   height: auto !important;
