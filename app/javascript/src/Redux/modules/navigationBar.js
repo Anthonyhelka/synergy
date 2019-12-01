@@ -20,7 +20,7 @@ const navigationBar = (state = initialState, action) => {
         case '/items':
           return {...initialState, items: 'active' }
         default:
-          return state
+          return initialState
       }
     case HANDLE_SIDEBAR_CLICK:
       if (state.sidebarStatus === 'invisible') {

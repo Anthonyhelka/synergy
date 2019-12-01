@@ -405,7 +405,7 @@ camille_1 = Champion.create(
   cost: 1,
   ability: {
     name: "The Hextech Ultimatum",
-    description: "Camille singles out an enemy, dealing magic damage and rooting them for few seconds. Camille's allies in range will prioritize attacking that enemy.",
+    description: "Camille singles out an enemy, dealing magic damage and rooting them for a few seconds. Camille's allies in range will prioritize attacking that enemy.",
     type: "Active",
     mana_cost: 150,
     mana_start: 0,
@@ -791,10 +791,6 @@ gnar_1 = Champion.create(
       {
         type: "Damage",
         value: "200 / 300 / 400"
-      },
-      {
-        type: "Transform Duration",
-        value: "60s"
       },
       {
         type: "Transform Bonus Health",
@@ -1646,7 +1642,7 @@ pantheon_1 = Champion.create(
     stats: [
       {
         type: "Damage",
-        value: "10% / 20% 30% Max Health"
+        value: "10% / 20% / 30% Max Health"
       },
       {
         type: "Stun Duration",

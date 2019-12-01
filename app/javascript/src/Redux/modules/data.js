@@ -1,6 +1,7 @@
 import { loadChampionSearch } from './championSearch.js';
 import { loadChampionTable } from './championTable.js';
 import { loadTraitContainer } from './traitContainer.js';
+import { handleChampionShowRedirect } from './championShow.js';
 
 const initialState = {
   season: 1,
@@ -77,6 +78,9 @@ const handleSeasonChange = (event, desiredSeason) => {
   return (dispatch, getState) => {
     if (desiredSeason !== getState().data.season) {
       dispatch(changeSeason(desiredSeason))
+      if (window.location.pathname.startsWith('/champions/') && window.location.pathname !== '/champions/traits') {
+        dispatch(handleChampionShowRedirect())
+      }
       dispatch(getData())
     }
   }

@@ -20,8 +20,10 @@ class Api::V1::ChampionsController < ApplicationController
   end
 
   def show
-    champion_key = params[:id].downcase
-    champion = Champion.where(key: champion_key, season: 1)
+    split = params["id"].split("_")
+    champion_key = split[0]
+    season = split[1]
+    champion = Champion.where(key: champion_key, season: season)
     render json: {
       champion: ActiveModel::Serializer::CollectionSerializer.new(champion, each_serializer: TraitSerializer)
     }
