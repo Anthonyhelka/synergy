@@ -19,7 +19,7 @@ class ChampionShowTileDesktop extends Component {
     let traitsIconList = this.props.champion.traits.map(trait => {
       return (
         <div id='ChampionShowDesktop-champion-header-trait'>
-          <Image src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}  />
+          <img src={`${pathToTraitIcon(`./${trait.key}_${trait.season_id}`, true)}`}  />
           <span>&nbsp;{trait.name}</span>
         </div>
       )
