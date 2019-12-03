@@ -32,12 +32,11 @@ class Api::V1::SummonerController < ApplicationController
     end
     summoner_name = URI.escape(summoner_name)
     api_key = ENV.fetch("RIOT_API_KEY")
-    summoner_info = HTTParty.get("https://#{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/#{summoner_name}?api_key=#{api_key}")
+    summoner_info = HTTParty.get("https://#{region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/#{summoner_name}?api_key=#{api_key}")
     summoner_id = summoner_info["id"]
-    ranked_data = HTTParty.get("https://#{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
-    tft_data = ranked_data.select { |t| t["queueType"] == "RANKED_TFT"}
+    ranked_data = HTTParty.get("https://#{{region}}.api.riotgames.com/tft/league/v1/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
     render json: {
-      summoner: summoner_info, rank: tft_data[0]
+      summoner: summoner_name, rank: ranked_data[0]
     }
   end
 

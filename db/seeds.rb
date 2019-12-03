@@ -2911,6 +2911,174 @@ aatrox_2 = Champion.create(
   },
   items: ["WIP"]
 )
+annie_2 = Champion.create(
+  id: 59,
+  season_id: 2,
+  key: "annie",
+  name: "Annie",
+  title: "The Dark Child",
+  origins: ["Inferno"],
+  classes: ["Summoner"],
+  cost: 4,
+  ability: {
+    name: "Tibbers!",
+    description: "Annie summons Tibbers to fight alongside her dealing damage to enemies in the area.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Initial Damage",
+        value: "100 / 200 / 300"
+      },
+      {
+        type: "Tibber's Damage",
+        value: "150 / 300/ 1000"
+      },
+      {
+        type: "Tibber's Health",
+        value: "2200"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+ashe_2 = Champion.create(
+  id: 60,
+  season_id: 2,
+  key: "ashe",
+  name: "Ashe",
+  title: "The Frost Archer",
+  origins: ["Crystal"],
+  classes: ["Ranger"],
+  cost: 4,
+  ability: {
+    name: "Ranger's Focus",
+    description: "Ashe gains attack speed and replacing her basic attacks with a flurry of 5 arrows for 5 seconds.",
+    type: "Active",
+    mana_cost: 35,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Attack Speed",
+        value: "50% / 75% / 100%"
+      },
+      {
+        type: "Damage Per Arrow",
+        value: "25% / 30% / 35%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.80,
+      range: 4
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+azir_2 = Champion.create(
+  id: 61,
+  season_id: 2,
+  key: "azir",
+  name: "Azir",
+  title: "the Emperor of the Sands",
+  origins: ["Desert"],
+  classes: ["Summoner"],
+  cost: 3,
+  ability: {
+    name: "Arise!",
+    description: "Azir summons a Sand Soldier for 6 seconds. When Azir attacks an enemy in a soldier's range, the soldier attacks as well.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 75,
+    stats: [
+      {
+        type: "Damage",
+        value: "125 / 250 / 375"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.80,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+brand_2 = Champion.create(
+  id: 62,
+  season_id: 2,
+  key: "brand",
+  name: "Brand",
+  title: "Pyroclasm",
+  origins: ["Inferno"],
+  classes: ["Mage"],
+  cost: 4,
+  ability: {
+    name: "Pyroclasm",
+    description: "Brand launches a bouncing fireball, damaging enemies hit.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "250 / 450 / 650"
+      },
+      {
+        type: "Bounces",
+        value: "5 / 6 / 20"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -2935,7 +3103,7 @@ cloud_2 = Trait.create(
     }
   ]
 )
-#cloud_2.champions << [janna_2, yasuo_2]
+cloud_2.champions << []
 crystal_2 = Trait.create(
   id: 26,
   season_id: 2,
@@ -2954,7 +3122,7 @@ crystal_2 = Trait.create(
     },
   ]
 )
-#crystal_2.champions << [ashe_2, skarner_2, taric_2]
+crystal_2.champions << [ashe_2]
 desert_2 = Trait.create(
   id: 27,
   season_id: 2,
@@ -2973,7 +3141,7 @@ desert_2 = Trait.create(
     },
   ]
 )
-#desert_2.champions << [azir_2, khazix_2, renekton_2, sivir_2]
+desert_2.champions << [azir_2]
 electric_2 = Trait.create(
   id: 28,
   season_id: 2,
@@ -2996,7 +3164,7 @@ electric_2 = Trait.create(
     }
   ]
 )
-#electric_2.champions << [ornn_2, volibear_2, zed_2]
+electric_2.champions << []
 glacial_2 = Trait.create(
   id: 29,
   season_id: 2,
@@ -3018,8 +3186,8 @@ glacial_2 = Trait.create(
       description: "60% chance"
     }
   ]
-),
-#glacial_2.champions << [braum_2, ezreal_2, olaf_2, volibear_2, warwick_2]
+)
+glacial_2.champions << []
 inferno_2 = Trait.create(
   id: 30,
   season_id: 2,
@@ -3042,7 +3210,7 @@ inferno_2 = Trait.create(
     }
   ]
 )
-#inferno_2.champions << [annie_2, brand_2, diana_2, kindred_2, varus_2, zyra_2]
+inferno_2.champions << [annie_2, brand_2]
 light_2 = Trait.create(
   id: 31,
   season_id: 2,
@@ -3066,7 +3234,6 @@ light_2 = Trait.create(
   ]
 )
 light_2.champions << [aatrox_2]
-#light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2, vayne_2, yorick_2]
 mountain_2 = Trait.create(
   id: 32,
   season_id: 2,
@@ -3076,7 +3243,7 @@ mountain_2 = Trait.create(
   description: "While at least Mountain units are in play, at the start of combat, a random ally gains a 1500 health shield",
   upgrades: []
 )
-#mountain_2.champions << [malphite_2, taliyah_2]
+mountain_2.champions << []
 ocean_2 = Trait.create(
   id: 33,
   season_id: 2,
@@ -3099,7 +3266,7 @@ ocean_2 = Trait.create(
     }
   ]
 )
-#ocean_2.champions << [nami_2, nautilus_2, syndra_2, thresh_2, vladimir_2]
+ocean_2.champions << []
 poison_2 = Trait.create(
   id: 34,
   season_id: 2,
@@ -3109,7 +3276,7 @@ poison_2 = Trait.create(
   description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
   upgrades: []
 )
-#poison_2.champions << [drmundo_2, kogmaw_2, singed_2, twitch_2]
+poison_2.champions << []
 shadow_2 = Trait.create(
   id: 35,
   season_id: 2,
@@ -3128,7 +3295,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-#shadow_2.champions << [kindred_2, malzahar_2, masteryi_2, sion_2, veigar_2]
+shadow_2.champions << []
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -3151,7 +3318,7 @@ steel_2 = Trait.create(
     }
   ]
 )
-#steel_2.champions << [nocturne_2, reksai_2]
+steel_2.champions << []
 woodland_2 = Trait.create(
   id: 37,
   season_id: 2,
@@ -3161,7 +3328,7 @@ woodland_2 = Trait.create(
   description: "While at least 3 Woodland units are in play, at the start of combat, a random Woodland champion makes a copy of themselves (excluding items)",
   upgrades: []
 )
-#woodland_2.champions << [ivern_2, leblanc_2, maokai_2, neeko_2]
+woodland_2.champions << []
 #Classes
 alchemist_2 = Trait.create(
   id: 38,
@@ -3172,7 +3339,7 @@ alchemist_2 = Trait.create(
   description: "Alchemists ignore collision and never stop moving.",
   upgrades: []
 )
-#alchemist.champions << [singed_2]
+alchemist_2.champions << []
 assassin_2 = Trait.create(
   id: 39,
   season_id: 2,
@@ -3191,7 +3358,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-#assassin_2.champions << [diana_2, khazix_2, leblanc_2, nocturne_2, qiyana_2, zed_2]
+assassin_2.champions << []
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -3201,7 +3368,7 @@ avatar_2 = Trait.create(
   description: "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Origin of that Avatar. An Avatar's Origin is counted twice for Trait bonuses",
   upgrades: []
 )
-#avatar_2.champions << [lux_2]
+avatar_2.champions << []
 berserker_2 = Trait.create(
   id: 41,
   season_id: 2,
@@ -3220,7 +3387,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-#berserker_2.champions << [drmundo_2, jax_2, olaf_2, renekton_2, sion_2, volibear_2]
+berserker_2.champions << []
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -3244,7 +3411,6 @@ blademaster_2 = Trait.create(
   ]
 )
 blademaster_2.champions << [aatrox_2]
-#blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2, yasuo_2]
 druid_2 = Trait.create(
   id: 43,
   season_id: 2,
@@ -3254,7 +3420,7 @@ druid_2 = Trait.create(
   description: "	While at least 2 Druids are in play, Druids regenerate 40 health each second.",
   upgrades: []
 )
-#druid_2.champions << [ivern_2, maokai_2, neeko_2]
+druid_2.champions << []
 mage_2 = Trait.create(
   id: 44,
   season_id: 2,
@@ -3273,7 +3439,7 @@ mage_2 = Trait.create(
     }
   ]
 )
-#mage_2.champions << [brand_2, leblanc_2, syndra_2, taliyah_2, veigar_2, vladimir_2]
+mage_2.champions << [brand_2]
 mystic_2 = Trait.create(
   id: 45,
   season_id: 2,
@@ -3292,7 +3458,7 @@ mystic_2 = Trait.create(
     }
   ]
 )
-#mystic_2.champions << [janna_2, masteryi_2, nami_2, soraka_2]
+mystic_2.champions << []
 predator_2 = Trait.create(
   id: 46,
   season_id: 2,
@@ -3302,7 +3468,7 @@ predator_2 = Trait.create(
   description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
   upgrades: []
 )
-#predator_2.champions << [kogmaw_2, reksai_2, skarner_2, warwick_2]
+predator_2.champions << []
 ranger_2 = Trait.create(
   id: 47,
   season_id: 2,
@@ -3325,7 +3491,7 @@ ranger_2 = Trait.create(
     }
   ]
 )
-#ranger_2.champions << [ashe_2, ezreal_2, kindred_2, twitch_2, varus_2, vayne_2]
+ranger_2.champions << [ashe_2]
 summoner_2 = Trait.create(
   id: 48,
   season_id: 2,
@@ -3344,7 +3510,7 @@ summoner_2 = Trait.create(
     }
   ]
 )
-#summoner_2.champions << [annie_2, azir_2, malzahar_2, yorick_2, zed_2, zyra_2]
+summoner_2.champions << [annie_2, azir_2]
 warden_2 = Trait.create(
   id: 49,
   season_id: 2,
@@ -3367,4 +3533,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-#warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2, ornn_2, taric_2, thresh_2]
+warden_2.champions << []
