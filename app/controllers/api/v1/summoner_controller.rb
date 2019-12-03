@@ -36,7 +36,7 @@ class Api::V1::SummonerController < ApplicationController
     summoner_id = summoner_info["id"]
     ranked_data = HTTParty.get("https://#{region}.api.riotgames.com/tft/league/v1/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
     render json: {
-      summoner: summoner_name, rank: ranked_data
+      summoner: summoner_info, rank: ranked_data[0]
     }
   end
 
