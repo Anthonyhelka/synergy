@@ -59,7 +59,8 @@ const filterChampions = (filteredChampions) => {
 
 const handleChampionSearch = (event) => {
   return (dispatch, getState) => {
-    const query = (event.target.value).trim();
+    let query;
+    (event.target.value.trim()) ? query = event.target.value : query = event.target.value.trim();
     dispatch(handleQueryChange(query));
     const champions = getState().championSearch.champions;
     const filteredChampions = champions.filter(champion => {
