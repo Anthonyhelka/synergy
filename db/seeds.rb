@@ -2922,7 +2922,7 @@ annie_2 = Champion.create(
   cost: 4,
   ability: {
     name: "Tibbers!",
-    description: "Annie summons Tibbers to fight alongside her dealing damage to enemies in the area.",
+    description: "Annie summons Tibbers to fight alongside her, dealing damage to enemies in the area.",
     type: "Active",
     mana_cost: 75,
     mana_start: 0,
@@ -2932,11 +2932,11 @@ annie_2 = Champion.create(
         value: "100 / 200 / 300"
       },
       {
-        type: "Tibber's Damage",
+        type: "Tibbers' Damage",
         value: "150 / 300/ 1000"
       },
       {
-        type: "Tibber's Health",
+        type: "Tibbers' Health",
         value: "2200"
       }
     ]
@@ -2968,7 +2968,7 @@ ashe_2 = Champion.create(
   cost: 4,
   ability: {
     name: "Ranger's Focus",
-    description: "Ashe gains attack speed and replacing her basic attacks with a flurry of 5 arrows for 5 seconds.",
+    description: "Ashe gains attack speed and replaces her basic attacks with a flurry of 5 arrows for 5 seconds.",
     type: "Active",
     mana_cost: 35,
     mana_start: 0,
@@ -3004,7 +3004,7 @@ azir_2 = Champion.create(
   season_id: 2,
   key: "azir",
   name: "Azir",
-  title: "the Emperor of the Sands",
+  title: "The Emperor of the Sands",
   origins: ["Desert"],
   classes: ["Summoner"],
   cost: 3,
@@ -3042,7 +3042,7 @@ brand_2 = Champion.create(
   season_id: 2,
   key: "brand",
   name: "Brand",
-  title: "Pyroclasm",
+  title: "The Burning Vengeance",
   origins: ["Inferno"],
   classes: ["Mage"],
   cost: 4,
