@@ -96,7 +96,7 @@ class ChampionShowTileDesktop extends Component {
                   </Grid.Column>
                   <Grid.Column id='ChampionShowDesktop-champion-details-ability-grid-row-one-column-two' width='6'>
                     <span id='ChampionShowDesktop-champion-details-ability-grid-row-one-column-two-type'>{this.props.champion.ability.type}</span>
-                    <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span id='ChampionShowDesktop-champion-details-ability-grid-row-one-column-two-mana'><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Mana</Popup>
+                    <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span id='ChampionShowDesktop-champion-details-ability-grid-row-one-column-two-mana'><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Starting Mana / Mana Cost</Popup>
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row id='ChampionShowDesktop-champion-details-ability-grid-row-two'>

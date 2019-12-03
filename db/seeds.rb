@@ -1263,7 +1263,7 @@ kindred_1 = Champion.create(
         value: "3s / 4s / 5s"
       },
       {
-        type: "Minimum HP",
+        type: "Minimum Health",
         value: "300 / 600 / 900"
       }
     ]
@@ -1341,7 +1341,7 @@ lissandra_1 = Champion.create(
   cost: 2,
   ability: {
     name: "Frozen Tomb",
-    description: "Lissandra encases the target in ice, dealing damage to nearby enemies. When below half HP, Lissandra instead encases herself, becoming untargetable.",
+    description: "Lissandra encases the target in ice, dealing damage to nearby enemies. When below half health, Lissandra instead encases herself, becoming untargetable.",
     type: "Active",
     mana_cost: 85,
     mana_start: 0,
@@ -2670,7 +2670,7 @@ assassin_1 = Trait.create(
   key: "assassin",
   name: "Assassin",
   trait_type: "Class",
-  description: "Assassins gain bonus critical strike damage/chance",
+  description: "Assassins gain bonus critical strike damage & chance",
   upgrades: [
     {
       threshhold: "3",
@@ -3079,6 +3079,212 @@ brand_2 = Champion.create(
   },
   items: ["WIP"]
 )
+braum_2 = Champion.create(
+  id: 63,
+  season_id: 2,
+  key: "braum",
+  name: "Braum",
+  title: "the Heart of the Freljord",
+  origins: ["Glacial"],
+  classes: ["Warden"],
+  cost: 2,
+  ability: {
+    name: "Unbreakable",
+    description: "Braum creates a barrier that blocks all incoming damage.",
+    type: "Active",
+    mana_cost: 65,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage Reduction",
+        value: "70% / 80% / 90%"
+      },
+      {
+        type: "Duration",
+        value: "4s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.60,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
+      armor: 60,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+diana_2 = Champion.create(
+  id: 64,
+  season_id: 2,
+  key: "diana",
+  name: "Diana",
+  title: "Scorn of the Moon",
+  origins: ["Inferno"],
+  classes: ["Assassin"],
+  cost: 1,
+  ability: {
+    name: "Flame Cascade",
+    description: "Diana creates 3 orbs that spin around her and explode upon contact with an enemy, dealing magic damage. Additionally, Diana gains a shield for 3 seconds.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Orbs",
+        value: "3 / 4 / 5"
+      },
+      {
+        type: "Damage Per Orb",
+        value: "80 / 100 / 120"
+      },
+      {
+        type: "Shield Amount",
+        value: "150 / 250 / 350"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+drmundo_2 = Champion.create(
+  id: 65,
+  season_id: 2,
+  key: "drmundo",
+  name: "Dr. Mundo",
+  title: "The Madman of Zaun",
+  origins: ["Poison"],
+  classes: ["Berserker"],
+  cost: 3,
+  ability: {
+    name: "Adrenaline Rush",
+    description: "Dr. Mundo creates a toxic cloud around him that deals damage to nearby enemies and heals for a portion of the damage done every second for 8 seconds.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 75,
+    stats: [
+      {
+        type: "Damage Per Second",
+        value: "50 / 100 / 150"
+      },
+      {
+        type: "Heal Amount",
+        value: "100% / 125% / 150%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.60,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+ezreal_2 = Champion.create(
+  id: 66,
+  season_id: 2,
+  key: "ezreal",
+  name: "Ezreal",
+  title: "The Prodigal Explorer",
+  origins: ["Glacial"],
+  classes: ["Ranger"],
+  cost: 3,
+  ability: {
+    name: "Ice Shot",
+    description: "Ezreal fires a shard of ice at the lowest health unit, dealing magic damage and applying on-hit effects.",
+    type: "Active",
+    mana_cost: 30,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 400 / 800"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+ivern_2 = Champion.create(
+  id: 67,
+  season_id: 2,
+  key: "ivern",
+  name: "Ivern",
+  title: "The Green Father",
+  origins: ["Woodland"],
+  classes: ["Druid"],
+  cost: 3,
+  ability: {
+    name: "Triggerseed",
+    description: "Ivern grants a shield to the ally with the lowest health.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Shield Amount",
+        value: "200 / 350 / 500"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.60,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -3187,7 +3393,7 @@ glacial_2 = Trait.create(
     }
   ]
 )
-glacial_2.champions << []
+glacial_2.champions << [braum_2, ezreal_2]
 inferno_2 = Trait.create(
   id: 30,
   season_id: 2,
@@ -3210,7 +3416,7 @@ inferno_2 = Trait.create(
     }
   ]
 )
-inferno_2.champions << [annie_2, brand_2]
+inferno_2.champions << [annie_2, brand_2, diana_2]
 light_2 = Trait.create(
   id: 31,
   season_id: 2,
@@ -3276,7 +3482,7 @@ poison_2 = Trait.create(
   description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
   upgrades: []
 )
-poison_2.champions << []
+poison_2.champions << [drmundo_2]
 shadow_2 = Trait.create(
   id: 35,
   season_id: 2,
@@ -3328,7 +3534,7 @@ woodland_2 = Trait.create(
   description: "While at least 3 Woodland units are in play, at the start of combat, a random Woodland champion makes a copy of themselves (excluding items)",
   upgrades: []
 )
-woodland_2.champions << []
+woodland_2.champions << [ivern_2]
 #Classes
 alchemist_2 = Trait.create(
   id: 38,
@@ -3346,7 +3552,7 @@ assassin_2 = Trait.create(
   key: "assassin",
   name: "Assassin",
   trait_type: "Class",
-  description: "Assassins gain bonus critical strike damage/chance",
+  description: "Assassins gain bonus critical strike damage & chance",
   upgrades: [
     {
       threshhold: "3",
@@ -3358,7 +3564,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-assassin_2.champions << []
+assassin_2.champions << [diana_2]
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -3387,7 +3593,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-berserker_2.champions << []
+berserker_2.champions << [drmundo_2]
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -3420,7 +3626,7 @@ druid_2 = Trait.create(
   description: "	While at least 2 Druids are in play, Druids regenerate 40 health each second.",
   upgrades: []
 )
-druid_2.champions << []
+druid_2.champions << [ivern_2]
 mage_2 = Trait.create(
   id: 44,
   season_id: 2,
@@ -3491,7 +3697,7 @@ ranger_2 = Trait.create(
     }
   ]
 )
-ranger_2.champions << [ashe_2]
+ranger_2.champions << [ashe_2, ezreal_2]
 summoner_2 = Trait.create(
   id: 48,
   season_id: 2,
@@ -3533,4 +3739,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-warden_2.champions << []
+warden_2.champions << [braum_2]

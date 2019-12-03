@@ -129,7 +129,7 @@ class ChampionShowTileMobile extends Component {
                 </Grid.Column>
                 <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-one-column-two' width='6'>
                     <span>{this.props.champion.ability.type}</span>
-                    <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Mana</Popup>
+                    <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Starting Mana / Mana Cost</Popup>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-two'>
