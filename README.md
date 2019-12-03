@@ -5,7 +5,7 @@ Synergy is an application that was developed to help users improve at the popula
 </p>
 
 # Tech/Frameworks Used
-**Ruby v2.4.5**
+**Ruby v2.6.2**
 
 **Built with:**
 * [Ruby on Rails](https://rubyonrails.org/) v5.2.3
