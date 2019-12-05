@@ -11,8 +11,10 @@ class SummonerShow extends Component {
     this.state={
       summoner: {},
       status: '',
-      isFetched: false
+      isFetched: false,
+      message: {type: '', content: ''}
     }
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -30,9 +32,37 @@ class SummonerShow extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({ summoner: body.summoner, status: body.status, isFetched: true })
-        // new Date() - new Date(body.summoner.updated_at) >= (5 * 60 * 1000)
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  handleUpdate() {
+    if (new Date() - new Date(this.state.summoner.updated_at) >= (5 * 60 * 1000)) {
+      fetch(`/api/v1/summoner/${this.state.summoner.summoner_id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ region: this.state.summoner.region }),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status}(${response.statusText})`;
+          let error = new Error(errorMessage);
+          throw(error);
+        }
+        })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ summoner: body.summoner, status: body.status, message: 'Updated!' })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+    } else {
+      let millisecondsRemaining = new Date() - new Date(this.state.summoner.updated_at) - (5 * 60 * 1000);
+      let secondsRemaining = (Math.abs(millisecondsRemaining) / 1000).toFixed(0)
+      let message = `You just updated! You can update again in ${secondsRemaining} seconds!`;
+      this.setState({ message: {type: 'error', content: message} })
+    }
   }
 
   render() {
@@ -51,6 +81,8 @@ class SummonerShow extends Component {
         let winRate = ((this.state.summoner.ranked_data.wins / (this.state.summoner.ranked_data.wins + this.state.summoner.ranked_data.losses)) * 100).toFixed(2);
         summonerDisplay = (
           <div>
+            <button onClick={this.handleUpdate}>Update</button>
+            <br />
             <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/${this.state.summoner.icon}.png`} rounded centered size='tiny' />
             <Divider />
             <Image src={`${pathToRankedEmblem(rankTier, true)}`} alt={`${rankTier}`} centered size='tiny' />
@@ -68,6 +100,8 @@ class SummonerShow extends Component {
       } else if (this.state.summoner.ranked_data.tier === 'Unranked' && this.state.status === 'Success') {
         summonerDisplay = (
           <div>
+            <button onClick={this.handleUpdate}>Update</button>
+            <br />
             <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/${this.state.summoner.icon}.png`} centered rounded size='tiny' />
             <Divider />
             <Image src='https://raw.communitydragon.org/9.15/game/assets/ux/mastery/mastery_icon_default.loadingscreenpolish.png' centered  size='tiny' />
@@ -95,6 +129,7 @@ class SummonerShow extends Component {
 
         <Responsive minWidth='1024'>
           <Segment id='summoner-show-page-container-computer' textAlign='center'>
+            {this.state.message.content !== '' ? (<Message warning header={this.state.message} />) : (<span></span>)}
             <span><b>{this.state.summoner.name}</b></span>
             {summonerDisplay}
           </Segment>
