@@ -15,9 +15,9 @@ class App extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.getData();
-  }
+  // componentDidMount() {
+  //   this.props.getData();
+  // }
 
   render(){
     return (

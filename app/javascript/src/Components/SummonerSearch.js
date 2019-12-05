@@ -27,8 +27,6 @@ class SummonerSearch extends Component {
     this.setState({ query: event.target.value })
     if(event.keyCode == 13 || searchMethod === 'search-button'){
       this.handleGoClick(event);
-    } else {
-      this.filterChampions(event.target.value);
     }
   }
 
@@ -73,8 +71,9 @@ class SummonerSearch extends Component {
           <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'NA')}>NA</Button>
           <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'EUW')}>EUW</Button>
           <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'EUNE')}>EUNE</Button>
+          <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'KR')}>KR</Button>
           <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'LAN')}>LAN</Button>
-          <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'LAS')}>LAS</Button>          <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'LAS')}>LAS</Button>
+          <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'LAS')}>LAS</Button>
           <Button id='SummonerSearch-grid-region-row-button' className='SummonerSearch' onClick={event => this.handleRegionChange(event, 'BR')}>BR</Button>
           <Button id='SummonerSearch-grid-region-row-button-close' className='SummonerSearch' onClick={this.handlePopupClose}><Icon name='close'/></Button>
         </Grid.Row>
