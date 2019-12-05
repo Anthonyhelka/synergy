@@ -54,7 +54,7 @@ class SummonerShow extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ summoner: body.summoner, status: body.status, message: 'Updated!' })
+        this.setState({ summoner: body.summoner, status: body.status, message: {type: 'success', content: 'Updated!'} })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     } else {
@@ -83,6 +83,7 @@ class SummonerShow extends Component {
           <div>
             <button onClick={this.handleUpdate}>Update</button>
             <br />
+            <span><b>{this.state.summoner.name}</b></span>
             <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/${this.state.summoner.icon}.png`} rounded centered size='tiny' />
             <Divider />
             <Image src={`${pathToRankedEmblem(rankTier, true)}`} alt={`${rankTier}`} centered size='tiny' />
@@ -98,13 +99,16 @@ class SummonerShow extends Component {
           </div>
         );
       } else if (this.state.summoner.ranked_data.tier === 'Unranked' && this.state.status === 'Success') {
+        let rankTier = `./${this.state.summoner.ranked_data.tier}`;
+        rankTier = rankTier.toLowerCase();
         summonerDisplay = (
           <div>
             <button onClick={this.handleUpdate}>Update</button>
             <br />
+            <span><b>{this.state.summoner.name}</b></span>
             <Image id='summoner-show-page-icon' src={`http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/${this.state.summoner.icon}.png`} centered rounded size='tiny' />
             <Divider />
-            <Image src='https://raw.communitydragon.org/9.15/game/assets/ux/mastery/mastery_icon_default.loadingscreenpolish.png' centered  size='tiny' />
+            <Image src={`${pathToRankedEmblem(rankTier, true)}`} alt={`${rankTier}`} centered size='tiny' />
             <span id='summoner-show-page-rank'>Unranked</span>
             <Divider />
             <Header>Match History</Header>
@@ -122,7 +126,7 @@ class SummonerShow extends Component {
 
         <Responsive maxWidth='1023'>
           <Segment id='summoner-show-page-container-mobile-tablet' textAlign='center'>
-            <span><b>{this.state.summoner.name}</b></span>
+            {this.state.message.content !== '' ? (<Message warning header={this.state.message} />) : (<span></span>)}
             {summonerDisplay}
           </Segment>
         </Responsive>
@@ -130,7 +134,6 @@ class SummonerShow extends Component {
         <Responsive minWidth='1024'>
           <Segment id='summoner-show-page-container-computer' textAlign='center'>
             {this.state.message.content !== '' ? (<Message warning header={this.state.message} />) : (<span></span>)}
-            <span><b>{this.state.summoner.name}</b></span>
             {summonerDisplay}
           </Segment>
         </Responsive>
