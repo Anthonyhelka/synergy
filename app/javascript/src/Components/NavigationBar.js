@@ -43,8 +43,8 @@ class NavigationBar extends Component {
         <Sidebar id='NavigationBarMobile-sidebar-container' className='NavigationBar-sidebar' as={Menu} animation='overlay' vertical visible={this.props.sidebarVisible}>
           {this.props.season === 1 ? (
             <div id='NavigationBarDesktop-change-season-container'>
-              <div className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 1)}>Set 1</div>
-              <div className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 2)}>Set 2</div>
+              <div className='NavigationBarDesktop-change-season-item-active' onClick={event => this.props.handleSeasonChange(event, 1)} disabled={true}>Set 1</div>
+              <div className='NavigationBarDesktop-change-season-item-inactive' onClick={event => this.props.handleSeasonChange(event, 2)} disabled={true}>Set 2</div>
             </div>
           ) : (
             <div id='NavigationBarDesktop-change-season-container'>
