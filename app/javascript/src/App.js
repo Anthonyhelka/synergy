@@ -8,7 +8,7 @@ import ChampionTableContainer from  './ChampionTable/ChampionTableContainer';
 import TraitContainer from  './Traits/TraitContainer';
 import ChampionShowContainer from  './ChampionShow/ChampionShowContainer';
 import ItemsContainer from  './MainPages/ItemsContainer';
-import SummonerShow from './Summoner/SummonerShow';
+import SummonerShow from './SummonerShow/SummonerShow';
 
 class App extends Component {
   constructor(props) {

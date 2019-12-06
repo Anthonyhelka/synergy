@@ -3285,6 +3285,201 @@ ivern_2 = Champion.create(
   },
   items: ["WIP"]
 )
+janna_2 = Champion.create(
+  id: 68,
+  season_id: 2,
+  key: "janna",
+  name: "Janna",
+  title: "The Storm's Fury",
+  origins: ["Cloud"],
+  classes: ["Mystic"],
+  cost: 4,
+  ability: {
+    name: "Monsoon",
+    description: "Janna channels winds which heal allies based on their maximum health and stun nearby enemies for 1 second.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Heal Amount",
+        value: "20% / 30% / 100%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+jax_2 = Champion.create(
+  id: 69,
+  season_id: 2,
+  key: "jax",
+  name: "Jax",
+  title: "Grandmaster at Arms",
+  origins: ["Light"],
+  classes: ["Berserker"],
+  cost: 2,
+  ability: {
+    name: "Counter Strike",
+    description: "Jax dodges all incoming attacks for 2 seconds, then strikes nearby enemies, stunning them for 1.5 seconds.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 250 / 450"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.80,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+khazix_2 = Champion.create(
+  id: 70,
+  season_id: 2,
+  key: "khazix",
+  name: "Kha'Zix",
+  title: "The Voidreaver",
+  origins: ["Desert"],
+  classes: ["Assassin"],
+  cost: 4,
+  ability: {
+    name: "Arid Assault",
+    description: "Kha'Zix becomes invisible and attacks the lowest health enemy after a short delay. This attack critically strikes and restores mana.",
+    type: "Active",
+    mana_cost: 40,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Bonus Damage",
+        value: "100 / 200 / 500"
+      },
+      {
+        type: "Mana Restored",
+        value: "5 / 10 / 15"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(75, 1.80),
+      attack_speed: 0.80,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+kindred_2 = Champion.create(
+  id: 71,
+  season_id: 2,
+  key: "kindred",
+  name: "Kindred",
+  title: "The Eternal Hunters",
+  origins: ["Inferno", "Shadow"],
+  classes: ["Ranger"],
+  cost: 3,
+  ability: {
+    name: "Dance of Dread",
+    description: "Wolf mauls Kindred's target, dealing magic damage and reducing healing by 80% to the target for 5 seconds, while Lamb leaps away from Kindred's target.",
+    type: "Active",
+    mana_cost: 35,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 325 / 650"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.75,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+kogmaw_2 = Champion.create(
+  id: 72,
+  season_id: 2,
+  key: "kogmaw",
+  name: "Kog'Maw",
+  title: "The Mouth of the Abyss",
+  origins: ["Poison"],
+  classes: ["Predator"],
+  cost: 1,
+  ability: {
+    name: "Living Artillery",
+    description: "Kog'Maw fires a living artillery shell at an enemy, dealing damage.",
+    type: "Active",
+    mana_cost: 40,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "125 / 275 / 425"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -3309,7 +3504,7 @@ cloud_2 = Trait.create(
     }
   ]
 )
-cloud_2.champions << []
+cloud_2.champions << [janna_2]
 crystal_2 = Trait.create(
   id: 26,
   season_id: 2,
@@ -3347,7 +3542,7 @@ desert_2 = Trait.create(
     },
   ]
 )
-desert_2.champions << [azir_2]
+desert_2.champions << [azir_2, khazix_2]
 electric_2 = Trait.create(
   id: 28,
   season_id: 2,
@@ -3416,7 +3611,7 @@ inferno_2 = Trait.create(
     }
   ]
 )
-inferno_2.champions << [annie_2, brand_2, diana_2]
+inferno_2.champions << [annie_2, brand_2, diana_2, kindred_2]
 light_2 = Trait.create(
   id: 31,
   season_id: 2,
@@ -3439,7 +3634,7 @@ light_2 = Trait.create(
     }
   ]
 )
-light_2.champions << [aatrox_2]
+light_2.champions << [aatrox_2, jax_2]
 mountain_2 = Trait.create(
   id: 32,
   season_id: 2,
@@ -3482,7 +3677,7 @@ poison_2 = Trait.create(
   description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
   upgrades: []
 )
-poison_2.champions << [drmundo_2]
+poison_2.champions << [drmundo_2, kogmaw_2]
 shadow_2 = Trait.create(
   id: 35,
   season_id: 2,
@@ -3501,7 +3696,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-shadow_2.champions << []
+shadow_2.champions << [kindred_2]
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -3564,7 +3759,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-assassin_2.champions << [diana_2]
+assassin_2.champions << [diana_2, khazix_2]
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -3593,7 +3788,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-berserker_2.champions << [drmundo_2]
+berserker_2.champions << [drmundo_2, jax_2]
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -3664,7 +3859,7 @@ mystic_2 = Trait.create(
     }
   ]
 )
-mystic_2.champions << []
+mystic_2.champions << [janna_2]
 predator_2 = Trait.create(
   id: 46,
   season_id: 2,
@@ -3674,7 +3869,7 @@ predator_2 = Trait.create(
   description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
   upgrades: []
 )
-predator_2.champions << []
+predator_2.champions << [kogmaw_2]
 ranger_2 = Trait.create(
   id: 47,
   season_id: 2,
@@ -3697,7 +3892,7 @@ ranger_2 = Trait.create(
     }
   ]
 )
-ranger_2.champions << [ashe_2, ezreal_2]
+ranger_2.champions << [ashe_2, ezreal_2, kindred_2]
 summoner_2 = Trait.create(
   id: 48,
   season_id: 2,
