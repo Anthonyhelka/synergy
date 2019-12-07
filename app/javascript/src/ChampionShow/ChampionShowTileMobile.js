@@ -87,34 +87,34 @@ class ChampionShowTileMobile extends Component {
               <span id='ChampionShowMobile-champion-header-title-title'>{this.props.champion.title}</span>
             </div>
             <div id='ChampionShowMobile-champion-header-tier-container'>
-              <Popup on='click' key='cost' position='top center' hideOnScroll={true} trigger={<div id='ChampionShowMobile-champion-header-tier' className={`tier-${this.props.champion.cost}`}><span>{this.props.champion.cost}</span></div>}>Cost</Popup>
+              <Popup on='click' key='cost' position='top center' hideOnScroll={true} basic trigger={<div id='ChampionShowMobile-champion-header-tier' className={`tier-${this.props.champion.cost}`}><span>{this.props.champion.cost}</span></div>}>Cost</Popup>
             </div>
           </Segment>
 
           <Segment id='ChampionShowMobile-champion-statistics-container' basic>
             <List id='ChampionShowMobile-champion-statistics-list' horizontal>
                 <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                  <Popup on='click' key='health' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
+                  <Popup on='click' key='health' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/health.png')} />}>Health</Popup>
                   <span>{this.props.champion.stats.defense.health[0]}</span>
                 </List.Item>
               <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                <Popup on='click' key='armor' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/armor.png')} />}>Armor</Popup>
+                <Popup on='click' key='armor' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/armor.png')} />}>Armor</Popup>
                 <span>{this.props.champion.stats.defense.armor}</span>
               </List.Item>
               <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                <Popup on='click' key='magic_resist' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/magic_resist.png')} />}>Magic Resist</Popup>
+                <Popup on='click' key='magic_resist' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/magic_resist.png')} />}>Magic Resist</Popup>
                 <span>{this.props.champion.stats.defense.magic_resist}</span>
               </List.Item>
               <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
+                <Popup on='click' key='attack_damage' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_damage.png')} />}>Attack Damage</Popup>
                 <span>{this.props.champion.stats.offense.attack_damage[0]}</span>
               </List.Item>
               <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                <Popup on='click' key='attack_speed' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_speed.png')} />}>Attack Speed</Popup>
+                <Popup on='click' key='attack_speed' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/attack_speed.png')} />}>Attack Speed</Popup>
                 <span>{this.props.champion.stats.offense.attack_speed}</span>
               </List.Item>
               <List.Item id='ChampionShowMobile-champion-statistics-list-item-container'>
-                <Popup on='click' key='range' position='top center' hideOnScroll={true} trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/range.png')} />}>Range</Popup>
+                <Popup on='click' key='range' position='top center' hideOnScroll={true} basic trigger={<Image id='ChampionShowMobile-champion-statistics-list-item-image' src={require('../../../assets/images/stat_icons/range.png')} />}>Range</Popup>
                 <span>{this.props.champion.stats.offense.range}</span>
               </List.Item>
             </List>
@@ -129,7 +129,7 @@ class ChampionShowTileMobile extends Component {
                 </Grid.Column>
                 <Grid.Column id='ChampionShowMobile-champion-ability-grid-row-one-column-two' width='6'>
                     <span>{this.props.champion.ability.type}</span>
-                    <Popup on='click' key='mana' position='right' hideOnScroll={true} trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Starting Mana / Mana Cost</Popup>
+                    <Popup on='click' key='mana' position='right' hideOnScroll={true} basic trigger={<span><Icon name='tint' />{this.props.champion.ability.mana_start} / {this.props.champion.ability.mana_cost}</span>}>Starting Mana / Mana Cost</Popup>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row id='ChampionShowMobile-champion-ability-grid-row-two'>

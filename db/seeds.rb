@@ -3479,6 +3479,208 @@ kogmaw_2 = Champion.create(
   },
   items: ["WIP"]
 )
+leblanc_2 = Champion.create(
+  id: 73,
+  season_id: 2,
+  key: "leblanc",
+  name: "Leblanc",
+  title: "The Deceiver",
+  origins: ["Woodland"],
+  classes: ["Assassin", "Mage"],
+  cost: 2,
+  ability: {
+    name: "Ethereal Chains",
+    description: "Leblanc flings an illusory chain toward a random enemy, dealing damage and stunning them after 1.5 seconds.",
+    type: "Active",
+    mana_cost: 80,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 450 / 800"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.70,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+lux_2 = Champion.create(
+  id: 74,
+  season_id: 2,
+  key: "lux",
+  name: "Lux",
+  title: "The Lady of Luminosity",
+  origins: ["Variable"],
+  classes: ["Avatar"],
+  cost: 7,
+  ability: {
+    name: "Final Spark",
+    description: "Lux fires a beam of light in a straight line towards her enemies. If an enemy is killed, she restores 50 mana.",
+    type: "Active",
+    mana_cost: 85,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "500 / 800 / 9999"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.85,
+      range: 4
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+malphite_2 = Champion.create(
+  id: 75,
+  season_id: 2,
+  key: "malphite",
+  name: "Malphite",
+  title: "Shard of the Monolith",
+  origins: ["Mountain"],
+  classes: ["Warden"],
+  cost: 4,
+  ability: {
+    name: "Unstoppable Force",
+    description: "Malphite charges toward a random enemy, dealing damage and knocking all nearby enemies into the air and stunning them.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "125 / 200 / 275"
+      },
+      {
+        type: "Stun Duration",
+        value: "2s / 2.5s / 5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.55,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 50,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+malzahar_2 = Champion.create(
+  id: 76,
+  season_id: 2,
+  key: "malzahar",
+  name: "Malzahar",
+  title: "The Prophet of the Void",
+  origins: ["Shadow"],
+  classes: ["Summoner"],
+  cost: 2,
+  ability: {
+    name: "Shadow Swarm",
+    description: "Malzahar creates a shadow portal, summoning 2 Shadow Spawn. The Shadow Spawn hit for magic damage each attack. Shadow Spawn benefit from active Shadow trait bonuses.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 75,
+    stats: [
+      {
+        type: "Number of Minions",
+        value: "2 / 3 / 4"
+      },
+      {
+        type: "Minion Damage",
+        value: "30 / 60 / 90"
+      },
+      {
+        type: "Minion Health",
+        value: "250"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.65,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+maokai_2 = Champion.create(
+  id: 77,
+  season_id: 2,
+  key: "maokai",
+  name: "Maokai",
+  title: "The Twisted Treant",
+  origins: ["Woodland"],
+  classes: ["Druid"],
+  cost: 1,
+  ability: {
+    name: "Sap Magic",
+    description: "After taking damage from a spell, Maokai's next attack will heal him.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Heal Amount",
+        value: "100 / 175 / 250"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.50,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 
 #Traits
 #Origins
@@ -3644,7 +3846,7 @@ mountain_2 = Trait.create(
   description: "While at least Mountain units are in play, at the start of combat, a random ally gains a 1500 health shield",
   upgrades: []
 )
-mountain_2.champions << []
+mountain_2.champions << [malphite_2]
 ocean_2 = Trait.create(
   id: 33,
   season_id: 2,
@@ -3696,7 +3898,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-shadow_2.champions << [kindred_2]
+shadow_2.champions << [kindred_2, malzahar_2]
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -3720,6 +3922,16 @@ steel_2 = Trait.create(
   ]
 )
 steel_2.champions << []
+variable_2 = Trait.create(
+  id: 50,
+  season_id: 2,
+  key: "variable",
+  name: "Variable",
+  trait_type: "Origin",
+  description: "Variable units transform into another Origin based on in-game conditions",
+  upgrades: []
+)
+variable_2.champions << [lux_2]
 woodland_2 = Trait.create(
   id: 37,
   season_id: 2,
@@ -3729,7 +3941,7 @@ woodland_2 = Trait.create(
   description: "While at least 3 Woodland units are in play, at the start of combat, a random Woodland champion makes a copy of themselves (excluding items)",
   upgrades: []
 )
-woodland_2.champions << [ivern_2]
+woodland_2.champions << [ivern_2, leblanc_2, maokai_2]
 #Classes
 alchemist_2 = Trait.create(
   id: 38,
@@ -3759,7 +3971,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-assassin_2.champions << [diana_2, khazix_2]
+assassin_2.champions << [diana_2, khazix_2, leblanc_2]
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -3769,7 +3981,7 @@ avatar_2 = Trait.create(
   description: "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Origin of that Avatar. An Avatar's Origin is counted twice for Trait bonuses",
   upgrades: []
 )
-avatar_2.champions << []
+avatar_2.champions << [lux_2]
 berserker_2 = Trait.create(
   id: 41,
   season_id: 2,
@@ -3821,7 +4033,7 @@ druid_2 = Trait.create(
   description: "	While at least 2 Druids are in play, Druids regenerate 40 health each second.",
   upgrades: []
 )
-druid_2.champions << [ivern_2]
+druid_2.champions << [ivern_2, maokai_2]
 mage_2 = Trait.create(
   id: 44,
   season_id: 2,
@@ -3840,7 +4052,7 @@ mage_2 = Trait.create(
     }
   ]
 )
-mage_2.champions << [brand_2]
+mage_2.champions << [brand_2, leblanc_2]
 mystic_2 = Trait.create(
   id: 45,
   season_id: 2,
@@ -3911,7 +4123,7 @@ summoner_2 = Trait.create(
     }
   ]
 )
-summoner_2.champions << [annie_2, azir_2]
+summoner_2.champions << [annie_2, azir_2, malzahar_2]
 warden_2 = Trait.create(
   id: 49,
   season_id: 2,
@@ -3934,4 +4146,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-warden_2.champions << [braum_2]
+warden_2.champions << [braum_2, malphite_2]

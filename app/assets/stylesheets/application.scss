@@ -519,10 +519,11 @@ body {
   align-items: center !important;
   position: absolute !important;
   width: 12px !important;
-  height: 20px !important;
+  height: 18px !important;
   padding: 0px !important;
   font-size: 12px !important;
   font-weight: bold !important;
+  border: 3px solid rgba(0, 0, 0, 0) !important;
   border-bottom-right-radius: 3px !important;
   z-index: 2 !important;
 }
@@ -1291,12 +1292,16 @@ body {
   transform: scale(1.1) !important;
 }
 #ChampionTraits-champion-list-item-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: absolute !important;
   width: 12px !important;
-  height: 20px !important;
+  height: 18px !important;
   padding: 0px !important;
   font-size: 12px !important;
   font-weight: bold !important;
+  border: none !important;
   border-bottom-right-radius: 3px !important;
   z-index: 2 !important;
 }
@@ -1677,12 +1682,15 @@ body {
   transform: scale(1.1) !important;
 }
 #ChampionShowDesktop-champion-details-traits-traits-grid-row-one-column-two-champions-list-item-label {
+  display: flex !important;
+  align-items: center !important;
   position: absolute !important;
   width: 12px !important;
   height: 20px !important;
   padding: 0px !important;
   font-size: 12px !important;
   font-weight: bold !important;
+  border: 3px solid rgba(0, 0, 0, 0) !important;
   border-bottom-right-radius: 3px !important;
   z-index: 2 !important;
 }
@@ -2024,12 +2032,16 @@ body {
   transform: scale(1.1) !important;
 }
 #ChampionShowMobile-champion-traits-grid-row-column-two-champion-list-item-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: absolute !important;
   width: 12px !important;
-  height: 20px !important;
+  height: 18px !important;
   padding: 0px !important;
   font-size: 12px !important;
   font-weight: bold !important;
+  border: none !important;
   border-bottom-right-radius: 3px !important;
   z-index: 2 !important;
 }
@@ -2087,4 +2099,11 @@ body {
   color: #FFFFFF !important;
   background-color: #FBBD07 !important;
   border: 3px solid #FBBD07 !important;
+}
+.tier-7 {
+  color: #FFFFFF !important;
+  background-color: #fd1892 !important;
+  border: 3px solid transparent !important;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%) !important;
+  border-image-slice: 1 !important;
 }
