@@ -793,7 +793,7 @@ gnar_1 = Champion.create(
         value: "200 / 300 / 400"
       },
       {
-        type: "Transform Bonus Health",
+        type: "Bonus Health Gained",
         value: "250 / 450 / 650"
       },
       {
@@ -1425,13 +1425,13 @@ lulu_1 = Champion.create(
   cost: 2,
   ability: {
     name: "Wild Growth",
-    description: "Lulu grants an ally bonus Health, knocking up enemies near them.",
+    description: "Lulu grants an ally bonus health, knocking up enemies near them.",
     type: "Active",
     mana_cost: 150,
     mana_start: 0,
     stats: [
       {
-        type: "Bonus Health",
+        type: "Bonus Health Gained",
         value: "300 / 400 / 500"
       },
       {
@@ -2836,11 +2836,11 @@ shapeshifter_1 = Trait.create(
   upgrades: [
     {
       threshhold: "3",
-      description: "60% bonus health"
+      description: "60% bonus health gained"
     },
     {
       threshhold: "6",
-      description: "100% bonus health"
+      description: "100% bonus health gained"
     }
   ],
 
@@ -3681,6 +3681,216 @@ maokai_2 = Champion.create(
   },
   items: ["WIP"]
 )
+masteryi_2 = Champion.create(
+  id: 78,
+  season_id: 2,
+  key: "masteryi",
+  name: "Master Yi",
+  title: "The Wuju Bladesman",
+  origins: ["Shadow"],
+  classes: ["Blademaster", "Mystic"],
+  cost: 5,
+  ability: {
+    name: "Meditate",
+    description: "Master Yi meditates for 1.5 seconds, becoming untargetable and recovering health. After his meditation, his attacks deal additional magic damage for 6 seconds.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 100,
+    stats: [
+      {
+        type: "Heal Amount",
+        value: "25% / 50% / 75%"
+      },
+      {
+        type: "Extra Damage",
+        value: "50 / 75 / 500"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
+      attack_speed: 1.00,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+nami_2 = Champion.create(
+  id: 79,
+  season_id: 2,
+  key: "nami",
+  name: "Nami",
+  title: "The Tidecaller",
+  origins: ["Ocean"],
+  classes: ["Mystic"],
+  cost: 5,
+  ability: {
+    name: "Tidal Wave",
+    description: "Nami sends a massive wave toward a random enemy, damaging and knocking up enemies it passes through and granting allies it passes through bonus magic damage on hit.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 250 / 350"
+      },
+      {
+        type: "Allied Bonus Damage",
+        value: "25 / 50 / 300"
+      },
+      {
+        type: "Knockup Duration",
+        value: "1.5 / 2 / 2.5"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.75,
+      range: 4
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+nasus_2 = Champion.create(
+  id: 80,
+  season_id: 2,
+  key: "nasus",
+  name: "Nasus",
+  title: "The Curator of the Sands",
+  origins: ["Light"],
+  classes: ["Warden"],
+  cost: 1,
+  ability: {
+    name: "Fury of the Dawn",
+    description: "Nasus temporarily enrages, gaining bonus health and damaging adjacent enemies each second for the duration.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage Per Second",
+        value: "50 / 70 / 90"
+      },
+      {
+        type: "Bonus Health Gained",
+        value: "250 / 400 / 550"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.55,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+nautilus_2 = Champion.create(
+  id: 81,
+  season_id: 2,
+  key: "nautilus",
+  name: "Nautilus",
+  title: "The Titan of the Depths",
+  origins: ["Ocean"],
+  classes: ["Warden"],
+  cost: 3,
+  ability: {
+    name: "Depth Charge",
+    description: "Nautilus sends out a depth charge that seeks out the furthest enemy champion, knocking them up and stunning them.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "100 / 200 / 400"
+      },
+      {
+        type: "Stun Duration",
+        value: "3s / 4s / 6s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.60,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+neeko_2 = Champion.create(
+  id: 82,
+  season_id: 2,
+  key: "neeko",
+  name: "Neeko",
+  title: "The Curious Chameleon",
+  origins: ["Woodland"],
+  classes: ["Druid"],
+  cost: 2,
+  ability: {
+    name: "Blooming Burst",
+    description: "Neeko throws a seed at a random target, exploding three times with increasing radius, dealing damage to all enemies hit by each explosion.",
+    type: "Active",
+    mana_cost: 80,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "100 / 200 / 350"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(45, 1.80),
+      attack_speed: 0.70,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 
 #Traits
 #Origins
@@ -3836,7 +4046,7 @@ light_2 = Trait.create(
     }
   ]
 )
-light_2.champions << [aatrox_2, jax_2]
+light_2.champions << [aatrox_2, jax_2, nasus_2]
 mountain_2 = Trait.create(
   id: 32,
   season_id: 2,
@@ -3869,7 +4079,7 @@ ocean_2 = Trait.create(
     }
   ]
 )
-ocean_2.champions << []
+ocean_2.champions << [nami_2, nautilus_2]
 poison_2 = Trait.create(
   id: 34,
   season_id: 2,
@@ -3898,7 +4108,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-shadow_2.champions << [kindred_2, malzahar_2]
+shadow_2.champions << [kindred_2, malzahar_2, masteryi_2]
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -3941,7 +4151,7 @@ woodland_2 = Trait.create(
   description: "While at least 3 Woodland units are in play, at the start of combat, a random Woodland champion makes a copy of themselves (excluding items)",
   upgrades: []
 )
-woodland_2.champions << [ivern_2, leblanc_2, maokai_2]
+woodland_2.champions << [ivern_2, leblanc_2, maokai_2, neeko_2]
 #Classes
 alchemist_2 = Trait.create(
   id: 38,
@@ -4023,7 +4233,7 @@ blademaster_2 = Trait.create(
     }
   ]
 )
-blademaster_2.champions << [aatrox_2]
+blademaster_2.champions << [aatrox_2, masteryi_2]
 druid_2 = Trait.create(
   id: 43,
   season_id: 2,
@@ -4033,7 +4243,7 @@ druid_2 = Trait.create(
   description: "	While at least 2 Druids are in play, Druids regenerate 40 health each second.",
   upgrades: []
 )
-druid_2.champions << [ivern_2, maokai_2]
+druid_2.champions << [ivern_2, maokai_2, neeko_2]
 mage_2 = Trait.create(
   id: 44,
   season_id: 2,
@@ -4071,7 +4281,7 @@ mystic_2 = Trait.create(
     }
   ]
 )
-mystic_2.champions << [janna_2]
+mystic_2.champions << [janna_2, masteryi_2, nami_2]
 predator_2 = Trait.create(
   id: 46,
   season_id: 2,
@@ -4115,11 +4325,11 @@ summoner_2 = Trait.create(
   upgrades: [
     {
       threshhold: "3",
-      description: "+40% health and duration"
+      description: "+40% bonus health and duration"
     },
     {
       threshhold: "6",
-      description: "+100% health and duration"
+      description: "+100% bonus health and duration"
     }
   ]
 )
@@ -4146,4 +4356,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-warden_2.champions << [braum_2, malphite_2]
+warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2]
