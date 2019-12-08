@@ -3891,6 +3891,204 @@ neeko_2 = Champion.create(
   },
   items: ["WIP"]
 )
+nocturne_2 = Champion.create(
+  id: 83,
+  season_id: 2,
+  key: "nocturne",
+  name: "Nocturne",
+  title: "The Eternal Nightmare",
+  origins: ["Steel"],
+  classes: ["Assassin"],
+  cost: 3,
+  ability: {
+    name: "Steel Blades",
+    description: "Every third attack, Nocturne deals damage to enemies around him and heals for a portion of the damage.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Heal Amount",
+        value: "40% / 60% / 80%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.75,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+olaf_2 = Champion.create(
+  id: 84,
+  season_id: 2,
+  key: "olaf",
+  name: "Olaf",
+  title: "The Berserker",
+  origins: ["Glacial"],
+  classes: ["Berserker"],
+  cost: 4,
+  ability: {
+    name: "Berserker Rage",
+    description: "Olaf gains attack speed and lifesteal, and also becomes immune to crowd control until the end of battle.",
+    type: "Active",
+    mana_cost: 90,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Attack Speed",
+        value: "75% / 100% / 125%"
+      },
+      {
+        type: "Lifesteal",
+        value: "20% / 40% / 60%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(70, 1.80),
+      attack_speed: 0.85,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(750, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+ornn_2 = Champion.create(
+  id: 85,
+  season_id: 2,
+  key: "ornn",
+  name: "Ornn",
+  title: "The Fire below the Mountain",
+  origins: ["Electric"],
+  classes: ["Warden"],
+  cost: 1,
+  ability: {
+    name: "Electrifying Breath",
+    description: "Ornn unleashes lightning bolts in a cone in front of him, dealing damage and increasing his critical strike chance by 20% for 4 seconds.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "100 / 200 / 300"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.55,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+qiyana_2 = Champion.create(
+  id: 86,
+  season_id: 2,
+  key: "qiyana",
+  name: "Qiyana",
+  title: "Empress of the Elements",
+  origins: ["Variable"],
+  classes: ["Assassin"],
+  cost: 3,
+  ability: {
+    name: "Edge of Ixtal",
+    description: "Qiyana dashes to the side of her target and throws a blast of wind through them, damaging and stunning enemies it passes through.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "300 / 500 / 700"
+      },
+      {
+        type: "Stun Duration",
+        value: "3s/ 4s / 7s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+reksai_2 = Champion.create(
+  id: 87,
+  season_id: 2,
+  key: "reksai",
+  name: "Rek'Sai",
+  title: "The Void Burrower",
+  origins: ["Steel"],
+  classes: ["Predator"],
+  cost: 2,
+  ability: {
+    name: "Furious Bite",
+    description: "Rek'Sai bites an enemy dealing true damage.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "250 / 550 / 850"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 
 #Traits
 #Origins
@@ -3977,7 +4175,7 @@ electric_2 = Trait.create(
     }
   ]
 )
-electric_2.champions << []
+electric_2.champions << [ornn_2]
 glacial_2 = Trait.create(
   id: 29,
   season_id: 2,
@@ -4000,7 +4198,7 @@ glacial_2 = Trait.create(
     }
   ]
 )
-glacial_2.champions << [braum_2, ezreal_2]
+glacial_2.champions << [braum_2, ezreal_2, olaf_2]
 inferno_2 = Trait.create(
   id: 30,
   season_id: 2,
@@ -4131,7 +4329,7 @@ steel_2 = Trait.create(
     }
   ]
 )
-steel_2.champions << []
+steel_2.champions << [nocturne_2, reksai_2]
 variable_2 = Trait.create(
   id: 50,
   season_id: 2,
@@ -4141,7 +4339,7 @@ variable_2 = Trait.create(
   description: "Variable units transform into another Origin based on in-game conditions",
   upgrades: []
 )
-variable_2.champions << [lux_2]
+variable_2.champions << [lux_2, qiyana_2]
 woodland_2 = Trait.create(
   id: 37,
   season_id: 2,
@@ -4181,7 +4379,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-assassin_2.champions << [diana_2, khazix_2, leblanc_2]
+assassin_2.champions << [diana_2, khazix_2, leblanc_2, nocturne_2, qiyana_2]
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -4210,7 +4408,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-berserker_2.champions << [drmundo_2, jax_2]
+berserker_2.champions << [drmundo_2, jax_2, olaf_2]
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -4291,7 +4489,7 @@ predator_2 = Trait.create(
   description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
   upgrades: []
 )
-predator_2.champions << [kogmaw_2]
+predator_2.champions << [kogmaw_2, reksai_2]
 ranger_2 = Trait.create(
   id: 47,
   season_id: 2,
@@ -4356,4 +4554,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2]
+warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2, ornn_2]
