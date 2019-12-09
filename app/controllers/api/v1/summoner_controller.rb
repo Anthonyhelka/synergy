@@ -24,9 +24,9 @@ class Api::V1::SummonerController < ApplicationController
         ranked_data: ranked_data
       )
       summoner.save
-      render json: { summoner: summoner, status: "Success" }
+      render json: { summoner: summoner, status: "Success", message: {type: "Success", content: "Successfully Updated!"} }
     else
-      render json: { summoner: {}, status: "Fail" }
+      render json: { summoner: {}, status: "Fail", message: {type: "Error", content: "We Couldn't Update, Please Try Again."} }
     end
   end
 
@@ -47,7 +47,7 @@ class Api::V1::SummonerController < ApplicationController
       ranked_data: ranked_data,
       updated_at: Time.now
     )
-    render json: { summoner: summoner, status: "Success" }
+    render json: { summoner: summoner, status: "Success", message: {type: "Success", content: "Successfully Updated!"} }
   end
 
   def show
@@ -74,7 +74,7 @@ class Api::V1::SummonerController < ApplicationController
     if summoner.blank?
       create
     else
-      render json: { summoner: summoner, status: "Success" }
+      render json: { summoner: summoner, status: "Success", message: {type: "", content: ""} }
     end
   end
 end

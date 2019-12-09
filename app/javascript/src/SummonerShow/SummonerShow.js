@@ -31,7 +31,7 @@ class SummonerShow extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ summoner: body.summoner, status: body.status, isFetched: true })
+        this.setState({ summoner: body.summoner, status: body.status, message: body.message, isFetched: true })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -54,14 +54,14 @@ class SummonerShow extends Component {
         })
       .then(response => response.json())
       .then(body => {
-        this.setState({ summoner: body.summoner, status: body.status, message: {type: 'success', content: 'Updated!'} })
+        this.setState({ summoner: body.summoner, status: body.status, message: body.message })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     } else {
       let millisecondsRemaining = new Date() - new Date(this.state.summoner.updated_at) - (5 * 60 * 1000);
       let secondsRemaining = (Math.abs(millisecondsRemaining) / 1000).toFixed(0)
       let message = `You just updated! You can update again in ${secondsRemaining} seconds!`;
-      this.setState({ message: {type: 'error', content: message} })
+      this.setState({ message: {type: 'Error', content: message} })
     }
   }
 
@@ -95,7 +95,7 @@ class SummonerShow extends Component {
             <span> ({winRate}%)</span>
             <Divider />
             <Header>Match History</Header>
-            <Message warning header='Coming Soon!' />
+            <div class='SummonerShow-message-warning'>Coming Soon!</div>
           </div>
         );
       } else if (this.state.summoner.ranked_data.tier === 'Unranked' && this.state.status === 'Success') {
@@ -112,7 +112,7 @@ class SummonerShow extends Component {
             <span id='summoner-show-page-rank'>Unranked</span>
             <Divider />
             <Header>Match History</Header>
-            <Message warning header='Coming Soon!' />
+            <div class='SummonerShow-message-warning'>Coming Soon!</div>
           </div>
         );
       }
@@ -126,14 +126,14 @@ class SummonerShow extends Component {
 
         <Responsive maxWidth='1023'>
           <Segment id='summoner-show-page-container-mobile-tablet' textAlign='center'>
-            {this.state.message.content !== '' ? (<Message warning header={this.state.message} />) : (<span></span>)}
+            {this.state.message.content !== '' ? (<div class={`SummonerShow-message-${(this.state.message.type).toLowerCase()}`}>{this.state.message.content}</div>) : (<span></span>)}
             {summonerDisplay}
           </Segment>
         </Responsive>
 
         <Responsive minWidth='1024'>
           <Segment id='summoner-show-page-container-computer' textAlign='center'>
-            {this.state.message.content !== '' ? (<Message warning header={this.state.message} />) : (<span></span>)}
+            {this.state.message.content !== '' ? (<div class={`SummonerShow-message-${(this.state.message.type).toLowerCase()}`}>{this.state.message.content}</div>) : (<span></span>)}
             {summonerDisplay}
           </Segment>
         </Responsive>

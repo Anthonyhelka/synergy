@@ -1081,13 +1081,16 @@ body {
 /* SummonerShow */
 #summoner-show-page-container-mobile-tablet {
   width: 100% !important;
-  margin: 40px 0px 15px 0px !important;
+  margin: 20px 0px 0px 0px !important;
+  padding: 14px 14px 0px 14px !important;
+  border-radius: 0px !important;
 }
 #summoner-show-page-container-computer {
   width: 50% !important;
   left: 50% !important;
   transform: translate(-50%, 0) !important;
-  margin: 40px 0px 40px 0px !important;
+  margin: 40px 0px 20px 0px !important;
+  padding: 14px 14px 0px 14px !important;
 }
 #summoner-show-page-icon {
   border: 2px solid black !important;
@@ -1102,7 +1105,34 @@ body {
 #summoner-show-page-rank-losses {
   color: red !important;
 }
-
+.SummonerShow-message-success,
+.SummonerShow-message-warning,
+.SummonerShow-message-error {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 50px !important;
+  margin: auto !important;
+  margin-bottom: 14px !important;
+  border-radius: 5px !important;
+  font-weight: bold !important;
+}
+.SummonerShow-message-success {
+  border: 2px solid #A3C293 !important;
+  color: #1A531B !important;
+  background-color: #FCFFF5 !important;
+}
+.SummonerShow-message-warning {
+  border: 2px solid #C9BA9A !important;
+  color: #784B02 !important;
+  background-color: #FFFAF2 !important;
+}
+.SummonerShow-message-error {
+  border: 2px solid #E0B4B4 !important;
+  color: #912D2A !important;
+  background-color: #FFF6F6 !important;
+}
 /* Traits */
 /* Desktop */
 #ChampionTraitsDesktop-page-container {

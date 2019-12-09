@@ -4,7 +4,7 @@ import { loadTraitContainer } from './traitContainer.js';
 import { handleChampionShowRedirect } from './championShow.js';
 
 const initialState = {
-  season: 1,
+  season: 2,
   isFetching: false
 }
 

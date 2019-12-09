@@ -4287,6 +4287,204 @@ skarner_2 = Champion.create(
   },
   items: ["WIP"]
 )
+soraka_2 = Champion.create(
+  id: 93,
+  season_id: 2,
+  key: "soraka",
+  name: "Soraka",
+  title: "The Starchild",
+  origins: ["Light"],
+  classes: ["Mystic"],
+  cost: 3,
+  ability: {
+    name: "Equinox",
+    description: "Soraka creates a zone at a random enemy's location, dealing magic damage and preventing mana from being restored to enemies inside.",
+    type: "Active",
+    mana_cost: 60,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 300 / 450"
+      },
+      {
+        type: "Duration",
+        value: "3s / 5s / 7s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.65,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+syndra_2 = Champion.create(
+  id: 94,
+  season_id: 2,
+  key: "syndra",
+  name: "Syndra",
+  title: "The Dark Sovereign",
+  origins: ["Ocean"],
+  classes: ["Mage"],
+  cost: 2,
+  ability: {
+    name: "Hydro Sphere",
+    description: "Syndra conjures a sphere of water near a random enemy which explodes dealing magic damage to all enemies hit.",
+    type: "Active",
+    mana_cost: 80,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "175 / 350 / 600"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+taliyah_2 = Champion.create(
+  id: 95,
+  season_id: 2,
+  key: "taliyah",
+  name: "Taliyah",
+  title: "The Stoneweaver",
+  origins: ["Mountain"],
+  classes: ["Mage"],
+  cost: 1,
+  ability: {
+    name: "Seismic Shove",
+    description: "Taliyah causes the ground to rise under the enemy with the most Mana, dealing damage and either pushing or pulling them toward her.",
+    type: "Active",
+    mana_cost: 80,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 325 / 500"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.65,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+taric_2 = Champion.create(
+  id: 96,
+  season_id: 2,
+  key: "taric",
+  name: "Taric",
+  title: "The Shield of Valoran",
+  origins: ["Crystal"],
+  classes: ["Warden"],
+  cost: 5,
+  ability: {
+    name: "Cosmic Radiance",
+    description: "After a delay, Taric and all nearby allies become invulnerable for a few seconds.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Duration",
+        value: "3s / 3s / 5s"
+      },
+      {
+        type: "Hex Radius",
+        value: "2 / 3 / 4"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.65,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(900, 1.80),
+      armor: 60,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+thresh_2 = Champion.create(
+  id: 97,
+  season_id: 2,
+  key: "thresh",
+  name: "Thresh",
+  title: "The Chain Warden",
+  origins: ["Ocean"],
+  classes: ["Warden"],
+  cost: 2,
+  ability: {
+    name: "Deep Sea Lantern",
+    description: "Thresh throws his lantern to the lowest-health ally, shielding them and nearby allies for 5 seconds.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Shield Amount",
+        value: "250 / 400 / 600"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.55,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(700, 1.80),
+      armor: 40,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -4330,7 +4528,7 @@ crystal_2 = Trait.create(
     },
   ]
 )
-crystal_2.champions << [ashe_2, skarner_2]
+crystal_2.champions << [ashe_2, skarner_2, taric_2]
 desert_2 = Trait.create(
   id: 27,
   season_id: 2,
@@ -4441,7 +4639,7 @@ light_2 = Trait.create(
     }
   ]
 )
-light_2.champions << [aatrox_2, jax_2, nasus_2]
+light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2]
 mountain_2 = Trait.create(
   id: 32,
   season_id: 2,
@@ -4451,7 +4649,7 @@ mountain_2 = Trait.create(
   description: "While at least Mountain units are in play, at the start of combat, a random ally gains a 1500 health shield",
   upgrades: []
 )
-mountain_2.champions << [malphite_2]
+mountain_2.champions << [malphite_2, taliyah_2]
 ocean_2 = Trait.create(
   id: 33,
   season_id: 2,
@@ -4474,7 +4672,7 @@ ocean_2 = Trait.create(
     }
   ]
 )
-ocean_2.champions << [nami_2, nautilus_2]
+ocean_2.champions << [nami_2, nautilus_2, syndra_2, thresh_2]
 poison_2 = Trait.create(
   id: 34,
   season_id: 2,
@@ -4657,7 +4855,7 @@ mage_2 = Trait.create(
     }
   ]
 )
-mage_2.champions << [brand_2, leblanc_2]
+mage_2.champions << [brand_2, leblanc_2, syndra_2, taliyah_2]
 mystic_2 = Trait.create(
   id: 45,
   season_id: 2,
@@ -4676,7 +4874,7 @@ mystic_2 = Trait.create(
     }
   ]
 )
-mystic_2.champions << [janna_2, masteryi_2, nami_2]
+mystic_2.champions << [janna_2, masteryi_2, nami_2, soraka_2]
 predator_2 = Trait.create(
   id: 46,
   season_id: 2,
@@ -4751,4 +4949,4 @@ warden_2 = Trait.create(
     }
   ]
 )
-warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2, ornn_2]
+warden_2.champions << [braum_2, malphite_2, nasus_2, nautilus_2, ornn_2, taric_2, thresh_2]
