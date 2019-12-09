@@ -4089,7 +4089,204 @@ reksai_2 = Champion.create(
   },
   items: ["WIP"]
 )
-
+renekton_2 = Champion.create(
+  id: 88,
+  season_id: 2,
+  key: "renekton",
+  name: "Renekton",
+  title: "The Butcher of the Sands",
+  origins: ["Desert"],
+  classes: ["Berserker"],
+  cost: 1,
+  ability: {
+    name: "Cull the Meek",
+    description: "Renekton swings his blade, dealing damage to nearby enemies and healing himself.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 275 / 400"
+      },
+      {
+        type: "Heal Amount",
+        value: "150 / 250 / 350"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.60,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+singed_2 = Champion.create(
+  id: 89,
+  season_id: 2,
+  key: "singed",
+  name: "Singed",
+  title: "The Mad Chemist",
+  origins: ["Poison"],
+  classes: ["Alchemist"],
+  cost: 5,
+  ability: {
+    name: "Poison Trail",
+    description: "Singed leaves a poison cloud behind him damaging enemies in the area over 4 seconds.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 400 / 2000"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(0, 1.80),
+      attack_speed: 0.00,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(950, 1.80),
+      armor: 50,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+sion_2 = Champion.create(
+  id: 90,
+  season_id: 2,
+  key: "sion",
+  name: "Sion",
+  title: "The Undead Juggernaut",
+  origins: ["Shadow"],
+  classes: ["Berserker"],
+  cost: 3,
+  ability: {
+    name: "Decimating Smash",
+    description: "Sion smashes his axe into the ground after a short delay, dealing damage and knocking up enemies in the area.",
+    type: "Active",
+    mana_cost: 125,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 400 / 800"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.65,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+sivir_2 = Champion.create(
+  id: 91,
+  season_id: 2,
+  key: "sivir",
+  name: "Sivir",
+  title: "The Battle Mistress",
+  origins: ["Desert"],
+  classes: ["Blademaster"],
+  cost: 3,
+  ability: {
+    name: "Ricochet",
+    description: "For the next 5 seconds, Sivir's attacks will bounce up to 10 times to nearby enemies, dealing damage and applying on-hit effects.",
+    type: "Active",
+    mana_cost: 65,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "100% / 125% / 150%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.70,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+skarner_2 = Champion.create(
+  id: 92,
+  season_id: 2,
+  key: "skarner",
+  name: "Skarner",
+  title: "The Crystal Vanguard",
+  origins: ["Crystal"],
+  classes: ["Predator"],
+  cost: 2,
+  ability: {
+    name: "Crystalline Exoskeleton",
+    description: "Skarner shields himself for 8 seconds. While the shield persists, Skarner gains attack speed.",
+    type: "Active",
+    mana_cost: 65,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Shield Amount",
+        value: "150 / 450 / 750"
+      },
+      {
+        type: "Attack Speed",
+        value: "30% / 65% / 100%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.65,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -4133,7 +4330,7 @@ crystal_2 = Trait.create(
     },
   ]
 )
-crystal_2.champions << [ashe_2]
+crystal_2.champions << [ashe_2, skarner_2]
 desert_2 = Trait.create(
   id: 27,
   season_id: 2,
@@ -4152,7 +4349,7 @@ desert_2 = Trait.create(
     },
   ]
 )
-desert_2.champions << [azir_2, khazix_2]
+desert_2.champions << [azir_2, khazix_2, renekton_2, sivir_2]
 electric_2 = Trait.create(
   id: 28,
   season_id: 2,
@@ -4287,7 +4484,7 @@ poison_2 = Trait.create(
   description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
   upgrades: []
 )
-poison_2.champions << [drmundo_2, kogmaw_2]
+poison_2.champions << [drmundo_2, kogmaw_2, singed_2]
 shadow_2 = Trait.create(
   id: 35,
   season_id: 2,
@@ -4306,7 +4503,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-shadow_2.champions << [kindred_2, malzahar_2, masteryi_2]
+shadow_2.champions << [kindred_2, malzahar_2, masteryi_2, sion_2]
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -4360,7 +4557,7 @@ alchemist_2 = Trait.create(
   description: "Alchemists ignore collision and never stop moving.",
   upgrades: []
 )
-alchemist_2.champions << []
+alchemist_2.champions << [singed_2]
 assassin_2 = Trait.create(
   id: 39,
   season_id: 2,
@@ -4408,7 +4605,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-berserker_2.champions << [drmundo_2, jax_2, olaf_2]
+berserker_2.champions << [drmundo_2, jax_2, olaf_2, renekton_2, sion_2]
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -4431,7 +4628,7 @@ blademaster_2 = Trait.create(
     }
   ]
 )
-blademaster_2.champions << [aatrox_2, masteryi_2]
+blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2]
 druid_2 = Trait.create(
   id: 43,
   season_id: 2,
@@ -4489,7 +4686,7 @@ predator_2 = Trait.create(
   description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
   upgrades: []
 )
-predator_2.champions << [kogmaw_2, reksai_2]
+predator_2.champions << [kogmaw_2, reksai_2, skarner_2]
 ranger_2 = Trait.create(
   id: 47,
   season_id: 2,
