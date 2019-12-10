@@ -10,11 +10,11 @@ const homeContainer = (state = initialState, action) => {
     case REMOVE_BACKGROUND:
       return {...state, background: '' }
     default:
-      return state
+      return state;
   }
 }
 
-const SET_BACKGROUND = 'SET_BACKGROUND'
+const SET_BACKGROUND = 'SET_BACKGROUND';
 const setBackground = (background) => {
   return {
     type: SET_BACKGROUND,
@@ -22,7 +22,7 @@ const setBackground = (background) => {
   }
 }
 
-const REMOVE_BACKGROUND = 'REMOVE_BACKGROUND'
+const REMOVE_BACKGROUND = 'REMOVE_BACKGROUND';
 const removeBackground = () => {
   return {
     type: REMOVE_BACKGROUND

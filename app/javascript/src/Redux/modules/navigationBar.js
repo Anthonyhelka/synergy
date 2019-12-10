@@ -33,11 +33,11 @@ const navigationBar = (state = initialState, action) => {
         return {...state, sidebarStatus: 'invisible', sidebarVisible: false }
       }
     default:
-      return state
+      return state;
   }
 }
 
-const HANDLE_CURRENT_PAGE = 'HANDLE_CURRENT_PAGE'
+const HANDLE_CURRENT_PAGE = 'HANDLE_CURRENT_PAGE';
 const handleCurrentPage = () => {
   return {
     type: HANDLE_CURRENT_PAGE,
@@ -45,14 +45,14 @@ const handleCurrentPage = () => {
   }
 }
 
-const HANDLE_SIDEBAR_CLICK = 'HANDLE_SIDEBAR_CLICK'
+const HANDLE_SIDEBAR_CLICK = 'HANDLE_SIDEBAR_CLICK';
 const handleSidebarClick = () => {
   return {
     type: HANDLE_SIDEBAR_CLICK
   }
 }
 
-const HANDLE_SIDEBAR_OUTSIDE_CLICK = 'HANDLE_SIDEBAR_OUTSIDE_CLICK'
+const HANDLE_SIDEBAR_OUTSIDE_CLICK = 'HANDLE_SIDEBAR_OUTSIDE_CLICK';
 const handleSidebarOutsideClick = (eventClass) => {
   return {
     type: HANDLE_SIDEBAR_OUTSIDE_CLICK,

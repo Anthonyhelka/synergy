@@ -7,6 +7,7 @@ import { homeContainer } from '../modules/homeContainer';
 import { championTable } from '../modules/championTable';
 import { traitContainer } from '../modules/traitContainer';
 import { championShow } from '../modules/championShow';
+import { summonerShow } from '../modules/summonerShow';
 
 const rootReducer = combineReducers({
   data,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   homeContainer,
   championTable,
   traitContainer,
-  championShow
+  championShow,
+  summonerShow
 });
 
 export default rootReducer;

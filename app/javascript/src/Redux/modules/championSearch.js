@@ -22,11 +22,11 @@ const championSearch = (state = initialState, action) => {
     case CLEAR_SEARCH:
       return {...state, query: '' }
     default:
-      return state
+      return state;
   }
 }
 
-const HANDLE_LOAD_CHAMPIONS = 'HANDLE_LOAD_CHAMPIONS'
+const HANDLE_LOAD_CHAMPIONS = 'HANDLE_LOAD_CHAMPIONS';
 const handleLoadChampions = (champions) => {
   return {
     type: HANDLE_LOAD_CHAMPIONS,
@@ -41,7 +41,7 @@ const loadChampionSearch = (champions) => {
   }
 }
 
-const HANDLE_QUERY_CHANGE = 'HANDLE_QUERY_CHANGE'
+const HANDLE_QUERY_CHANGE = 'HANDLE_QUERY_CHANGE';
 const handleQueryChange = (query) => {
   return {
     type: HANDLE_QUERY_CHANGE,
@@ -49,7 +49,7 @@ const handleQueryChange = (query) => {
   }
 }
 
-const FILTER_CHAMPIONS = 'FILTER_CHAMPIONS'
+const FILTER_CHAMPIONS = 'FILTER_CHAMPIONS';
 const filterChampions = (filteredChampions) => {
   return {
     type: FILTER_CHAMPIONS,
@@ -64,20 +64,20 @@ const handleChampionSearch = (event) => {
     dispatch(handleQueryChange(query));
     const champions = getState().championSearch.champions;
     const filteredChampions = champions.filter(champion => {
-      return champion.name.toLowerCase().includes(query.toLowerCase())
+      return champion.name.toLowerCase().includes(query.toLowerCase());
     });
     dispatch(filterChampions(filteredChampions));
   }
 }
 
-const HANDLE_SORT_CHANGE = 'HANDLE_SORT_CHANGE'
+const HANDLE_SORT_CHANGE = 'HANDLE_SORT_CHANGE';
 const handleSortChange = () => {
   return {
     type: HANDLE_SORT_CHANGE
   }
 }
 
-const CLEAR_SEARCH = 'CLEAR_SEARCH'
+const CLEAR_SEARCH = 'CLEAR_SEARCH';
 const clearChampionSearch = () => {
   return {
     type: CLEAR_SEARCH

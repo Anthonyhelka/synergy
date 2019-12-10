@@ -7,11 +7,11 @@ const traitContainer = (state = initialState, action) => {
     case HANDLE_LOAD_TRAITS:
       return {...state, traits: action.traits }
     default:
-      return state
+      return state;
   }
 }
 
-const HANDLE_LOAD_TRAITS = 'HANDLE_LOAD_TRAITS'
+const HANDLE_LOAD_TRAITS = 'HANDLE_LOAD_TRAITS';
 const handleLoadTraits = (traits) => {
   return {
     type: HANDLE_LOAD_TRAITS,
@@ -24,7 +24,6 @@ const loadTraitContainer = (traits) => {
     dispatch(handleLoadTraits(traits));
   }
 }
-
 
 export {
   traitContainer,

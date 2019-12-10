@@ -17,11 +17,11 @@ const championTable = (state = initialState, action) => {
         return {...state, direction: 'ascending' }
       }
     default:
-      return state
+      return state;
   }
 }
 
-const HANDLE_LOAD_CHAMPIONS = 'HANDLE_LOAD_CHAMPIONS'
+const HANDLE_LOAD_CHAMPIONS = 'HANDLE_LOAD_CHAMPIONS';
 const handleLoadChampions = (champions) => {
   return {
     type: HANDLE_LOAD_CHAMPIONS,
@@ -35,7 +35,7 @@ const loadChampionTable = (champions) => {
   }
 }
 
-const CHANGE_COLUMN = 'CHANGE_COLUMN'
+const CHANGE_COLUMN = 'CHANGE_COLUMN';
 const changeColumn = (selectedColumn) => {
   return {
     type: CHANGE_COLUMN,
@@ -43,7 +43,7 @@ const changeColumn = (selectedColumn) => {
   }
 }
 
-const CHANGE_DIRECTION= 'CHANGE_DIRECTION'
+const CHANGE_DIRECTION= 'CHANGE_DIRECTION';
 const changeDirection = () => {
   return {
     type: CHANGE_DIRECTION

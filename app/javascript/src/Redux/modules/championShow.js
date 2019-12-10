@@ -15,18 +15,18 @@ const championShow = (state = initialState, action) => {
     case GET_CHAMPION_REQUEST_FAILURE:
       return {...state, isFetching: false }
     default:
-      return state
+      return state;
   }
 }
 
-const GET_CHAMPION_REQUEST = 'GET_CHAMPION_REQUEST'
+const GET_CHAMPION_REQUEST = 'GET_CHAMPION_REQUEST';
 const getChampionRequest = () => {
   return {
     type: GET_CHAMPION_REQUEST
   }
 }
 
-const GET_CHAMPION_REQUEST_SUCCESS = 'GET_CHAMPION_REQUEST_SUCCESS'
+const GET_CHAMPION_REQUEST_SUCCESS = 'GET_CHAMPION_REQUEST_SUCCESS';
 const getChampionRequestSuccess = (champion) => {
   return {
     type: GET_CHAMPION_REQUEST_SUCCESS,
@@ -34,7 +34,7 @@ const getChampionRequestSuccess = (champion) => {
   }
 }
 
-const GET_CHAMPION_REQUEST_FAILURE = 'GET_CHAMPION_REQUEST_FAILURE'
+const GET_CHAMPION_REQUEST_FAILURE = 'GET_CHAMPION_REQUEST_FAILURE';
 const getChampionRequestFailure = () => {
   return {
     type: GET_CHAMPION_REQUEST_FAILURE
@@ -43,23 +43,23 @@ const getChampionRequestFailure = () => {
 
 const getChampion = (championKey) => {
   return (dispatch, getState) => {
-    dispatch(getChampionRequest())
+    dispatch(getChampionRequest());
     return fetch(`/api/v1/champions/${championKey}_${getState().data.season}`)
     .then(response => {
       if(response.ok) {
-        return response.json()
+        return response.json();
       } else {
-        dispatch(getChampionRequestFailure())
+        dispatch(getChampionRequestFailure());
       }
     })
     .then(response => {
       if(!response.error) {
         if (response.champion.length === 0) {
-          dispatch(handleChampionShowRedirect())
+          dispatch(handleChampionShowRedirect());
         } else {
           window.scrollTo(0,0);
           browserHistory.push(`/champions/${championKey}`);
-          dispatch(getChampionRequestSuccess(response.champion[0]))
+          dispatch(getChampionRequestSuccess(response.champion[0]));
         }
       }
     })

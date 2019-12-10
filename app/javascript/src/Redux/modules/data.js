@@ -19,25 +19,25 @@ const data = (state = initialState, action) => {
     case CHANGE_SEASON:
       return {...state, season: action.desiredSeason }
     default:
-      return state
+      return state;
   }
 }
 
-const GET_DATA_REQUEST = 'GET_DATA_REQUEST'
+const GET_DATA_REQUEST = 'GET_DATA_REQUEST';
 const getDataRequest = () => {
   return {
     type: GET_DATA_REQUEST
   }
 }
 
-const GET_DATA_REQUEST_SUCCESS = 'GET_DATA_REQUEST_SUCCESS'
+const GET_DATA_REQUEST_SUCCESS = 'GET_DATA_REQUEST_SUCCESS';
 const getDataRequestSuccess = () => {
   return {
     type: GET_DATA_REQUEST_SUCCESS
   }
 }
 
-const GET_DATA_REQUEST_FAILURE = 'GET_DATA_REQUEST_FAILURE'
+const GET_DATA_REQUEST_FAILURE = 'GET_DATA_REQUEST_FAILURE';
 const getDataRequestFailure = () => {
   return {
     type: GET_DATA_REQUEST_FAILURE
@@ -46,27 +46,27 @@ const getDataRequestFailure = () => {
 
 const getData = () => {
   return (dispatch, getState) => {
-    dispatch(getDataRequest())
+    dispatch(getDataRequest());
     return fetch(`/api/v1/champions/season_${getState().data.season}`)
     .then(response => {
       if(response.ok) {
-        return response.json()
+        return response.json();
       } else {
-        dispatch(getDataRequestFailure())
+        dispatch(getDataRequestFailure());
       }
     })
     .then(response => {
       if(!response.error) {
-        dispatch(loadChampionSearch(response.champions))
-        dispatch(loadChampionTable(response.champions))
-        dispatch(loadTraitContainer(response.traits))
-        dispatch(getDataRequestSuccess())
+        dispatch(loadChampionSearch(response.champions));
+        dispatch(loadChampionTable(response.champions));
+        dispatch(loadTraitContainer(response.traits));
+        dispatch(getDataRequestSuccess());
       }
     })
   }
 }
 
-const CHANGE_SEASON = 'CHANGE_SEASON'
+const CHANGE_SEASON = 'CHANGE_SEASON';
 const changeSeason = (desiredSeason) => {
   return {
     type: CHANGE_SEASON,
@@ -77,11 +77,11 @@ const changeSeason = (desiredSeason) => {
 const handleSeasonChange = (event, desiredSeason) => {
   return (dispatch, getState) => {
     if (desiredSeason !== getState().data.season) {
-      dispatch(changeSeason(desiredSeason))
+      dispatch(changeSeason(desiredSeason));
       if (window.location.pathname.startsWith('/champions/') && window.location.pathname !== '/champions/traits') {
-        dispatch(handleChampionShowRedirect())
+        dispatch(handleChampionShowRedirect());
       }
-      dispatch(getData())
+      dispatch(getData());
     }
   }
 }

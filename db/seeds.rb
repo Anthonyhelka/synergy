@@ -4485,6 +4485,44 @@ thresh_2 = Champion.create(
   },
   items: ["WIP"]
 )
+twitch_2 = Champion.create(
+  id: 98,
+  season_id: 2,
+  key: "twitch",
+  name: "Twitch",
+  title: "The Plague Rat",
+  origins: ["Poison"],
+  classes: ["Ranger"],
+  cost: 4,
+  ability: {
+    name: "Spray and Pray",
+    description: "Twitch gains infinite range and deals increased damage for 8 seconds. During this time, his attacks travel their full range and hit every enemy they pass through.",
+    type: "Active",
+    mana_cost: 90,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "125% / 150% / 300%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.75,
+      range: 4
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -4682,7 +4720,7 @@ poison_2 = Trait.create(
   description: "While at least 3 Poison units are in play, Poison units apply a Neurotoxin when they deal damage, increasing the mana cost of the target's ability by 50%",
   upgrades: []
 )
-poison_2.champions << [drmundo_2, kogmaw_2, singed_2]
+poison_2.champions << [drmundo_2, kogmaw_2, singed_2, twitch_2]
 shadow_2 = Trait.create(
   id: 35,
   season_id: 2,
@@ -4907,7 +4945,7 @@ ranger_2 = Trait.create(
     }
   ]
 )
-ranger_2.champions << [ashe_2, ezreal_2, kindred_2]
+ranger_2.champions << [ashe_2, ezreal_2, kindred_2, twitch_2]
 summoner_2 = Trait.create(
   id: 48,
   season_id: 2,

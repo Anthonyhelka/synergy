@@ -1079,31 +1079,120 @@ body {
 }
 
 /* SummonerShow */
-#summoner-show-page-container-mobile-tablet {
+#SummonerShow-page-container {
   width: 100% !important;
-  margin: 20px 0px 0px 0px !important;
-  padding: 14px 14px 0px 14px !important;
-  border-radius: 0px !important;
+  height: 100% !important;
 }
-#summoner-show-page-container-computer {
-  width: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, 0) !important;
-  margin: 40px 0px 20px 0px !important;
-  padding: 14px 14px 0px 14px !important;
-}
-#summoner-show-page-icon {
-  border: 2px solid black !important;
-}
-#summoner-show-page-rank {
-  color: #36A9E0 !important;
+#SummonerShow-summoner-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 80% !important;
+  height: auto !important;
+  margin: auto !important;
+  padding-top: 40px !important;
+  color: #FFFFFF !important;
   font-weight: bold !important;
 }
-#summoner-show-page-rank-wins {
+#SummonerShow-loading-gears-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 80% !important;
+  height: auto !important;
+  margin: auto !important;
+  padding-top: 40px !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+}
+#SummonerShow-loading-gears {
+  width: 60px !important;
+  height: 60px !important;
+}
+#SummonerShow-divider {
+  width: 100px !important;
+  background-color: #FFFFFF !important;
+}
+#SummonerShow-summoner-valid-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: auto !important;
+}
+#SummonerShow-summoner-header-container {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  padding: 7px 14px 7px 0px !important;
+}
+#SummonerShow-summoner-name-icon-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  margin-right: 7px !important;
+}
+#SummonerShow-summoner-update-button {
+  width: 60px !important;
+  height: 30px !important;
+  border: 0px !important;
+  border-radius: 5px !important;
+  color: #FFFFFF !important;
+  background-color: #2185D0 !important
+}
+#SummonerShow-summoner-update-button:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
+}
+#SummonerShow-summoner-ranked-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+#SummonerShow-summoner-tier {
+  width: 70px !important;
+  height: 70px !important;
+  margin: 0px 0px 5px 0px;
+}
+#SummonerShow-summoner-rank-details {
+  font-size: 16px !important;
+}
+#SummonerShow-summoner-record,
+#SummonerShow-summoner-win-percentage {
+  font-size: 16px !important;
+  color: #2185D0 !important;
+}
+#SummonerShow-summoner-record-wins {
+  font-size: 16px !important;
   color: green !important;
 }
-#summoner-show-page-rank-losses {
+#SummonerShow-summoner-record-losses {
+  font-size: 16px !important;
   color: red !important;
+}
+#SummonerShow-summoner-name {
+  font-size: 18px !important;
+}
+#SummonerShow-summoner-icon {
+  width: 70px !important;
+  height: 70px !important;
+  border: 3px solid #2185D0 !important;
+  border-radius: 3px !important;
+}
+#SummonerShow-summoner-match-history-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  height: auto !important;
+  font-size: 18px !important;
 }
 .SummonerShow-message-success,
 .SummonerShow-message-warning,
@@ -1111,12 +1200,12 @@ body {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 100% !important;
+  width: 80% !important;
   height: 50px !important;
-  margin: auto !important;
-  margin-bottom: 14px !important;
+  margin: 7px 0px 7px 0px !important;
   border-radius: 5px !important;
   font-weight: bold !important;
+  text-align: center !important;
 }
 .SummonerShow-message-success {
   border: 2px solid #A3C293 !important;
