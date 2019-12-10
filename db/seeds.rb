@@ -5216,7 +5216,7 @@ avatar_2 = Trait.create(
   key: "avatar",
   name: "Avatar",
   trait_type: "Class",
-  description: "Having an Avatar on your bench or board transforms all other Avatars in your shop to the Origin of that Avatar. An Avatar's Origin is counted twice for Trait bonuses",
+  description: "An Avatar's Origin is counted twice for Trait bonuses",
   upgrades: []
 )
 avatar_2.champions << [lux_2]
