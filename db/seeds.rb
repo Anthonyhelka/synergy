@@ -2153,7 +2153,7 @@ vayne_1 = Champion.create(
     mana_start: 0,
     stats: [
       {
-        type: "Max Health Damage",
+        type: "Maximum Health Damage",
         value: "8% / 12% / 16%"
       }
     ]
@@ -4523,6 +4523,403 @@ twitch_2 = Champion.create(
   },
   items: ["WIP"]
 )
+varus_2 = Champion.create(
+  id: 99,
+  season_id: 2,
+  key: "varus",
+  name: "Varus",
+  title: "The Arrow of Retribution",
+  origins: ["Inferno"],
+  classes: ["Ranger"],
+  cost: 2,
+  ability: {
+    name: "Piercing Arrow",
+    description: "Varus charges for 1.5 seconds and fires an arrow, dealing damage to all enemies in a line.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "225 / 450 / 675"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.75,
+      range: 4
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+vayne_2 = Champion.create(
+  id: 100,
+  season_id: 2,
+  key: "vayne",
+  name: "Vayne",
+  title: "The Night Hunter",
+  origins: ["Light"],
+  classes: ["Ranger"],
+  cost: 1,
+  ability: {
+    name: "Silver Bolts",
+    description: "Vayne deals bonus true damage every third attack based on the enemy's maximum health.",
+    type: "Passive",
+    mana_cost: 0,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Maxium Health Damage",
+        value: "9% / 12% / 15%"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.75,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 25,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+veigar_2 = Champion.create(
+  id: 101,
+  season_id: 2,
+  key: "veigar",
+  name: "Veigar",
+  title: "The Tiny Master of Evil",
+  origins: ["Shadow"],
+  classes: ["Mage"],
+  cost: 3,
+  ability: {
+    name: "Primordial Burst",
+    description: "Veigar blasts an enemy with magical energy. This spell instantly kills if the enemy is a lower star level than Veigar.",
+    type: "Active",
+    mana_cost: 60,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "300 / 600 / 900"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.60,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+vladimir_2 = Champion.create(
+  id: 102,
+  season_id: 2,
+  key: "vladimir",
+  name: "Vladimir",
+  title: "The Crimson Reaper",
+  origins: ["Ocean"],
+  classes: ["Mage"],
+  cost: 1,
+  ability: {
+    name: "Drain",
+    description: "Vladimir drains an enemy, healing himself for the damage dealt.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 325 / 450"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.65,
+      range: 2
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(550, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+volibear_2 = Champion.create(
+  id: 103,
+  season_id: 2,
+  key: "volibear",
+  name: "Volibear",
+  title: "The Thunder's Roar",
+  origins: ["Electric", "Glacial"],
+  classes: ["Berserker"],
+  cost: 2,
+  ability: {
+    name: "Frenzied Bite",
+    description: "Volibear bites an enemy. If the target has less than 35% health, it is killed instantly and Volibear fully restores his mana.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "200 / 450 / 850"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(60, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+warwick_2 = Champion.create(
+  id: 104,
+  season_id: 2,
+  key: "warwick",
+  name: "Warwick",
+  title: "The Uncaged Wrath of Zaun",
+  origins: ["Glacial"],
+  classes: ["Predator"],
+  cost: 1,
+  ability: {
+    name: "Infinite Duress",
+    description: "Warwick pounces onto the lowest health enemy, stunning and damaging them.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Damage",
+        value: "150 / 225 / 300"
+      },
+      {
+        type: "Stun Duration",
+        value: "1.5s"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(50, 1.80),
+      attack_speed: 0.60,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(650, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+yasuo_2 = Champion.create(
+  id: 105,
+  season_id: 2,
+  key: "yasuo",
+  name: "Yasuo",
+  title: "The Unforgiven",
+  origins: ["Cloud"],
+  classes: ["Blademaster"],
+  cost: 2,
+  ability: {
+    name: "Last Breath",
+    description: "Yasuo teleports to the enemy with the most items, knocking them up in the air for 1 second and attacking them repeatedly.",
+    type: "Active",
+    mana_cost: 100,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Attacks",
+        value: "4 / 5 / 6"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(55, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(600, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+yorick_2 = Champion.create(
+  id: 106,
+  season_id: 2,
+  key: "yorick",
+  name: "Yorick",
+  title: "Shepherd of Souls",
+  origins: ["Light"],
+  classes: ["Summoner"],
+  cost: 4,
+  ability: {
+    name: "Shepherd of Souls",
+    description: "Yorick blesses his allies with the lowest health, not including Light Walkers. When they die, they resurect as Light Walkers and benefit from the effects of the Light origin.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Number of Allies",
+        value: "3 / 5 / 10"
+      },
+      {
+        type: "Light Walker Damage",
+        value: "100 / 200 / 300"
+      },
+      {
+        type: "Light Walker Health",
+        value: "600 / 1000 / 1400"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(65, 1.80),
+      attack_speed: 0.70,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(800, 1.80),
+      armor: 35,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+zed_2 = Champion.create(
+  id: 107,
+  season_id: 2,
+  key: "zed",
+  name: "Zed",
+  title: "The Master of Shadows",
+  origins: ["Electric"],
+  classes: ["Assassin", "Summoner"],
+  cost: 5,
+  ability: {
+    name: "Living Lightning",
+    description: "Zed creates a clone identical to him behind his current target. This clone inherits its creator's items, stats, and current health, and can cast Living Lightning.",
+    type: "Active",
+    mana_cost: 150,
+    mana_start: 50,
+    stats: [
+      {
+        type: "Clone Living Lightning Mana Cost",
+        value: "200 / 175 / 150"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(80, 1.80),
+      attack_speed: 1.00,
+      range: 1
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(850, 1.80),
+      armor: 30,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+zyra_2 = Champion.create(
+  id: 108,
+  season_id: 2,
+  key: "zyra",
+  name: "Zyra",
+  title: "Rise of the Thorns",
+  origins: ["Inferno"],
+  classes: ["Summoner"],
+  cost: 1,
+  ability: {
+    name: "Rampant Growth",
+    description: "Zyra summons two Flame Spitters at a random location at the edge of the arena. The Flame Spitters attack the nearest enemy 4 times.",
+    type: "Active",
+    mana_cost: 75,
+    mana_start: 0,
+    stats: [
+      {
+        type: "Damage",
+        value: "70 / 80 / 90"
+      },
+      {
+        type: "Number of Plants",
+        value: "2 / 3 / 4"
+      }
+    ]
+  },
+  stats: {
+    offense: {
+      damage_scale_factor: 1.80,
+      attack_damage: damage_scaling(40, 1.80),
+      attack_speed: 0.65,
+      range: 3
+    },
+    defense: {
+      health_scale_factor: 1.80,
+      health: health_scaling(500, 1.80),
+      armor: 20,
+      magic_resist: 20
+    }
+  },
+  items: ["WIP"]
+)
+
 #Traits
 #Origins
 cloud_2 = Trait.create(
@@ -4547,7 +4944,7 @@ cloud_2 = Trait.create(
     }
   ]
 )
-cloud_2.champions << [janna_2]
+cloud_2.champions << [janna_2, yasuo_2]
 crystal_2 = Trait.create(
   id: 26,
   season_id: 2,
@@ -4608,7 +5005,7 @@ electric_2 = Trait.create(
     }
   ]
 )
-electric_2.champions << [ornn_2]
+electric_2.champions << [ornn_2, volibear_2, zed_2]
 glacial_2 = Trait.create(
   id: 29,
   season_id: 2,
@@ -4631,7 +5028,7 @@ glacial_2 = Trait.create(
     }
   ]
 )
-glacial_2.champions << [braum_2, ezreal_2, olaf_2]
+glacial_2.champions << [braum_2, ezreal_2, olaf_2, volibear_2, warwick_2]
 inferno_2 = Trait.create(
   id: 30,
   season_id: 2,
@@ -4654,7 +5051,7 @@ inferno_2 = Trait.create(
     }
   ]
 )
-inferno_2.champions << [annie_2, brand_2, diana_2, kindred_2]
+inferno_2.champions << [annie_2, brand_2, diana_2, kindred_2, varus_2, zyra_2]
 light_2 = Trait.create(
   id: 31,
   season_id: 2,
@@ -4677,7 +5074,7 @@ light_2 = Trait.create(
     }
   ]
 )
-light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2]
+light_2.champions << [aatrox_2, jax_2, nasus_2, soraka_2, vayne_2, yorick_2]
 mountain_2 = Trait.create(
   id: 32,
   season_id: 2,
@@ -4710,7 +5107,7 @@ ocean_2 = Trait.create(
     }
   ]
 )
-ocean_2.champions << [nami_2, nautilus_2, syndra_2, thresh_2]
+ocean_2.champions << [nami_2, nautilus_2, syndra_2, thresh_2, vladimir_2]
 poison_2 = Trait.create(
   id: 34,
   season_id: 2,
@@ -4739,7 +5136,7 @@ shadow_2 = Trait.create(
     }
   ]
 )
-shadow_2.champions << [kindred_2, malzahar_2, masteryi_2, sion_2]
+shadow_2.champions << [kindred_2, malzahar_2, masteryi_2, sion_2, veigar_2]
 steel_2 = Trait.create(
   id: 36,
   season_id: 2,
@@ -4812,7 +5209,7 @@ assassin_2 = Trait.create(
     }
   ]
 )
-assassin_2.champions << [diana_2, khazix_2, leblanc_2, nocturne_2, qiyana_2]
+assassin_2.champions << [diana_2, khazix_2, leblanc_2, nocturne_2, qiyana_2, zed_2]
 avatar_2 = Trait.create(
   id: 40,
   season_id: 2,
@@ -4841,7 +5238,7 @@ berserker_2 = Trait.create(
     }
   ]
 )
-berserker_2.champions << [drmundo_2, jax_2, olaf_2, renekton_2, sion_2]
+berserker_2.champions << [drmundo_2, jax_2, olaf_2, renekton_2, sion_2, volibear_2]
 blademaster_2 = Trait.create(
   id: 42,
   season_id: 2,
@@ -4864,7 +5261,7 @@ blademaster_2 = Trait.create(
     }
   ]
 )
-blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2]
+blademaster_2.champions << [aatrox_2, masteryi_2, sivir_2, yasuo_2]
 druid_2 = Trait.create(
   id: 43,
   season_id: 2,
@@ -4893,7 +5290,7 @@ mage_2 = Trait.create(
     }
   ]
 )
-mage_2.champions << [brand_2, leblanc_2, syndra_2, taliyah_2]
+mage_2.champions << [brand_2, leblanc_2, syndra_2, taliyah_2, veigar_2, vladimir_2]
 mystic_2 = Trait.create(
   id: 45,
   season_id: 2,
@@ -4922,7 +5319,7 @@ predator_2 = Trait.create(
   description: "While at least 3 Predators are in play, Predators instantly kill enemies they damage who are below 25% health",
   upgrades: []
 )
-predator_2.champions << [kogmaw_2, reksai_2, skarner_2]
+predator_2.champions << [kogmaw_2, reksai_2, skarner_2, warwick_2]
 ranger_2 = Trait.create(
   id: 47,
   season_id: 2,
@@ -4945,7 +5342,7 @@ ranger_2 = Trait.create(
     }
   ]
 )
-ranger_2.champions << [ashe_2, ezreal_2, kindred_2, twitch_2]
+ranger_2.champions << [ashe_2, ezreal_2, kindred_2, twitch_2, varus_2, vayne_2]
 summoner_2 = Trait.create(
   id: 48,
   season_id: 2,
@@ -4964,7 +5361,7 @@ summoner_2 = Trait.create(
     }
   ]
 )
-summoner_2.champions << [annie_2, azir_2, malzahar_2]
+summoner_2.champions << [annie_2, azir_2, malzahar_2, yorick_2, zed_2, zyra_2]
 warden_2 = Trait.create(
   id: 49,
   season_id: 2,
