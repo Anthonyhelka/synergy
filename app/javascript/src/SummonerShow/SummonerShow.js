@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSummoner, updateSummoner } from '../Redux/modules/summonerShow';
-import { Menu, Container, Header, List, Dropdown, Message, Responsive, Image, Segment, Divider } from 'semantic-ui-react';
+import { Divider } from 'semantic-ui-react';
 import loading_gears from '../../../assets/images/miscellaneous_images/loading_gears_white.svg';
 
 import NavigationBar from '../Components/NavigationBar';
@@ -28,9 +28,7 @@ class SummonerShow extends Component {
       <div id='SummonerShow-page-container'>
         <NavigationBar />
           {this.props.isFetching ? (
-            <div id='SummonerShow-loading-gears-container'>
-              <img id='SummonerShow-loading-gears' src={loading_gears} />
-            </div>
+            <div id='SummonerShow-loading-gears-container'><img id='SummonerShow-loading-gears' src={loading_gears} /></div>
           ) : (
             <div id='SummonerShow-summoner-container'>
               {this.props.message.content !== '' ? (<div class={`SummonerShow-message-${(this.props.message.type).toLowerCase()}`}>{this.props.message.content}</div>) : (<span></span>)}
@@ -57,9 +55,7 @@ class SummonerShow extends Component {
                   </div>
                 </div>
                ) : (
-                <div id='SummonerShow-summoner-invalid-container'>
-                  <p>This Summoner Doesn't Exist!</p>
-                </div>
+                <div id='SummonerShow-summoner-invalid-container'><p>This Summoner Doesn't Exist!</p></div>
                )}
             </div>
           )}
