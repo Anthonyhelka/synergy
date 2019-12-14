@@ -2,7 +2,6 @@ require "factory_bot_rails"
 
 FactoryBot.define do
   factory :season do
-    id  { 1 }
     name { "1" }
   end
 
@@ -44,11 +43,25 @@ FactoryBot.define do
     items { ["WIP"] }
   end
 
-  factory :team do
-    name { name.sample  }
-    icon { "./demon" }
-    team_type { team_type.sample }
-    description { Faker::Hipster.sentences(number: 1) }
+  factory :trait do
+    key { "demon" }
+    name { "Demon" }
+    trait_type { "Origin" }
+    description { "Attacks from Demons have a 40% chance to burn 20 mana from their target and return mana to the attacker" }
+    upgrades { [
+      {
+        threshhold: "2",
+        description: "15 mana returned"
+      },
+      {
+        threshhold: "4",
+        description: "30 mana returned"
+      },
+      {
+        threshhold: "6",
+        description: "45 mana returned"
+      }
+    ] }
     champions { [FactoryBot.create(:champion), FactoryBot.create(:champion)]  }
   end
 end

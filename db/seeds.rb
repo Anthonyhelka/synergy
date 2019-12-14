@@ -2436,8 +2436,7 @@ demon_1 = Trait.create(
       threshhold: "6",
       description: "45 mana returned"
     }
-  ],
-
+  ]
 )
 demon_1.champions << [aatrox_1, brand_1, elise_1, evelynn_1, morgana_1, swain_1, varus_1]
 dragon_1 = Trait.create(
@@ -2447,8 +2446,7 @@ dragon_1 = Trait.create(
   name: "Dragon",
   trait_type: "Origin",
   description: "While 2 Dragons are in play, all allied Dragons take 75% reduced magic damage",
-  upgrades: [],
-
+  upgrades: []
 )
 dragon_1.champions << [aurelionsol_1, pantheon_1, shyvana_1]
 exile_1 = Trait.create(
@@ -2458,8 +2456,7 @@ exile_1 = Trait.create(
   name: "Exile",
   trait_type: "Origin",
   description: "If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their health",
-  upgrades: [],
-
+  upgrades: []
 )
 exile_1.champions << [yasuo_1]
 glacial_1 = Trait.create(
@@ -2482,8 +2479,7 @@ glacial_1 = Trait.create(
       threshhold: "6",
       description: "50% chance"
     }
-  ],
-
+  ]
 )
 glacial_1.champions << [anivia_1, ashe_1, braum_1, lissandra_1, sejuani_1, volibear_1]
 hextech_1 = Trait.create(
@@ -2502,8 +2498,7 @@ hextech_1 = Trait.create(
       threshhold: "4",
       description: "Affects units within 2 hexes of the bomb"
     }
-  ],
-
+  ]
 )
 hextech_1.champions << [camille_1, jayce_1, jinx_1, vi_1]
 imperial_1 = Trait.create(
@@ -2522,8 +2517,7 @@ imperial_1 = Trait.create(
       threshhold: "4",
       description: "All Imperials"
     }
-  ],
-
+  ]
 )
 imperial_1.champions << [darius_1, draven_1, katarina_1, swain_1]
 ninja_1 = Trait.create(
@@ -2542,8 +2536,7 @@ ninja_1 = Trait.create(
       threshhold: "4",
       description: "All Ninjas gain 80 attack damage/ability power"
     }
-  ],
-
+  ]
 )
 ninja_1.champions << [akali_1, kennen_1, shen_1, zed_1]
 noble_1 = Trait.create(
@@ -2562,8 +2555,7 @@ noble_1 = Trait.create(
       threshhold: "6",
       description: "All allies"
     }
-  ],
-
+  ]
 )
 noble_1.champions << [fiora_1, garen_1, kayle_1, leona_1, lucian_1, vayne_1]
 phantom_1 = Trait.create(
@@ -2573,8 +2565,7 @@ phantom_1 = Trait.create(
   name: "Phantom",
   trait_type: "Origin",
   description: "While 2 Phantoms are in play, a random enemy will begin combat with 100 health",
-  upgrades: [],
-
+  upgrades: []
 )
 phantom_1.champions << [karthus_1, kindred_1, mordekaiser_1]
 pirate_1 = Trait.create(
@@ -2584,8 +2575,7 @@ pirate_1 = Trait.create(
   name: "Pirate",
   trait_type: "Origin",
   description: "While 3 Pirates are in play, you begin each PvP round with a chest that grants between 0 and 4 gold",
-  upgrades: [],
-
+  upgrades: []
 )
 pirate_1.champions << [gangplank_1, graves_1, missfortune_1, pyke_1, twistedfate_1]
 robot_1 = Trait.create(
@@ -2595,8 +2585,7 @@ robot_1 = Trait.create(
   name: "Robot",
   trait_type: "Origin",
   description: "Robots start combat at full mana",
-  upgrades: [],
-
+  upgrades: []
 )
 robot_1.champions << [blitzcrank_1]
 void_1 = Trait.create(
@@ -2615,8 +2604,7 @@ void_1 = Trait.create(
       threshhold: "4",
       description: "All Voidlings"
     }
-  ],
-
+  ]
 )
 void_1.champions << [chogath_1, kaisa_1, kassadin_1, khazix_1, reksai_1]
 wild_1 = Trait.create(
@@ -2635,8 +2623,7 @@ wild_1 = Trait.create(
       threshhold: "4",
       description: "Fury benefits all allies and their attacks cannot be dodged"
     }
-  ],
-
+  ]
 )
 wild_1.champions << [ahri_1, gnar_1, nidalee_1, rengar_1, warwick_1]
 yordle_1 = Trait.create(
@@ -2659,8 +2646,7 @@ yordle_1 = Trait.create(
       threshhold: "9",
       description: "90% chance"
     }
-  ],
-
+  ]
 )
 yordle_1.champions << [gnar_1, kennen_1, lulu_1, poppy_1, tristana_1, veigar_1]
 #Classes
@@ -2684,8 +2670,7 @@ assassin_1 = Trait.create(
       threshhold: "9",
       description: "+225% damage/+30% chance"
     }
-  ],
-
+  ]
 )
 assassin_1.champions << [akali_1, evelynn_1, kaisa_1, katarina_1, khazix_1, pyke_1, rengar_1, zed_1]
 blademaster_1 = Trait.create(
@@ -2708,8 +2693,7 @@ blademaster_1 = Trait.create(
       threshhold: "9",
       description: "Quadruple strike"
     }
-  ],
-
+  ]
 )
 blademaster_1.champions << [aatrox_1, camille_1, draven_1, fiora_1, gangplank_1, shen_1, yasuo_1]
 brawler_1 = Trait.create(
@@ -2732,8 +2716,7 @@ brawler_1 = Trait.create(
       threshhold: "6",
       description: "+900 maximum health"
     }
-  ],
-
+  ]
 )
 brawler_1.champions << [blitzcrank_1, chogath_1, reksai_1, vi_1, volibear_1, warwick_1]
 elementalist_1 = Trait.create(
@@ -2743,8 +2726,7 @@ elementalist_1 = Trait.create(
   name: "Elementalist",
   trait_type: "Class",
   description: "When 3 Elementalists are in play, begin combat with an Elemental adjacent to one of your Elementalists",
-  upgrades: [],
-
+  upgrades: []
 )
 elementalist_1.champions << [anivia_1, brand_1, kennen_1, lissandra_1]
 guardian_1 = Trait.create(
@@ -2754,8 +2736,7 @@ guardian_1 = Trait.create(
   name: "Guardian",
   trait_type: "Class",
   description: "When 2 Guardians are in play, grant 45 armor to all units that start adjacent to a Guardian",
-  upgrades: [],
-
+  upgrades: []
 )
 guardian_1.champions << [braum_1, leona_1, pantheon_1]
 gunslinger_1 = Trait.create(
@@ -2778,8 +2759,7 @@ gunslinger_1 = Trait.create(
       threshhold: "6",
       description: "Attacks hit four additional random enemy"
     }
-  ],
-
+  ]
 )
 gunslinger_1.champions << [gangplank_1, graves_1, jinx_1, lucian_1, missfortune_1, tristana_1]
 knight_1 = Trait.create(
@@ -2802,8 +2782,7 @@ knight_1 = Trait.create(
       threshhold: "6",
       description: "60 damage ignored"
     }
-  ],
-
+  ]
 )
 knight_1.champions << [darius_1, garen_1, kayle_1, mordekaiser_1, poppy_1, sejuani_1]
 ranger_1 = Trait.create(
@@ -2822,8 +2801,7 @@ ranger_1 = Trait.create(
       threshhold: "4",
       description: "75% chance"
     }
-  ],
-
+  ]
 )
 ranger_1.champions << [ashe_1, kaisa_1, kindred_1, varus_1, vayne_1]
 shapeshifter_1 = Trait.create(
@@ -2842,8 +2820,7 @@ shapeshifter_1 = Trait.create(
       threshhold: "6",
       description: "100% bonus health gained"
     }
-  ],
-
+  ]
 )
 shapeshifter_1.champions << [elise_1, gnar_1, jayce_1, nidalee_1, shyvana_1, swain_1]
 sorcerer_1 = Trait.create(
@@ -2866,8 +2843,7 @@ sorcerer_1 = Trait.create(
       threshhold: "9",
       description: "+175% bonus spell power"
     }
-  ],
-
+  ]
 )
 sorcerer_1.champions << [ahri_1, aurelionsol_1, karthus_1, kassadin_1, lulu_1, morgana_1, twistedfate_1, veigar_1]
 

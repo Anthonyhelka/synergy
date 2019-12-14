@@ -4,9 +4,9 @@ DatabaseCleaner.clean_with(:truncation)
 
 RSpec.describe Api::V1::ChampionsController, type: :controller do
   champion_one = FactoryBot.create(:champion)
-  champion_two = FactoryBot.create(:champion)
-  team_one = FactoryBot.create(:team, team_type: "Origin", champions: [champion_one, champion_two])
-  team_two = FactoryBot.create(:team, team_type: "Class", champions: [champion_one, champion_two])
+  trait_one = FactoryBot.create(:trait, trait_type: "Origin", champions: [champion_one])
+  trait_two = FactoryBot.create(:trait, trait_type: "Class", champions: [champion_one])
+  season = FactoryBot.create(:season, traits: [trait_one], champions: [champion_one])
 
   describe "GET#overview" do
     it "returns successful response with json-formatted data" do
@@ -22,8 +22,8 @@ RSpec.describe Api::V1::ChampionsController, type: :controller do
       expect(response_json.length).to eq 2
       expect(response_json[0]["name"]).to eq champion_one.name
       expect(response_json[1]["name"]).to eq champion_two.name
-      expect(response_json[0]["teams"].length).to eq 2
-      expect(response_json[1]["teams"].length).to eq 2
+      expect(response_json[0]["traits"].length).to eq 2
+      expect(response_json[1]["traits"].length).to eq 2
     end
   end
 
@@ -34,12 +34,12 @@ RSpec.describe Api::V1::ChampionsController, type: :controller do
       expect(response.content_type).to eq "application/json"
     end
 
-    it "returns all teams in the database with the team_type of \"Origin\"" do
+    it "returns all traits in the database with the trait_type of \"Origin\"" do
       get :origins
       response_json = JSON.parse(response.body)
       response_json = response_json["origins"]
       expect(response_json.length).to eq 1
-      expect(response_json[0]["name"]).to eq team_one.name
+      expect(response_json[0]["name"]).to eq trait_one.name
       expect(response_json[0]["champions"].length).to eq 2
     end
   end
@@ -51,12 +51,12 @@ RSpec.describe Api::V1::ChampionsController, type: :controller do
       expect(response.content_type).to eq "application/json"
     end
 
-    it "returns all teams in the database with the team_type of \"Class\"" do
+    it "returns all traits in the database with the trait_type of \"Class\"" do
       get :classes
       response_json = JSON.parse(response.body)
       response_json = response_json["classes"]
       expect(response_json.length).to eq 1
-      expect(response_json[0]["name"]).to eq team_two.name
+      expect(response_json[0]["name"]).to eq trait_two.name
       expect(response_json[0]["champions"].length).to eq 2
     end
   end
@@ -74,7 +74,7 @@ RSpec.describe Api::V1::ChampionsController, type: :controller do
       response_json = response_json["champion"]
       expect(response_json.length).to eq 1
       expect(response_json[0]["name"]).to eq champion_two.name
-      expect(response_json[0]["teams"].length).to eq 2
+      expect(response_json[0]["traits"].length).to eq 2
     end
   end
 end
